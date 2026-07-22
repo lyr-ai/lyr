@@ -18,9 +18,16 @@ from __future__ import annotations
 
 from typing import Iterable
 
+from .durable import (
+    Consolidator,
+    DurableBuilder,
+    DurableProposal,
+    RecurrenceConsolidator,
+    is_active,
+)
 from .ingestion import Document, Ingestor, TextIngestor
 from .models import Node, SourceRecord
-from .provenance import ProvenanceTree, explain, trace
+from .provenance import ProvenanceTree, explain, supporters, trace
 from .semantic import Extractor, RuleBasedExtractor, SemanticBuilder
 from .store import InMemoryStore, Store
 
@@ -39,11 +46,14 @@ class LYR:
         store: Store | None = None,
         ingestor: Ingestor | None = None,
         extractor: Extractor | None = None,
+        consolidator: Consolidator | None = None,
     ) -> None:
         self.store: Store = store or InMemoryStore()
         self.ingestor: Ingestor = ingestor or TextIngestor()
         self.extractor: Extractor = extractor or RuleBasedExtractor()
+        self.consolidator: Consolidator = consolidator or RecurrenceConsolidator()
         self.builder = SemanticBuilder(self.store, self.extractor)
+        self.durable_builder = DurableBuilder(self.store, self.consolidator)
 
     # ── M1: ingest ---------------------------------------------------------
     def ingest_source(
@@ -75,14 +85,53 @@ class LYR:
         """
         return self.builder.build(list(self.store.sources()))
 
+    # ── M3: durable layer --------------------------------------------------
+    def build_durable(self) -> list[DurableProposal]:
+        """Consolidate recurring semantic knowledge into durable memory.
+
+        A maintenance pass over accumulated semantic knowledge — run it
+        periodically, not on every ingest. Returns the proposals made (ADD /
+        UPDATE / MERGE / NO_OP), which the builder has already applied.
+        """
+        return self.durable_builder.build()
+
+    def propose_durable(self) -> list[DurableProposal]:
+        """The durable proposals for the current state, without applying them."""
+        return self.durable_builder.propose()
+
+    def durable_memories(self, *, include_retired: bool = False) -> Iterable[Node]:
+        """Active durable memories (latest version of each identity).
+
+        Retired memories — those folded into another by MERGE — are excluded by
+        default; pass ``include_retired=True`` to see them (their history and
+        provenance are always retained in the store).
+        """
+        heads: dict[str, Node] = {}
+        for node in self.store.nodes(layer="durable"):
+            current = heads.get(node.identity)
+            if current is None or node.version > current.version:
+                heads[node.identity] = node
+        memories = heads.values()
+        if not include_retired:
+            memories = [n for n in memories if is_active(n)]
+        return list(memories)
+
     # ── provenance ---------------------------------------------------------
     def explain(self, node: Node) -> list[SourceRecord]:
-        """The Source Records that justify ``node``."""
+        """The Source Records that justify ``node`` (any layer)."""
         return explain(node, self.store)
 
     def trace(self, node: Node) -> ProvenanceTree:
         """The full evidence tree beneath ``node``."""
         return trace(node, self.store)
+
+    def supporters(self, node: Node | SourceRecord, *, layer: str | None = None) -> list[Node]:
+        """Higher-layer nodes that cite ``node`` as evidence.
+
+        The upward provenance query: e.g. which durable memories a semantic
+        record supports (``layer="durable"``).
+        """
+        return supporters(node.id, self.store, layer=layer)
 
     # ── retrieval (hierarchical, thin for v0.1) ----------------------------
     def semantic_nodes(self) -> Iterable[Node]:

@@ -3,6 +3,56 @@
 All notable changes to LYR are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [0.2.0] — unreleased (M3: Durable Layer — substrate)
+
+Adds the **Durable Layer** — the trustworthy substrate for long-term knowledge
+maintenance. LYR moves beyond extraction to *maintaining* knowledge, with the
+same identity, versioning, and provenance guarantees as the layers below. The
+guiding split:
+
+> **Model proposes meaning. Engine commits identity, history, and provenance.**
+
+This release delivers the engine's half (deterministic, auditable) plus a
+deterministic *baseline* policy. Defining durability as a semantic judgment
+(evidence independence, significance) is deferred to M3.1 — recurrence is **not**
+LYR's definition of durable.
+
+### Added
+
+- **Durable lifecycle** — the `Consolidator` protocol and the four update
+  operations (`ADD` / `UPDATE` / `MERGE` / `NO_OP`) as `DurableProposal`s.
+  - `RecurrenceConsolidator` — deterministic **structural baseline** (promotes a
+    topic once ≥ `min_support` distinct source records back it). Explicitly a
+    proxy/control, not the definition of durability. Reproducible.
+  - `LLMConsolidator` — model-driven policy over any `LLMClient`; the model
+    proposes which existing memory to match, and the engine owns identity.
+- **`DurableBuilder`** — separates `propose` from `apply`; the engine enforces
+  the invariants regardless of the operation a consolidator names:
+  - **identity guard** — an `ADD` onto an existing identity evolves it rather
+    than minting a second `v1` (chains stay `1..n`), including within one batch.
+  - **MERGE lifecycle** — superseded memories are *tombstoned* (`status=retired`,
+    `merged_into` recorded), their evidence folded into the target; history and
+    provenance are retained, and they drop out of active queries.
+  - **minimal change** — an inert UPDATE downgrades to NO_OP (syntactic; semantic
+    equivalence is a model judgment, out of scope for the substrate).
+- **Bidirectional provenance** — `supporters()` walks provenance *upward*, so a
+  semantic record can discover the durable memories it supports.
+- **Evaluation harness** (`lyr.durable.evaluation`) — scores identity
+  preservation, minimal change, provenance completeness, and reproducibility
+  without labels; update precision/recall require caller-supplied ground truth
+  and are reported as `None` otherwise. Not yet a validated durability benchmark.
+- **Engine** — `build_durable`, `propose_durable`, `durable_memories`
+  (`include_retired=` opt-in), `supporters`, plus a `consolidator=` injection
+  point on `LYR(...)`.
+
+### Notes
+
+- Durable confidence/support live in `Node.attributes` (no `Node` model change).
+- Layer isolation is enforced by construction: consolidators consume `Node`s and
+  their provenance ids, never `store.get_source`.
+- No document/episode/run "support unit" is baked into the schema — evidence
+  independence is a semantic judgment left to the model-driven policy (M3.1).
+
 ## [0.1.0] — unreleased
 
 First cut of the knowledge engine: the **M1 (Source) + M2 (Semantic)** vertical
