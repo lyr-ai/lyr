@@ -23,6 +23,14 @@ of the next design milestone.
 
 from .base import DURABLE_OPS, RETIRED, Consolidator, DurableProposal, is_active
 from .builder import DurableBuilder
+from .judgment import (
+    REJECT,
+    EngineAction,
+    JudgmentRecord,
+    JudgmentResult,
+    ModelProposal,
+)
+from .judgment_builder import PROMPT_VERSION, JudgmentBuilder
 from .llm import LLMConsolidator
 from .recurrence import RecurrenceConsolidator
 
@@ -31,8 +39,15 @@ __all__ = [
     "DurableProposal",
     "DURABLE_OPS",
     "RETIRED",
+    "REJECT",
     "is_active",
     "RecurrenceConsolidator",
     "LLMConsolidator",
     "DurableBuilder",
+    "JudgmentBuilder",
+    "JudgmentRecord",
+    "JudgmentResult",
+    "ModelProposal",
+    "EngineAction",
+    "PROMPT_VERSION",
 ]

@@ -8,9 +8,12 @@ milestone; they implement the same protocol.
 
 from __future__ import annotations
 
-from typing import Iterable
+from typing import TYPE_CHECKING, Iterable
 
 from ..models import Node, SourceRecord
+
+if TYPE_CHECKING:
+    from ..durable.judgment import JudgmentRecord
 
 
 class InMemoryStore:
@@ -19,6 +22,9 @@ class InMemoryStore:
         self._nodes: dict[str, Node] = {}
         # identity -> version ids in insertion (== version) order
         self._by_identity: dict[str, list[str]] = {}
+        # append-only judgment log: order preserved, indexed by id for lookup
+        self._judgments: list["JudgmentRecord"] = []
+        self._judgments_by_id: dict[str, "JudgmentRecord"] = {}
 
     # ── source layer ------------------------------------------------------
     def add_source(self, record: SourceRecord) -> SourceRecord:
@@ -61,3 +67,17 @@ class InMemoryStore:
         if not chain:
             return None
         return self._nodes[chain[-1]]
+
+    # ── judgment records --------------------------------------------------
+    def add_judgment(self, record: "JudgmentRecord") -> "JudgmentRecord":
+        # Append-only: always keep the record in order. The by-id index is a
+        # convenience for lookup; identical content-addressed ids are harmless.
+        self._judgments.append(record)
+        self._judgments_by_id[record.judgment_id] = record
+        return record
+
+    def get_judgment(self, judgment_id: str) -> "JudgmentRecord | None":
+        return self._judgments_by_id.get(judgment_id)
+
+    def judgments(self) -> Iterable["JudgmentRecord"]:
+        return list(self._judgments)
