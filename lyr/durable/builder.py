@@ -23,7 +23,15 @@ from typing import Any
 
 from ..models import Node
 from ..store.base import Store
-from .base import ADD, MERGE, NO_OP, UPDATE, Consolidator, DurableProposal
+from .base import (
+    MERGE,
+    NO_OP,
+    RETIRED,
+    UPDATE,
+    Consolidator,
+    DurableProposal,
+    is_active,
+)
 
 
 class DurableBuilder:
@@ -42,10 +50,13 @@ class DurableBuilder:
 
     # ── propose / apply / build -------------------------------------------
     def propose(self) -> list[DurableProposal]:
-        """Ask the consolidator for operations, without touching the store."""
-        return self._consolidator.consolidate(
-            self._heads("semantic"), self._heads("durable")
-        )
+        """Ask the consolidator for operations, without touching the store.
+
+        Only *active* durable memories are offered to the consolidator — a
+        retired (merged-away) memory is not a valid UPDATE/MERGE target.
+        """
+        active_durable = [n for n in self._heads("durable") if is_active(n)]
+        return self._consolidator.consolidate(self._heads("semantic"), active_durable)
 
     def apply(self, proposals: list[DurableProposal]) -> list[Node]:
         """Apply proposals to the store; return the durable nodes affected."""
@@ -63,51 +74,97 @@ class DurableBuilder:
         return proposals
 
     # ── operation handlers ------------------------------------------------
+    #
+    # Model proposes meaning; the engine commits identity, history, and
+    # provenance. Whatever a consolidator asks for, the builder guarantees the
+    # invariants below — a consolidator can never fork an identity or lose
+    # history through the operation it names.
     def _apply_one(self, proposal: DurableProposal) -> Node | None:
-        head = self._store.head(proposal.identity)
-
         if proposal.op == NO_OP:
             return None
 
-        if proposal.op == ADD or (proposal.op in (UPDATE, MERGE) and head is None):
-            node = Node(
-                layer="durable",
-                kind=proposal.kind,
-                label=proposal.statement,
-                identity=proposal.identity,
-                evidence=sorted(set(proposal.evidence)),
-                attributes=dict(proposal.attributes),
-            )
-            return self._store.add_node(node)
-
-        if proposal.op == UPDATE:
-            return self._evolve(head, proposal, dict(proposal.attributes))
+        head = self._store.head(proposal.identity)
 
         if proposal.op == MERGE:
-            # Fold the superseded memories' evidence into the target, and record
-            # where it came from. The superseded chains stay in the store, so
-            # their history remains discoverable.
-            evidence = set(proposal.evidence)
-            merged_from: list[str] = list(proposal.superseded)
-            for identity in proposal.superseded:
-                other = self._store.head(identity)
-                if other is not None:
-                    evidence.update(other.evidence)
-            attributes = dict(proposal.attributes)
-            if merged_from:
-                attributes["merged_from"] = sorted(merged_from)
-            merged_proposal = DurableProposal(
-                op=UPDATE, identity=proposal.identity, statement=proposal.statement,
-                kind=proposal.kind, evidence=sorted(evidence), attributes=attributes,
-            )
-            return self._evolve(head, merged_proposal, attributes)
+            return self._apply_merge(head, proposal)
 
-        return None
+        # ADD / UPDATE.
+        if head is None:
+            # A genuinely new identity → create v1. This covers an ADD, and an
+            # UPDATE whose target no longer exists (nothing to evolve).
+            return self._create_v1(proposal, sorted(set(proposal.evidence)), dict(proposal.attributes))
+
+        # Identity guard (#6): an ADD onto an *existing* identity must never
+        # mint a second v1 — it becomes an evolve, so the chain stays 1..n. This
+        # also covers two same-identity ADDs within one batch (the first creates
+        # v1, the second sees the head and evolves).
+        return self._evolve(head, proposal, dict(proposal.attributes))
+
+    def _apply_merge(self, head: Node | None, proposal: DurableProposal) -> Node | None:
+        """Fold superseded memories into the target and retire them.
+
+        Each superseded memory is *tombstoned* (a new version marked
+        ``status=retired`` with ``merged_into`` set): its evidence moves to the
+        target, its full history and provenance stay in the store, and active
+        queries stop returning it. The merge does not delete anything.
+        """
+        evidence = set(proposal.evidence)
+        merged_from: list[str] = []
+        for identity in proposal.superseded:
+            if identity == proposal.identity:
+                continue
+            other = self._store.head(identity)
+            if other is None or not is_active(other):
+                continue
+            evidence.update(other.evidence)
+            merged_from.append(identity)
+            self._retire(other, into=proposal.identity)
+
+        attributes = dict(proposal.attributes)
+        if merged_from:
+            attributes["merged_from"] = sorted(set(merged_from))
+
+        if head is None:
+            return self._create_v1(proposal, sorted(evidence), attributes)
+
+        merged = DurableProposal(
+            op=UPDATE, identity=proposal.identity, statement=proposal.statement,
+            kind=proposal.kind, evidence=sorted(evidence), attributes=attributes,
+        )
+        return self._evolve(head, merged, attributes)
+
+    def _retire(self, head: Node, *, into: str) -> Node:
+        """Tombstone ``head`` — a new version marking it merged into ``into``.
+
+        History is preserved (prior versions remain) and provenance is intact
+        (evidence is carried over), so the retired memory stays fully traceable;
+        it is simply excluded from active queries.
+        """
+        retired = head.evolved(
+            attributes={**head.attributes, "status": RETIRED, "merged_into": into}
+        )
+        return self._store.add_node(retired)
+
+    def _create_v1(
+        self, proposal: DurableProposal, evidence: list[str], attributes: dict[str, Any]
+    ) -> Node:
+        return self._store.add_node(
+            Node(
+                layer="durable", kind=proposal.kind, label=proposal.statement,
+                identity=proposal.identity, evidence=evidence, attributes=attributes,
+            )
+        )
 
     def _evolve(
         self, head: Node, proposal: DurableProposal, attributes: dict[str, Any]
     ) -> Node | None:
-        """Evolve ``head`` to a new version — or NO_OP if nothing changed."""
+        """Evolve ``head`` to a new version — or NO_OP if nothing changed.
+
+        Change is currently detected *syntactically*: the evidence set, the exact
+        statement string, and attributes. That is stable for deterministic
+        consolidators; detecting semantic equivalence (a paraphrase is "the same
+        knowledge") is a model judgment and is out of scope for the substrate.
+        """
         merged_evidence = sorted(set(head.evidence) | set(proposal.evidence))
         merged_attributes = {**head.attributes, **attributes}
 

@@ -18,7 +18,13 @@ from __future__ import annotations
 
 from typing import Iterable
 
-from .durable import Consolidator, DurableBuilder, DurableProposal, RecurrenceConsolidator
+from .durable import (
+    Consolidator,
+    DurableBuilder,
+    DurableProposal,
+    RecurrenceConsolidator,
+    is_active,
+)
 from .ingestion import Document, Ingestor, TextIngestor
 from .models import Node, SourceRecord
 from .provenance import ProvenanceTree, explain, supporters, trace
@@ -93,14 +99,22 @@ class LYR:
         """The durable proposals for the current state, without applying them."""
         return self.durable_builder.propose()
 
-    def durable_memories(self) -> Iterable[Node]:
-        """Current durable memories (latest version of each identity)."""
+    def durable_memories(self, *, include_retired: bool = False) -> Iterable[Node]:
+        """Active durable memories (latest version of each identity).
+
+        Retired memories — those folded into another by MERGE — are excluded by
+        default; pass ``include_retired=True`` to see them (their history and
+        provenance are always retained in the store).
+        """
         heads: dict[str, Node] = {}
         for node in self.store.nodes(layer="durable"):
             current = heads.get(node.identity)
             if current is None or node.version > current.version:
                 heads[node.identity] = node
-        return list(heads.values())
+        memories = heads.values()
+        if not include_retired:
+            memories = [n for n in memories if is_active(n)]
+        return list(memories)
 
     # ── provenance ---------------------------------------------------------
     def explain(self, node: Node) -> list[SourceRecord]:

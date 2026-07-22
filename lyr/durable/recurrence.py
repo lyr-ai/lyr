@@ -1,17 +1,28 @@
-"""RecurrenceConsolidator — the deterministic default durable policy.
+"""RecurrenceConsolidator — a deterministic *structural baseline*, not a definition of durable.
 
-Knowledge becomes durable when it recurs across *multiple independent
-experiences*. This consolidator measures that recurrence purely from semantic
-records and their provenance ids — it never reads the source layer, honoring M3
-layer isolation — and promotes a topic to a durable memory once it is backed by
-at least ``min_support`` distinct source records.
+This consolidator promotes a topic to a durable memory once it is backed by at
+least ``min_support`` distinct source records, measured purely from semantic
+records and their provenance ids (it never reads the source layer, honoring M3
+layer isolation).
 
-``min_support`` is the one tunable that encodes the M3 open question ("how much
-evidence before something is durable?"). The default is deliberately modest and
-clearly a *policy choice*, not a hidden assumption: LYR makes no claim it is the
-right threshold — it is the knob you turn while investigating that question.
+**It is a baseline, not LYR's definition of durability.** Recurrence is not the
+same as importance: a significant one-off decision can be durable while repeated
+noise is not. This policy is here to be deterministic, runnable offline, and a
+control to measure a real (model-driven) policy against — nothing more.
 
-Being a pure function of (semantic records, config), the consolidator is exactly
+Two limitations are deliberate and named, not hidden:
+
+- ``min_support`` counts distinct *source records* — i.e. passages, a **structural
+  proxy** for evidence independence. Three paragraphs describing one event count
+  as three; that over-counts. Genuine evidence independence ("are these the same
+  observation or two?") is a semantic judgment this baseline does not attempt,
+  and LYR deliberately does **not** substitute a document/episode/run boundary
+  heuristic for it.
+- The threshold itself is a proxy for a judgment ("is this worth remembering?")
+  that this baseline cannot make.
+
+Both belong to the model-driven policy that supersedes this baseline. Being a
+pure function of (semantic records, config), this consolidator is exactly
 reproducible: identical inputs yield an identical, stably-ordered proposal list.
 """
 

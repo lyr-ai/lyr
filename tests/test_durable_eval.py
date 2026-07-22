@@ -60,16 +60,18 @@ def test_identity_and_provenance_are_intact_after_a_real_build():
     # deterministic consolidator → reproducible
     assert is_reproducible(consolidator, builder._heads("semantic"), builder._heads("durable"))
 
+    # No gold labels are supplied — the harness must NOT invent a score for a
+    # judgment it cannot ground. Only the substrate metrics are asserted.
     report = evaluate(
         store=store, predicted=proposals, consolidator=consolidator,
         semantic_nodes=builder._heads("semantic"),
         existing_durable=[],  # this round started from no durable memories
-        gold=[p for p in proposals if p.op == ADD],
     )
     assert report.reproducible is True
     assert report.provenance_completeness == 1.0
     assert report.identity_preservation == 1.0
-    assert report.update_recall == 1.0
+    assert report.update_precision is None  # no ground truth → no score
+    assert report.update_recall is None
 
 
 def test_empty_state_scores_are_neutral():

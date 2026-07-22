@@ -1,19 +1,25 @@
-"""The M3 knowledge-maintenance benchmark.
+"""Evaluation *harness* for durable consolidation — scaffolding, not yet a benchmark.
 
-M3 is the first milestone where LYR *maintains* knowledge rather than only
-extracting it, so it needs a way to measure maintenance quality. This module
-scores the properties the M3 design calls out as success criteria:
+This module measures properties of a consolidation round. Some of them are
+objective and need no labels — they check the engine's substrate:
 
 - **identity preservation** — do durable memories keep a single, well-formed
   version chain (no rival identities for the same knowledge)?
-- **minimal change** — how much of the proposal set is NO_OP (stability)?
 - **provenance completeness** — does every durable memory's evidence resolve?
-- **update precision / recall** — against a gold set of expected operations.
+- **minimal change** — how much of the proposal set is NO_OP (stability)?
 - **reproducibility** — same inputs + config → same proposals?
 
-The scorers work on the plain data structures the builder already produces
-(``DurableProposal`` lists and the ``Store``), so they can grade any
-consolidator, deterministic or LLM-backed.
+**Update precision / recall are different: they need ground truth.** There is no
+agreed definition yet of what *should* be durable (that is the open research
+question — recurrence is not durability), so this harness cannot supply gold
+labels. ``update_precision_recall`` scores predictions against a ``gold`` set the
+caller provides; ``evaluate`` reports precision/recall as ``None`` when no gold is
+given rather than inventing a passing score.
+
+A real durability benchmark — human-labeled "is this durable?" / "are these
+independent evidence?" cases — is future work. Do not read a high score here as
+evidence that the consolidation *judgments* are correct; the labelled parts only
+attest that the *substrate* (identity, history, provenance) held.
 """
 
 from __future__ import annotations
@@ -32,11 +38,13 @@ class EvalReport:
     identity_preservation: float
     minimal_change: float
     provenance_completeness: float
-    update_precision: float
-    update_recall: float
+    # None when no gold labels were supplied — the harness will not invent a
+    # score for a judgment it cannot ground.
+    update_precision: float | None
+    update_recall: float | None
     reproducible: bool
 
-    def as_dict(self) -> dict[str, float | bool]:
+    def as_dict(self) -> dict[str, float | bool | None]:
         return {
             "identity_preservation": self.identity_preservation,
             "minimal_change": self.minimal_change,
@@ -134,11 +142,14 @@ def evaluate(
     """Score a consolidation round across every M3 maintenance metric.
 
     ``predicted`` are the proposals under test (already applied to ``store``);
-    ``gold`` is an optional set of expected proposals for precision/recall (when
-    omitted, both are reported as 1.0 — nothing to disagree with).
+    ``gold`` is an optional set of human-labeled expected operations. When
+    omitted, precision/recall are ``None`` — the harness does not fabricate a
+    score for judgments it cannot ground.
     """
+    precision: float | None
+    recall: float | None
     if gold is None:
-        precision = recall = 1.0
+        precision = recall = None
     else:
         precision, recall = update_precision_recall(predicted, gold)
 

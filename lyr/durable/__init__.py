@@ -1,18 +1,27 @@
-"""Durable layer (M3): consolidate recurring semantic records into long-term knowledge.
+"""Durable layer (M3): maintain long-term knowledge over the semantic layer.
 
-The Durable Builder answers one question — *what deserves to become long-term
-knowledge?* — by consolidating semantic records that recur across multiple
-independent experiences into stable Durable Memories.
+The Durable layer is where LYR stops merely extracting and starts *maintaining*
+knowledge — consolidating semantic records into stable Durable Memories that keep
+their identity and version history as evidence accumulates.
 
-It obeys the M3 invariants: stable identity (memories evolve v1 → v2 → v3, never
-regenerated), minimal change (small evidence → small update; NO_OP is the common
-outcome), provenance (every durable memory cites its supporting semantic
-records, and every semantic record can discover the durables it supports), layer
-isolation (only semantic records are consumed — never raw source), and
-reproducibility (identical inputs + config → identical proposals).
+**What is "durable" is a policy, not a fixed rule.** The engine deliberately
+takes no position on it. It supplies the trustworthy substrate — identity,
+version history, provenance, and the ADD/UPDATE/MERGE/NO_OP lifecycle — and
+defers the *judgment* of what deserves to be long-term knowledge to a pluggable
+``Consolidator``:
+
+    Model proposes meaning.  Engine commits identity, history, and provenance.
+
+``RecurrenceConsolidator`` is a **deterministic structural baseline** — it treats
+cross-record recurrence as a cheap proxy signal. It is useful offline, as a test
+control, and as a comparison baseline, but it is explicitly *not* LYR's
+definition of durability: recurrence is not the same as importance, and a
+significant one-off can be durable while repeated noise is not. Real durability
+judgment (evidence independence, significance) is model-driven and is the subject
+of the next design milestone.
 """
 
-from .base import DURABLE_OPS, Consolidator, DurableProposal
+from .base import DURABLE_OPS, RETIRED, Consolidator, DurableProposal, is_active
 from .builder import DurableBuilder
 from .llm import LLMConsolidator
 from .recurrence import RecurrenceConsolidator
@@ -21,6 +30,8 @@ __all__ = [
     "Consolidator",
     "DurableProposal",
     "DURABLE_OPS",
+    "RETIRED",
+    "is_active",
     "RecurrenceConsolidator",
     "LLMConsolidator",
     "DurableBuilder",

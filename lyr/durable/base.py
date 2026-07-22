@@ -32,6 +32,16 @@ MERGE = "MERGE"
 NO_OP = "NO_OP"
 DURABLE_OPS: tuple[str, ...] = (ADD, UPDATE, MERGE, NO_OP)
 
+# Lifecycle status carried in ``Node.attributes["status"]``. A memory folded into
+# another by MERGE is *retired* — kept in the store for history and provenance,
+# but excluded from active ("what do we currently believe?") queries.
+RETIRED = "retired"
+
+
+def is_active(node: Node) -> bool:
+    """True unless the node has been retired (e.g. merged into another memory)."""
+    return node.attributes.get("status") != RETIRED
+
 
 @dataclass
 class DurableProposal:

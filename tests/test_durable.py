@@ -118,8 +118,60 @@ def test_merge_folds_evidence_and_keeps_history():
     assert head.version == 2
     assert set(head.evidence) == {"sem_1", "sem_2"}  # b's evidence folded in
     assert head.attributes["merged_from"] == ["idn_b"]
-    # b's history is preserved
-    assert store.head("idn_b").label == "Retry transient errors"
+
+    # the superseded memory is tombstoned, not deleted
+    b_head = store.head("idn_b")
+    assert b_head.attributes["status"] == "retired"
+    assert b_head.attributes["merged_into"] == "idn_a"
+    # ...its history and provenance are preserved
+    assert [v.version for v in store.versions("idn_b")] == [1, 2]
+    assert store.versions("idn_b")[0].label == "Retry transient errors"
+    assert set(b_head.evidence) == {"sem_2"}
+
+
+def test_merge_retired_memory_excluded_from_active_view():
+    from lyr import LYR
+
+    lyr = LYR()
+    a = Node(layer="durable", kind="lesson", label="A", identity="idn_a",
+             evidence=["sem_1"])
+    b = Node(layer="durable", kind="lesson", label="B", identity="idn_b",
+             evidence=["sem_2"])
+    lyr.store.add_node(a)
+    lyr.store.add_node(b)
+
+    class _Merge:
+        def consolidate(self, semantic_nodes, existing_durable):
+            return [DurableProposal(op=MERGE, identity="idn_a", statement="A+B",
+                                    evidence=["sem_1"], superseded=["idn_b"])]
+
+    DurableBuilder(lyr.store, _Merge()).build()
+    active = {n.identity for n in lyr.durable_memories()}
+    assert active == {"idn_a"}  # retired idn_b hidden from the active view
+    assert "idn_b" in {n.identity for n in lyr.durable_memories(include_retired=True)}
+
+
+# ── builder: identity guard (#6) ----------------------------------------
+def test_add_onto_existing_identity_evolves_instead_of_forking():
+    store = InMemoryStore()
+
+    class _TwoAdds:
+        """A misbehaving consolidator that ADDs the same identity twice with
+        different content — the builder must not create two v1 nodes."""
+        def consolidate(self, semantic_nodes, existing_durable):
+            return [
+                DurableProposal(op=ADD, identity="idn_x", statement="first",
+                                evidence=["sem_1"]),
+                DurableProposal(op=ADD, identity="idn_x", statement="second",
+                                evidence=["sem_2"]),
+            ]
+
+    DurableBuilder(store, _TwoAdds()).build()
+
+    versions = store.versions("idn_x")
+    assert [v.version for v in versions] == [1, 2]  # a proper chain, not [1, 1]
+    assert versions[1].parent_id == versions[0].id
+    assert set(store.head("idn_x").evidence) == {"sem_1", "sem_2"}
 
 
 # ── LLM consolidator -----------------------------------------------------
