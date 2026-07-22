@@ -79,6 +79,22 @@ def explain(node: Node, store: Store) -> list[SourceRecord]:
     return sorted(found.values(), key=lambda s: (s.origin, s.position))
 
 
+def supporters(target_id: str, store: Store, *, layer: str | None = None) -> list[Node]:
+    """Nodes that cite ``target_id`` as evidence — provenance walked *upward*.
+
+    The inverse of ``trace``: given a Source Record or a lower-layer node, find
+    the higher-layer knowledge it supports. This is what lets a semantic record
+    answer "which Durable Memories do I support?" (an M3 invariant) — pass the
+    semantic node's id and ``layer="durable"``.
+    """
+    found = [
+        node
+        for node in store.nodes(layer=layer)
+        if target_id in node.evidence
+    ]
+    return sorted(found, key=lambda n: (n.layer, n.identity, n.version))
+
+
 def dangling_evidence(node: Node, store: Store) -> list[str]:
     """Evidence ids on ``node`` that resolve to neither a record nor a node.
 

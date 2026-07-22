@@ -44,10 +44,11 @@ facts to the source paragraphs that justify them.
 
 ## Status
 
-**v0.1** ships the **M1 (Source) + M2 (Semantic)** vertical slice with working
-provenance tracing across both layers. The Durable and Cognitive layers are
-already representable in the model and slot in behind the same store and
-provenance machinery in later milestones.
+The engine ships the **Source (M1)**, **Semantic (M2)**, and **Durable (M3)**
+layers, with provenance tracing in **both** directions — downward (any node → its
+source evidence) and upward (a record → the durable memories it supports). The
+Cognitive layer (M4) is already representable in the model and slots in behind
+the same store and provenance machinery.
 
 ## Install
 
@@ -91,6 +92,31 @@ The extractor is a plug point: `RuleBasedExtractor` (deterministic, zero-dep) an
 `LLMExtractor` (any `LLMClient`) both just emit `ExtractedNode`s. Swap the
 `store`, `ingestor`, or `extractor` on `LYR(...)` without touching anything else.
 
+### Durable layer — consolidate recurring knowledge (M3)
+
+The Durable Builder consolidates semantic records that recur across independent
+experiences into stable, long-term memories. It proposes a small set of
+operations (`ADD` / `UPDATE` / `MERGE` / `NO_OP`), preserves identity, and applies
+minimal change — `NO_OP` is the common outcome.
+
+```python
+lyr.ingest("The Payments Service failed during the London deploy.", origin="incident-1")
+lyr.ingest("The Payments Service failed again overnight.",          origin="incident-2")
+
+for proposal in lyr.build_durable():          # consolidate + apply
+    print(proposal.op, proposal.statement)    # ADD  'Payments Service recurs ...'
+
+durable = next(iter(lyr.durable_memories()))
+print(lyr.explain(durable))                   # durable → semantic → source
+print(lyr.supporters(entity, layer="durable"))  # record → durables it supports
+```
+
+The consolidation policy is pluggable: `RecurrenceConsolidator` (deterministic,
+`min_support`-thresholded) is the default; `LLMConsolidator` drives the same
+operations with a model. `lyr.durable.evaluation` provides the M3 knowledge-
+maintenance benchmark (identity preservation, minimal change, provenance
+completeness, precision/recall, reproducibility).
+
 ### Evolution & version history
 
 Re-ingesting the same observation changes nothing (content-addressed ids,
@@ -121,7 +147,8 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
 |---|---|
 | `lyr.ingestion` | heterogeneous experiences → normalized, immutable Source Records (M1) |
 | `lyr.semantic` | Source Records → entities/events/relationships, with identity + versioning (M2) |
-| `lyr.provenance` | expand any node back to its supporting evidence |
+| `lyr.durable` | consolidate recurring semantic records → long-term memories; ADD/UPDATE/MERGE/NO_OP; evaluation suite (M3) |
+| `lyr.provenance` | expand any node down to source, or find what a record supports upward |
 | `lyr.store` | pluggable persistence (`InMemoryStore` in v0.1) |
 | `lyr.llm` | one-method `LLMClient` seam (`AnthropicClient`, `FakeClient`) |
 | `lyr.engine` | the `LYR` facade tying it together |
@@ -130,7 +157,7 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
 
 - **M1 — Source Layer** ✅ ingest, normalize, immutable records
 - **M2 — Semantic Layer** ✅ entities/events/relationships, provenance, versioning
-- **M3 — Durable Layer** consolidate recurring semantic knowledge; incremental updates
+- **M3 — Durable Layer** ✅ consolidate recurring knowledge; ADD/UPDATE/MERGE/NO_OP; bidirectional provenance; evaluation suite
 - **M4 — Cognitive Layer** derive higher-level reasoning patterns from durable knowledge
 - **M5 — Interactive Explorer** navigate layers, visualize provenance, expand to source (`explorer/`, TypeScript)
 

@@ -13,17 +13,31 @@ Five principles shape the engine:
 4. Knowledge has identity — nodes evolve v1 → v2 → v3, keeping their identity.
 5. Minimal change — small evidence produces small updates.
 
-v0.1 ships the M1 (Source) + M2 (Semantic) vertical slice with working
-provenance tracing across both layers. The Durable and Cognitive layers are
-representable in the model and slot in behind the same store and provenance
-machinery in later milestones.
+The engine ships the Source (M1), Semantic (M2), and Durable (M3) layers with
+provenance tracing — both downward (any node → its source evidence) and upward
+(a record → the durable memories it supports). The Cognitive layer (M4) is
+representable in the model and slots in behind the same store and provenance
+machinery.
 """
 
+from .durable import (
+    Consolidator,
+    DurableBuilder,
+    DurableProposal,
+    LLMConsolidator,
+    RecurrenceConsolidator,
+)
 from .engine import LYR
 from .ids import content_id, normalize
 from .ingestion import Document, Ingestor, TextIngestor
 from .models import LAYERS, Node, SourceRecord
-from .provenance import ProvenanceTree, dangling_evidence, explain, trace
+from .provenance import (
+    ProvenanceTree,
+    dangling_evidence,
+    explain,
+    supporters,
+    trace,
+)
 from .semantic import (
     ExtractedNode,
     ExtractionResult,
@@ -54,12 +68,19 @@ __all__ = [
     "RuleBasedExtractor",
     "LLMExtractor",
     "SemanticBuilder",
+    # durable (M3)
+    "Consolidator",
+    "DurableProposal",
+    "RecurrenceConsolidator",
+    "LLMConsolidator",
+    "DurableBuilder",
     # store
     "Store",
     "InMemoryStore",
     # provenance
     "trace",
     "explain",
+    "supporters",
     "dangling_evidence",
     "ProvenanceTree",
     # ids
