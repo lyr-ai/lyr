@@ -1,0 +1,16 @@
+[
+  {"kind": "event", "label": "Acquired competitor Northwind Analytics for $2.1B in Q2 2025.", "source": "10Q-2025Q2"},
+  {"kind": "event", "label": "The Northwind acquisition closed in the second quarter for approximately $2.1 billion.", "source": "earnings-call-2025Q2"},
+
+  {"kind": "event", "label": "Raised the quarterly dividend for the 12th consecutive year.", "source": "10Q-2025Q2"},
+
+  {"kind": "event", "label": "Raised full-year revenue guidance to $9.4B at the Q1 2025 report.", "source": "10Q-2025Q1"},
+  {"kind": "event", "label": "Lowered full-year revenue guidance to $8.8B at the Q3 2025 report, citing softening enterprise demand.", "source": "10Q-2025Q3"},
+
+  {"kind": "event", "label": "Cloud segment revenue grew 31% year over year in Q2 2025.", "source": "10Q-2025Q2"},
+
+  {"kind": "event", "label": "Recorded routine quarterly rent expense of $4.2M.", "source": "10Q-2025Q2"},
+  {"kind": "event", "label": "Recorded routine quarterly rent expense of $4.2M.", "source": "10Q-2025Q3"},
+
+  {"kind": "event", "label": "Took a one-time $180M goodwill impairment on the 2019 Helios acquisition.", "source": "10Q-2025Q3"}
+]

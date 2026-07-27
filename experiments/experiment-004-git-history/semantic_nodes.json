@@ -1,0 +1,16 @@
+[
+  {"kind": "event", "label": "Migrated the public API from REST to gRPC.", "source": "commit-a1b2c3"},
+
+  {"kind": "event", "label": "Fixed a race condition in the auth token refresh.", "source": "commit-d4e5f6"},
+  {"kind": "event", "label": "Patched another auth session bug: tokens expiring early.", "source": "commit-091a2b"},
+  {"kind": "event", "label": "Hardened auth middleware after a third session-handling regression.", "source": "commit-7c8d9e"},
+
+  {"kind": "event", "label": "Bumped version to 2.3.1.", "source": "commit-111111"},
+  {"kind": "event", "label": "Bumped version to 2.3.2.", "source": "commit-222222"},
+  {"kind": "event", "label": "Bumped version to 2.3.3.", "source": "commit-333333"},
+
+  {"kind": "event", "label": "Added a Redis cache in front of the product catalog.", "source": "commit-abc123"},
+  {"kind": "event", "label": "Reverted the Redis catalog cache due to stale-read incidents.", "source": "commit-def456"},
+
+  {"kind": "event", "label": "Merge pull request #482: migrate public API from REST to gRPC.", "source": "commit-merge482"}
+]
