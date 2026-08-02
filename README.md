@@ -129,18 +129,53 @@ print(lyr.explain(durable))                   # durable → semantic → source
 print(lyr.supporters(entity, layer="durable"))  # record → durables it supports
 ```
 
-**Consolidation policy is pluggable.** `RecurrenceConsolidator` is the default —
-but it is a *deterministic structural baseline* (recurrence as a cheap proxy),
-**not** LYR's definition of durability: recurrence is not importance, and a
-significant one-off can be durable while repeated noise is not. Real durability
-judgment — evidence independence, significance — is model-driven and is the
-subject of the next milestone. `LLMConsolidator` is the seam for it.
+**Consolidation policy is pluggable.** `RecurrenceConsolidator` remains a
+*deterministic structural baseline* (recurrence as a cheap proxy) — **not** LYR's
+definition of durability: recurrence is not importance, and a significant one-off
+can be durable while repeated noise is not. **Model-driven durability judgment is
+implemented (M3.1)** through the `JudgmentBuilder`, judgment **decomposition**, and
+the **Durability Verifier** (see below).
 
-`lyr.durable.evaluation` is an evaluation *harness*: identity preservation,
-minimal change, provenance completeness, and reproducibility are scored without
-labels; update precision/recall require caller-supplied ground truth (a
-human-labeled durability benchmark is future work — the harness reports `None`
-rather than inventing a score).
+`lyr.durable.evaluation` scores substrate properties without labels (identity
+preservation, minimal change, provenance completeness, reproducibility). For the
+*judgment* itself, the frozen
+[`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark holds
+the first reviewed cross-domain judgment set — an **experimental** benchmark (19
+cases), not yet a broad, population-level measure of durability quality.
+
+### Model-driven durable judgment (M3.1)
+
+An LLM proposes durable knowledge; a **decomposer** splits a batch so each judgment
+covers one topic; a **durability verifier** vetoes what should not persist — and the
+engine still commits identity, history, and provenance. Every attempt is one
+immutable `JudgmentRecord` (proposal → verdict → committed action).
+
+```python
+from lyr import LYR
+from lyr.durable import JudgmentPipeline, LLMDecomposer, LLMDurabilityVerifier
+from lyr.llm import OpenAIClient          # or AnthropicClient
+
+lyr = LYR()
+lyr.ingest("...accumulated experiences...", origin="doc-1")   # Source + Semantic
+semantic = list(lyr.semantic_nodes())
+
+client = OpenAIClient()
+pipeline = JudgmentPipeline(
+    lyr.store, client,
+    decomposer=LLMDecomposer(client),           # batch → one topic per judgment (M3.1-B.2)
+    verifier=LLMDurabilityVerifier(client),     # gate: should this persist? (M3.1-C)
+)
+
+for result in pipeline.run(semantic, candidate_durable_nodes=[]):
+    rec = result.judgment_record
+    verdict = rec.verification.decision if rec.verification else "—"   # KEEP / REJECT / UNSURE
+    print(rec.model_intent.operation, "→", rec.final_engine_action.operation,
+          "| verdict:", verdict, "|", rec.model_intent.statement)
+```
+
+On the frozen `durability-v1` benchmark this verifier drove trivia-over-promotion
+(false positives) to **0**, with one narrow false-negative remaining. The full story
+is in [`docs/M3.1-research-arc.md`](docs/M3.1-research-arc.md).
 
 ### Evolution & version history
 
@@ -163,9 +198,21 @@ for v in lyr.history(node):
 
 ```
 Experience → Ingestion → Source Records → Semantic Builder → Semantic Memory
-                              │                                     │
-                              └──────────── Provenance ─────────────┘
-                                     (trace any node to source)
+                                                                    │
+                              ┌─────────────────────────────────────┘
+                              ▼
+                       Judgment Decomposer      (batch → one topic per judgment)
+                              ▼
+                        JudgmentBuilder          (propose one durable operation)
+                              ▼
+                      Durability Verifier        (KEEP / REJECT / UNSURE)
+                              ▼
+                        Durable Memory           committed by the engine
+                              │
+        JudgmentRecord: proposal → verdict → engine action   (immutable audit)
+                              │
+                    ◀──────── Provenance ────────▶
+             (any node → its source; a record → what it supports)
 ```
 
 | Module | Responsibility |

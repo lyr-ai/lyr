@@ -3,6 +3,35 @@
 All notable changes to LYR are documented here. This project adheres to
 [Semantic Versioning](https://semver.org/).
 
+## [0.3.0] — unreleased (M3.1: model-driven durable consolidation)
+
+A complete research cycle over the durable layer — model-driven judgment with a
+frozen benchmark and frozen evaluation. See
+[`docs/M3.1-research-arc.md`](docs/M3.1-research-arc.md) for the full story.
+
+### Added
+
+- **`JudgmentBuilder`** — one LLM proposal → one immutable `JudgmentRecord`
+  (proposal + engine action; **B.1** hardening: unique execution ids vs. content
+  fingerprints, frozen/tuple records, preserved raw output).
+- **Judgment decomposition** (`JudgmentPipeline`, `LLMDecomposer` /
+  `WholeBatchDecomposer` / `SingletonDecomposer`) — split a batch so each judgment
+  covers one topic (fixes the F7 candidate-coverage failure found in M3.1-E).
+- **Durability verifier** (`DurabilityVerifier`, `LLMDurabilityVerifier`,
+  `ThresholdDurabilityVerifier`) — a stateless `KEEP / REJECT / UNSURE` gate on
+  whether a proposed durable should persist; verdict recorded on
+  `JudgmentRecord.verification` (execution `ERROR` kept distinct from a semantic
+  `UNSURE`). Task frozen up front in M3.1-C0.
+- **`OpenAIClient`** — OpenAI/ChatGPT behind the one-method `LLMClient` seam.
+- **`durability-v1` benchmark** + a scorer frozen before results; primary result:
+  benchmark false-positives → 0, one narrow false-negative.
+
+### Notes
+
+- Public `JudgmentBuilder.update()` signature unchanged across B.1/B.2/C.
+- On `durability-v1` the observed F4 over-promotions were eliminated — a
+  demonstration on 19 cases, not a general claim.
+
 ## [0.2.0] — unreleased (M3: Durable Layer — substrate)
 
 Adds the **Durable Layer** — the trustworthy substrate for long-term knowledge

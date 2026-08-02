@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lyr"
-version = "0.1.0"
+version = "0.3.0"
 description = "Living knowledge layers — transform evolving information into layered, traceable, continuously-maintained knowledge."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -26,9 +26,9 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://github.com/canis-minor/lyr"
-Repository = "https://github.com/canis-minor/lyr"
-Issues = "https://github.com/canis-minor/lyr/issues"
+Homepage = "https://github.com/lyr-ai/lyr"
+Repository = "https://github.com/lyr-ai/lyr"
+Issues = "https://github.com/lyr-ai/lyr/issues"
 
 [project.optional-dependencies]
 test = ["pytest>=7"]
