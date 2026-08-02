@@ -42,6 +42,8 @@
   .layers{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
   .layers .row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;font-weight:700}
   .lyr{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 14px}
+  .lyr.next{opacity:.6;border-style:dashed;font-weight:600}
+  .lyr.next em{font-style:normal;color:var(--accent);font-size:11px;letter-spacing:.04em}
   .layers .arw{color:var(--muted)}
   .layers p{color:var(--muted);font-size:13.5px;margin:14px 0 0}
   /* featured */
@@ -104,11 +106,12 @@
         <span class="lyr">Source</span><span class="arw">→</span>
         <span class="lyr">Semantic</span><span class="arw">→</span>
         <span class="lyr">Durable</span><span class="arw">→</span>
-        <span class="lyr">Cognitive</span>
+        <span class="lyr next">Cognitive <em>· next</em></span>
       </div>
       <p>Every layer above Source cites its evidence one layer down — so any belief is a single
-         walk back to what actually happened. The <b>Durable</b> layer is model-driven and
-         experimentally validated (M3.1).</p>
+         walk back to what actually happened. The <b>Durable</b> layer is model-driven and was
+         <b>evaluated on a frozen four-domain benchmark</b> (M3.1). The <b>Cognitive</b> layer is
+         the next layer — future work, not yet built.</p>
     </div>
   </section>
 
@@ -132,7 +135,7 @@
 const FEATURED=[
   {slug:"coffee-ritual",     mk:"❌", t:"Coffee ritual",     s:"a recurring habit — trivia", v:"REJECT", note:"Rejected"},
   {slug:"family-over-career",mk:"✅", t:"Family over career",s:"a lifelong pattern",         v:"KEEP",   note:"Kept"},
-  {slug:"guidance-reversal", mk:"❌", t:"Guidance reversal", s:"the one over-prune",          v:"REJECT", note:"False negative"},
+  {slug:"guidance-reversal", mk:"❌", t:"Guidance reversal", s:"a real trend the system dropped", v:"REJECT", note:"Should have been kept"},
   {slug:"payments-ci-flakiness",mk:"✅",t:"Payments CI flakiness",s:"a recurring blocker",     v:"KEEP",   note:"Kept"},
 ];
 document.getElementById("feat").innerHTML = FEATURED.map(f=>
