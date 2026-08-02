@@ -1,0 +1,48 @@
+{
+  "judgment_id": "jdg_01KZ0FJTXZQXQB03WDYHKVK73P",
+  "judgment_fingerprint": "jfp_9424cdaf7b1d",
+  "model_intent": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "lesson",
+    "evidence": [],
+    "target_identity": null,
+    "superseded": [],
+    "rationale": "The new records describe sequential version bumps, which are routine updates and do not constitute a durable knowledge piece. They lack semantic significance beyond the event occurrences.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "NO_OP",
+    "node_id": null,
+    "identity": null,
+    "version": null,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"NO_OP\",\n  \"statement\": \"\",\n  \"kind\": \"\",\n  \"evidence\": [],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [],\n  \"rationale\": \"The new records describe sequential version bumps, which are routine updates and do not constitute a durable knowledge piece. They lack semantic significance beyond the event occurrences.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "",
+    "evidence": [],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [],
+    "rationale": "The new records describe sequential version bumps, which are routine updates and do not constitute a durable knowledge piece. They lack semantic significance beyond the event occurrences.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_903951ec7b13",
+    "sem_4539d2961ce6",
+    "sem_ceaff12a5e56"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:39.359681+00:00"
+}

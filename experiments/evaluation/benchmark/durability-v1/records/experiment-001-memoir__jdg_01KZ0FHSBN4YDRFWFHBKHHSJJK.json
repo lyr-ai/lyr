@@ -1,0 +1,79 @@
+{
+  "judgment_id": "jdg_01KZ0FHSBN4YDRFWFHBKHHSJJK",
+  "judgment_fingerprint": "jfp_ead870c790dd",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Consistently prioritized family considerations over career opportunities.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_476f94873d00",
+      "sem_85970f53784f",
+      "sem_c3518f7789be"
+    ],
+    "target_identity": "idn_8c262f247485",
+    "superseded": [],
+    "rationale": "The pattern of consistently prioritizing family over career is evident in multiple independent decisions over the years, suggesting a durable lesson.",
+    "counter_evidence": "",
+    "confidence": 0.95
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_f401842d53ac",
+    "identity": "idn_8c262f247485",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Consistently prioritized family considerations over career opportunities.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\"records\": [0, 3], \"same_observation\": true, \"note\": \"Both records refer to the same 1998 promotion decision.\"}\n  ],\n  \"rationale\": \"The pattern of consistently prioritizing family over career is evident in multiple independent decisions over the years, suggesting a durable lesson.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.95\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Consistently prioritized family considerations over career opportunities.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          3
+        ],
+        "same_observation": true,
+        "note": "Both records refer to the same 1998 promotion decision."
+      }
+    ],
+    "rationale": "The pattern of consistently prioritizing family over career is evident in multiple independent decisions over the years, suggesting a durable lesson.",
+    "counter_evidence": "",
+    "confidence": 0.95
+  },
+  "candidate_semantic_ids": [
+    "sem_c3518f7789be",
+    "sem_85970f53784f",
+    "sem_476f94873d00",
+    "sem_abb5928ecdb9"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        3
+      ],
+      "same_observation": true,
+      "note": "Both records refer to the same 1998 promotion decision.",
+      "semantic_ids": [
+        "sem_c3518f7789be",
+        "sem_abb5928ecdb9"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:04.982166+00:00"
+}

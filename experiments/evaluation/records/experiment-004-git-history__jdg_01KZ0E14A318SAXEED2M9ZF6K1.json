@@ -1,0 +1,83 @@
+{
+  "judgment_id": "jdg_01KZ0E14A318SAXEED2M9ZF6K1",
+  "judgment_fingerprint": "jfp_9cc403492f10",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Significant changes were made in the system's architecture, including migrating the public API from REST to gRPC.",
+    "kind": "decision",
+    "evidence": [
+      "sem_0a1ae27188f3",
+      "sem_43354218b0bb"
+    ],
+    "target_identity": "idn_ea634951eac8",
+    "superseded": [],
+    "rationale": "The migration from REST to gRPC for the public API indicates a significant architectural decision, likely impacting long-term software design and system performance.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_9f71f6ad3764",
+    "identity": "idn_ea634951eac8",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Significant changes were made in the system's architecture, including migrating the public API from REST to gRPC.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0, 9],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [{\"records\": [0, 9], \"same_observation\": true, \"note\": \"Both records indicate independent mentions of the API migration to gRPC as an important architectural shift.\"}],\n  \"rationale\": \"The migration from REST to gRPC for the public API indicates a significant architectural decision, likely impacting long-term software design and system performance.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Significant changes were made in the system's architecture, including migrating the public API from REST to gRPC.",
+    "kind": "decision",
+    "evidence": [
+      0,
+      9
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          9
+        ],
+        "same_observation": true,
+        "note": "Both records indicate independent mentions of the API migration to gRPC as an important architectural shift."
+      }
+    ],
+    "rationale": "The migration from REST to gRPC for the public API indicates a significant architectural decision, likely impacting long-term software design and system performance.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_0a1ae27188f3",
+    "sem_174e09281827",
+    "sem_56fa2625e4ec",
+    "sem_37991d8c0254",
+    "sem_903951ec7b13",
+    "sem_4539d2961ce6",
+    "sem_ceaff12a5e56",
+    "sem_01a492f02686",
+    "sem_0320eb24882e",
+    "sem_43354218b0bb"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        9
+      ],
+      "same_observation": true,
+      "note": "Both records indicate independent mentions of the API migration to gRPC as an important architectural shift.",
+      "semantic_ids": [
+        "sem_0a1ae27188f3",
+        "sem_43354218b0bb"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:09:30.564107+00:00"
+}

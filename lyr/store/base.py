@@ -12,9 +12,12 @@ implementation, ``InMemoryStore``.
 
 from __future__ import annotations
 
-from typing import Iterable, Protocol
+from typing import TYPE_CHECKING, Iterable, Protocol
 
 from ..models import Node, SourceRecord
+
+if TYPE_CHECKING:
+    from ..durable.judgment import JudgmentRecord
 
 
 class Store(Protocol):
@@ -44,4 +47,16 @@ class Store(Protocol):
 
     def head(self, identity: str) -> Node | None:
         """The latest version for an identity, or None if unknown."""
+        ...
+
+    # ── judgment records (append-only audit log) --------------------------
+    def add_judgment(self, record: "JudgmentRecord") -> "JudgmentRecord":
+        """Append an immutable judgment record. Never mutates an existing one —
+        a superseding judgment is a new record (M3.1-A Judgment Contract)."""
+        ...
+
+    def get_judgment(self, judgment_id: str) -> "JudgmentRecord | None": ...
+
+    def judgments(self) -> Iterable["JudgmentRecord"]:
+        """Every judgment record, in the order it was appended."""
         ...

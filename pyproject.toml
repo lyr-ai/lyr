@@ -33,11 +33,15 @@ Issues = "https://github.com/canis-minor/lyr/issues"
 [project.optional-dependencies]
 test = ["pytest>=7"]
 anthropic = ["anthropic>=0.34"]
-all = ["anthropic>=0.34"]
+openai = ["openai>=1.40"]
+all = ["anthropic>=0.34", "openai>=1.40"]
 
 [tool.setuptools.packages.find]
 include = ["lyr*"]
 exclude = ["tests*", "explorer*"]
+
+[tool.setuptools.package-data]
+"lyr.durable" = ["prompts/*.md"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

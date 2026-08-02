@@ -1,0 +1,3 @@
+# Captured run transcripts are research output — regenerate them by running the
+# harness. Curated findings belong in each experiment's hypothesis.md, not here.
+*/runs/

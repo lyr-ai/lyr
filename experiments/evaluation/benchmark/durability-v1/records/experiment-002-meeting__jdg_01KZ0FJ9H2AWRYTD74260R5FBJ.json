@@ -1,0 +1,69 @@
+{
+  "judgment_id": "jdg_01KZ0FJ9H2AWRYTD74260R5FBJ",
+  "judgment_fingerprint": "jfp_6423d8c2068f",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.",
+    "kind": "decision",
+    "evidence": [
+      "sem_d3c115a1a042"
+    ],
+    "target_identity": "idn_02874d4770a1",
+    "superseded": [],
+    "rationale": "This single event represents a strategic decision with potential long-term implications for team structure and workload management, warranting its addition as a durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.85
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_94427ac75523",
+    "identity": "idn_02874d4770a1",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": false,\n      \"note\": \"The hiring of a second SRE is a significant organizational change that suggests a strategic decision to manage on-call rotations better.\"\n    }\n  ],\n  \"rationale\": \"This single event represents a strategic decision with potential long-term implications for team structure and workload management, warranting its addition as a durable memory.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.85\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.",
+    "kind": "decision",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": false,
+        "note": "The hiring of a second SRE is a significant organizational change that suggests a strategic decision to manage on-call rotations better."
+      }
+    ],
+    "rationale": "This single event represents a strategic decision with potential long-term implications for team structure and workload management, warranting its addition as a durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.85
+  },
+  "candidate_semantic_ids": [
+    "sem_d3c115a1a042"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": false,
+      "note": "The hiring of a second SRE is a significant organizational change that suggests a strategic decision to manage on-call rotations better.",
+      "semantic_ids": [
+        "sem_d3c115a1a042"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:21.538811+00:00"
+}

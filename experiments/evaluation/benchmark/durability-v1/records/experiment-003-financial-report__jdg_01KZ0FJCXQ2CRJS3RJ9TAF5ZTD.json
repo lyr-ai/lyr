@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0FJCXQ2CRJS3RJ9TAF5ZTD",
+  "judgment_fingerprint": "jfp_eb2859f862c9",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Acquired competitor Northwind Analytics for approximately $2.1B in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      "sem_906d05a67f88",
+      "sem_fac0613c82a3"
+    ],
+    "target_identity": "idn_625d4008c0de",
+    "superseded": [],
+    "rationale": "The acquisition of Northwind Analytics is a significant event with details corroborated by both records, making it a suitable fact for durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_11dc3ef989d0",
+    "identity": "idn_625d4008c0de",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Acquired competitor Northwind Analytics for approximately $2.1B in Q2 2025.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records describe the closing of the Northwind Analytics acquisition for roughly the same amount and in the same quarter.\"\n    }\n  ],\n  \"rationale\": \"The acquisition of Northwind Analytics is a significant event with details corroborated by both records, making it a suitable fact for durable memory.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Acquired competitor Northwind Analytics for approximately $2.1B in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe the closing of the Northwind Analytics acquisition for roughly the same amount and in the same quarter."
+      }
+    ],
+    "rationale": "The acquisition of Northwind Analytics is a significant event with details corroborated by both records, making it a suitable fact for durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_fac0613c82a3",
+    "sem_906d05a67f88"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe the closing of the Northwind Analytics acquisition for roughly the same amount and in the same quarter.",
+      "semantic_ids": [
+        "sem_fac0613c82a3",
+        "sem_906d05a67f88"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:25.015610+00:00"
+}

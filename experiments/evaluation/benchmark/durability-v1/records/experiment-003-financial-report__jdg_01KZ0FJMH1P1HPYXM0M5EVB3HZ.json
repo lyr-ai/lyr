@@ -1,0 +1,69 @@
+{
+  "judgment_id": "jdg_01KZ0FJMH1P1HPYXM0M5EVB3HZ",
+  "judgment_fingerprint": "jfp_aa2fc8665b50",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The company incurred a $180M goodwill impairment on the 2019 Helios acquisition.",
+    "kind": "fact",
+    "evidence": [
+      "sem_a2413445aab9"
+    ],
+    "target_identity": "idn_b77881bf5819",
+    "superseded": [],
+    "rationale": "The $180M goodwill impairment on the Helios acquisition is a significant financial fact that may have long-term implications for the company's financial health and its future merger and acquisition strategy.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_902825bbdbbe",
+    "identity": "idn_b77881bf5819",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The company incurred a $180M goodwill impairment on the 2019 Helios acquisition.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [{\"records\": [0], \"same_observation\": true, \"note\": \"A one-time financial event of significant magnitude.\"}],\n  \"rationale\": \"The $180M goodwill impairment on the Helios acquisition is a significant financial fact that may have long-term implications for the company's financial health and its future merger and acquisition strategy.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The company incurred a $180M goodwill impairment on the 2019 Helios acquisition.",
+    "kind": "fact",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": true,
+        "note": "A one-time financial event of significant magnitude."
+      }
+    ],
+    "rationale": "The $180M goodwill impairment on the Helios acquisition is a significant financial fact that may have long-term implications for the company's financial health and its future merger and acquisition strategy.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_a2413445aab9"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": true,
+      "note": "A one-time financial event of significant magnitude.",
+      "semantic_ids": [
+        "sem_a2413445aab9"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:32.801204+00:00"
+}

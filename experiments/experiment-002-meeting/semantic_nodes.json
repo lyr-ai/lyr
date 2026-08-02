@@ -1,0 +1,16 @@
+[
+  {"kind": "event", "label": "The team decided to sunset the legacy billing API by Q3 2026.", "source": "standup-04-12"},
+  {"kind": "event", "label": "Reconfirmed the decision to retire the legacy billing API before Q3.", "source": "standup-04-19"},
+
+  {"kind": "event", "label": "Agreed to standardize new services on Postgres.", "source": "arch-review-03-02"},
+  {"kind": "event", "label": "Reversed the earlier Postgres decision and chose DynamoDB for the new services after load testing.", "source": "arch-review-05-11"},
+
+  {"kind": "event", "label": "Flaky CI on the payments suite blocked the release again.", "source": "standup-04-12"},
+  {"kind": "event", "label": "Flaky CI on the payments suite came up as a blocker once more.", "source": "standup-04-26"},
+  {"kind": "event", "label": "Payments CI flakiness raised as a recurring release blocker.", "source": "retro-05-01"},
+
+  {"kind": "event", "label": "Someone brought donuts to the Friday standup.", "source": "standup-04-19"},
+  {"kind": "event", "label": "Donuts again at Friday standup.", "source": "standup-04-26"},
+
+  {"kind": "event", "label": "Hired a second SRE to own on-call rotation.", "source": "planning-05-03"}
+]

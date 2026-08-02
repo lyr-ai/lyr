@@ -1,0 +1,89 @@
+{
+  "judgment_id": "jdg_01KZ0FHZ9QEBT613G90N2QHAWD",
+  "judgment_fingerprint": "jfp_651271f5bf63",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "She has a tendency to make financial decisions driven by emotion rather than based on financial literacy, such as keeping all savings in cash when young and investing a large portion of retirement funds in a risky venture later in life.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_30c74c3015a0",
+      "sem_350c022331ba"
+    ],
+    "target_identity": "idn_1de17dddede1",
+    "superseded": [],
+    "rationale": "The records suggest a consistent pattern of emotionally-driven financial decision-making, evidenced by both preservation out of fear and risky investment in family.",
+    "counter_evidence": "",
+    "confidence": 0.7
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_ee9103edcf99",
+    "identity": "idn_1de17dddede1",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"She has a tendency to make financial decisions driven by emotion rather than based on financial literacy, such as keeping all savings in cash when young and investing a large portion of retirement funds in a risky venture later in life.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": false,\n      \"note\": \"Her aversion to investment in her thirties due to fear of loss indicates financial decisions driven by emotion.\"\n    },\n    {\n      \"records\": [1],\n      \"same_observation\": false,\n      \"note\": \"Her later life investment in a risky venture suggests a similar emotional decision pattern.\"\n    }\n  ],\n  \"rationale\": \"The records suggest a consistent pattern of emotionally-driven financial decision-making, evidenced by both preservation out of fear and risky investment in family.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.7\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "She has a tendency to make financial decisions driven by emotion rather than based on financial literacy, such as keeping all savings in cash when young and investing a large portion of retirement funds in a risky venture later in life.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": false,
+        "note": "Her aversion to investment in her thirties due to fear of loss indicates financial decisions driven by emotion."
+      },
+      {
+        "records": [
+          1
+        ],
+        "same_observation": false,
+        "note": "Her later life investment in a risky venture suggests a similar emotional decision pattern."
+      }
+    ],
+    "rationale": "The records suggest a consistent pattern of emotionally-driven financial decision-making, evidenced by both preservation out of fear and risky investment in family.",
+    "counter_evidence": "",
+    "confidence": 0.7
+  },
+  "candidate_semantic_ids": [
+    "sem_30c74c3015a0",
+    "sem_350c022331ba"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": false,
+      "note": "Her aversion to investment in her thirties due to fear of loss indicates financial decisions driven by emotion.",
+      "semantic_ids": [
+        "sem_30c74c3015a0"
+      ]
+    },
+    {
+      "records": [
+        1
+      ],
+      "same_observation": false,
+      "note": "Her later life investment in a risky venture suggests a similar emotional decision pattern.",
+      "semantic_ids": [
+        "sem_350c022331ba"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:11.063705+00:00"
+}

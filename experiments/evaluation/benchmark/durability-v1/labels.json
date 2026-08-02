@@ -1,0 +1,183 @@
+{
+  "benchmark": "durability-v1",
+  "cases": [
+    {
+      "judgment_id": "jdg_01KZ0FHSBN4YDRFWFHBKHHSJJK",
+      "domain": "experiment-001-memoir",
+      "operation": "ADD",
+      "statement": "Consistently prioritized family considerations over career opportunities.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "durable life preference across decades"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FHVGXJ8H91YSSGBCM2881",
+      "domain": "experiment-001-memoir",
+      "operation": "ADD",
+      "statement": "Maintained a long-distance familial relationship by writing weekly letters to her sister in Poland from Canada for thirty years.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "sustained 30-year devotion"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FHX0TCW3SXBZEAGY7HNCZ",
+      "domain": "experiment-001-memoir",
+      "operation": "ADD",
+      "statement": "Has a morning ritual of drinking black coffee before writing.",
+      "kind": "preference",
+      "deserves_persistence": "no",
+      "note": "trivial recurring ritual; model over-promoted (F4)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FHZ9QEBT613G90N2QHAWD",
+      "domain": "experiment-001-memoir",
+      "operation": "ADD",
+      "statement": "She has a tendency to make financial decisions driven by emotion rather than based on financial literacy, such as keeping all savings in cash when young and investing a large portion of retirement funds in a risky venture later in life.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "genuine cross-life risk pattern"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJ3FVNQXSBA9K9N10JJM4",
+      "domain": "experiment-002-meeting",
+      "operation": "ADD",
+      "statement": "The team has decided to sunset the legacy billing API by Q3 2026.",
+      "kind": "decision",
+      "deserves_persistence": "yes",
+      "note": "significant one-off decision"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJ4TGWXDXJNT4RN5YQ809",
+      "domain": "experiment-002-meeting",
+      "operation": "ADD",
+      "statement": "The decision regarding the database for new services can be revised based on performance evidence, as shown by the shift from Postgres to DynamoDB after load testing.",
+      "kind": "lesson",
+      "deserves_persistence": "yes",
+      "note": "architectural decision/reversal, durable lesson"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJ6MSP7D137DQMBY9FN53",
+      "domain": "experiment-002-meeting",
+      "operation": "ADD",
+      "statement": "Flakiness in the payments CI pipeline is a recurring issue, consistently blocking releases.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "recurring release-blocking pattern"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJ844FGEMV4Q1VCJD93EZ",
+      "domain": "experiment-002-meeting",
+      "operation": "ADD",
+      "statement": "It is common for someone to bring donuts to the Friday standup.",
+      "kind": "pattern",
+      "deserves_persistence": "no",
+      "note": "trivial; model over-promoted (F4)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJ9H2AWRYTD74260R5FBJ",
+      "domain": "experiment-002-meeting",
+      "operation": "ADD",
+      "statement": "Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.",
+      "kind": "decision",
+      "deserves_persistence": "borderline",
+      "note": "staffing decision, but phrased as generic rationale"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJCXQ2CRJS3RJ9TAF5ZTD",
+      "domain": "experiment-003-financial-report",
+      "operation": "ADD",
+      "statement": "Acquired competitor Northwind Analytics for approximately $2.1B in Q2 2025.",
+      "kind": "fact",
+      "deserves_persistence": "yes",
+      "note": "material one-off fact"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJET3G0ZY2DF8EY105BG7",
+      "domain": "experiment-003-financial-report",
+      "operation": "ADD",
+      "statement": "In 2025, a company's revenue guidance fluctuated significantly, initially increased to $9.4B in Q1 and later decreased to $8.8B in Q3, due to softening enterprise demand.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "durable trend/decision (guidance reversal)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJG7JJTNEWC1DAGM8WY1V",
+      "domain": "experiment-003-financial-report",
+      "operation": "ADD",
+      "statement": "The company has a pattern of raising its quarterly dividend for twelve consecutive years.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "sustained dividend policy pattern"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJHM5MB2R61X90JCZX43P",
+      "domain": "experiment-003-financial-report",
+      "operation": "ADD",
+      "statement": "Cloud segment revenue grew 31% year over year in Q2 2025",
+      "kind": "fact",
+      "deserves_persistence": "no",
+      "note": "single-quarter metric, transient; model over-promoted (F4)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJK44ZRCF7GSZVS50SY49",
+      "domain": "experiment-003-financial-report",
+      "operation": "NO_OP",
+      "statement": "",
+      "kind": "lesson",
+      "deserves_persistence": "no",
+      "note": "correctly NO_OP'd by the model (true negative — trivial/repetitive line)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJMH1P1HPYXM0M5EVB3HZ",
+      "domain": "experiment-003-financial-report",
+      "operation": "ADD",
+      "statement": "The company incurred a $180M goodwill impairment on the 2019 Helios acquisition.",
+      "kind": "fact",
+      "deserves_persistence": "yes",
+      "note": "material one-time financial fact"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJR586QA6FRRP4GZGTRHR",
+      "domain": "experiment-004-git-history",
+      "operation": "ADD",
+      "statement": "The public API was migrated from REST to gRPC.",
+      "kind": "decision",
+      "deserves_persistence": "yes",
+      "note": "significant architectural decision"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJSNK1FT97YCQP14WJC9F",
+      "domain": "experiment-004-git-history",
+      "operation": "ADD",
+      "statement": "The authentication token refresh process is susceptible to recurring issues including race conditions, early token expiry, and session-handling regressions, indicating a need for reinforced middleware.",
+      "kind": "pattern",
+      "deserves_persistence": "yes",
+      "note": "recurring fragility pattern"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJTXZQXQB03WDYHKVK73P",
+      "domain": "experiment-004-git-history",
+      "operation": "NO_OP",
+      "statement": "",
+      "kind": "lesson",
+      "deserves_persistence": "no",
+      "note": "correctly NO_OP'd by the model (true negative — trivial/repetitive line)"
+    },
+    {
+      "judgment_id": "jdg_01KZ0FJWGWDQY3J10ASJRHBVXJ",
+      "domain": "experiment-004-git-history",
+      "operation": "ADD",
+      "statement": "Implementing a Redis cache in front of a product catalog can lead to stale-read incidents.",
+      "kind": "lesson",
+      "deserves_persistence": "yes",
+      "note": "real engineering lesson from the revert"
+    }
+  ],
+  "reviewer": "assistant-draft",
+  "model": "gpt-4o",
+  "prompt_versions": {
+    "decomposer": "judgment_decomposer_v1",
+    "builder": "durable_builder_v1"
+  },
+  "about": "Durability benchmark v1: proposed durable memories from the M3.1-B.2 decomposed runs, each labeled 'deserves_persistence' (yes/no/borderline). A Durability Verifier (M3.1-C) can be scored against these labels. Labels are assistant-draft, open to human revision."
+}

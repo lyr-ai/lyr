@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0FJR586QA6FRRP4GZGTRHR",
+  "judgment_fingerprint": "jfp_a3ccb5804871",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The public API was migrated from REST to gRPC.",
+    "kind": "decision",
+    "evidence": [
+      "sem_0a1ae27188f3",
+      "sem_43354218b0bb"
+    ],
+    "target_identity": "idn_a102e86a6424",
+    "superseded": [],
+    "rationale": "The migration of the API is a significant event that marks a decision impacting future developments and usage patterns of the API.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_0bee4bb4da1c",
+    "identity": "idn_a102e86a6424",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The public API was migrated from REST to gRPC.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records refer to the same event of migrating the public API from REST to gRPC.\"\n    }\n  ],\n  \"rationale\": \"The migration of the API is a significant event that marks a decision impacting future developments and usage patterns of the API.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The public API was migrated from REST to gRPC.",
+    "kind": "decision",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records refer to the same event of migrating the public API from REST to gRPC."
+      }
+    ],
+    "rationale": "The migration of the API is a significant event that marks a decision impacting future developments and usage patterns of the API.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_0a1ae27188f3",
+    "sem_43354218b0bb"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records refer to the same event of migrating the public API from REST to gRPC.",
+      "semantic_ids": [
+        "sem_0a1ae27188f3",
+        "sem_43354218b0bb"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:36.520845+00:00"
+}

@@ -23,6 +23,26 @@ of the next design milestone.
 
 from .base import DURABLE_OPS, RETIRED, Consolidator, DurableProposal, is_active
 from .builder import DurableBuilder
+from .judgment import (
+    REJECT,
+    EngineAction,
+    EvidenceGroup,
+    JudgmentRecord,
+    JudgmentResult,
+    ModelProposal,
+    new_judgment_id,
+)
+from .judgment_builder import PROMPT, PROMPT_VERSION, JudgmentBuilder
+from .decomposition import (
+    DECOMPOSER_PROMPT,
+    DECOMPOSER_PROMPT_VERSION,
+    Decomposer,
+    JudgmentUnit,
+    LLMDecomposer,
+    SingletonDecomposer,
+    WholeBatchDecomposer,
+)
+from .pipeline import JudgmentPipeline
 from .llm import LLMConsolidator
 from .recurrence import RecurrenceConsolidator
 
@@ -31,8 +51,26 @@ __all__ = [
     "DurableProposal",
     "DURABLE_OPS",
     "RETIRED",
+    "REJECT",
     "is_active",
     "RecurrenceConsolidator",
     "LLMConsolidator",
     "DurableBuilder",
+    "JudgmentBuilder",
+    "JudgmentRecord",
+    "JudgmentResult",
+    "ModelProposal",
+    "EngineAction",
+    "EvidenceGroup",
+    "new_judgment_id",
+    "PROMPT",
+    "PROMPT_VERSION",
+    "Decomposer",
+    "JudgmentUnit",
+    "WholeBatchDecomposer",
+    "SingletonDecomposer",
+    "LLMDecomposer",
+    "DECOMPOSER_PROMPT",
+    "DECOMPOSER_PROMPT_VERSION",
+    "JudgmentPipeline",
 ]

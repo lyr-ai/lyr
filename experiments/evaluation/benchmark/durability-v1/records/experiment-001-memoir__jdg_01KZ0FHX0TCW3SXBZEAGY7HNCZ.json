@@ -1,0 +1,89 @@
+{
+  "judgment_id": "jdg_01KZ0FHX0TCW3SXBZEAGY7HNCZ",
+  "judgment_fingerprint": "jfp_79b7f193edf9",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Has a morning ritual of drinking black coffee before writing.",
+    "kind": "preference",
+    "evidence": [
+      "sem_39f09e9caf29",
+      "sem_53d8f38f6432"
+    ],
+    "target_identity": "idn_246bfe21c339",
+    "superseded": [],
+    "rationale": "Both records indicate a habitual behavior that can be regarded as a personal preference. The repeated mention of the coffee ritual suggests its significance.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_e3a09027f5e7",
+    "identity": "idn_246bfe21c339",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Has a morning ritual of drinking black coffee before writing.\",\n  \"kind\": \"preference\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": false,\n      \"note\": \"Describes drinking black coffee each morning before writing.\"\n    },\n    {\n      \"records\": [1],\n      \"same_observation\": false,\n      \"note\": \"Mentions the morning coffee ritual in the context of her writing desk.\"\n    }\n  ],\n  \"rationale\": \"Both records indicate a habitual behavior that can be regarded as a personal preference. The repeated mention of the coffee ritual suggests its significance.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Has a morning ritual of drinking black coffee before writing.",
+    "kind": "preference",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": false,
+        "note": "Describes drinking black coffee each morning before writing."
+      },
+      {
+        "records": [
+          1
+        ],
+        "same_observation": false,
+        "note": "Mentions the morning coffee ritual in the context of her writing desk."
+      }
+    ],
+    "rationale": "Both records indicate a habitual behavior that can be regarded as a personal preference. The repeated mention of the coffee ritual suggests its significance.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "candidate_semantic_ids": [
+    "sem_53d8f38f6432",
+    "sem_39f09e9caf29"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": false,
+      "note": "Describes drinking black coffee each morning before writing.",
+      "semantic_ids": [
+        "sem_53d8f38f6432"
+      ]
+    },
+    {
+      "records": [
+        1
+      ],
+      "same_observation": false,
+      "note": "Mentions the morning coffee ritual in the context of her writing desk.",
+      "semantic_ids": [
+        "sem_39f09e9caf29"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:08.730594+00:00"
+}

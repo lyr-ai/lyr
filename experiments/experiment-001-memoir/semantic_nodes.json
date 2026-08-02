@@ -1,0 +1,16 @@
+[
+  {"kind": "event", "label": "Declined a promotion to regional director in 1998 to stay in her hometown near her aging parents.", "source": "chapter-03"},
+  {"kind": "event", "label": "Turned down an overseas transfer to Singapore in 2005 so the children could stay in the same school.", "source": "chapter-05"},
+  {"kind": "event", "label": "Left a fast-growing startup in 2012 to care for her husband through his cancer treatment.", "source": "chapter-07"},
+  {"kind": "event", "label": "Recalls the 1998 promotion she gave up, still sure it was the right choice.", "source": "chapter-09"},
+
+  {"kind": "event", "label": "Emigrated from Poland to Canada in 1990, leaving her parents and siblings behind, never to live in the same country as them again.", "source": "chapter-01"},
+
+  {"kind": "event", "label": "Drank a cup of black coffee every morning before writing.", "source": "chapter-02"},
+  {"kind": "event", "label": "Mentions her morning coffee ritual again while describing her writing desk.", "source": "chapter-06"},
+
+  {"kind": "event", "label": "In her thirties she kept all savings in cash and refused to invest, fearing loss.", "source": "chapter-04"},
+  {"kind": "event", "label": "In her sixties she invested a large share of her retirement fund in her nephew's unproven restaurant venture.", "source": "chapter-11"},
+
+  {"kind": "relationship", "label": "Wrote to her sister in Poland every single week for thirty years.", "attributes": {"subject": "she", "predicate": "wrote weekly to", "object": "her sister"}, "source": "chapter-08"}
+]

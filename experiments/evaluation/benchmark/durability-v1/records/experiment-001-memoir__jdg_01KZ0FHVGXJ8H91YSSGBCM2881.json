@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0FHVGXJ8H91YSSGBCM2881",
+  "judgment_fingerprint": "jfp_e56afecf3f9a",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Maintained a long-distance familial relationship by writing weekly letters to her sister in Poland from Canada for thirty years.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_497abc1ab7db",
+      "sem_ed7429320c65"
+    ],
+    "target_identity": "idn_32cf150dd6d2",
+    "superseded": [],
+    "rationale": "The act of writing weekly letters for thirty years demonstrates a durable pattern of maintaining a long-distance relationship, worth noting as it reflects commitment and consistency.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_b212faa3ed3f",
+    "identity": "idn_32cf150dd6d2",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Maintained a long-distance familial relationship by writing weekly letters to her sister in Poland from Canada for thirty years.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": false,\n      \"note\": \"Emigration pattern and sustained communication are independently noted.\"\n    }\n  ],\n  \"rationale\": \"The act of writing weekly letters for thirty years demonstrates a durable pattern of maintaining a long-distance relationship, worth noting as it reflects commitment and consistency.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Maintained a long-distance familial relationship by writing weekly letters to her sister in Poland from Canada for thirty years.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": false,
+        "note": "Emigration pattern and sustained communication are independently noted."
+      }
+    ],
+    "rationale": "The act of writing weekly letters for thirty years demonstrates a durable pattern of maintaining a long-distance relationship, worth noting as it reflects commitment and consistency.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_ed7429320c65",
+    "sem_497abc1ab7db"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": false,
+      "note": "Emigration pattern and sustained communication are independently noted.",
+      "semantic_ids": [
+        "sem_ed7429320c65",
+        "sem_497abc1ab7db"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:07.198084+00:00"
+}
