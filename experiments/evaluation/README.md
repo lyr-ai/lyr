@@ -22,20 +22,31 @@ experiments/evaluation/
 
 ## Workflow (per domain, Builder frozen)
 
+> **Paste note (zsh):** interactive zsh does not treat `#` as a comment — paste
+> the comment-free blocks below as-is.
+
+**1. Collect** — live model (needs a key + `pip install -e '.[anthropic]'`):
+
 ```bash
-# 1. Collect — live model (needs a key + `pip install -e '.[anthropic]'`):
 python experiments/harness.py experiment-001-memoir --builder --model claude-opus-4-8
+```
 
-# 2. Preserve the record + generate a review skeleton:
+**2. Preserve the record + generate a review skeleton:**
+
+```bash
 python experiments/evaluation/evaluate.py review experiment-001-memoir
+```
 
-# 3. Open reviews/experiment-001-memoir__<jid>.json and fill in:
-#      dimensions[*].rating  → ok | weak | fail   (design §7)
-#      failures              → any of F1..F8       (design §8)
-#      reviewer, verdict
-#    The _context block is regenerated from the record — don't edit it.
+**3. Fill in the review** — open `reviews/experiment-001-memoir__<jid>.json` and set:
+- `dimensions[*].rating` → `ok` | `weak` | `fail` (design §7)
+- `failures` → any of `F1`..`F8` (design §8)
+- `reviewer`, `verdict`
 
-# 4. After all four domains are reviewed:
+The `_context` block is regenerated from the record — don't edit it.
+
+**4. After all four domains are reviewed:**
+
+```bash
 python experiments/evaluation/evaluate.py summarize
 ```
 
