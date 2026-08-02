@@ -29,4 +29,31 @@ The fixture is engineered so several hard cases collide in one batch. What we
 
 ## Runs & observations
 
-_(none yet)_
+### 2026-07-27 — role-play smoke test
+
+- `run_type: non_blind_prompt_smoke_test`
+- `evaluation_status: excluded_from_benchmark`
+- reasoner: the assistant role-playing the model (authored the fixture) — **not
+  evidence**, only a check that the one-step builder prompt yields a sensible,
+  auditable, parseable judgment before spending live tokens.
+- transcript: `runs/…__judgment__CANNED.json` (gitignored)
+
+**Result:** ADD, kind=pattern, "Across her adult life she repeatedly subordinated
+career advancement to family obligations", evidence = records [0,1,2]; committed
+durable v1 with a `judgment_id` back-reference. Evidence grouping correctly folded
+0&3 (same 1998 promotion) and 5&6 (same coffee ritual); counter_evidence scoped the
+claim to ~1998–2012 and flagged the 7/8 risk reversal as a separate topic.
+
+**Structural findings (the only thing this run is allowed to inform):**
+
+- ✅ evidence references present and resolvable; operation unambiguous; output
+  parsed; committed node fully traceable to source. No builder change warranted.
+- ⚠️ **One-op-per-call vs. multi-topic batch (contract question, not a bug).** The
+  memoir holds ≥2 durable candidates (career-vs-family pattern *and* the 30-years
+  of weekly letters, record 9). A single `update()` emits exactly one operation, so
+  the letters candidate is silently absent from the output — not even a NO_OP with a
+  reason. The record accounts for the decision it *made* but not for un-promoted
+  candidates. This is expected if candidate-retrieval is meant to hand the builder
+  one topic at a time; it is a real gap if a batch can be multi-topic. **Deferred to
+  the live four-domain runs to decide** whether the prompt contract needs revision
+  before M3.1-C (per direction). Builder left unchanged.
