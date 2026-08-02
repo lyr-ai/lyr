@@ -22,6 +22,8 @@ import glob
 import json
 import os
 import sys
+from collections import Counter
+from datetime import datetime, timezone
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -205,6 +207,135 @@ def cmd_preserve(args: argparse.Namespace) -> None:
     print(f"{args.experiment}: preserved {preserved} record(s) → {recdir.relative_to(EXPERIMENTS.parent)}")
 
 
+# ── score-verifier (M3.1-C.1) --------------------------------------------
+#
+# Frozen BEFORE the live run so the scoring rules cannot be tuned to the output.
+# Runs a durability verifier over the FIXED benchmark proposals (not a fresh
+# builder run — that would fold builder/decomposer noise into the verifier's
+# score) and compares each verdict to the human label.
+#
+#   scored cases      = benchmark cases whose builder op was a write (ADD/UPDATE/
+#                       MERGE) — the ones a verifier actually judges.
+#   NO_OP cases        = builder true-negatives (rent, version bumps): reported as
+#                       context, NOT part of the verifier metric.
+#   false positive     = verdict KEEP on a label 'no'
+#   false negative     = verdict REJECT on a label 'yes'
+#   strict score       = confirmed yes/no labels only
+#   provisional score  = strict + unconfirmed 'no' (e.g. cloud-growth)
+#   borderline/debatable and execution-ERROR cases: reported separately, never
+#                       folded into FP/FN.
+def _semantic_map(domain: str) -> dict:
+    sys.path.insert(0, str(EXPERIMENTS))
+    from harness import load_records, to_semantic_nodes  # type: ignore
+    return {n.id: n for n in to_semantic_nodes(load_records(EXPERIMENTS / domain))}
+
+
+def _proposal_from_record(rec: dict):
+    from lyr.durable.judgment import ModelProposal
+    mi = rec["model_intent"]
+    return ModelProposal(
+        operation=mi["operation"], statement=mi["statement"], kind=mi["kind"],
+        evidence=tuple(mi.get("evidence", [])), confidence=mi.get("confidence"),
+        rationale=mi.get("rationale", ""), counter_evidence=mi.get("counter_evidence", ""),
+    )
+
+
+def _build_scoring_verifier(args) -> tuple[object, str, str]:
+    from lyr.durable import LLMDurabilityVerifier, ThresholdDurabilityVerifier
+    from lyr.durable.verifier import VERIFIER_PROMPT_VERSION
+    if args.control:
+        return ThresholdDurabilityVerifier(args.threshold), f"control:threshold-{args.threshold}", "n/a"
+    if args.provider == "openai":
+        from lyr.llm import OpenAIClient
+        client = OpenAIClient(model=args.model)
+    else:
+        from lyr.llm import AnthropicClient
+        client = AnthropicClient(model=args.model)
+    return LLMDurabilityVerifier(client), f"{args.provider}:{args.model}", VERIFIER_PROMPT_VERSION
+
+
+def cmd_score_verifier(args: argparse.Namespace) -> None:
+    from lyr.durable.judgment import ERROR, SUCCESS
+
+    bench = BENCHMARK / args.benchmark
+    doc = json.loads((bench / "labels.json").read_text())
+    verifier, vname, pver = _build_scoring_verifier(args)
+    sem_maps: dict[str, dict] = {}
+
+    rows: list[dict] = []
+    for case in doc["cases"]:
+        jid, domain = case["judgment_id"], case["domain"]
+        rec = json.loads((bench / "records" / f"{domain}__{jid}.json").read_text())
+        row = {
+            "domain": domain, "statement": case["statement"],
+            "label": case["deserves_persistence"], "confirmed": case.get("confirmed", True),
+            "builder_op": rec["model_intent"]["operation"],
+        }
+        if rec["model_intent"]["operation"] == "NO_OP":
+            row.update(scored=False, note="builder-rejected (not verifier-scored)")
+            rows.append(row)
+            continue
+        sem_maps.setdefault(domain, _semantic_map(domain))
+        proposal = _proposal_from_record(rec)
+        evidence = [sem_maps[domain][i] for i in proposal.evidence if i in sem_maps[domain]]
+        v = verifier.verify(proposal, evidence)
+        row.update(scored=True, status=v.status,
+                   verdict=(v.decision if v.status == SUCCESS else None),
+                   error_reason=v.error_reason)
+        rows.append(row)
+
+    judged = [r for r in rows if r["scored"]]
+    ok = [r for r in judged if r["status"] == SUCCESS]
+    errors = [r for r in judged if r["status"] == ERROR]
+    counts = Counter(r["verdict"] for r in ok)
+
+    def fp(rs): return [r for r in rs if r["label"] == "no" and r["verdict"] == "KEEP"]
+    def fn(rs): return [r for r in rs if r["label"] == "yes" and r["verdict"] == "REJECT"]
+    strict = [r for r in ok if r["label"] in ("yes", "no") and r["confirmed"]]
+    prov = [r for r in ok if r["label"] in ("yes", "no")]
+    borderline = [r for r in judged if r["label"] == "borderline" or not r["confirmed"]]
+    noop = [r for r in rows if not r["scored"]]
+
+    report = {
+        "benchmark": args.benchmark,
+        "verifier": vname,
+        "verifier_prompt_version": pver,
+        "run_at": datetime.now(timezone.utc).isoformat(),
+        "verdict_counts": {k: counts.get(k, 0) for k in ("KEEP", "REJECT", "UNSURE")},
+        "execution_errors": len(errors),
+        "strict": {"n": len(strict), "false_positives": len(fp(strict)), "false_negatives": len(fn(strict))},
+        "provisional": {"n": len(prov), "false_positives": len(fp(prov)), "false_negatives": len(fn(prov))},
+        "borderline_excluded": [r["statement"] for r in borderline],
+        "builder_true_negatives_not_scored": [r["statement"] or "(NO_OP)" for r in noop],
+        "detail": rows,
+    }
+    scores = bench / "scores"
+    scores.mkdir(exist_ok=True)
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    safe = vname.replace(":", "_").replace("/", "_")
+    (scores / f"{stamp}__{safe}.json").write_text(json.dumps(report, indent=2, ensure_ascii=False))
+
+    print(f"=== durability verifier score — {vname} on {args.benchmark} ===")
+    print(f"verdicts: KEEP={report['verdict_counts']['KEEP']} "
+          f"REJECT={report['verdict_counts']['REJECT']} UNSURE={report['verdict_counts']['UNSURE']} "
+          f"| execution errors: {len(errors)}")
+    for name in ("strict", "provisional"):
+        s = report[name]
+        print(f"{name:11}: n={s['n']}  false_positives={s['false_positives']}  false_negatives={s['false_negatives']}")
+    print(f"borderline/debatable (excluded): {len(borderline)}  |  builder true-negatives: {len(noop)}")
+    print("\nfalse positives (KEEP on a 'no'):")
+    for r in fp(prov):
+        conf = "" if r["confirmed"] else "  [provisional]"
+        print(f"  KEEP  {r['statement'][:60]}{conf}")
+    for r in fn(strict):
+        print(f"  FN REJECT  {r['statement'][:60]}")
+    if errors:
+        print("execution errors:")
+        for r in errors:
+            print(f"  {r['statement'][:50]} — {r['error_reason']}")
+    print(f"\nwrote {(scores / f'{stamp}__{safe}.json').relative_to(EXPERIMENTS.parent)}")
+
+
 # ── summarize ------------------------------------------------------------
 def cmd_summarize(args: argparse.Namespace) -> None:
     reviews = [json.loads(Path(p).read_text()) for p in sorted(glob.glob(str(REVIEWS / "*.json")))]
@@ -283,6 +414,14 @@ def main() -> None:
     p.add_argument("--benchmark", default="durability-v1", help="benchmark name (default: durability-v1)")
     p.add_argument("--allow-canned", action="store_true", help="permit FakeClient records (testing only)")
     p.set_defaults(func=cmd_preserve)
+
+    v = sub.add_parser("score-verifier", help="score a durability verifier against a benchmark (M3.1-C.1)")
+    v.add_argument("--benchmark", default="durability-v1")
+    v.add_argument("--provider", choices=["openai", "anthropic"], default="openai")
+    v.add_argument("--model", default="gpt-4o")
+    v.add_argument("--control", action="store_true", help="use the deterministic threshold control (offline)")
+    v.add_argument("--threshold", type=float, default=0.5, help="control threshold on builder confidence")
+    v.set_defaults(func=cmd_score_verifier)
 
     s = sub.add_parser("summarize", help="tally failures + check builder-config uniformity")
     s.set_defaults(func=cmd_summarize)
