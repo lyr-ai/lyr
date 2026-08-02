@@ -242,8 +242,9 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
   - **B.2** **judgment decomposition** — solved F7; exposed **F4** (durability judgment)
   - **C0/C** **durability verifier** (task frozen first) — drove benchmark false-positives to **0**; one narrow, characterized false-negative remains
   - a frozen [`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark future verifiers re-run against
-- **M4 — Cognitive Layer** derive higher-level reasoning patterns from the now-stable durable layer
-- **M5.0 — Judgment Explorer** ✅ a public site (`site/`, GitHub Pages) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records; a landing page frames the project for first-time visitors
+- **Judgment Explorer** ✅ a public site ([`site/`](site/), GitHub Pages, [live](https://lyr-ai.github.io/lyr/)) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records
+- **M3.2 — Knowledge Explorer** (next) browse an entire durable knowledge space over one Book — People / Ideas / Events / Places / Themes / Lessons, progressive disclosure, navigation-only grouping; every memory drills into the Judgment Explorer. The bridge between *forming* durable knowledge and *navigating* it — and the feedback loop that will protect M4. ([design](docs/design/M3.2-knowledge-explorer.md))
+- **M4 — Cognitive Layer** derive higher-level reasoning patterns from the now-stable, now-navigable durable layer — cognition as an additional *explorable* layer, not isolated theories
 
 ## Development
 
