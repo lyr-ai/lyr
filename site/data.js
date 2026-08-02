@@ -5,6 +5,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
     "title": "Family over career",
+    "slug": "family-over-career",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -68,6 +69,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
     "title": "Weekly letters to her sister",
+    "slug": "weekly-letters-to-her-sister",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -137,6 +139,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
     "title": "Lifelong financial-risk pattern",
+    "slug": "lifelong-financial-risk-pattern",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -206,6 +209,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
     "title": "Sunset the billing API",
+    "slug": "sunset-the-billing-api",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -259,6 +263,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
     "title": "Postgres → DynamoDB reversal",
+    "slug": "postgres-dynamodb-reversal",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -322,6 +327,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
     "title": "Payments CI flakiness",
+    "slug": "payments-ci-flakiness",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -394,6 +400,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
     "title": "Second SRE hire",
+    "slug": "second-sre-hire",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -447,6 +454,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
     "title": "Northwind acquisition",
+    "slug": "northwind-acquisition",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -510,6 +518,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
     "title": "12-year dividend streak",
+    "slug": "12-year-dividend-streak",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -563,6 +572,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
     "title": "Goodwill impairment",
+    "slug": "goodwill-impairment",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -616,6 +626,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
     "title": "REST → gRPC migration",
+    "slug": "rest-grpc-migration",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -679,6 +690,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
     "title": "Auth-fragility pattern",
+    "slug": "auth-fragility-pattern",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -752,6 +764,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
     "title": "Redis stale-read lesson",
+    "slug": "redis-stale-read-lesson",
     "finding": "Correct durable retained",
     "verdict": "KEEP",
     "sources": [
@@ -815,6 +828,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
     "title": "Coffee ritual",
+    "slug": "coffee-ritual",
     "finding": "False positive removed — trivia correctly rejected",
     "verdict": "REJECT",
     "sources": [
@@ -878,6 +892,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
     "title": "Guidance reversal",
+    "slug": "guidance-reversal",
     "finding": "False negative — a durable trend the verifier over-pruned",
     "verdict": "REJECT",
     "sources": [
@@ -941,6 +956,7 @@ window.LYR_RECORDS = [
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
     "title": "One-quarter cloud growth",
+    "slug": "one-quarter-cloud-growth",
     "finding": "False positive removed — a single-quarter metric, not durable",
     "verdict": "REJECT",
     "sources": [

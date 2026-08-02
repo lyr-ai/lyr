@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LYR — Living Knowledge Layers</title>
+<meta name="description" content="LYR forms durable, model-driven long-term knowledge from evolving information — and preserves why it believes it, how it was verified, and how it traces back to source. Explore real judgments.">
+<style>
+  :root{
+    --bg:#f6f6f8; --panel:#fff; --ink:#181820; --muted:#66707c; --line:#e6e7eb; --soft:#f0f1f4;
+    --keep:#15803d; --keep-bg:#dcfce7; --reject:#b91c1c; --reject-bg:#fee2e2; --accent:#4f46e5; --accent-ink:#fff;
+  }
+  @media (prefers-color-scheme:dark){:root{
+    --bg:#0c0d11; --panel:#15171f; --ink:#e9e9ef; --muted:#98a0ac; --line:#262933; --soft:#1c1f28;
+    --keep:#4ade80; --keep-bg:#0f2f1c; --reject:#f87171; --reject-bg:#3a1414; --accent:#8b93ff; --accent-ink:#0c0d11; }}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+  a{color:var(--accent)}
+  /* hero */
+  .hero{text-align:center;padding:70px 0 44px}
+  .brand{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:800}
+  h1{font-size:44px;line-height:1.08;margin:14px 0 0;letter-spacing:-.02em}
+  .tag{font-size:19px;color:var(--muted);max-width:40ch;margin:16px auto 0}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+  .btn{display:inline-block;padding:12px 22px;border-radius:11px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line)}
+  .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+  .btn.ghost{background:var(--panel);color:var(--ink)}
+  .repo{margin-top:16px;font-size:13.5px;color:var(--muted)}
+  /* contrast */
+  section{padding:30px 0}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);text-align:center;margin:0 0 18px}
+  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media (max-width:680px){.cols{grid-template-columns:1fr}h1{font-size:34px}}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+  .card h3{margin:0 0 10px;font-size:16px}
+  .card.old h3{color:var(--muted)} .card.new h3{color:var(--accent)}
+  .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px} .card li{margin:5px 0}
+  .card.new li{color:var(--ink)}
+  /* layers */
+  .layers{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
+  .layers .row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;font-weight:700}
+  .lyr{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 14px}
+  .layers .arw{color:var(--muted)}
+  .layers p{color:var(--muted);font-size:13.5px;margin:14px 0 0}
+  /* featured */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media (max-width:680px){.feat{grid-template-columns:1fr}}
+  .fj{display:flex;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);
+    border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
+  .fj:hover{border-color:var(--accent)}
+  .fj .mk{font-size:20px}
+  .fj .t{font-weight:700} .fj .s{font-size:12.5px;color:var(--muted)}
+  .badge{margin-left:auto;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px}
+  .badge.KEEP{color:var(--keep);background:var(--keep-bg)} .badge.REJECT{color:var(--reject);background:var(--reject-bg)}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 60px}
+  .code{font-family:ui-monospace,Menlo,monospace}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <div class="brand">LYR</div>
+    <h1>Living Knowledge Layers</h1>
+    <p class="tag">Most AI systems store documents. LYR <b>forms knowledge</b> — and remembers
+       <b>why</b> it believes it.</p>
+    <div class="cta">
+      <a class="btn primary" href="explorer.html">Open the Judgment Explorer →</a>
+      <a class="btn ghost" href="https://github.com/lyr-ai/lyr/blob/main/docs/M3.1-research-arc.md">Read the research</a>
+    </div>
+    <div class="repo">Open source · <a href="https://github.com/lyr-ai/lyr">github.com/lyr-ai/lyr</a></div>
+  </div>
+
+  <section>
+    <h2>The difference</h2>
+    <div class="cols">
+      <div class="card old">
+        <h3>Traditional AI memory</h3>
+        <ul>
+          <li>Stores documents or embeddings</li>
+          <li>Returns the closest text</li>
+          <li>Can't say <i>why</i> it believes something</li>
+          <li>Forgets how understanding changed</li>
+        </ul>
+      </div>
+      <div class="card new">
+        <h3>LYR</h3>
+        <ul>
+          <li><b>Forms</b> durable knowledge from evolving evidence</li>
+          <li><b>Explains why</b> a memory exists — proposal, verdict, commit</li>
+          <li><b>Verifies</b> whether something deserves to persist</li>
+          <li><b>Traces</b> every belief back to its original source</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Four layers over immutable evidence</h2>
+    <div class="layers">
+      <div class="row">
+        <span class="lyr">Source</span><span class="arw">→</span>
+        <span class="lyr">Semantic</span><span class="arw">→</span>
+        <span class="lyr">Durable</span><span class="arw">→</span>
+        <span class="lyr">Cognitive</span>
+      </div>
+      <p>Every layer above Source cites its evidence one layer down — so any belief is a single
+         walk back to what actually happened. The <b>Durable</b> layer is model-driven and
+         experimentally validated (M3.1).</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>See it on one real judgment</h2>
+    <div class="feat" id="feat"></div>
+    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:14px">
+      Each is an actual <span class="code">JudgmentRecord</span> from the M3.1-C.1 experiment —
+      no install, no signup.</p>
+  </section>
+
+  <footer>
+    LYR · Living Knowledge Layers &nbsp;·&nbsp;
+    <a href="explorer.html">Explorer</a> &nbsp;·&nbsp;
+    <a href="https://github.com/lyr-ai/lyr">GitHub</a>
+  </footer>
+
+</div>
+
+<script>
+const FEATURED=[
+  {slug:"coffee-ritual",     mk:"❌", t:"Coffee ritual",     s:"a recurring habit — trivia", v:"REJECT", note:"Rejected"},
+  {slug:"family-over-career",mk:"✅", t:"Family over career",s:"a lifelong pattern",         v:"KEEP",   note:"Kept"},
+  {slug:"guidance-reversal", mk:"❌", t:"Guidance reversal", s:"the one over-prune",          v:"REJECT", note:"False negative"},
+  {slug:"payments-ci-flakiness",mk:"✅",t:"Payments CI flakiness",s:"a recurring blocker",     v:"KEEP",   note:"Kept"},
+];
+document.getElementById("feat").innerHTML = FEATURED.map(f=>
+  `<a class="fj" href="explorer.html#${f.slug}">
+     <span class="mk">${f.mk}</span>
+     <span><div class="t">${f.t}</div><div class="s">${f.s}</div></span>
+     <span class="badge ${f.v}">${f.note}</span>
+   </a>`).join("");
+</script>
+</body>
+</html>

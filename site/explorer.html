@@ -74,7 +74,7 @@
 </head>
 <body>
 <header>
-  <div class="eyebrow">LYR · Judgment Explorer</div>
+  <div class="eyebrow"><a href="index.html" style="color:inherit;text-decoration:none">← LYR</a> · Judgment Explorer</div>
   <h1>Why does the system believe this?</h1>
   <p>Most AI systems show only an answer. LYR preserves <b>how a piece of long-term knowledge
      formed</b> — and lets you walk it: <code>Source → Semantic → Builder → Verifier → Durable</code>.
@@ -161,14 +161,30 @@ function render(r){
 
 // sidebar
 const list=document.getElementById("list");
+const buttons=[];
 R.forEach((r,i)=>{
-  const b=el("button","item"+(i===0?" active":""));
+  const b=el("button","item");
   b.append(el("span","mark",MARK[r.verdict]),
            el("span",null,`<div class="t">${esc(r.title)}</div><div class="d">${esc(r.domain_title)}</div>`));
-  b.onclick=()=>{document.querySelectorAll(".item").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(r);window.scrollTo({top:0,behavior:"smooth"});};
-  list.append(b);
+  b.onclick=()=>select(i,true);
+  list.append(b); buttons.push(b);
 });
-R.length ? render(R[0]) : (document.getElementById("main").innerHTML='<p class="note">No records. Run <code>python explorer/build_data.py</code>.</p>');
+function select(i,scroll){
+  buttons.forEach(x=>x.classList.remove("active"));
+  if(buttons[i]) buttons[i].classList.add("active");
+  render(R[i]);
+  if(R[i]) history.replaceState(null,"","#"+R[i].slug);
+  if(scroll) window.scrollTo({top:0,behavior:"smooth"});
+}
+// deep-link: index.html chips link to explorer.html#<slug>
+function fromHash(){
+  const h=decodeURIComponent(location.hash.replace(/^#/,""));
+  const i=R.findIndex(r=>r.slug===h);
+  return i>=0?i:0;
+}
+window.addEventListener("hashchange",()=>select(fromHash(),true));
+R.length ? select(fromHash(),false)
+         : (document.getElementById("main").innerHTML='<p class="note">No records. Run <code>python site/build_data.py</code>.</p>');
 </script>
 </body>
 </html>

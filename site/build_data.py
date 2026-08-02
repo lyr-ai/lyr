@@ -127,9 +127,10 @@ def _enrich(rec: dict, idx: dict, domain: str) -> dict:
             sources.append({"key": e["source_key"], "passage": e["passage"], "label": e["label"]})
     title, finding = _curate(mi["statement"], decision)
 
+    slug = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
     return {
         "id": rec["judgment_id"], "domain": domain, "domain_title": DOMAIN_TITLES.get(domain, domain),
-        "title": title, "finding": finding, "verdict": decision,
+        "title": title, "slug": slug, "finding": finding, "verdict": decision,
         "sources": sources,
         "evidence": [{"kind": e["kind"], "label": e["label"]} for e in evidence],
         "evidence_groups": [

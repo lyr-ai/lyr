@@ -13,6 +13,12 @@ It answers the questions flat retrieval can't:
 - What evidence changed our understanding?
 - How has this idea evolved over months or years?
 
+**▶ Live demo — the [Judgment Explorer](https://lyr-ai.github.io/lyr/)** walks one durable
+judgment end to end (`Source → Semantic → Builder → Verifier → Durable`) over real
+records: see *why* [coffee was rejected](https://lyr-ai.github.io/lyr/explorer.html#coffee-ritual)
+and [family-over-career was kept](https://lyr-ai.github.io/lyr/explorer.html#family-over-career).
+No install.
+
 ---
 
 ## The layers
@@ -237,7 +243,7 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
   - **C0/C** **durability verifier** (task frozen first) — drove benchmark false-positives to **0**; one narrow, characterized false-negative remains
   - a frozen [`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark future verifiers re-run against
 - **M4 — Cognitive Layer** derive higher-level reasoning patterns from the now-stable durable layer
-- **M5 — Interactive Explorer** navigate layers, visualize provenance, expand to source (`explorer/`, TypeScript)
+- **M5.0 — Judgment Explorer** ✅ a public site (`site/`, GitHub Pages) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records; a landing page frames the project for first-time visitors
 
 ## Development
 
