@@ -27,7 +27,9 @@ a claim under contradiction. The answer matters less than the reasoning.
 experiments/
   harness.py                       # renders the prompt over an experiment, optionally calls the LLM
   prompts/
-    durability_judgment_v1.md      # THE prompt (versioned — later JudgmentRecords store prompt_version)
+    durability_judgment_v1.md      # reasoning-INSPECTION prompt (step-by-step, for reading how a
+                                   #   model thinks). NOT the builder contract — the canonical
+                                   #   builder prompt is lyr/durable/prompts/durable_builder_v1.md
   experiment-001-memoir/
     semantic_nodes.json            # hand-authored clean semantic records (the input)
     input.md                       # the raw passages the records were drawn from (provenance)

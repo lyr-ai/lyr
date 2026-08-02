@@ -1,3 +1,8 @@
+<!-- Reasoning-INSPECTION prompt: a step-by-step think-aloud for reading how a model
+     reasons about durability. This is NOT the builder contract. The canonical
+     one-step builder prompt (what JudgmentBuilder actually sends) lives at
+     lyr/durable/prompts/durable_builder_v1.md and is versioned there. -->
+
 You are studying how long-term ("durable") knowledge forms from accumulated
 observations. Reason openly and honestly — we care about *how you think* at least
 as much as your final answer.

@@ -26,11 +26,13 @@ from .builder import DurableBuilder
 from .judgment import (
     REJECT,
     EngineAction,
+    EvidenceGroup,
     JudgmentRecord,
     JudgmentResult,
     ModelProposal,
+    new_judgment_id,
 )
-from .judgment_builder import PROMPT_VERSION, JudgmentBuilder
+from .judgment_builder import PROMPT, PROMPT_VERSION, JudgmentBuilder
 from .llm import LLMConsolidator
 from .recurrence import RecurrenceConsolidator
 
@@ -49,5 +51,8 @@ __all__ = [
     "JudgmentResult",
     "ModelProposal",
     "EngineAction",
+    "EvidenceGroup",
+    "new_judgment_id",
+    "PROMPT",
     "PROMPT_VERSION",
 ]

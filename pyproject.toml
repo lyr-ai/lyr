@@ -39,5 +39,8 @@ all = ["anthropic>=0.34"]
 include = ["lyr*"]
 exclude = ["tests*", "explorer*"]
 
+[tool.setuptools.package-data]
+"lyr.durable" = ["prompts/*.md"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -10,18 +10,23 @@ This is the *orchestration* layer. It owns none of the trustworthy substrate: th
 identity guard, MERGE lifecycle, and minimal-change downgrade all come from the
 existing ``DurableBuilder`` (reused, unchanged). The model proposes one operation
 and its reasoning; the engine decides what — if anything — is actually committed,
-and both halves are recorded in an immutable ``JudgmentRecord``.
+and every stage (raw output → parsed payload → intent → engine action) is recorded
+in an immutable ``JudgmentRecord``.
 
     Model proposes meaning.  Engine commits identity, history, and provenance.
 
 ``update`` is the stable interface for all future durable builders (M3.1-C adds a
 verifier stage *around* it, not a redesign of it).
+
+The prompt is loaded from a single canonical, versioned source
+(``lyr/durable/prompts/durable_builder_v1.md``) so it evolves in exactly one place.
 """
 
 from __future__ import annotations
 
 import json
 import re
+from importlib.resources import files
 from typing import Any, Iterable
 
 from ..ids import content_id, normalize
@@ -33,48 +38,18 @@ from .builder import DurableBuilder
 from .judgment import (
     REJECT,
     EngineAction,
+    EvidenceGroup,
     JudgmentRecord,
     JudgmentResult,
     ModelProposal,
+    new_judgment_id,
 )
 
+# The one canonical builder prompt. Versioned by filename; loaded once at import.
 PROMPT_VERSION = "durable_builder_v1"
-
-_PROMPT = """\
-You maintain a long-term ("durable") knowledge base. Given new semantic records and
-the durable memories that may be related, choose the SINGLE best maintenance
-operation to perform right now.
-
-Durable knowledge is worth keeping after many experiences: a lesson, decision,
-stable preference, persistent pattern, or lasting fact. Hold three things:
-  - Recurrence is not durability. A single significant event can be durable; a
-    repeated trivial observation is not.
-  - Several records describing the SAME event are ONE piece of evidence, not many.
-  - Scope is part of the claim — qualify it by time, phase, or context when the
-    evidence only holds there.
-
-Existing durable memories (may be empty):
-<<DURABLE>>
-
-New semantic records:
-<<SEMANTIC>>
-
-Return ONLY one JSON object of this shape:
-{
-  "operation": "ADD" | "UPDATE" | "MERGE" | "NO_OP",
-  "statement": "the durable claim, scoped/qualified as the evidence warrants",
-  "kind": "your own word: lesson | decision | preference | pattern | fact | ...",
-  "evidence": [semantic-record indices that INDEPENDENTLY support the statement],
-  "target": durable-memory index for UPDATE/MERGE, else null,
-  "merge": [durable indices to fold into target for MERGE, else []],
-  "evidence_groups": [{"records": [0, 3], "same_observation": true, "note": "..."}],
-  "rationale": "why this operation, in one or two sentences",
-  "counter_evidence": "contradictions or scope limits you found, or empty",
-  "confidence": 0.0
-}
-
-Prefer NO_OP when no durable change is warranted. Choose exactly one operation.
-JSON object:"""
+PROMPT = files("lyr.durable").joinpath("prompts").joinpath(f"{PROMPT_VERSION}.md").read_text(
+    encoding="utf-8"
+)
 
 
 class JudgmentBuilder:
@@ -83,7 +58,7 @@ class JudgmentBuilder:
         store: Store,
         client: LLMClient,
         *,
-        prompt: str = _PROMPT,
+        prompt: str = PROMPT,
         model_config: dict[str, Any] | None = None,
     ) -> None:
         self._store = store
@@ -105,14 +80,17 @@ class JudgmentBuilder:
         candidates = list(candidate_durable_nodes)
 
         prompt = self._render(semantic, candidates)
-        completion = self._client.complete(prompt)
-        parsed = _parse_object(completion)
+        raw_completion = self._client.complete(prompt)
+        parsed = _parse_object(raw_completion)
 
         intent, error = self._interpret(parsed, semantic, candidates)
-        groups = _evidence_groups(parsed)
+        groups = self._evidence_groups(parsed, semantic)
 
-        judgment_id = content_id(
-            "jdg",
+        # A globally unique execution id (never repeats) vs. a content-derived
+        # fingerprint of the judgment (may repeat across executions).
+        judgment_id = new_judgment_id()
+        fingerprint = content_id(
+            "jfp",
             intent.operation,
             intent.statement,
             *sorted(intent.evidence),
@@ -123,10 +101,13 @@ class JudgmentBuilder:
 
         record = JudgmentRecord(
             judgment_id=judgment_id,
+            judgment_fingerprint=fingerprint,
             model_intent=intent,
             final_engine_action=action,
-            candidate_semantic_ids=[n.id for n in semantic],
-            candidate_durable_identities=[n.identity for n in candidates],
+            raw_completion=raw_completion,
+            parsed_payload=parsed,
+            candidate_semantic_ids=tuple(n.id for n in semantic),
+            candidate_durable_identities=tuple(n.identity for n in candidates),
             evidence_groups=groups,
             model_config=self._model_config(),
         )
@@ -177,7 +158,7 @@ class JudgmentBuilder:
     ) -> tuple[ModelProposal, str | None]:
         """Resolve the model's indices to real ids and validate the proposal.
 
-        Returns the (best-effort) ``ModelProposal`` always — so the intent is
+        Always returns a (best-effort) frozen ``ModelProposal`` — so the intent is
         recorded even on rejection — plus an error string when the proposal is
         malformed or references something that does not exist.
         """
@@ -191,42 +172,87 @@ class JudgmentBuilder:
         rationale = _clean_str(parsed.get("rationale"))
         counter = _clean_str(parsed.get("counter_evidence"))
         confidence = _clean_confidence(parsed.get("confidence"))
+        target_identity: str | None = None
+        superseded: tuple[str, ...] = ()
 
-        base = ModelProposal(
-            operation=op if op in DURABLE_OPS else NO_OP,
-            statement=statement,
-            kind=kind,
-            evidence=evidence,
-            rationale=rationale,
-            counter_evidence=counter,
-            confidence=confidence,
-        )
+        def make(**over: Any) -> ModelProposal:
+            fields: dict[str, Any] = dict(
+                operation=op if op in DURABLE_OPS else NO_OP,
+                statement=statement,
+                kind=kind,
+                evidence=evidence,
+                target_identity=target_identity,
+                superseded=superseded,
+                rationale=rationale,
+                counter_evidence=counter,
+                confidence=confidence,
+            )
+            fields.update(over)
+            return ModelProposal(**fields)
 
         if op not in DURABLE_OPS:
-            return base, f"unknown operation {op!r}"
+            return make(), f"unknown operation {op!r}"
 
         if op == NO_OP:
             target = _index(parsed.get("target"), candidates)
-            base.target_identity = candidates[target].identity if target is not None else None
-            return base, None
+            target_identity = candidates[target].identity if target is not None else None
+            return make(target_identity=target_identity), None
 
         if op in (UPDATE, MERGE):
             target = _index(parsed.get("target"), candidates)
             if target is None:
-                return base, f"{op} target does not reference a candidate durable memory"
-            base.target_identity = candidates[target].identity
-            if not base.statement:
-                base.statement = candidates[target].label
+                return make(), f"{op} target does not reference a candidate durable memory"
+            target_identity = candidates[target].identity
+            if not statement:
+                statement = candidates[target].label
             if op == MERGE:
-                base.superseded = _merge_identities(parsed.get("merge"), candidates, base.target_identity)
+                superseded = _merge_identities(parsed.get("merge"), candidates, target_identity)
         elif op == ADD:
             if not statement:
-                return base, "ADD requires a statement"
-            base.target_identity = content_id("idn", "durable", "judgment", normalize(statement))
+                return make(), "ADD requires a statement"
+            target_identity = content_id("idn", "durable", "judgment", normalize(statement))
 
         if not evidence:
-            return base, f"{op} requires at least one valid evidence reference"
-        return base, None
+            return make(statement=statement, target_identity=target_identity), (
+                f"{op} requires at least one valid evidence reference"
+            )
+        return make(statement=statement, target_identity=target_identity, superseded=superseded), None
+
+    # ── evidence groups (validated) ---------------------------------------
+    def _evidence_groups(
+        self, parsed: dict[str, Any] | None, semantic: list[Node]
+    ) -> tuple[EvidenceGroup, ...]:
+        """Validate the model's evidence groups into immutable, id-resolved form.
+
+        Drops out-of-range indices, de-duplicates while preserving order, and
+        resolves each index to a real semantic id — so an audit artifact can never
+        cite a record that was not in the input.
+        """
+        if not isinstance(parsed, dict):
+            return ()
+        raw_groups = parsed.get("evidence_groups")
+        if not isinstance(raw_groups, list):
+            return ()
+
+        groups: list[EvidenceGroup] = []
+        for g in raw_groups:
+            if not isinstance(g, dict):
+                continue
+            records: list[int] = []
+            seen: set[int] = set()
+            for idx in g.get("records") or []:
+                if isinstance(idx, int) and 0 <= idx < len(semantic) and idx not in seen:
+                    seen.add(idx)
+                    records.append(idx)
+            groups.append(
+                EvidenceGroup(
+                    records=tuple(records),
+                    same_observation=bool(g.get("same_observation", False)),
+                    note=_clean_str(g.get("note")),
+                    semantic_ids=tuple(semantic[i].id for i in records),
+                )
+            )
+        return tuple(groups)
 
     # ── rendering & config ------------------------------------------------
     def _render(self, semantic: list[Node], candidates: list[Node]) -> str:
@@ -282,28 +308,25 @@ def _parse_object(text: str) -> dict[str, Any] | None:
     return data if isinstance(data, dict) else None
 
 
-def _evidence_groups(parsed: dict[str, Any] | None) -> list[dict[str, Any]]:
-    if not isinstance(parsed, dict):
-        return []
-    groups = parsed.get("evidence_groups")
-    return [g for g in groups if isinstance(g, dict)] if isinstance(groups, list) else []
-
-
-def _map_evidence(raw: Any, semantic: list[Node]) -> list[str]:
+def _map_evidence(raw: Any, semantic: list[Node]) -> tuple[str, ...]:
     out: list[str] = []
     for idx in raw or []:
         if isinstance(idx, int) and 0 <= idx < len(semantic):
             out.append(semantic[idx].id)
-    return sorted(set(out))
+    return tuple(sorted(set(out)))
 
 
-def _merge_identities(raw: Any, candidates: list[Node], target_identity: str) -> list[str]:
+def _merge_identities(raw: Any, candidates: list[Node], target_identity: str) -> tuple[str, ...]:
     superseded: list[str] = []
+    seen: set[str] = set()
     for idx in raw or []:
         m = _index(idx, candidates)
-        if m is not None and candidates[m].identity != target_identity:
-            superseded.append(candidates[m].identity)
-    return superseded
+        if m is not None:
+            ident = candidates[m].identity
+            if ident != target_identity and ident not in seen:
+                seen.add(ident)
+                superseded.append(ident)
+    return tuple(superseded)
 
 
 def _index(value: Any, nodes: list[Node]) -> int | None:
