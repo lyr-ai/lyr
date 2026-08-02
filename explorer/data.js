@@ -4,6 +4,26 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JYSNDXPWCFKXAPTR6N832",
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
+    "title": "Family over career",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "chapter-07",
+        "passage": "The startup was the most exciting work of my life, and in 2012 I walked away from it without hesitating, because Marek was sick and there was no one else to sit with him.",
+        "label": "Left a fast-growing startup in 2012 to care for her husband through his cancer treatment."
+      },
+      {
+        "key": "chapter-05",
+        "passage": "In 2005 the company wanted to send us to Singapore. It would have been good for my career. But the children were settled in their school, and I would not uproot them.",
+        "label": "Turned down an overseas transfer to Singapore in 2005 so the children could stay in the same school."
+      },
+      {
+        "key": "chapter-03",
+        "passage": "They offered me the regional directorship in 1998. I said no. My parents were getting older and I could not imagine being a plane ride away.",
+        "label": "Declined a promotion to regional director in 1998 to stay in her hometown near her aging parents."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -38,7 +58,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_4a14ecd8eaeb",
       "version": 1,
-      "node_id": "dur_8a2a95b84715",
       "rejection_reason": null
     },
     "committed": true,
@@ -48,6 +67,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JYW54KB29XHC8Z5B2QBG3",
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
+    "title": "Weekly letters to her sister",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "chapter-08",
+        "passage": "I wrote to my sister every week. Thirty years of letters, never a week skipped, long after everyone said no one writes letters anymore.",
+        "label": "Wrote to her sister in Poland every single week for thirty years."
+      },
+      {
+        "key": "chapter-01",
+        "passage": "When I stepped off the plane in Toronto in the winter of 1990, I was twenty-six and I did not know that I would never again live in the same country as my mother. We had said goodbye in Kraków as if it were ordinary.",
+        "label": "Emigrated from Poland to Canada in 1990, leaving her parents and siblings behind, never to live in the same country as them again."
+      }
+    ],
     "evidence": [
       {
         "kind": "relationship",
@@ -93,7 +127,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_a522a09d4ed2",
       "version": 1,
-      "node_id": "dur_a3b2bfa83c5d",
       "rejection_reason": null
     },
     "committed": true,
@@ -103,6 +136,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZ3RCXJDC148GHYM09R4J",
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
+    "title": "Lifelong financial-risk pattern",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "chapter-04",
+        "passage": "In those years — my thirties — I kept everything in cash. I had watched savings vanish once and I would not risk it again.",
+        "label": "In her thirties she kept all savings in cash and refused to invest, fearing loss."
+      },
+      {
+        "key": "chapter-11",
+        "passage": "And then, at sixty-three, I did the thing my younger self would have called insane: I put a third of my retirement into my nephew's restaurant, which had never served a single meal.",
+        "label": "In her sixties she invested a large share of her retirement fund in her nephew's unproven restaurant venture."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -148,7 +196,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_c8c3a4adf306",
       "version": 1,
-      "node_id": "dur_762bdabbb3f2",
       "rejection_reason": null
     },
     "committed": true,
@@ -158,6 +205,16 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZ8NB5QEAHE70WB13W3XJ",
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
+    "title": "Sunset the billing API",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "standup-04-12",
+        "passage": "Decision: we're sunsetting the legacy billing API by Q3. Also: payments CI flaked again overnight and blocked the nightly release.",
+        "label": "The team decided to sunset the legacy billing API by Q3 2026."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -192,7 +249,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_3ce98fb0db7b",
       "version": 1,
-      "node_id": "dur_117fbb04ba6e",
       "rejection_reason": null
     },
     "committed": true,
@@ -202,6 +258,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZBBM64MWZJKQZV5R4RP9",
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
+    "title": "Postgres → DynamoDB reversal",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "arch-review-05-11",
+        "passage": "After load testing, we reversed the Postgres call and chose DynamoDB for the new services — the access patterns are key-value and the write volume was too high for our Postgres setup.",
+        "label": "Reversed the earlier Postgres decision and chose DynamoDB for the new services after load testing."
+      },
+      {
+        "key": "arch-review-03-02",
+        "passage": "Agreed all new services standardize on Postgres.",
+        "label": "Agreed to standardize new services on Postgres."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -241,7 +312,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_44749bc8d33f",
       "version": 1,
-      "node_id": "dur_86385f914fdf",
       "rejection_reason": null
     },
     "committed": true,
@@ -251,6 +321,26 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZEFKSYF0F73XSWQJKH66",
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
+    "title": "Payments CI flakiness",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "standup-04-12",
+        "passage": "Decision: we're sunsetting the legacy billing API by Q3. Also: payments CI flaked again overnight and blocked the nightly release.",
+        "label": "Flaky CI on the payments suite blocked the release again."
+      },
+      {
+        "key": "retro-05-01",
+        "passage": "Biggest recurring theme this month: payments CI flakiness keeps blocking releases. Action: allocate time to stabilize it.",
+        "label": "Payments CI flakiness raised as a recurring release blocker."
+      },
+      {
+        "key": "standup-04-26",
+        "passage": "Payments CI flaked again — third time this month it's held up a release. More donuts.",
+        "label": "Flaky CI on the payments suite came up as a blocker once more."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -294,7 +384,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_8f468e5878fd",
       "version": 1,
-      "node_id": "dur_1452e0789bed",
       "rejection_reason": null
     },
     "committed": true,
@@ -304,6 +393,16 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZKHVSQZFXBFX006BC9TE",
     "domain": "experiment-002-meeting",
     "domain_title": "Meeting notes",
+    "title": "Second SRE hire",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "planning-05-03",
+        "passage": "Hired a second SRE to take over the on-call rotation.",
+        "label": "Hired a second SRE to own on-call rotation."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -338,7 +437,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_cf116ac835b7",
       "version": 1,
-      "node_id": "dur_6822f6df2d2a",
       "rejection_reason": null
     },
     "committed": true,
@@ -348,6 +446,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZRXE35A9K98QSTJG6Q3S",
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
+    "title": "Northwind acquisition",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "earnings-call-2025Q2",
+        "passage": "\"The Northwind deal closed in Q2, about $2.1 billion, and we're excited about the analytics roadmap.\" (CEO remarks.)",
+        "label": "The Northwind acquisition closed in the second quarter for approximately $2.1 billion."
+      },
+      {
+        "key": "10Q-2025Q2",
+        "passage": "In the second quarter the company completed its acquisition of Northwind Analytics for approximately $2.1 billion. The Board raised the quarterly dividend for the 12th consecutive year. Cloud segment revenue grew 31% YoY. Quarterly rent expense was $4.2M.",
+        "label": "Acquired competitor Northwind Analytics for $2.1B in Q2 2025."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -387,7 +500,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_b2b047d1d254",
       "version": 1,
-      "node_id": "dur_bb4cff4eb60d",
       "rejection_reason": null
     },
     "committed": true,
@@ -397,6 +509,16 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZVBJA7Y097XN5JGR9XRT",
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
+    "title": "12-year dividend streak",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "10Q-2025Q2",
+        "passage": "In the second quarter the company completed its acquisition of Northwind Analytics for approximately $2.1 billion. The Board raised the quarterly dividend for the 12th consecutive year. Cloud segment revenue grew 31% YoY. Quarterly rent expense was $4.2M.",
+        "label": "Raised the quarterly dividend for the 12th consecutive year."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -431,7 +553,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_ea1008d8df7e",
       "version": 1,
-      "node_id": "dur_b1248c44fe1a",
       "rejection_reason": null
     },
     "committed": true,
@@ -441,6 +562,16 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0K05HZPYB5A24KEFAHA4CW",
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
+    "title": "Goodwill impairment",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "10Q-2025Q3",
+        "passage": "The company lowered full-year revenue guidance to $8.8B, citing softening enterprise demand. It recorded a one-time $180M goodwill impairment related to the 2019 Helios acquisition. Quarterly rent expense was $4.2M.",
+        "label": "Took a one-time $180M goodwill impairment on the 2019 Helios acquisition."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -475,7 +606,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_e04066d05059",
       "version": 1,
-      "node_id": "dur_0007f2ffd97f",
       "rejection_reason": null
     },
     "committed": true,
@@ -485,6 +615,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0K0AB7SZ49VFGQ9SY8D0KB",
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
+    "title": "REST → gRPC migration",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "commit-a1b2c3",
+        "passage": "Migrate public API from REST to gRPC",
+        "label": "Migrated the public API from REST to gRPC."
+      },
+      {
+        "key": "commit-merge482",
+        "passage": "Merge pull request #482: migrate public API from REST to gRPC",
+        "label": "Merge pull request #482: migrate public API from REST to gRPC."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -524,7 +669,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_6fd8c594cb0a",
       "version": 1,
-      "node_id": "dur_e4d617949e3e",
       "rejection_reason": null
     },
     "committed": true,
@@ -534,6 +678,26 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0K0CXXZE9AJ7HE6CRMPZJB",
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
+    "title": "Auth-fragility pattern",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "commit-d4e5f6",
+        "passage": "Fix race condition in auth token refresh",
+        "label": "Fixed a race condition in the auth token refresh."
+      },
+      {
+        "key": "commit-7c8d9e",
+        "passage": "Harden auth middleware after third session-handling regression",
+        "label": "Hardened auth middleware after a third session-handling regression."
+      },
+      {
+        "key": "commit-091a2b",
+        "passage": "Fix auth session bug: tokens expiring early",
+        "label": "Patched another auth session bug: tokens expiring early."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -578,7 +742,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_509718d384d8",
       "version": 1,
-      "node_id": "dur_21e42e0f05c9",
       "rejection_reason": null
     },
     "committed": true,
@@ -588,6 +751,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0K0GYT1YFSPF6342AJ283F",
     "domain": "experiment-004-git-history",
     "domain_title": "Git history",
+    "title": "Redis stale-read lesson",
+    "finding": "Correct durable retained",
+    "verdict": "KEEP",
+    "sources": [
+      {
+        "key": "commit-abc123",
+        "passage": "Add Redis cache in front of product catalog",
+        "label": "Added a Redis cache in front of the product catalog."
+      },
+      {
+        "key": "commit-def456",
+        "passage": "Revert \"Add Redis cache in front of product catalog\"",
+        "label": "Reverted the Redis catalog cache due to stale-read incidents."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -627,7 +805,6 @@ window.LYR_RECORDS = [
       "operation": "ADD",
       "identity": "idn_d848f04310e5",
       "version": 1,
-      "node_id": "dur_81d58af477c2",
       "rejection_reason": null
     },
     "committed": true,
@@ -637,6 +814,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZ0KYVTP15FFSC31SGD1M",
     "domain": "experiment-001-memoir",
     "domain_title": "Memoir",
+    "title": "Coffee ritual",
+    "finding": "False positive removed — trivia correctly rejected",
+    "verdict": "REJECT",
+    "sources": [
+      {
+        "key": "chapter-06",
+        "passage": "I wrote at that same desk for thirty years, the coffee going cold beside me.",
+        "label": "Mentions her morning coffee ritual again while describing her writing desk."
+      },
+      {
+        "key": "chapter-02",
+        "passage": "Every morning began the same way: a cup of black coffee, no sugar, carried to the desk before the light came up.",
+        "label": "Drank a cup of black coffee every morning before writing."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -676,7 +868,6 @@ window.LYR_RECORDS = [
       "operation": "NO_OP",
       "identity": "idn_e5c6c387513a",
       "version": null,
-      "node_id": null,
       "rejection_reason": "verifier REJECT: The drinking of black coffee as a part of a morning ritual is a routine observation and does not constitute a significant long-term pattern or fact worth retaining as durable memory."
     },
     "committed": false,
@@ -686,6 +877,21 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0JZYQMR33336CDY1D8C52M",
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
+    "title": "Guidance reversal",
+    "finding": "False negative — a durable trend the verifier over-pruned",
+    "verdict": "REJECT",
+    "sources": [
+      {
+        "key": "10Q-2025Q1",
+        "passage": "The company raised full-year revenue guidance to $9.4B.",
+        "label": "Raised full-year revenue guidance to $9.4B at the Q1 2025 report."
+      },
+      {
+        "key": "10Q-2025Q3",
+        "passage": "The company lowered full-year revenue guidance to $8.8B, citing softening enterprise demand. It recorded a one-time $180M goodwill impairment related to the 2019 Helios acquisition. Quarterly rent expense was $4.2M.",
+        "label": "Lowered full-year revenue guidance to $8.8B at the Q3 2025 report, citing softening enterprise demand."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -725,7 +931,6 @@ window.LYR_RECORDS = [
       "operation": "NO_OP",
       "identity": "idn_7d639f7a4054",
       "version": null,
-      "node_id": null,
       "rejection_reason": "verifier REJECT: The adjustment of revenue guidance for 2025, while informative for the specific year, is a routine business recalibration and does not represent a durable pattern that is likely to have long-lasting significance beyond the fiscal year in question."
     },
     "committed": false,
@@ -735,6 +940,16 @@ window.LYR_RECORDS = [
     "id": "jdg_01KZ0K018EB0MXYVZV680G596V",
     "domain": "experiment-003-financial-report",
     "domain_title": "Financial report",
+    "title": "One-quarter cloud growth",
+    "finding": "False positive removed — a single-quarter metric, not durable",
+    "verdict": "REJECT",
+    "sources": [
+      {
+        "key": "10Q-2025Q2",
+        "passage": "In the second quarter the company completed its acquisition of Northwind Analytics for approximately $2.1 billion. The Board raised the quarterly dividend for the 12th consecutive year. Cloud segment revenue grew 31% YoY. Quarterly rent expense was $4.2M.",
+        "label": "Cloud segment revenue grew 31% year over year in Q2 2025."
+      }
+    ],
     "evidence": [
       {
         "kind": "event",
@@ -769,101 +984,7 @@ window.LYR_RECORDS = [
       "operation": "NO_OP",
       "identity": "idn_8db38af033a4",
       "version": null,
-      "node_id": null,
       "rejection_reason": "verifier REJECT: The revenue growth figure for a specific quarterly period is a routine financial metric. While it may be significant in the short-term for business decisions, it does not constitute a lasting lesson or persistent pattern that warrants long-term memory retention."
-    },
-    "committed": false,
-    "model": "gpt-4o"
-  },
-  {
-    "id": "jdg_01KZ0JZG3KJ2XHPP1HER4QCPM6",
-    "domain": "experiment-002-meeting",
-    "domain_title": "Meeting notes",
-    "evidence": [],
-    "evidence_groups": [
-      {
-        "same_observation": true,
-        "note": "Both records describe people bringing donuts to a recurring Friday standup.",
-        "members": [
-          "Someone brought donuts to the Friday standup.",
-          "Donuts again at Friday standup."
-        ]
-      }
-    ],
-    "builder": {
-      "operation": "NO_OP",
-      "kind": "lesson",
-      "statement": "",
-      "rationale": "The two records describe a trivial and recurring event that does not warrant a durable memory. There is no indication of significance leading to a lesson, decision, or pattern worth preserving long-term.",
-      "counter_evidence": "The recurrence does not imply significance or change.",
-      "confidence": 0.1
-    },
-    "verifier": null,
-    "engine": {
-      "operation": "NO_OP",
-      "identity": null,
-      "version": null,
-      "node_id": null,
-      "rejection_reason": null
-    },
-    "committed": false,
-    "model": "gpt-4o"
-  },
-  {
-    "id": "jdg_01KZ0K02RMSJNKTGMMVYX74W9J",
-    "domain": "experiment-003-financial-report",
-    "domain_title": "Financial report",
-    "evidence": [],
-    "evidence_groups": [
-      {
-        "same_observation": true,
-        "note": "Both records represent the same event: quarterly rent expense.",
-        "members": [
-          "Recorded routine quarterly rent expense of $4.2M.",
-          "Recorded routine quarterly rent expense of $4.2M."
-        ]
-      }
-    ],
-    "builder": {
-      "operation": "NO_OP",
-      "kind": "lesson",
-      "statement": "",
-      "rationale": "The records describe the same routine, recurring event and do not represent a durable memory worth retaining. Recurrent observations of routine expenses do not constitute a significant standalone fact or lesson.",
-      "counter_evidence": "",
-      "confidence": 0.9
-    },
-    "verifier": null,
-    "engine": {
-      "operation": "NO_OP",
-      "identity": null,
-      "version": null,
-      "node_id": null,
-      "rejection_reason": null
-    },
-    "committed": false,
-    "model": "gpt-4o"
-  },
-  {
-    "id": "jdg_01KZ0K0E9QCJQX9H4YZEVYAWR0",
-    "domain": "experiment-004-git-history",
-    "domain_title": "Git history",
-    "evidence": [],
-    "evidence_groups": [],
-    "builder": {
-      "operation": "NO_OP",
-      "kind": "lesson",
-      "statement": "",
-      "rationale": "The version bumps from 2.3.1 to 2.3.3 represent routine and trivial changes that do not independently or collectively support a durable memory. Such events may be recurrent, but they do not convey a significant lesson, enduring pattern, or lasting fact.",
-      "counter_evidence": "",
-      "confidence": 0.9
-    },
-    "verifier": null,
-    "engine": {
-      "operation": "NO_OP",
-      "identity": null,
-      "version": null,
-      "node_id": null,
-      "rejection_reason": null
     },
     "committed": false,
     "model": "gpt-4o"

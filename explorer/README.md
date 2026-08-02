@@ -45,11 +45,29 @@ explorer/
   records/         real JudgmentRecords (committed demo evidence)
 ```
 
+## Embed it in the blog
+
+It is a static, self-contained page with no external requests, so it drops straight
+into the M3.1 article as a live demo — readers click through *actual* judgments
+instead of looking at screenshots:
+
+```html
+<iframe src="explorer/index.html" width="100%" height="720"
+        style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
+
+<p><em>Try one real judgment — coffee, family, or the guidance reversal.</em></p>
+```
+
 ## Notes
 
 - **Read-only** by design — it explains, it never edits (P4).
-- **One judgment at a time** (P3) — it never summarizes the whole knowledge base.
-- Because it is self-contained and static, it embeds directly in the M3.1 article /
-  a blog: readers click through *actual* experimental judgments, not screenshots.
-- Provenance currently shows `durable → semantic` (the cited evidence); the further
-  `semantic → source` hop is noted per record and is a future extension.
+- **One judgment at a time** (P3) — never a whole-knowledge-base summary.
+- It frames each case as *"Why does the system keep / reject this?"* and walks the
+  **full LYR stack** — `Source → Semantic → Builder → Verifier → Durable` — so a
+  first-time viewer sees it as *explaining how a knowledge formed*, not a pipeline.
+- Each case ends with the **research finding** it demonstrates (e.g. coffee → *false
+  positive removed*; guidance → *false negative*), which makes it a *research*
+  explorer, not a data viewer.
+- The 16 substantive judgments (13 KEEP + 3 REJECT) are shown; the builder-`NO_OP`
+  units (donuts / rent / version-bumps — empty statement, nothing to display) are
+  skipped by `build_data.py`.
