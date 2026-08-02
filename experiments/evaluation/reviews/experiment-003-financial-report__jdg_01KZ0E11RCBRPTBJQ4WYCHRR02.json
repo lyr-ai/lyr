@@ -1,0 +1,64 @@
+{
+  "experiment": "experiment-003-financial-report",
+  "judgment_id": "jdg_01KZ0E11RCBRPTBJQ4WYCHRR02",
+  "judgment_fingerprint": "jfp_04634b620eeb",
+  "prompt_version": "durable_builder_v1",
+  "model": "gpt-4o",
+  "_context": {
+    "model_operation": "ADD",
+    "engine_operation": "ADD",
+    "statement": "Acquired competitor Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+    "kind": "fact",
+    "confidence": 0.95,
+    "counter_evidence": "",
+    "evidence": [
+      "The Northwind acquisition closed in the second quarter for approximately $2.1 billion.",
+      "Acquired competitor Northwind Analytics for $2.1B in Q2 2025."
+    ],
+    "evidence_groups": [
+      {
+        "same_observation": true,
+        "records": [
+          "Acquired competitor Northwind Analytics for $2.1B in Q2 2025.",
+          "The Northwind acquisition closed in the second quarter for approximately $2.1 billion."
+        ],
+        "note": "Both records describe the same event of acquiring Northwind Analytics for around $2.1 billion in Q2 2025."
+      }
+    ]
+  },
+  "dimensions": {
+    "groundedness": {
+      "rating": "ok",
+      "note": ""
+    },
+    "durability": {
+      "rating": "ok",
+      "note": ""
+    },
+    "scope": {
+      "rating": "ok",
+      "note": ""
+    },
+    "evidence_independence": {
+      "rating": "ok",
+      "note": ""
+    },
+    "candidate_coverage": {
+      "rating": "fail",
+      "note": ""
+    },
+    "operation_correctness": {
+      "rating": "ok",
+      "note": ""
+    },
+    "audit_quality": {
+      "rating": "ok",
+      "note": ""
+    }
+  },
+  "failures": [
+    "F7"
+  ],
+  "reviewer": "assistant-draft",
+  "verdict": "Correct acquisition fact; duplicate (10-Q + earnings call) correctly grouped same_observation. Missed guidance reversal (3,4), dividend policy (2), impairment (8) -> F7."
+}

@@ -1,0 +1,82 @@
+{
+  "judgment_id": "jdg_01KZ0E11RCBRPTBJQ4WYCHRR02",
+  "judgment_fingerprint": "jfp_04634b620eeb",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Acquired competitor Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      "sem_906d05a67f88",
+      "sem_fac0613c82a3"
+    ],
+    "target_identity": "idn_37a8edf9f042",
+    "superseded": [],
+    "rationale": "The acquisition of a competitor is a significant event with potentially long-term implications for market position and business strategy. Combining both records strengthens this single durable fact.",
+    "counter_evidence": "",
+    "confidence": 0.95
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_ffef6f65ecad",
+    "identity": "idn_37a8edf9f042",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Acquired competitor Northwind Analytics for approximately $2.1 billion in Q2 2025.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records describe the same event of acquiring Northwind Analytics for around $2.1 billion in Q2 2025.\"\n    }\n  ],\n  \"rationale\": \"The acquisition of a competitor is a significant event with potentially long-term implications for market position and business strategy. Combining both records strengthens this single durable fact.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.95\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Acquired competitor Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe the same event of acquiring Northwind Analytics for around $2.1 billion in Q2 2025."
+      }
+    ],
+    "rationale": "The acquisition of a competitor is a significant event with potentially long-term implications for market position and business strategy. Combining both records strengthens this single durable fact.",
+    "counter_evidence": "",
+    "confidence": 0.95
+  },
+  "candidate_semantic_ids": [
+    "sem_fac0613c82a3",
+    "sem_906d05a67f88",
+    "sem_5b46df7a7400",
+    "sem_3bbe58f8d9cb",
+    "sem_9e3282b3daf3",
+    "sem_26cb02f56644",
+    "sem_5d3fac2b1adb",
+    "sem_20074be38f1e",
+    "sem_a2413445aab9"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe the same event of acquiring Northwind Analytics for around $2.1 billion in Q2 2025.",
+      "semantic_ids": [
+        "sem_fac0613c82a3",
+        "sem_906d05a67f88"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:09:27.949141+00:00"
+}

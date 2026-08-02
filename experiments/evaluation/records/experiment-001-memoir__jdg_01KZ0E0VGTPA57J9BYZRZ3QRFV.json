@@ -1,0 +1,85 @@
+{
+  "judgment_id": "jdg_01KZ0E0VGTPA57J9BYZRZ3QRFV",
+  "judgment_fingerprint": "jfp_3eb30e357a14",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "She has consistently prioritized family and personal responsibilities over career advancements, even if it required significant sacrifices.",
+    "kind": "preference",
+    "evidence": [
+      "sem_476f94873d00",
+      "sem_85970f53784f",
+      "sem_c3518f7789be"
+    ],
+    "target_identity": "idn_aae7ff966947",
+    "superseded": [],
+    "rationale": "The evidence from records 0, 1, and 2 indicates a consistent pattern of choosing family and personal responsibilities over professional opportunities, suggesting a durable preference.",
+    "counter_evidence": "The emigration record [4] might indicate otherwise, but it pertains to an earlier life context without immediate family responsibilities.",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_12ddffe7256c",
+    "identity": "idn_aae7ff966947",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"She has consistently prioritized family and personal responsibilities over career advancements, even if it required significant sacrifices.\",\n  \"kind\": \"preference\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 3],\n      \"same_observation\": true,\n      \"note\": \"Both records describe the same decision regarding the decline of a promotion in 1998.\"\n    }\n  ],\n  \"rationale\": \"The evidence from records 0, 1, and 2 indicates a consistent pattern of choosing family and personal responsibilities over professional opportunities, suggesting a durable preference.\",\n  \"counter_evidence\": \"The emigration record [4] might indicate otherwise, but it pertains to an earlier life context without immediate family responsibilities.\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "She has consistently prioritized family and personal responsibilities over career advancements, even if it required significant sacrifices.",
+    "kind": "preference",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          3
+        ],
+        "same_observation": true,
+        "note": "Both records describe the same decision regarding the decline of a promotion in 1998."
+      }
+    ],
+    "rationale": "The evidence from records 0, 1, and 2 indicates a consistent pattern of choosing family and personal responsibilities over professional opportunities, suggesting a durable preference.",
+    "counter_evidence": "The emigration record [4] might indicate otherwise, but it pertains to an earlier life context without immediate family responsibilities.",
+    "confidence": 0.9
+  },
+  "candidate_semantic_ids": [
+    "sem_c3518f7789be",
+    "sem_85970f53784f",
+    "sem_476f94873d00",
+    "sem_abb5928ecdb9",
+    "sem_ed7429320c65",
+    "sem_53d8f38f6432",
+    "sem_39f09e9caf29",
+    "sem_30c74c3015a0",
+    "sem_350c022331ba",
+    "sem_497abc1ab7db"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        3
+      ],
+      "same_observation": true,
+      "note": "Both records describe the same decision regarding the decline of a promotion in 1998.",
+      "semantic_ids": [
+        "sem_c3518f7789be",
+        "sem_abb5928ecdb9"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:09:21.563153+00:00"
+}
