@@ -36,14 +36,18 @@ from ..store.base import Store
 from .base import ADD, DURABLE_OPS, MERGE, NO_OP, UPDATE, DurableProposal
 from .builder import DurableBuilder
 from .judgment import (
+    ERROR,
     REJECT,
+    UNSURE,
     EngineAction,
     EvidenceGroup,
     JudgmentRecord,
     JudgmentResult,
     ModelProposal,
+    Verdict,
     new_judgment_id,
 )
+from .verifier import DurabilityVerifier
 
 # The one canonical builder prompt. Versioned by filename; loaded once at import.
 PROMPT_VERSION = "durable_builder_v1"
@@ -60,11 +64,15 @@ class JudgmentBuilder:
         *,
         prompt: str = PROMPT,
         model_config: dict[str, Any] | None = None,
+        verifier: DurabilityVerifier | None = None,
     ) -> None:
         self._store = store
         self._client = client
         self._prompt = prompt
         self._extra_config = dict(model_config or {})
+        # Optional durability gate (M3.1-C). None → pre-M3.1-C behavior. Injected,
+        # not embedded: it stays a separate, stateless component (C0 §5).
+        self._verifier = verifier
         # Reuse the engine substrate for commits; the null consolidator is never
         # consulted (only _apply_one is used), so no policy leaks in here.
         self._engine = DurableBuilder(store, _NullConsolidator())
@@ -86,6 +94,13 @@ class JudgmentBuilder:
         intent, error = self._interpret(parsed, semantic, candidates)
         groups = self._evidence_groups(parsed, semantic)
 
+        # Durability gate (M3.1-C). Only a genuine write is verified — never a
+        # NO_OP, and never over a builder-level parse/reference failure.
+        verdict = None
+        if self._verifier is not None and error is None and intent.operation != NO_OP:
+            evidence_nodes = [n for n in semantic if n.id in set(intent.evidence)]
+            verdict = self._run_verifier(intent, evidence_nodes)
+
         # A globally unique execution id (never repeats) vs. a content-derived
         # fingerprint of the judgment (may repeat across executions).
         judgment_id = new_judgment_id()
@@ -97,7 +112,7 @@ class JudgmentBuilder:
             *sorted(n.identity for n in candidates),
         )
 
-        node, action = self._commit(intent, error, judgment_id)
+        node, action = self._commit(intent, error, judgment_id, verdict)
 
         record = JudgmentRecord(
             judgment_id=judgment_id,
@@ -106,6 +121,7 @@ class JudgmentBuilder:
             final_engine_action=action,
             raw_completion=raw_completion,
             parsed_payload=parsed,
+            verification=verdict,
             candidate_semantic_ids=tuple(n.id for n in semantic),
             candidate_durable_identities=tuple(n.identity for n in candidates),
             evidence_groups=groups,
@@ -114,14 +130,44 @@ class JudgmentBuilder:
         self._store.add_judgment(record)
         return JudgmentResult(judgment_record=record, engine_action=action, updated_durable=node)
 
+    # ── verification (M3.1-C) ---------------------------------------------
+    def _run_verifier(self, intent: ModelProposal, evidence: list[Node]) -> Verdict:
+        """Invoke the verifier, guaranteeing a well-formed Verdict.
+
+        Any escaped exception or malformed return becomes ``status=ERROR`` — a
+        broken verifier never masquerades as a semantic UNSURE (C0/M3.1-C §5b).
+        """
+        try:
+            verdict = self._verifier.verify(intent, evidence)  # type: ignore[union-attr]
+        except Exception as e:  # noqa: BLE001
+            return Verdict(decision=UNSURE, status=ERROR, error_reason=f"{type(e).__name__}: {e}")
+        if not isinstance(verdict, Verdict) or verdict.decision not in ("KEEP", "REJECT", "UNSURE"):
+            return Verdict(decision=UNSURE, status=ERROR, error_reason="invalid verdict object")
+        return verdict
+
     # ── commit (reuses the engine invariants) -----------------------------
     def _commit(
-        self, intent: ModelProposal, error: str | None, judgment_id: str
+        self,
+        intent: ModelProposal,
+        error: str | None,
+        judgment_id: str,
+        verdict: Verdict | None = None,
     ) -> tuple[Node | None, EngineAction]:
         if error is not None:
             return None, EngineAction(operation=REJECT, rejection_reason=error)
         if intent.operation == NO_OP:
             return None, EngineAction(operation=NO_OP, identity=intent.target_identity)
+
+        # Durability gate: veto before commit (C0 §1). ERROR ≠ REJECT (§5b).
+        if verdict is not None:
+            if verdict.status == ERROR:
+                return None, EngineAction(
+                    operation=REJECT, identity=intent.target_identity,
+                    rejection_reason=f"verifier ERROR: {verdict.error_reason}")
+            if verdict.decision == REJECT:
+                return None, EngineAction(
+                    operation=NO_OP, identity=intent.target_identity,
+                    rejection_reason=f"verifier REJECT: {verdict.rationale}")
 
         proposal = DurableProposal(
             op=intent.operation,
@@ -141,6 +187,10 @@ class JudgmentBuilder:
         # produced it. Set after commit so it never perturbs the minimal-change
         # comparison (attributes are not part of a node's content id).
         node.attributes["judgment_id"] = judgment_id
+        # UNSURE is retained-but-flagged (C0 §4): a flag on an ordinary durable,
+        # not a new class.
+        if verdict is not None and verdict.decision == UNSURE:
+            node.attributes["verification"] = "unsure"
 
         # Report what the engine *did*, which may differ from what was proposed:
         # an ADD onto an existing identity is evolved (identity guard), landing as

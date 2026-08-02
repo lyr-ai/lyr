@@ -29,16 +29,23 @@ from ..store.base import Store
 from .decomposition import Decomposer, WholeBatchDecomposer
 from .judgment import JudgmentResult
 from .judgment_builder import JudgmentBuilder
+from .verifier import DurabilityVerifier
 
 
 class JudgmentPipeline:
     """Decompose a semantic batch into topics, then judge each with the builder."""
 
     def __init__(
-        self, store: Store, client: LLMClient, decomposer: Decomposer | None = None
+        self,
+        store: Store,
+        client: LLMClient,
+        decomposer: Decomposer | None = None,
+        *,
+        verifier: DurabilityVerifier | None = None,
     ) -> None:
         # The builder is used verbatim — no subclassing, no new entry point (G3).
-        self._builder = JudgmentBuilder(store, client)
+        # An optional durability verifier gates each proposal at commit (M3.1-C).
+        self._builder = JudgmentBuilder(store, client, verifier=verifier)
         # Default to the control decomposer, so a pipeline with no decomposer behaves
         # exactly like a single pre-M3.1-B.2 update().
         self._decomposer: Decomposer = decomposer or WholeBatchDecomposer()
