@@ -1,0 +1,88 @@
+{
+  "judgment_id": "jdg_01KZ0JZ8NB5QEAHE70WB13W3XJ",
+  "judgment_fingerprint": "jfp_cdcf02cd415b",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The team has decided to sunset the legacy billing API by Q3 2026.",
+    "kind": "decision",
+    "evidence": [
+      "sem_5becf9f36a24"
+    ],
+    "target_identity": "idn_3ce98fb0db7b",
+    "superseded": [],
+    "rationale": "The decision to sunset the legacy billing API is a significant event with a timeline (Q3 2026) that constitutes a durable claim as it is an established decision with implications for future planning.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_117fbb04ba6e",
+    "identity": "idn_3ce98fb0db7b",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The team has decided to sunset the legacy billing API by Q3 2026.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [1],\n      \"same_observation\": true,\n      \"note\": \"Reconfirmation of the decision to retire the legacy billing API.\"\n    }\n  ],\n  \"rationale\": \"The decision to sunset the legacy billing API is a significant event with a timeline (Q3 2026) that constitutes a durable claim as it is an established decision with implications for future planning.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The team has decided to sunset the legacy billing API by Q3 2026.",
+    "kind": "decision",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          1
+        ],
+        "same_observation": true,
+        "note": "Reconfirmation of the decision to retire the legacy billing API."
+      }
+    ],
+    "rationale": "The decision to sunset the legacy billing API is a significant event with a timeline (Q3 2026) that constitutes a durable claim as it is an established decision with implications for future planning.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The decision to sunset the legacy billing API by Q3 2026 is a significant and lasting decision that will likely have long-term implications for the team's operations and strategy.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The decision to sunset the legacy billing API by Q3 2026 is a significant and lasting decision that will likely have long-term implications for the team's operations and strategy.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The decision to sunset the legacy billing API by Q3 2026 is a significant and lasting decision that will likely have long-term implications for the team's operations and strategy."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_5becf9f36a24",
+    "sem_9fb683ae364d"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        1
+      ],
+      "same_observation": true,
+      "note": "Reconfirmation of the decision to retire the legacy billing API.",
+      "semantic_ids": [
+        "sem_9fb683ae364d"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:52.363646+00:00"
+}

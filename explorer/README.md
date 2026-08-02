@@ -1,17 +1,55 @@
-# LYR Explorer (planned — M5)
+# LYR Judgment Explorer (M5.0)
 
-The interactive knowledge explorer. A TypeScript app built **on top of** the
-Python knowledge engine's primitives — it is intentionally not part of v0.1.
+A read-only view of **one durable judgment's full lifecycle** — the reasoning LYR
+preserves that most systems throw away:
 
-Rather than only offering chat, the Explorer will expose an *explorable knowledge
-space* over the engine's layers and provenance:
+```
+Evidence → Builder proposal → Verifier verdict → Engine action → Durable memory
+```
 
-- **Timeline** — how knowledge formed over time
-- **Subjects / Concepts** — entities and higher-level ideas
-- **Knowledge Layers** — move between Source → Semantic → Durable → Cognitive
-- **Evidence Graph** — expand any abstraction back to supporting records
-- **Version History** — inspect how a node evolved (v1 → v2 → v3) and why
+It answers, for any one `JudgmentRecord`, without reading code: *what evidence
+existed, what the Builder proposed, why the Verifier kept or rejected it, and what
+changed in durable memory.*
 
-It will consume the engine through a thin read API over the same `Store` and
-`provenance` primitives the Python package already exposes. Scaffolding lands
-once the engine's layers (M3/M4) are further along.
+Design: [`docs/design/M5.0-judgment-explorer.md`](../docs/design/M5.0-judgment-explorer.md).
+
+## Run it
+
+It is a **single self-contained page** — no build, no server, no network. Just open
+it:
+
+```bash
+open explorer/index.html        # macOS  (or double-click the file)
+```
+
+The data is real: `explorer/records/` holds actual full-lifecycle `JudgmentRecord`s
+from the M3.1-C.1 verified run (`gpt-4o`), and `explorer/data.js` is generated from
+them. Click any judgment in the sidebar — e.g. **coffee** (`ADD → REJECT → NO_OP`) or
+**family** (`ADD → KEEP → durable v1`).
+
+## Regenerate the data
+
+After adding/replacing records under `explorer/records/`:
+
+```bash
+python explorer/build_data.py   # records/ + fixtures → data.js (resolves evidence labels)
+```
+
+## Layout
+
+```
+explorer/
+  index.html       self-contained viewer (loads data.js; theme-aware; read-only)
+  data.js          generated: window.LYR_RECORDS = [ …enriched records… ]
+  build_data.py    records/ + experiment fixtures → data.js
+  records/         real JudgmentRecords (committed demo evidence)
+```
+
+## Notes
+
+- **Read-only** by design — it explains, it never edits (P4).
+- **One judgment at a time** (P3) — it never summarizes the whole knowledge base.
+- Because it is self-contained and static, it embeds directly in the M3.1 article /
+  a blog: readers click through *actual* experimental judgments, not screenshots.
+- Provenance currently shows `durable → semantic` (the cited evidence); the further
+  `semantic → source` hop is noted per record and is a future extension.

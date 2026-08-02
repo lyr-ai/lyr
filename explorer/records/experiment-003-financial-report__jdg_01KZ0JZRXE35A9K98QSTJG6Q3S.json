@@ -1,0 +1,93 @@
+{
+  "judgment_id": "jdg_01KZ0JZRXE35A9K98QSTJG6Q3S",
+  "judgment_fingerprint": "jfp_281e072b85db",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The company acquired Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      "sem_906d05a67f88",
+      "sem_fac0613c82a3"
+    ],
+    "target_identity": "idn_b2b047d1d254",
+    "superseded": [],
+    "rationale": "The acquisition of Northwind Analytics is a significant event and thus, a durable fact, as both records independently corroborate this occurrence.",
+    "counter_evidence": "",
+    "confidence": 1.0
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_bb4cff4eb60d",
+    "identity": "idn_b2b047d1d254",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The company acquired Northwind Analytics for approximately $2.1 billion in Q2 2025.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records describe the acquisition of Northwind Analytics for $2.1 billion in Q2 2025.\"\n    }\n  ],\n  \"rationale\": \"The acquisition of Northwind Analytics is a significant event and thus, a durable fact, as both records independently corroborate this occurrence.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 1.0\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The company acquired Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe the acquisition of Northwind Analytics for $2.1 billion in Q2 2025."
+      }
+    ],
+    "rationale": "The acquisition of Northwind Analytics is a significant event and thus, a durable fact, as both records independently corroborate this occurrence.",
+    "counter_evidence": "",
+    "confidence": 1.0
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The acquisition of Northwind Analytics for $2.1 billion is a significant fact that shows a major business decision and strategic expansion effort by the company, making it valuable long-term knowledge.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The acquisition of Northwind Analytics for $2.1 billion is a significant fact that shows a major business decision and strategic expansion effort by the company, making it valuable long-term knowledge.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The acquisition of Northwind Analytics for $2.1 billion is a significant fact that shows a major business decision and strategic expansion effort by the company, making it valuable long-term knowledge."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_fac0613c82a3",
+    "sem_906d05a67f88"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe the acquisition of Northwind Analytics for $2.1 billion in Q2 2025.",
+      "semantic_ids": [
+        "sem_fac0613c82a3",
+        "sem_906d05a67f88"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:09.007172+00:00"
+}

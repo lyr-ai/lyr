@@ -1,0 +1,87 @@
+{
+  "judgment_id": "jdg_01KZ0K05HZPYB5A24KEFAHA4CW",
+  "judgment_fingerprint": "jfp_8ea0d022a799",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The company took a one-time $180M goodwill impairment on the 2019 Helios acquisition.",
+    "kind": "fact",
+    "evidence": [
+      "sem_a2413445aab9"
+    ],
+    "target_identity": "idn_e04066d05059",
+    "superseded": [],
+    "rationale": "The goodwill impairment on the Helios acquisition is a significant financial event that represents a single, lasting impact on the company's financials, thus warranting durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_0007f2ffd97f",
+    "identity": "idn_e04066d05059",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The company took a one-time $180M goodwill impairment on the 2019 Helios acquisition.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [{\"records\": [0], \"same_observation\": true, \"note\": \"A significant financial event related to an acquisition.\"}],\n  \"rationale\": \"The goodwill impairment on the Helios acquisition is a significant financial event that represents a single, lasting impact on the company's financials, thus warranting durable memory.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The company took a one-time $180M goodwill impairment on the 2019 Helios acquisition.",
+    "kind": "fact",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": true,
+        "note": "A significant financial event related to an acquisition."
+      }
+    ],
+    "rationale": "The goodwill impairment on the Helios acquisition is a significant financial event that represents a single, lasting impact on the company's financials, thus warranting durable memory.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The $180M goodwill impairment on the 2019 Helios acquisition is a significant financial event for the company and could have implications for its financial history and future decisions. It reflects a major accounting decision related to the valuation of an acquisition, which is noteworthy in the company's long-term financial narrative.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The $180M goodwill impairment on the 2019 Helios acquisition is a significant financial event for the company and could have implications for its financial history and future decisions. It reflects a major accounting decision related to the valuation of an acquisition, which is noteworthy in the company's long-term financial narrative.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The $180M goodwill impairment on the 2019 Helios acquisition is a significant financial event for the company and could have implications for its financial history and future decisions. It reflects a major accounting decision related to the valuation of an acquisition, which is noteworthy in the company's long-term financial narrative."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_a2413445aab9"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": true,
+      "note": "A significant financial event related to an acquisition.",
+      "semantic_ids": [
+        "sem_a2413445aab9"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:21.952162+00:00"
+}

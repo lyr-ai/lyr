@@ -1,0 +1,99 @@
+{
+  "judgment_id": "jdg_01KZ0K0CXXZE9AJ7HE6CRMPZJB",
+  "judgment_fingerprint": "jfp_7e1ee84e95a3",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Auth middleware has recurrent issues with session handling and token expiration, requiring multiple patches.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_174e09281827",
+      "sem_37991d8c0254",
+      "sem_56fa2625e4ec"
+    ],
+    "target_identity": "idn_509718d384d8",
+    "superseded": [],
+    "rationale": "The sequence of patches and regressions indicates a pattern of issues in the auth middleware, specifically related to session handling and token management.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_21e42e0f05c9",
+    "identity": "idn_509718d384d8",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Auth middleware has recurrent issues with session handling and token expiration, requiring multiple patches.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [{\"records\": [0, 1, 2], \"same_observation\": false, \"note\": \"Multiple distinct events show a recurring issue with the auth system.\"}],\n  \"rationale\": \"The sequence of patches and regressions indicates a pattern of issues in the auth middleware, specifically related to session handling and token management.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Auth middleware has recurrent issues with session handling and token expiration, requiring multiple patches.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1,
+          2
+        ],
+        "same_observation": false,
+        "note": "Multiple distinct events show a recurring issue with the auth system."
+      }
+    ],
+    "rationale": "The sequence of patches and regressions indicates a pattern of issues in the auth middleware, specifically related to session handling and token management.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The statement identifies a recurring pattern of issues with session handling and token expiration in the auth middleware. This pattern is notable given the repeated need for patches and fixes, indicating a persistent issue that may impact system reliability and requires ongoing attention. As such, it represents genuine long-term knowledge worth keeping.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The statement identifies a recurring pattern of issues with session handling and token expiration in the auth middleware. This pattern is notable given the repeated need for patches and fixes, indicating a persistent issue that may impact system reliability and requires ongoing attention. As such, it represents genuine long-term knowledge worth keeping.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The statement identifies a recurring pattern of issues with session handling and token expiration in the auth middleware. This pattern is notable given the repeated need for patches and fixes, indicating a persistent issue that may impact system reliability and requires ongoing attention. As such, it represents genuine long-term knowledge worth keeping."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_174e09281827",
+    "sem_56fa2625e4ec",
+    "sem_37991d8c0254"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1,
+        2
+      ],
+      "same_observation": false,
+      "note": "Multiple distinct events show a recurring issue with the auth system.",
+      "semantic_ids": [
+        "sem_174e09281827",
+        "sem_56fa2625e4ec",
+        "sem_37991d8c0254"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:29.501471+00:00"
+}

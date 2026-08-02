@@ -1,0 +1,107 @@
+{
+  "judgment_id": "jdg_01KZ0JYW54KB29XHC8Z5B2QBG3",
+  "judgment_fingerprint": "jfp_1638646e90d0",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Maintained a long-distance relationship with her sister in Poland for thirty years through weekly letters, after emigrating to Canada in 1990.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_497abc1ab7db",
+      "sem_ed7429320c65"
+    ],
+    "target_identity": "idn_a522a09d4ed2",
+    "superseded": [],
+    "rationale": "The record shows a durable pattern of maintaining communication over a long period, emphasizing a commitment to familial connection despite geographical separation.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_a3b2bfa83c5d",
+    "identity": "idn_a522a09d4ed2",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Maintained a long-distance relationship with her sister in Poland for thirty years through weekly letters, after emigrating to Canada in 1990.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": true,\n      \"note\": \"Emigration event indicating geographical separation.\"\n    },\n    {\n      \"records\": [1],\n      \"same_observation\": true,\n      \"note\": \"Consistent communication pattern over thirty years.\"\n    }\n  ],\n  \"rationale\": \"The record shows a durable pattern of maintaining communication over a long period, emphasizing a commitment to familial connection despite geographical separation.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Maintained a long-distance relationship with her sister in Poland for thirty years through weekly letters, after emigrating to Canada in 1990.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": true,
+        "note": "Emigration event indicating geographical separation."
+      },
+      {
+        "records": [
+          1
+        ],
+        "same_observation": true,
+        "note": "Consistent communication pattern over thirty years."
+      }
+    ],
+    "rationale": "The record shows a durable pattern of maintaining communication over a long period, emphasizing a commitment to familial connection despite geographical separation.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The proposed memory represents a significant and lasting pattern of maintaining a long-distance familial relationship over an extended period, illustrating a persistent and meaningful commitment.",
+    "confidence": 0.9,
+    "raw_completion": "{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The proposed memory represents a significant and lasting pattern of maintaining a long-distance familial relationship over an extended period, illustrating a persistent and meaningful commitment.\"}",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The proposed memory represents a significant and lasting pattern of maintaining a long-distance familial relationship over an extended period, illustrating a persistent and meaningful commitment."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_ed7429320c65",
+    "sem_497abc1ab7db"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": true,
+      "note": "Emigration event indicating geographical separation.",
+      "semantic_ids": [
+        "sem_ed7429320c65"
+      ]
+    },
+    {
+      "records": [
+        1
+      ],
+      "same_observation": true,
+      "note": "Consistent communication pattern over thirty years.",
+      "semantic_ids": [
+        "sem_497abc1ab7db"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:39.557281+00:00"
+}

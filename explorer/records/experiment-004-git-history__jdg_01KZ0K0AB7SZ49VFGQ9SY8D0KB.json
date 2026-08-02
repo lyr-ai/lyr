@@ -1,0 +1,93 @@
+{
+  "judgment_id": "jdg_01KZ0K0AB7SZ49VFGQ9SY8D0KB",
+  "judgment_fingerprint": "jfp_2bccad55ed79",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Migrating the public API from REST to gRPC was a significant event.",
+    "kind": "decision",
+    "evidence": [
+      "sem_0a1ae27188f3",
+      "sem_43354218b0bb"
+    ],
+    "target_identity": "idn_6fd8c594cb0a",
+    "superseded": [],
+    "rationale": "The migration of a public API from REST to gRPC is a significant and likely impactful decision, warranting its addition as durable knowledge.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_e4d617949e3e",
+    "identity": "idn_6fd8c594cb0a",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Migrating the public API from REST to gRPC was a significant event.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records describe the same migration event.\"\n    }\n  ],\n  \"rationale\": \"The migration of a public API from REST to gRPC is a significant and likely impactful decision, warranting its addition as durable knowledge.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Migrating the public API from REST to gRPC was a significant event.",
+    "kind": "decision",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe the same migration event."
+      }
+    ],
+    "rationale": "The migration of a public API from REST to gRPC is a significant and likely impactful decision, warranting its addition as durable knowledge.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "Migrating a public API from REST to gRPC is a significant architectural decision that can have lasting impacts on system performance, development processes, and how clients interact with the service. This is a durable memory as it represents a significant event and decision.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"Migrating a public API from REST to gRPC is a significant architectural decision that can have lasting impacts on system performance, development processes, and how clients interact with the service. This is a durable memory as it represents a significant event and decision.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "Migrating a public API from REST to gRPC is a significant architectural decision that can have lasting impacts on system performance, development processes, and how clients interact with the service. This is a durable memory as it represents a significant event and decision."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_0a1ae27188f3",
+    "sem_43354218b0bb"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe the same migration event.",
+      "semantic_ids": [
+        "sem_0a1ae27188f3",
+        "sem_43354218b0bb"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:26.856030+00:00"
+}

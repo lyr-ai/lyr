@@ -1,0 +1,93 @@
+{
+  "judgment_id": "jdg_01KZ0JZBBM64MWZJKQZV5R4RP9",
+  "judgment_fingerprint": "jfp_d7ca2aabeda7",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The decision to standardize on Postgres for new services was reversed in favor of DynamoDB after load testing.",
+    "kind": "decision",
+    "evidence": [
+      "sem_7586e57c4661",
+      "sem_9c8744312a55"
+    ],
+    "target_identity": "idn_44749bc8d33f",
+    "superseded": [],
+    "rationale": "The two events combined highlight a significant decision change that reflects an outcome of evaluation, making it a durable knowledge worth keeping.",
+    "counter_evidence": "The initial decision was not stable and has been explicitly reversed.",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_86385f914fdf",
+    "identity": "idn_44749bc8d33f",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The decision to standardize on Postgres for new services was reversed in favor of DynamoDB after load testing.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\"records\": [0, 1], \"same_observation\": false, \"note\": \"Event 0 was reversed by event 1.\"}\n  ],\n  \"rationale\": \"The two events combined highlight a significant decision change that reflects an outcome of evaluation, making it a durable knowledge worth keeping.\",\n  \"counter_evidence\": \"The initial decision was not stable and has been explicitly reversed.\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The decision to standardize on Postgres for new services was reversed in favor of DynamoDB after load testing.",
+    "kind": "decision",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": false,
+        "note": "Event 0 was reversed by event 1."
+      }
+    ],
+    "rationale": "The two events combined highlight a significant decision change that reflects an outcome of evaluation, making it a durable knowledge worth keeping.",
+    "counter_evidence": "The initial decision was not stable and has been explicitly reversed.",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The decision to standardize on a specific database technology for new services represents a significant and durable change in strategic direction, reflecting long-term architectural planning.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The decision to standardize on a specific database technology for new services represents a significant and durable change in strategic direction, reflecting long-term architectural planning.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The decision to standardize on a specific database technology for new services represents a significant and durable change in strategic direction, reflecting long-term architectural planning."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_9c8744312a55",
+    "sem_7586e57c4661"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": false,
+      "note": "Event 0 was reversed by event 1.",
+      "semantic_ids": [
+        "sem_9c8744312a55",
+        "sem_7586e57c4661"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:55.124602+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "judgment_id": "jdg_01KZ0K018EB0MXYVZV680G596V",
+  "judgment_fingerprint": "jfp_49f426752adb",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Cloud segment revenue grew 31% year over year in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      "sem_26cb02f56644"
+    ],
+    "target_identity": "idn_8db38af033a4",
+    "superseded": [],
+    "rationale": "The growth of cloud segment revenue by 31% year over year in Q2 2025 is a significant fact that can be considered a durable piece of knowledge worth retaining.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "NO_OP",
+    "node_id": null,
+    "identity": "idn_8db38af033a4",
+    "version": null,
+    "rejection_reason": "verifier REJECT: The revenue growth figure for a specific quarterly period is a routine financial metric. While it may be significant in the short-term for business decisions, it does not constitute a lasting lesson or persistent pattern that warrants long-term memory retention."
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Cloud segment revenue grew 31% year over year in Q2 2025.\",\n  \"kind\": \"fact\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": true,\n      \"note\": \"The record describes a specific growth in cloud segment revenue for Q2 2025.\"\n    }\n  ],\n  \"rationale\": \"The growth of cloud segment revenue by 31% year over year in Q2 2025 is a significant fact that can be considered a durable piece of knowledge worth retaining.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Cloud segment revenue grew 31% year over year in Q2 2025.",
+    "kind": "fact",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": true,
+        "note": "The record describes a specific growth in cloud segment revenue for Q2 2025."
+      }
+    ],
+    "rationale": "The growth of cloud segment revenue by 31% year over year in Q2 2025 is a significant fact that can be considered a durable piece of knowledge worth retaining.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "REJECT",
+    "status": "SUCCESS",
+    "rationale": "The revenue growth figure for a specific quarterly period is a routine financial metric. While it may be significant in the short-term for business decisions, it does not constitute a lasting lesson or persistent pattern that warrants long-term memory retention.",
+    "confidence": 0.9,
+    "raw_completion": "{\"verdict\": \"REJECT\", \"confidence\": 0.9, \"reason\": \"The revenue growth figure for a specific quarterly period is a routine financial metric. While it may be significant in the short-term for business decisions, it does not constitute a lasting lesson or persistent pattern that warrants long-term memory retention.\"}",
+    "parsed_payload": {
+      "verdict": "REJECT",
+      "confidence": 0.9,
+      "reason": "The revenue growth figure for a specific quarterly period is a routine financial metric. While it may be significant in the short-term for business decisions, it does not constitute a lasting lesson or persistent pattern that warrants long-term memory retention."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_26cb02f56644"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": true,
+      "note": "The record describes a specific growth in cloud segment revenue for Q2 2025.",
+      "semantic_ids": [
+        "sem_26cb02f56644"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:17.550333+00:00"
+}

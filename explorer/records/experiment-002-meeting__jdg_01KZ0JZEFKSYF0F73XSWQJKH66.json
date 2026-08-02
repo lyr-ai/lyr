@@ -1,0 +1,96 @@
+{
+  "judgment_id": "jdg_01KZ0JZEFKSYF0F73XSWQJKH66",
+  "judgment_fingerprint": "jfp_4526c187dbcf",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Flaky CI on the payments suite is a recurring release blocker.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_83eb160ea10c",
+      "sem_95b50a2abc3b",
+      "sem_e108a5410ed5"
+    ],
+    "target_identity": "idn_8f468e5878fd",
+    "superseded": [],
+    "rationale": "The consistent theme across multiple records indicates that issues with CI for the payments suite repeatedly block releases, suggesting a problematic pattern worth noting.",
+    "counter_evidence": "",
+    "confidence": 0.85
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_1452e0789bed",
+    "identity": "idn_8f468e5878fd",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Flaky CI on the payments suite is a recurring release blocker.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records 0 and 1 describe the same event of CI flakiness blocking the release.\"\n    }\n  ],\n  \"rationale\": \"The consistent theme across multiple records indicates that issues with CI for the payments suite repeatedly block releases, suggesting a problematic pattern worth noting.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.85\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Flaky CI on the payments suite is a recurring release blocker.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records 0 and 1 describe the same event of CI flakiness blocking the release."
+      }
+    ],
+    "rationale": "The consistent theme across multiple records indicates that issues with CI for the payments suite repeatedly block releases, suggesting a problematic pattern worth noting.",
+    "counter_evidence": "",
+    "confidence": 0.85
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The statement identifies a persistent pattern where flaky CI on the payments suite acts as a recurring release blocker, suggesting a significant and lasting issue that impacts the release process.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The statement identifies a persistent pattern where flaky CI on the payments suite acts as a recurring release blocker, suggesting a significant and lasting issue that impacts the release process.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The statement identifies a persistent pattern where flaky CI on the payments suite acts as a recurring release blocker, suggesting a significant and lasting issue that impacts the release process."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_83eb160ea10c",
+    "sem_e108a5410ed5",
+    "sem_95b50a2abc3b"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records 0 and 1 describe the same event of CI flakiness blocking the release.",
+      "semantic_ids": [
+        "sem_83eb160ea10c",
+        "sem_e108a5410ed5"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:58.323752+00:00"
+}

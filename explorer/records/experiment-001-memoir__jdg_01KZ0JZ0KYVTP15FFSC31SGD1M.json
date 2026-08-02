@@ -1,0 +1,93 @@
+{
+  "judgment_id": "jdg_01KZ0JZ0KYVTP15FFSC31SGD1M",
+  "judgment_fingerprint": "jfp_46e765732fc3",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Drinking a cup of black coffee is a part of her morning ritual before writing.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_39f09e9caf29",
+      "sem_53d8f38f6432"
+    ],
+    "target_identity": "idn_e5c6c387513a",
+    "superseded": [],
+    "rationale": "The pattern of drinking black coffee every morning before writing is reinforced by both new records and reflects a consistent behavior or ritual for her.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "NO_OP",
+    "node_id": null,
+    "identity": "idn_e5c6c387513a",
+    "version": null,
+    "rejection_reason": "verifier REJECT: The drinking of black coffee as a part of a morning ritual is a routine observation and does not constitute a significant long-term pattern or fact worth retaining as durable memory."
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Drinking a cup of black coffee is a part of her morning ritual before writing.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\"records\": [0, 1], \"same_observation\": true, \"note\": \"Both records describe the recurring pattern of drinking coffee in the morning before writing.\"}\n  ],\n  \"rationale\": \"The pattern of drinking black coffee every morning before writing is reinforced by both new records and reflects a consistent behavior or ritual for her.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Drinking a cup of black coffee is a part of her morning ritual before writing.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe the recurring pattern of drinking coffee in the morning before writing."
+      }
+    ],
+    "rationale": "The pattern of drinking black coffee every morning before writing is reinforced by both new records and reflects a consistent behavior or ritual for her.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "verification": {
+    "decision": "REJECT",
+    "status": "SUCCESS",
+    "rationale": "The drinking of black coffee as a part of a morning ritual is a routine observation and does not constitute a significant long-term pattern or fact worth retaining as durable memory.",
+    "confidence": 0.8,
+    "raw_completion": "```json\n{\"verdict\": \"REJECT\", \"confidence\": 0.8, \"reason\": \"The drinking of black coffee as a part of a morning ritual is a routine observation and does not constitute a significant long-term pattern or fact worth retaining as durable memory.\"}\n```",
+    "parsed_payload": {
+      "verdict": "REJECT",
+      "confidence": 0.8,
+      "reason": "The drinking of black coffee as a part of a morning ritual is a routine observation and does not constitute a significant long-term pattern or fact worth retaining as durable memory."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_53d8f38f6432",
+    "sem_39f09e9caf29"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe the recurring pattern of drinking coffee in the morning before writing.",
+      "semantic_ids": [
+        "sem_53d8f38f6432",
+        "sem_39f09e9caf29"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:44.127270+00:00"
+}

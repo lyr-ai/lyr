@@ -1,0 +1,70 @@
+{
+  "judgment_id": "jdg_01KZ0JZG3KJ2XHPP1HER4QCPM6",
+  "judgment_fingerprint": "jfp_9424cdaf7b1d",
+  "model_intent": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "lesson",
+    "evidence": [],
+    "target_identity": null,
+    "superseded": [],
+    "rationale": "The two records describe a trivial and recurring event that does not warrant a durable memory. There is no indication of significance leading to a lesson, decision, or pattern worth preserving long-term.",
+    "counter_evidence": "The recurrence does not imply significance or change.",
+    "confidence": 0.1
+  },
+  "final_engine_action": {
+    "operation": "NO_OP",
+    "node_id": null,
+    "identity": null,
+    "version": null,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"NO_OP\",\n  \"statement\": \"\",\n  \"kind\": \"\",\n  \"evidence\": [],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": true,\n      \"note\": \"Both records describe people bringing donuts to a recurring Friday standup.\"\n    }\n  ],\n  \"rationale\": \"The two records describe a trivial and recurring event that does not warrant a durable memory. There is no indication of significance leading to a lesson, decision, or pattern worth preserving long-term.\",\n  \"counter_evidence\": \"The recurrence does not imply significance or change.\",\n  \"confidence\": 0.1\n}\n```",
+  "parsed_payload": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "",
+    "evidence": [],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": true,
+        "note": "Both records describe people bringing donuts to a recurring Friday standup."
+      }
+    ],
+    "rationale": "The two records describe a trivial and recurring event that does not warrant a durable memory. There is no indication of significance leading to a lesson, decision, or pattern worth preserving long-term.",
+    "counter_evidence": "The recurrence does not imply significance or change.",
+    "confidence": 0.1
+  },
+  "verification": null,
+  "candidate_semantic_ids": [
+    "sem_fb1ea27dde9f",
+    "sem_e7c904c40bfe"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": true,
+      "note": "Both records describe people bringing donuts to a recurring Friday standup.",
+      "semantic_ids": [
+        "sem_fb1ea27dde9f",
+        "sem_e7c904c40bfe"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:59.987152+00:00"
+}

@@ -1,0 +1,87 @@
+{
+  "judgment_id": "jdg_01KZ0JZKHVSQZFXBFX006BC9TE",
+  "judgment_fingerprint": "jfp_e7d297570b76",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The organization has hired a second Site Reliability Engineer (SRE) to handle the on-call rotation, suggesting a growth in the team or an increased focus on operational reliability.",
+    "kind": "decision",
+    "evidence": [
+      "sem_d3c115a1a042"
+    ],
+    "target_identity": "idn_cf116ac835b7",
+    "superseded": [],
+    "rationale": "The hiring of additional personnel, especially for specialized roles such as SRE, usually reflects a strategic decision about team size or focus. This decision can have long-term implications for the team's operation and capabilities.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_6822f6df2d2a",
+    "identity": "idn_cf116ac835b7",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The organization has hired a second Site Reliability Engineer (SRE) to handle the on-call rotation, suggesting a growth in the team or an increased focus on operational reliability.\",\n  \"kind\": \"decision\",\n  \"evidence\": [0],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0],\n      \"same_observation\": true,\n      \"note\": \"The hiring of a second SRE is a singular event indicating a decision to manage on-call rotation more effectively.\"\n    }\n  ],\n  \"rationale\": \"The hiring of additional personnel, especially for specialized roles such as SRE, usually reflects a strategic decision about team size or focus. This decision can have long-term implications for the team's operation and capabilities.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The organization has hired a second Site Reliability Engineer (SRE) to handle the on-call rotation, suggesting a growth in the team or an increased focus on operational reliability.",
+    "kind": "decision",
+    "evidence": [
+      0
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0
+        ],
+        "same_observation": true,
+        "note": "The hiring of a second SRE is a singular event indicating a decision to manage on-call rotation more effectively."
+      }
+    ],
+    "rationale": "The hiring of additional personnel, especially for specialized roles such as SRE, usually reflects a strategic decision about team size or focus. This decision can have long-term implications for the team's operation and capabilities.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The hiring of a second SRE is a significant decision indicating a growth in the team or an increased focus on operational reliability, which is likely to have a lasting impact on the organization's structure and priorities.",
+    "confidence": 0.8,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.8, \"reason\": \"The hiring of a second SRE is a significant decision indicating a growth in the team or an increased focus on operational reliability, which is likely to have a lasting impact on the organization's structure and priorities.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.8,
+      "reason": "The hiring of a second SRE is a significant decision indicating a growth in the team or an increased focus on operational reliability, which is likely to have a lasting impact on the organization's structure and priorities."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_d3c115a1a042"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0
+      ],
+      "same_observation": true,
+      "note": "The hiring of a second SRE is a singular event indicating a decision to manage on-call rotation more effectively.",
+      "semantic_ids": [
+        "sem_d3c115a1a042"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:03.515299+00:00"
+}

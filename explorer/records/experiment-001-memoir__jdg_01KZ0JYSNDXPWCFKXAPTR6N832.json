@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0JYSNDXPWCFKXAPTR6N832",
+  "judgment_fingerprint": "jfp_348a5f0b7077",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Consistently prioritizes family commitments over career advancement.",
+    "kind": "preference",
+    "evidence": [
+      "sem_476f94873d00",
+      "sem_85970f53784f",
+      "sem_c3518f7789be"
+    ],
+    "target_identity": "idn_4a14ecd8eaeb",
+    "superseded": [],
+    "rationale": "The pattern across multiple events indicates a strong and consistent preference for prioritizing family over career opportunities.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_8a2a95b84715",
+    "identity": "idn_4a14ecd8eaeb",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Consistently prioritizes family commitments over career advancement.\",\n  \"kind\": \"preference\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [],\n  \"rationale\": \"The pattern across multiple events indicates a strong and consistent preference for prioritizing family over career opportunities.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Consistently prioritizes family commitments over career advancement.",
+    "kind": "preference",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [],
+    "rationale": "The pattern across multiple events indicates a strong and consistent preference for prioritizing family over career opportunities.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The consistent pattern of prioritizing family commitments over career advancement is a significant and lasting preference demonstrated through multiple decisions across different life stages.",
+    "confidence": 0.95,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.95, \"reason\": \"The consistent pattern of prioritizing family commitments over career advancement is a significant and lasting preference demonstrated through multiple decisions across different life stages.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.95,
+      "reason": "The consistent pattern of prioritizing family commitments over career advancement is a significant and lasting preference demonstrated through multiple decisions across different life stages."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_c3518f7789be",
+    "sem_85970f53784f",
+    "sem_476f94873d00",
+    "sem_abb5928ecdb9"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:35:37.005736+00:00"
+}

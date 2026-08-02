@@ -1,0 +1,93 @@
+{
+  "judgment_id": "jdg_01KZ0K0GYT1YFSPF6342AJ283F",
+  "judgment_fingerprint": "jfp_09dc378b64d7",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "Implementing a Redis cache for the product catalog can lead to stale-read incidents.",
+    "kind": "lesson",
+    "evidence": [
+      "sem_01a492f02686",
+      "sem_0320eb24882e"
+    ],
+    "target_identity": "idn_d848f04310e5",
+    "superseded": [],
+    "rationale": "The sequence of events shows a clear cause-and-effect relationship, providing a lesson on the potential issues with caching mechanisms.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_81d58af477c2",
+    "identity": "idn_d848f04310e5",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"Implementing a Redis cache for the product catalog can lead to stale-read incidents.\",\n  \"kind\": \"lesson\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": false,\n      \"note\": \"The addition of a Redis cache was followed by its reversion due to issues with stale reads.\"\n    }\n  ],\n  \"rationale\": \"The sequence of events shows a clear cause-and-effect relationship, providing a lesson on the potential issues with caching mechanisms.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "Implementing a Redis cache for the product catalog can lead to stale-read incidents.",
+    "kind": "lesson",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": false,
+        "note": "The addition of a Redis cache was followed by its reversion due to issues with stale reads."
+      }
+    ],
+    "rationale": "The sequence of events shows a clear cause-and-effect relationship, providing a lesson on the potential issues with caching mechanisms.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "verification": {
+    "decision": "KEEP",
+    "status": "SUCCESS",
+    "rationale": "The proposed durable memory is a significant lesson about the potential consequences of using a Redis cache for the product catalog, specifically regarding stale-read incidents. This is a lasting lesson that can guide future decisions and implementations, making it worth retaining as long-term knowledge.",
+    "confidence": 0.9,
+    "raw_completion": "```json\n{\"verdict\": \"KEEP\", \"confidence\": 0.9, \"reason\": \"The proposed durable memory is a significant lesson about the potential consequences of using a Redis cache for the product catalog, specifically regarding stale-read incidents. This is a lasting lesson that can guide future decisions and implementations, making it worth retaining as long-term knowledge.\"}\n```",
+    "parsed_payload": {
+      "verdict": "KEEP",
+      "confidence": 0.9,
+      "reason": "The proposed durable memory is a significant lesson about the potential consequences of using a Redis cache for the product catalog, specifically regarding stale-read incidents. This is a lasting lesson that can guide future decisions and implementations, making it worth retaining as long-term knowledge."
+    },
+    "error_reason": null,
+    "model_config": {
+      "prompt_version": "durability_verifier_v1",
+      "provider": "OpenAIClient",
+      "model": "gpt-4o"
+    }
+  },
+  "candidate_semantic_ids": [
+    "sem_01a492f02686",
+    "sem_0320eb24882e"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": false,
+      "note": "The addition of a Redis cache was followed by its reversion due to issues with stale reads.",
+      "semantic_ids": [
+        "sem_01a492f02686",
+        "sem_0320eb24882e"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:33.626637+00:00"
+}

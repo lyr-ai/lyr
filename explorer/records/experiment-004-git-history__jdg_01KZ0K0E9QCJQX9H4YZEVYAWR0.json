@@ -1,0 +1,49 @@
+{
+  "judgment_id": "jdg_01KZ0K0E9QCJQX9H4YZEVYAWR0",
+  "judgment_fingerprint": "jfp_9424cdaf7b1d",
+  "model_intent": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "lesson",
+    "evidence": [],
+    "target_identity": null,
+    "superseded": [],
+    "rationale": "The version bumps from 2.3.1 to 2.3.3 represent routine and trivial changes that do not independently or collectively support a durable memory. Such events may be recurrent, but they do not convey a significant lesson, enduring pattern, or lasting fact.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "final_engine_action": {
+    "operation": "NO_OP",
+    "node_id": null,
+    "identity": null,
+    "version": null,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"NO_OP\",\n  \"statement\": \"\",\n  \"kind\": \"\",\n  \"evidence\": [],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [],\n  \"rationale\": \"The version bumps from 2.3.1 to 2.3.3 represent routine and trivial changes that do not independently or collectively support a durable memory. Such events may be recurrent, but they do not convey a significant lesson, enduring pattern, or lasting fact.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.9\n}\n```",
+  "parsed_payload": {
+    "operation": "NO_OP",
+    "statement": "",
+    "kind": "",
+    "evidence": [],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [],
+    "rationale": "The version bumps from 2.3.1 to 2.3.3 represent routine and trivial changes that do not independently or collectively support a durable memory. Such events may be recurrent, but they do not convey a significant lesson, enduring pattern, or lasting fact.",
+    "counter_evidence": "",
+    "confidence": 0.9
+  },
+  "verification": null,
+  "candidate_semantic_ids": [
+    "sem_903951ec7b13",
+    "sem_4539d2961ce6",
+    "sem_ceaff12a5e56"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T06:36:30.903460+00:00"
+}
