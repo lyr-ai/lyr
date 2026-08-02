@@ -174,6 +174,10 @@ def run_builder_mode(args, exp_dir: Path, records: list[dict], durable: list[dic
     for n in candidates:
         store.add_node(n)
 
+    if args.decompose:
+        _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag)
+        return
+
     result = JudgmentBuilder(store, client).update(semantic, candidates)
     record = result.judgment_record
 
@@ -228,6 +232,43 @@ def _make_client(args):
         )
 
 
+# ── decomposed pipeline (M3.1-B.2) ---------------------------------------
+def _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag) -> None:
+    from lyr.durable import (
+        JudgmentPipeline,
+        LLMDecomposer,
+        SingletonDecomposer,
+        WholeBatchDecomposer,
+    )
+
+    decomposer = {
+        "whole": WholeBatchDecomposer(),
+        "singleton": SingletonDecomposer(),
+        "llm": LLMDecomposer(client),
+    }[args.decompose]
+
+    results = JudgmentPipeline(store, client, decomposer).run(semantic, candidates)
+
+    runs = _runs_dir(exp_dir)
+    stamp = _stamp()
+    committed = 0
+    print(f"=== {args.experiment} — decomposed run ({tag}, decompose={args.decompose}) ===")
+    print(f"{len(semantic)} record(s) → {len(results)} judgment unit(s)")
+    for i, r in enumerate(results):
+        rec = r.judgment_record
+        (runs / f"{stamp}__judgment__{tag}__unit{i:02d}.json").write_text(
+            json.dumps(rec.to_dict(), indent=2, ensure_ascii=False)
+        )
+        node = r.updated_durable
+        if node:
+            committed += 1
+        mark = f"durable {node.identity} v{node.version}" if node else r.engine_action.operation
+        print(f"  [{i}] {rec.model_intent.operation:5} -> {r.engine_action.operation:6} | "
+              f"{rec.model_intent.statement or '(none)'}  ({mark})")
+    print(f"committed {committed} durable memory(ies) from one batch; "
+          f"wrote {len(results)} record(s) to runs/")
+
+
 # ── helpers ---------------------------------------------------------------
 
 
@@ -252,6 +293,8 @@ def main() -> None:
     ap.add_argument("--max-tokens", type=int, default=4096)
     ap.add_argument("--dry-run", action="store_true", help="prompt mode: render, call nothing")
     ap.add_argument("--builder", action="store_true", help="run JudgmentBuilder.update end to end")
+    ap.add_argument("--decompose", choices=["whole", "singleton", "llm"],
+                    help="builder mode: decompose the batch into topic units first (M3.1-B.2)")
     ap.add_argument("--canned", help="builder mode: a file with a canned model response (offline)")
     args = ap.parse_args()
     # Resolve the model default from the chosen provider.
