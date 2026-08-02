@@ -16,9 +16,13 @@ Usage:
     # Prompt only (paste into claude.ai to watch reasoning):
     python experiments/harness.py experiment-001-memoir --dry-run
 
-    # Run the builder live (needs a key + the anthropic extra):
+    # Run the builder live with Claude (needs a key + the anthropic extra):
     export ANTHROPIC_API_KEY=...
     python experiments/harness.py experiment-001-memoir --builder --model claude-opus-4-8
+
+    # ...or with OpenAI / ChatGPT (needs a key + the openai extra):
+    export OPENAI_API_KEY=...
+    python experiments/harness.py experiment-001-memoir --builder --provider openai --model gpt-4o
 
     # Run the builder offline against a canned model response (for testing the loop):
     python experiments/harness.py experiment-001-memoir --builder --canned response.json
@@ -115,10 +119,10 @@ def run_prompt_mode(args, exp_dir: Path, records: list[dict], durable: list[dict
     prompt_path = Path(args.prompt)
     prompt = build_prompt(prompt_path.read_text(), records, durable)
 
-    live = not args.dry_run and bool(os.environ.get("ANTHROPIC_API_KEY"))
+    live = not args.dry_run and _has_key(args)
     completion: str | None = None
     if live:
-        completion = _anthropic(args).complete(prompt)
+        completion = _make_client(args).complete(prompt)
 
     runs = _runs_dir(exp_dir)
     stamp = _stamp()
@@ -137,9 +141,10 @@ def run_prompt_mode(args, exp_dir: Path, records: list[dict], durable: list[dict
     out.write_text("\n".join(body))
     print(f"wrote {out.relative_to(HERE.parent)}")
     if not live:
-        reason = "--dry-run" if args.dry_run else "no ANTHROPIC_API_KEY"
-        print(f"({reason}) — rendered prompt only. Paste it into claude.ai to watch the")
-        print("reasoning, or set ANTHROPIC_API_KEY and re-run for a captured completion.")
+        env = _PROVIDERS[args.provider]["env"]
+        reason = "--dry-run" if args.dry_run else f"no {env}"
+        print(f"({reason}) — rendered prompt only. Paste it into a chat UI to watch the")
+        print(f"reasoning, or set {env} and re-run for a captured completion.")
 
 
 def run_builder_mode(args, exp_dir: Path, records: list[dict], durable: list[dict]) -> None:
@@ -150,12 +155,14 @@ def run_builder_mode(args, exp_dir: Path, records: list[dict], durable: list[dic
         from lyr.llm.fake import FakeClient
         client = FakeClient(Path(args.canned).read_text())
         tag = "CANNED"
-    elif os.environ.get("ANTHROPIC_API_KEY"):
-        client = _anthropic(args)
+    elif _has_key(args):
+        client = _make_client(args)
         tag = args.model
     else:
+        prov = _PROVIDERS[args.provider]
         raise SystemExit(
-            "builder mode needs a model: set ANTHROPIC_API_KEY (+ pip install -e '.[anthropic]')\n"
+            f"builder mode needs a model: set {prov['env']} "
+            f"(+ pip install -e '.[{prov['extra']}]')\n"
             "or pass --canned <file> with a model response to run the loop offline."
         )
 
@@ -193,13 +200,35 @@ def run_builder_mode(args, exp_dir: Path, records: list[dict], durable: list[dic
     print(f"wrote {(runs / f'{stamp}__judgment__{tag}.json').relative_to(HERE.parent)}")
 
 
-# ── helpers ---------------------------------------------------------------
-def _anthropic(args):
+# ── providers -------------------------------------------------------------
+# One row per LLM provider: which env var holds the key, which pip extra installs
+# the SDK, and the default model. Adding a provider is one entry + one client class.
+_PROVIDERS = {
+    "anthropic": {"env": "ANTHROPIC_API_KEY", "extra": "anthropic", "default_model": "claude-opus-4-8"},
+    "openai": {"env": "OPENAI_API_KEY", "extra": "openai", "default_model": "gpt-4o"},
+}
+
+
+def _has_key(args) -> bool:
+    return bool(os.environ.get(_PROVIDERS[args.provider]["env"]))
+
+
+def _make_client(args):
+    prov = _PROVIDERS[args.provider]
     try:
+        if args.provider == "openai":
+            from lyr.llm.openai import OpenAIClient
+            return OpenAIClient(model=args.model, max_tokens=args.max_tokens)
         from lyr.llm.anthropic import AnthropicClient
+        return AnthropicClient(model=args.model, max_tokens=args.max_tokens)
     except ImportError as e:
-        raise SystemExit(f"live mode needs the anthropic extra (pip install -e '.[anthropic]'): {e}")
-    return AnthropicClient(model=args.model, max_tokens=args.max_tokens)
+        raise SystemExit(
+            f"live mode needs the {args.provider} extra "
+            f"(pip install -e '.[{prov['extra']}]'): {e}"
+        )
+
+
+# ── helpers ---------------------------------------------------------------
 
 
 def _runs_dir(exp_dir: Path) -> Path:
@@ -216,12 +245,17 @@ def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("experiment", help="experiment dir name under experiments/")
     ap.add_argument("--prompt", default=str(DEFAULT_PROMPT), help="prompt template file")
-    ap.add_argument("--model", default="claude-opus-4-8")
+    ap.add_argument("--provider", choices=sorted(_PROVIDERS), default="anthropic",
+                    help="LLM provider (default: anthropic)")
+    ap.add_argument("--model", default=None,
+                    help="model id (default: the provider's default model)")
     ap.add_argument("--max-tokens", type=int, default=4096)
     ap.add_argument("--dry-run", action="store_true", help="prompt mode: render, call nothing")
     ap.add_argument("--builder", action="store_true", help="run JudgmentBuilder.update end to end")
     ap.add_argument("--canned", help="builder mode: a file with a canned model response (offline)")
     args = ap.parse_args()
+    # Resolve the model default from the chosen provider.
+    args.model = args.model or _PROVIDERS[args.provider]["default_model"]
 
     exp_dir = HERE / args.experiment
     if not exp_dir.is_dir():

@@ -54,7 +54,8 @@ the same store and provenance machinery.
 
 ```bash
 pip install -e .            # core engine, zero dependencies
-pip install -e '.[anthropic]'  # + the Anthropic-backed LLM extractor
+pip install -e '.[anthropic]'  # + the Anthropic (Claude) LLM client
+pip install -e '.[openai]'  # + the OpenAI (ChatGPT) LLM client
 pip install -e '.[test]'    # + pytest
 ```
 
@@ -81,12 +82,19 @@ for record in lyr.explain(entity):
 
 ```python
 from lyr import LYR
-from lyr.llm.anthropic import AnthropicClient
+from lyr.llm import AnthropicClient, OpenAIClient  # pick a provider
 from lyr.semantic import LLMExtractor
 
-lyr = LYR(extractor=LLMExtractor(AnthropicClient()))  # defaults to Claude Opus 4.8
+lyr = LYR(extractor=LLMExtractor(AnthropicClient()))       # Claude (defaults to Opus 4.8)
+# lyr = LYR(extractor=LLMExtractor(OpenAIClient()))        # ...or ChatGPT (defaults to gpt-4o)
 lyr.ingest(open("design-doc.md").read(), origin="design-doc")
 ```
+
+Both clients implement the same one-method `LLMClient` seam
+(`complete(prompt) -> str`), so anything that takes a client — `LLMExtractor`, the
+durable `JudgmentBuilder`, the experiment harness — works with either provider
+unchanged. `AnthropicClient` reads `ANTHROPIC_API_KEY`; `OpenAIClient` reads
+`OPENAI_API_KEY`.
 
 The extractor is a plug point: `RuleBasedExtractor` (deterministic, zero-dep) and
 `LLMExtractor` (any `LLMClient`) both just emit `ExtractedNode`s. Swap the
