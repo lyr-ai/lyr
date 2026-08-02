@@ -46,8 +46,17 @@ facts to the source paragraphs that justify them.
 
 The engine ships the **Source (M1)**, **Semantic (M2)**, and **Durable (M3)**
 layers, with provenance tracing in **both** directions — downward (any node → its
-source evidence) and upward (a record → the durable memories it supports). The
-Cognitive layer (M4) is already representable in the model and slots in behind
+source evidence) and upward (a record → the durable memories it supports).
+
+The **Durable layer is now model-driven (M3.1)**: an LLM proposes durable knowledge,
+a **decomposition** stage splits a batch into one topic per judgment, and a
+**durability verifier** vetoes what should not persist — while the engine keeps
+committing identity, history, and provenance. This was built as a *research
+program*: each stage removed one measured failure mode and exposed the next
+(coverage → judgment), evaluated against a frozen benchmark. See the write-up in
+[`docs/M3.1-research-arc.md`](docs/M3.1-research-arc.md).
+
+The Cognitive layer (M4) is already representable in the model and slots in behind
 the same store and provenance machinery.
 
 ## Install
@@ -163,10 +172,10 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
 |---|---|
 | `lyr.ingestion` | heterogeneous experiences → normalized, immutable Source Records (M1) |
 | `lyr.semantic` | Source Records → entities/events/relationships, with identity + versioning (M2) |
-| `lyr.durable` | long-term knowledge maintenance; ADD/UPDATE/MERGE/NO_OP lifecycle; pluggable policy (deterministic recurrence baseline); evaluation harness (M3) |
+| `lyr.durable` | long-term knowledge maintenance (M3/M3.1): ADD/UPDATE/MERGE/NO_OP lifecycle; recurrence baseline; **`JudgmentBuilder`** (one proposal → immutable `JudgmentRecord`); **decomposition** (batch → one topic per judgment); **durability verifier** (KEEP/REJECT/UNSURE gate) |
 | `lyr.provenance` | expand any node down to source, or find what a record supports upward |
 | `lyr.store` | pluggable persistence (`InMemoryStore` in v0.1) |
-| `lyr.llm` | one-method `LLMClient` seam (`AnthropicClient`, `FakeClient`) |
+| `lyr.llm` | one-method `LLMClient` seam (`AnthropicClient`, `OpenAIClient`, `FakeClient`) |
 | `lyr.engine` | the `LYR` facade tying it together |
 
 ## Roadmap
@@ -174,8 +183,13 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
 - **M1 — Source Layer** ✅ ingest, normalize, immutable records
 - **M2 — Semantic Layer** ✅ entities/events/relationships, provenance, versioning
 - **M3 — Durable Layer** ✅ substrate: identity/history/provenance + ADD/UPDATE/MERGE/NO_OP lifecycle; bidirectional provenance; deterministic recurrence *baseline*; evaluation harness
-- **M3.1 — LLM-guided consolidation** (next) evidence independence, durability judgment, decision provenance — *the* durable-layer research question
-- **M4 — Cognitive Layer** derive higher-level reasoning patterns from durable knowledge
+- **M3.1 — Model-driven durable consolidation** ✅ a completed research cycle:
+  - **B** minimal `JudgmentBuilder` (one proposal → one immutable `JudgmentRecord`); **B.1** contract hardening
+  - **E** cross-domain evaluation — falsified "one judgment per batch" (failure **F7**, candidate coverage)
+  - **B.2** **judgment decomposition** — solved F7; exposed **F4** (durability judgment)
+  - **C0/C** **durability verifier** (task frozen first) — drove benchmark false-positives to **0**; one narrow, characterized false-negative remains
+  - a frozen [`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark future verifiers re-run against
+- **M4 — Cognitive Layer** derive higher-level reasoning patterns from the now-stable durable layer
 - **M5 — Interactive Explorer** navigate layers, visualize provenance, expand to source (`explorer/`, TypeScript)
 
 ## Development
