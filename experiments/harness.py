@@ -174,11 +174,13 @@ def run_builder_mode(args, exp_dir: Path, records: list[dict], durable: list[dic
     for n in candidates:
         store.add_node(n)
 
+    verifier = _make_verifier(args, client)
+
     if args.decompose:
-        _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag)
+        _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag, verifier)
         return
 
-    result = JudgmentBuilder(store, client).update(semantic, candidates)
+    result = JudgmentBuilder(store, client, verifier=verifier).update(semantic, candidates)
     record = result.judgment_record
 
     runs = _runs_dir(exp_dir)
@@ -213,6 +215,13 @@ _PROVIDERS = {
 }
 
 
+def _make_verifier(args, client):
+    if not getattr(args, "verify", False):
+        return None
+    from lyr.durable import LLMDurabilityVerifier
+    return LLMDurabilityVerifier(client)
+
+
 def _has_key(args) -> bool:
     return bool(os.environ.get(_PROVIDERS[args.provider]["env"]))
 
@@ -233,7 +242,7 @@ def _make_client(args):
 
 
 # ── decomposed pipeline (M3.1-B.2) ---------------------------------------
-def _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag) -> None:
+def _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag, verifier=None) -> None:
     from lyr.durable import (
         JudgmentPipeline,
         LLMDecomposer,
@@ -247,7 +256,7 @@ def _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag) -> 
         "llm": LLMDecomposer(client),
     }[args.decompose]
 
-    results = JudgmentPipeline(store, client, decomposer).run(semantic, candidates)
+    results = JudgmentPipeline(store, client, decomposer, verifier=verifier).run(semantic, candidates)
 
     runs = _runs_dir(exp_dir)
     stamp = _stamp()
@@ -262,7 +271,9 @@ def _run_decomposed(args, exp_dir, store, client, semantic, candidates, tag) -> 
         node = r.updated_durable
         if node:
             committed += 1
-        mark = f"durable {node.identity} v{node.version}" if node else r.engine_action.operation
+        v = rec.verification
+        vtag = (f" [verify:{v.decision if v.status == 'SUCCESS' else 'ERROR'}]" if v else "")
+        mark = (f"durable {node.identity} v{node.version}" if node else r.engine_action.operation) + vtag
         print(f"  [{i}] {rec.model_intent.operation:5} -> {r.engine_action.operation:6} | "
               f"{rec.model_intent.statement or '(none)'}  ({mark})")
     print(f"committed {committed} durable memory(ies) from one batch; "
@@ -295,6 +306,8 @@ def main() -> None:
     ap.add_argument("--builder", action="store_true", help="run JudgmentBuilder.update end to end")
     ap.add_argument("--decompose", choices=["whole", "singleton", "llm"],
                     help="builder mode: decompose the batch into topic units first (M3.1-B.2)")
+    ap.add_argument("--verify", action="store_true",
+                    help="builder mode: gate each proposal with the durability verifier (M3.1-C)")
     ap.add_argument("--canned", help="builder mode: a file with a canned model response (offline)")
     args = ap.parse_args()
     # Resolve the model default from the chosen provider.

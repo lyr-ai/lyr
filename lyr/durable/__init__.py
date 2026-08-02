@@ -24,13 +24,26 @@ of the next design milestone.
 from .base import DURABLE_OPS, RETIRED, Consolidator, DurableProposal, is_active
 from .builder import DurableBuilder
 from .judgment import (
+    ERROR,
+    KEEP,
     REJECT,
+    SUCCESS,
+    UNSURE,
+    VERDICT_DECISIONS,
     EngineAction,
     EvidenceGroup,
     JudgmentRecord,
     JudgmentResult,
     ModelProposal,
+    Verdict,
     new_judgment_id,
+)
+from .verifier import (
+    VERIFIER_PROMPT,
+    VERIFIER_PROMPT_VERSION,
+    DurabilityVerifier,
+    LLMDurabilityVerifier,
+    ThresholdDurabilityVerifier,
 )
 from .judgment_builder import PROMPT, PROMPT_VERSION, JudgmentBuilder
 from .decomposition import (
@@ -73,4 +86,15 @@ __all__ = [
     "DECOMPOSER_PROMPT",
     "DECOMPOSER_PROMPT_VERSION",
     "JudgmentPipeline",
+    "Verdict",
+    "KEEP",
+    "UNSURE",
+    "SUCCESS",
+    "ERROR",
+    "VERDICT_DECISIONS",
+    "DurabilityVerifier",
+    "LLMDurabilityVerifier",
+    "ThresholdDurabilityVerifier",
+    "VERIFIER_PROMPT",
+    "VERIFIER_PROMPT_VERSION",
 ]

@@ -45,6 +45,14 @@ from ..models import Node
 # Engine actions that commit no durable version (in addition to base's NO_OP).
 REJECT = "REJECT"
 
+# Durability-verifier verdict axes (M3.1-C).
+#   decision — what it judged;  status — whether it judged at all.
+KEEP = "KEEP"
+UNSURE = "UNSURE"
+VERDICT_DECISIONS: tuple[str, ...] = (KEEP, REJECT, UNSURE)
+SUCCESS = "SUCCESS"
+ERROR = "ERROR"
+
 # Crockford base32 (no I, L, O, U) — the ULID alphabet.
 _CROCKFORD = "0123456789ABCDEFGHJKMNPQRSTVWXYZ"
 
@@ -126,6 +134,26 @@ class EngineAction:
 
 
 @dataclass(frozen=True)
+class Verdict:
+    """A durability verifier's judgment of one proposed durable memory (M3.1-C).
+
+    Two independent axes: ``decision`` (KEEP / REJECT / UNSURE — what it judged) and
+    ``status`` (SUCCESS / ERROR — whether it judged at all). A failed run (timeout,
+    unparseable output, illegal verdict) is ``status=ERROR`` and must never be
+    treated as a semantic UNSURE — the engine does not commit on ERROR.
+    """
+
+    decision: str
+    status: str = SUCCESS
+    rationale: str = ""
+    confidence: float | None = None
+    raw_completion: str = ""
+    parsed_payload: dict[str, Any] | None = None
+    error_reason: str | None = None
+    model_config: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass(frozen=True)
 class JudgmentRecord:
     """One immutable record of a durable judgment attempt (accepted or not).
 
@@ -139,6 +167,8 @@ class JudgmentRecord:
     final_engine_action: EngineAction
     raw_completion: str = ""
     parsed_payload: dict[str, Any] | None = None
+    # The durability verifier's verdict (M3.1-C). None when no verifier ran.
+    verification: Verdict | None = None
     candidate_semantic_ids: tuple[str, ...] = ()
     candidate_durable_identities: tuple[str, ...] = ()
     evidence_groups: tuple[EvidenceGroup, ...] = ()
