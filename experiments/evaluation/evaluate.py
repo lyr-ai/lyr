@@ -79,6 +79,20 @@ def cmd_review(args: argparse.Namespace) -> None:
             f"  python experiments/harness.py {args.experiment} --builder --model claude-opus-4-8"
         )
     record = json.loads(record_path.read_text())
+
+    # Guard: never preserve a canned/offline run as experimental evidence. If the
+    # newest run in runs/ is a FakeClient record, the live model call almost
+    # certainly failed (e.g. an API/billing error) and this is a stale leftover.
+    provider = record.get("model_config", {}).get("provider")
+    if provider == "FakeClient" and not args.allow_canned:
+        raise SystemExit(
+            f"refusing to preserve a canned (FakeClient) record as evidence:\n"
+            f"  {record_path}\n"
+            "The newest run in this experiment's runs/ is a --canned/offline run, so a\n"
+            "live model call likely failed. Fix the live run and re-collect, or pass\n"
+            "--allow-canned only if you are deliberately testing the kit."
+        )
+
     jid = record["judgment_id"]
     labels = _semantic_labels(args.experiment)
 
@@ -199,6 +213,8 @@ def main() -> None:
     r.add_argument("experiment", help="experiment dir name under experiments/")
     r.add_argument("--record", help="specific JudgmentRecord json (default: newest in runs/)")
     r.add_argument("--force", action="store_true", help="overwrite an existing review")
+    r.add_argument("--allow-canned", action="store_true",
+                   help="permit preserving a FakeClient/offline record (kit testing only)")
     r.set_defaults(func=cmd_review)
 
     s = sub.add_parser("summarize", help="tally failures + check builder-config uniformity")
