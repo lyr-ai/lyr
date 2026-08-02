@@ -7,6 +7,12 @@ instead models how knowledge *forms over time*: it continuously builds and
 maintains multiple layers of abstraction over immutable observations, while
 preserving complete provenance back to the original evidence.
 
+LYR is a **generic** long-term memory — a computational account of how an agent
+accumulates experience and stays coherent over time. Every concrete subject (a
+memoir, meeting notes, a financial report, a git history) is a **validation
+domain**, never the design center: the same representation is proven *across*
+heterogeneous domains rather than specialized to one.
+
 It answers the questions flat retrieval can't:
 
 - Why do we believe this today?
@@ -243,8 +249,8 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
   - **C0/C** **durability verifier** (task frozen first) — drove benchmark false-positives to **0**; one narrow, characterized false-negative remains
   - a frozen [`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark future verifiers re-run against
 - **Judgment Explorer** ✅ a public site ([`site/`](site/), GitHub Pages, [live](https://lyr-ai.github.io/lyr/)) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records
-- **M3.2 — Knowledge Explorer** (next) browse an entire durable knowledge space over one Book — People / Ideas / Events / Places / Themes / Lessons, progressive disclosure, navigation-only grouping; every memory drills into the Judgment Explorer. The bridge between *forming* durable knowledge and *navigating* it — and the feedback loop that will protect M4. ([design](docs/design/M3.2-knowledge-explorer.md))
-- **M4 — Cognitive Layer** derive higher-level reasoning patterns from the now-stable, now-navigable durable layer — cognition as an additional *explorable* layer, not isolated theories
+- **M3.2 — Generic Knowledge Explorer** (next) browse an entire durable knowledge space (People / Ideas / Events / Places / Themes / Lessons, progressive disclosure, navigation-only grouping; every memory drills into the Judgment Explorer). The goal is **not** "explore a book" — it is to show that *one generic representation stays explorable across fundamentally different domains* (Book · Git · Financial …) with **no core changes** — extending the genericity M3.1-E proved for the builder to the navigation layer. A Book is the first validation domain, never the design center. ([design](docs/design/M3.2-knowledge-explorer.md))
+- **M4 — Cognitive Layer** *what persistent internal state lets an intelligent system stay coherent over years?* — cognition as an additional *explorable* layer over durable knowledge, generic across domains (person / company / book / agent / record), not isolated theories
 
 ## Development
 
