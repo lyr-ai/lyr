@@ -1,0 +1,237 @@
+{
+  "benchmark": "durability-v1",
+  "verifier": "openai:gpt-4o",
+  "verifier_prompt_version": "durability_verifier_v1",
+  "run_at": "2026-08-02T06:33:20.707699+00:00",
+  "verdict_counts": {
+    "KEEP": 13,
+    "REJECT": 4,
+    "UNSURE": 0
+  },
+  "execution_errors": 0,
+  "strict": {
+    "n": 15,
+    "false_positives": 0,
+    "false_negatives": 1
+  },
+  "provisional": {
+    "n": 16,
+    "false_positives": 0,
+    "false_negatives": 1
+  },
+  "borderline_excluded": [
+    "Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.",
+    "Cloud segment revenue grew 31% year over year in Q2 2025"
+  ],
+  "builder_true_negatives_not_scored": [
+    "(NO_OP)",
+    "(NO_OP)"
+  ],
+  "detail": [
+    {
+      "domain": "experiment-001-memoir",
+      "statement": "Consistently prioritized family considerations over career opportunities.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-001-memoir",
+      "statement": "Maintained a long-distance familial relationship by writing weekly letters to her sister in Poland from Canada for thirty years.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-001-memoir",
+      "statement": "Has a morning ritual of drinking black coffee before writing.",
+      "label": "no",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "REJECT",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-001-memoir",
+      "statement": "She has a tendency to make financial decisions driven by emotion rather than based on financial literacy, such as keeping all savings in cash when young and investing a large portion of retirement funds in a risky venture later in life.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-002-meeting",
+      "statement": "The team has decided to sunset the legacy billing API by Q3 2026.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-002-meeting",
+      "statement": "The decision regarding the database for new services can be revised based on performance evidence, as shown by the shift from Postgres to DynamoDB after load testing.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-002-meeting",
+      "statement": "Flakiness in the payments CI pipeline is a recurring issue, consistently blocking releases.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-002-meeting",
+      "statement": "It is common for someone to bring donuts to the Friday standup.",
+      "label": "no",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "REJECT",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-002-meeting",
+      "statement": "Hiring a second SRE allows for an owned on-call rotation, improving workload management and potentially reducing burnout.",
+      "label": "borderline",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "Acquired competitor Northwind Analytics for approximately $2.1B in Q2 2025.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "In 2025, a company's revenue guidance fluctuated significantly, initially increased to $9.4B in Q1 and later decreased to $8.8B in Q3, due to softening enterprise demand.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "REJECT",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "The company has a pattern of raising its quarterly dividend for twelve consecutive years.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "Cloud segment revenue grew 31% year over year in Q2 2025",
+      "label": "no",
+      "confirmed": false,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "REJECT",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "",
+      "label": "no",
+      "confirmed": true,
+      "builder_op": "NO_OP",
+      "scored": false,
+      "note": "builder-rejected (not verifier-scored)"
+    },
+    {
+      "domain": "experiment-003-financial-report",
+      "statement": "The company incurred a $180M goodwill impairment on the 2019 Helios acquisition.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-004-git-history",
+      "statement": "The public API was migrated from REST to gRPC.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-004-git-history",
+      "statement": "The authentication token refresh process is susceptible to recurring issues including race conditions, early token expiry, and session-handling regressions, indicating a need for reinforced middleware.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    },
+    {
+      "domain": "experiment-004-git-history",
+      "statement": "",
+      "label": "no",
+      "confirmed": true,
+      "builder_op": "NO_OP",
+      "scored": false,
+      "note": "builder-rejected (not verifier-scored)"
+    },
+    {
+      "domain": "experiment-004-git-history",
+      "statement": "Implementing a Redis cache in front of a product catalog can lead to stale-read incidents.",
+      "label": "yes",
+      "confirmed": true,
+      "builder_op": "ADD",
+      "scored": true,
+      "status": "SUCCESS",
+      "verdict": "KEEP",
+      "error_reason": null
+    }
+  ]
+}
