@@ -1,0 +1,81 @@
+{
+  "judgment_id": "jdg_01KZ0FJSNK1FT97YCQP14WJC9F",
+  "judgment_fingerprint": "jfp_915750a50f9d",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The authentication token refresh process is susceptible to recurring issues including race conditions, early token expiry, and session-handling regressions, indicating a need for reinforced middleware.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_174e09281827",
+      "sem_37991d8c0254",
+      "sem_56fa2625e4ec"
+    ],
+    "target_identity": "idn_92a70c8ceec4",
+    "superseded": [],
+    "rationale": "The repeated issues affecting the auth token refresh process suggest a persistent pattern related to its robustness and reliability, warranting durable attention to prevent further problems.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_e329484dd754",
+    "identity": "idn_92a70c8ceec4",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The authentication token refresh process is susceptible to recurring issues including race conditions, early token expiry, and session-handling regressions, indicating a need for reinforced middleware.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1, 2],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\"records\": [0, 1, 2], \"same_observation\": false, \"note\": \"Each event points to distinct issues within the auth token management process.\"}\n  ],\n  \"rationale\": \"The repeated issues affecting the auth token refresh process suggest a persistent pattern related to its robustness and reliability, warranting durable attention to prevent further problems.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The authentication token refresh process is susceptible to recurring issues including race conditions, early token expiry, and session-handling regressions, indicating a need for reinforced middleware.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1,
+      2
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1,
+          2
+        ],
+        "same_observation": false,
+        "note": "Each event points to distinct issues within the auth token management process."
+      }
+    ],
+    "rationale": "The repeated issues affecting the auth token refresh process suggest a persistent pattern related to its robustness and reliability, warranting durable attention to prevent further problems.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "candidate_semantic_ids": [
+    "sem_174e09281827",
+    "sem_56fa2625e4ec",
+    "sem_37991d8c0254"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1,
+        2
+      ],
+      "same_observation": false,
+      "note": "Each event points to distinct issues within the auth token management process.",
+      "semantic_ids": [
+        "sem_174e09281827",
+        "sem_56fa2625e4ec",
+        "sem_37991d8c0254"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:38.068091+00:00"
+}

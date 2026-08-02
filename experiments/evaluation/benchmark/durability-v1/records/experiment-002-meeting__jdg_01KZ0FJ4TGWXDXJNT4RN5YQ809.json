@@ -1,0 +1,53 @@
+{
+  "judgment_id": "jdg_01KZ0FJ4TGWXDXJNT4RN5YQ809",
+  "judgment_fingerprint": "jfp_2829dbe9c625",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "The decision regarding the database for new services can be revised based on performance evidence, as shown by the shift from Postgres to DynamoDB after load testing.",
+    "kind": "lesson",
+    "evidence": [
+      "sem_7586e57c4661",
+      "sem_9c8744312a55"
+    ],
+    "target_identity": "idn_279688a85767",
+    "superseded": [],
+    "rationale": "The two records together demonstrate a learning experience where initial technology choices were re-evaluated due to performance testing, indicating a durable lesson on adapting decisions based on empirical evidence.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_14c1717e3a65",
+    "identity": "idn_279688a85767",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"The decision regarding the database for new services can be revised based on performance evidence, as shown by the shift from Postgres to DynamoDB after load testing.\",\n  \"kind\": \"lesson\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [],\n  \"rationale\": \"The two records together demonstrate a learning experience where initial technology choices were re-evaluated due to performance testing, indicating a durable lesson on adapting decisions based on empirical evidence.\",\n  \"counter_evidence\": \"\",\n  \"confidence\": 0.8\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "The decision regarding the database for new services can be revised based on performance evidence, as shown by the shift from Postgres to DynamoDB after load testing.",
+    "kind": "lesson",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [],
+    "rationale": "The two records together demonstrate a learning experience where initial technology choices were re-evaluated due to performance testing, indicating a durable lesson on adapting decisions based on empirical evidence.",
+    "counter_evidence": "",
+    "confidence": 0.8
+  },
+  "candidate_semantic_ids": [
+    "sem_9c8744312a55",
+    "sem_7586e57c4661"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:16.720914+00:00"
+}

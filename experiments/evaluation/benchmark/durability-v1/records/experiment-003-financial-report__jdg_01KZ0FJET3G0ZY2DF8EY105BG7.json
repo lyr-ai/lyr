@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0FJET3G0ZY2DF8EY105BG7",
+  "judgment_fingerprint": "jfp_ce98e7b0ce0e",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "In 2025, a company's revenue guidance fluctuated significantly, initially increased to $9.4B in Q1 and later decreased to $8.8B in Q3, due to softening enterprise demand.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_3bbe58f8d9cb",
+      "sem_9e3282b3daf3"
+    ],
+    "target_identity": "idn_011c9047d3bf",
+    "superseded": [],
+    "rationale": "The changes in revenue guidance within the same year indicate a significant pattern of financial forecast adjustments, making it a durable observation.",
+    "counter_evidence": "The pattern may only be relevant for the specific context of 2025.",
+    "confidence": 0.85
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_749b0977ad5b",
+    "identity": "idn_011c9047d3bf",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"In 2025, a company's revenue guidance fluctuated significantly, initially increased to $9.4B in Q1 and later decreased to $8.8B in Q3, due to softening enterprise demand.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [\n    {\n      \"records\": [0, 1],\n      \"same_observation\": false,\n      \"note\": \"These records together show a pattern of fluctuating revenue guidance in 2025.\"\n    }\n  ],\n  \"rationale\": \"The changes in revenue guidance within the same year indicate a significant pattern of financial forecast adjustments, making it a durable observation.\",\n  \"counter_evidence\": \"The pattern may only be relevant for the specific context of 2025.\",\n  \"confidence\": 0.85\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "In 2025, a company's revenue guidance fluctuated significantly, initially increased to $9.4B in Q1 and later decreased to $8.8B in Q3, due to softening enterprise demand.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": false,
+        "note": "These records together show a pattern of fluctuating revenue guidance in 2025."
+      }
+    ],
+    "rationale": "The changes in revenue guidance within the same year indicate a significant pattern of financial forecast adjustments, making it a durable observation.",
+    "counter_evidence": "The pattern may only be relevant for the specific context of 2025.",
+    "confidence": 0.85
+  },
+  "candidate_semantic_ids": [
+    "sem_3bbe58f8d9cb",
+    "sem_9e3282b3daf3"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": false,
+      "note": "These records together show a pattern of fluctuating revenue guidance in 2025.",
+      "semantic_ids": [
+        "sem_3bbe58f8d9cb",
+        "sem_9e3282b3daf3"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:26.947409+00:00"
+}

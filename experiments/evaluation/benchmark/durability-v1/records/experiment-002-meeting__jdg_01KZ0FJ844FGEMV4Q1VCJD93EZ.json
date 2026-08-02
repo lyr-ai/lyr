@@ -1,0 +1,75 @@
+{
+  "judgment_id": "jdg_01KZ0FJ844FGEMV4Q1VCJD93EZ",
+  "judgment_fingerprint": "jfp_cd2363978ac4",
+  "model_intent": {
+    "operation": "ADD",
+    "statement": "It is common for someone to bring donuts to the Friday standup.",
+    "kind": "pattern",
+    "evidence": [
+      "sem_e7c904c40bfe",
+      "sem_fb1ea27dde9f"
+    ],
+    "target_identity": "idn_5f2771a4f497",
+    "superseded": [],
+    "rationale": "The pattern of bringing donuts to the Friday standup is evidenced by two independent occurrences, suggesting it might be a recurring activity.",
+    "counter_evidence": "This pattern is suggested by only two instances and may not be sustained in the future.",
+    "confidence": 0.6
+  },
+  "final_engine_action": {
+    "operation": "ADD",
+    "node_id": "dur_82531fcb0e68",
+    "identity": "idn_5f2771a4f497",
+    "version": 1,
+    "rejection_reason": null
+  },
+  "raw_completion": "```json\n{\n  \"operation\": \"ADD\",\n  \"statement\": \"It is common for someone to bring donuts to the Friday standup.\",\n  \"kind\": \"pattern\",\n  \"evidence\": [0, 1],\n  \"target\": null,\n  \"merge\": [],\n  \"evidence_groups\": [{\"records\": [0, 1], \"same_observation\": false, \"note\": \"Both events independently show donuts being brought to the Friday standup.\"}],\n  \"rationale\": \"The pattern of bringing donuts to the Friday standup is evidenced by two independent occurrences, suggesting it might be a recurring activity.\",\n  \"counter_evidence\": \"This pattern is suggested by only two instances and may not be sustained in the future.\",\n  \"confidence\": 0.6\n}\n```",
+  "parsed_payload": {
+    "operation": "ADD",
+    "statement": "It is common for someone to bring donuts to the Friday standup.",
+    "kind": "pattern",
+    "evidence": [
+      0,
+      1
+    ],
+    "target": null,
+    "merge": [],
+    "evidence_groups": [
+      {
+        "records": [
+          0,
+          1
+        ],
+        "same_observation": false,
+        "note": "Both events independently show donuts being brought to the Friday standup."
+      }
+    ],
+    "rationale": "The pattern of bringing donuts to the Friday standup is evidenced by two independent occurrences, suggesting it might be a recurring activity.",
+    "counter_evidence": "This pattern is suggested by only two instances and may not be sustained in the future.",
+    "confidence": 0.6
+  },
+  "candidate_semantic_ids": [
+    "sem_fb1ea27dde9f",
+    "sem_e7c904c40bfe"
+  ],
+  "candidate_durable_identities": [],
+  "evidence_groups": [
+    {
+      "records": [
+        0,
+        1
+      ],
+      "same_observation": false,
+      "note": "Both events independently show donuts being brought to the Friday standup.",
+      "semantic_ids": [
+        "sem_fb1ea27dde9f",
+        "sem_e7c904c40bfe"
+      ]
+    }
+  ],
+  "model_config": {
+    "prompt_version": "durable_builder_v1",
+    "provider": "OpenAIClient",
+    "model": "gpt-4o"
+  },
+  "created_at": "2026-08-02T05:36:20.101157+00:00"
+}

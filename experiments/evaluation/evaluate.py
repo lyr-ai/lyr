@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import glob
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -27,6 +28,7 @@ HERE = Path(__file__).resolve().parent
 EXPERIMENTS = HERE.parent
 RECORDS = HERE / "records"
 REVIEWS = HERE / "reviews"
+BENCHMARK = HERE / "benchmark"
 
 # The evaluation vocabulary (design §7, §8) — kept here so a review is self-describing.
 DIMENSIONS = [
@@ -144,6 +146,65 @@ def cmd_review(args: argparse.Namespace) -> None:
           "evaluate.py summarize")
 
 
+# ── preserve (decomposed run → durability benchmark) ---------------------
+def _newest_decomposed_run(experiment: str) -> list[str]:
+    """Unit record files of the newest decomposed run (…__unitNN.json), in order."""
+    files = glob.glob(str(EXPERIMENTS / experiment / "runs" / "*__unit*.json"))
+    by_stamp: dict[str, list[str]] = {}
+    for f in files:
+        stamp = os.path.basename(f).split("__", 1)[0]
+        by_stamp.setdefault(stamp, []).append(f)
+    if not by_stamp:
+        return []
+    return sorted(by_stamp[max(by_stamp)])
+
+
+def cmd_preserve(args: argparse.Namespace) -> None:
+    """Preserve a decomposed run's records as durability-benchmark cases.
+
+    Each proposed durable memory (one JudgmentRecord per topic unit) becomes a
+    benchmark case with a durability label a Verifier can later be scored against.
+    """
+    unit_files = _newest_decomposed_run(args.experiment)
+    if not unit_files:
+        raise SystemExit(
+            f"no decomposed run (…__unitNN.json) in {args.experiment}/runs.\n"
+            f"  python experiments/harness.py {args.experiment} --builder "
+            f"--provider openai --model gpt-4o --decompose llm"
+        )
+
+    bench = BENCHMARK / args.benchmark
+    recdir = bench / "records"
+    recdir.mkdir(parents=True, exist_ok=True)
+    labels_path = bench / "labels.json"
+    doc = json.loads(labels_path.read_text()) if labels_path.exists() else {"benchmark": args.benchmark, "cases": []}
+    cases = doc["cases"]
+    seen = {c["judgment_id"] for c in cases}
+
+    preserved = 0
+    for f in unit_files:
+        rec = json.loads(Path(f).read_text())
+        if rec.get("model_config", {}).get("provider") == "FakeClient" and not args.allow_canned:
+            raise SystemExit(f"refusing to preserve a canned (FakeClient) record: {f}")
+        jid = rec["judgment_id"]
+        (recdir / f"{args.experiment}__{jid}.json").write_text(json.dumps(rec, indent=2, ensure_ascii=False))
+        preserved += 1
+        if jid not in seen:
+            intent = rec["model_intent"]
+            cases.append({
+                "judgment_id": jid,
+                "domain": args.experiment,
+                "operation": rec["final_engine_action"]["operation"],
+                "statement": intent["statement"],
+                "kind": intent["kind"],
+                "deserves_persistence": "",   # yes | no | borderline  (fill in)
+                "note": "",
+            })
+            seen.add(jid)
+    labels_path.write_text(json.dumps(doc, indent=2, ensure_ascii=False))
+    print(f"{args.experiment}: preserved {preserved} record(s) → {recdir.relative_to(EXPERIMENTS.parent)}")
+
+
 # ── summarize ------------------------------------------------------------
 def cmd_summarize(args: argparse.Namespace) -> None:
     reviews = [json.loads(Path(p).read_text()) for p in sorted(glob.glob(str(REVIEWS / "*.json")))]
@@ -216,6 +277,12 @@ def main() -> None:
     r.add_argument("--allow-canned", action="store_true",
                    help="permit preserving a FakeClient/offline record (kit testing only)")
     r.set_defaults(func=cmd_review)
+
+    p = sub.add_parser("preserve", help="preserve a decomposed run as durability-benchmark cases")
+    p.add_argument("experiment", help="experiment dir name under experiments/")
+    p.add_argument("--benchmark", default="durability-v1", help="benchmark name (default: durability-v1)")
+    p.add_argument("--allow-canned", action="store_true", help="permit FakeClient records (testing only)")
+    p.set_defaults(func=cmd_preserve)
 
     s = sub.add_parser("summarize", help="tally failures + check builder-config uniformity")
     s.set_defaults(func=cmd_summarize)
