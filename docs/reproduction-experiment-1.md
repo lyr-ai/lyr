@@ -147,3 +147,45 @@ context — a strong but not identical proxy for human first-time readers. It re
 authors' shared context (the thing that makes self-assessment unreliable) but does not remove
 model-shared priors. A human execution remains the stronger version of Phase 1 and is not
 replaced by this run.
+
+---
+
+## Re-run against the patched note
+
+After patching §3/§4 (closure premise `A₀`, the `F`-split on "caused", the causal bridge
+`A_cause`), the same experiment was re-run: three fresh independent executors, packet
+reconstructed from the *patched* definitions (now including `F` and the closure rule) and the
+patched example inputs, committed answers again withheld.
+
+**Numerical reproduction: exact, 3/3.** Every executor reproduced the committed patched
+results, including the parts most likely to diverge:
+
+| quantity | reproduced? |
+|---|---|
+| Ex A `C(r)`, `Q₁: {yes,no}→{yes}`, `Q₂: {fear,duty,social}` | ✓ 3/3 |
+| Ex B `C(r)^{f_fail}` (2), `C(r)^{f_nofail}` (3) | ✓ 3/3 |
+| Ex B `c₁`: `f_fail→{yes}`, `f_nofail→{yes,no}`, F-robust `{yes,no}` | ✓ 3/3 |
+| Ex B `c₂`+`A_cause`: F-robust `{yes}` | ✓ 3/3 |
+
+The first run's divergence at `(h_notX, m_censored)` is **gone** — all three now resolve it
+identically through the `F`-split. The three patches did what they were meant to.
+
+**Invention list: not yet empty.** The re-run surfaced two residual items and one artifact:
+
+1. **[real, new] Example B had no closure premise.** The patched §1 rule permits `incompatible`
+   only under a *stated* closure premise; §3 got `A₀`, but §4's `✗` cells leaned on reading the
+   `m`-definitions *as* closure. 2/3 executors flagged this — the `A₀` patch to §3 is precisely
+   what made the missing B-side premise visible. **Fixed:** added `A₀ᴮ` to §4.
+2. **[real, minor] `A_schema` under-specified.** "IDs assigned consecutively" does not by itself
+   force "a call ran at 3"; 3/3 sharpened it to "assigned to each initiated call ⟹ a gap is a
+   deleted call." **Fixed:** `A_schema` now states this.
+3. **[artifact, not a note defect] content of `A₁`.** The re-run packet withheld `A₁`'s
+   propositional content (asked executors to *name* the commitment `c₁` needs); the committed
+   §3 in fact states `A₁` in full. 3/3 re-authored the same bridge (stylometry⟹framing) — a
+   flaw in packet construction, not the note. A faithful packet would supply it.
+
+**Status.** Numerical reproduction is solved; the Phase-1 gate (empty invention list) is not
+yet met, but the two real residuals are closed and the third is a packet fix. A third,
+faithful-packet re-run (supplying `A₁`'s content, as the note does) is the remaining check
+before Phase 2. Recorded honestly: two rounds in, the note reproduces its numbers in strangers'
+hands, and each round has converted a tacit authorial premise into a written one.

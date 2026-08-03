@@ -134,7 +134,14 @@ pattern persist?") would be needed — and the diary may or may not contain it.
 **Record `r`:** self-log with tool-call IDs `[1, 2, 4]`, terminal state = failure, no
 `deploy` call (`X`) visible.
 
-**`H` × `M`**:
+**Closure premise `A₀ᴮ`:** the log is generated *only* by (which calls ran) × (the logging
+process `m`) — no third channel writes to or redacts it. As with `A₀` in §3, this is what
+licenses an `✗` (a cell is *forbidden*, not merely *underspecified*); without it every "must
+appear / must be absent" verdict below would read as `underspecified`. `A₀ᴮ` is the first
+constraint, logged before `c₁`; reproduction experiment 1's re-run surfaced its absence — the
+`A₀` patch to §3 had made the missing B-side premise visible.
+
+**`H` × `M`** (under `A₀ᴮ`):
 
 | | `m_complete` (logs all) | `m_censored` (drops failed calls) |
 |---|---|---|
@@ -168,7 +175,7 @@ X-innocent), robustly across both readings.
 | Restriction `S₁` | `M = {m_censored}` |
 | Witness | ID gap: `[1,2,4]` is missing `3` |
 | Type | empirical, under commitment |
-| Background commitments | `A_schema`: IDs are assigned consecutively |
+| Background commitments | `A_schema`: IDs are assigned consecutively to each *initiated* call, so a gap ⟹ a call ran at that position and is absent |
 | Target affected | `Q` (formalization-dependently — see `Δ_Q`) |
 | Excluded joint hyps | `(h_notX, m_complete)` |
 | `Δ_Q` | `f_fail`: `{yes,no}→{yes}` (identified) · `f_nofail`: `{yes,no}→{yes,no}` · **`F`-robust: `{yes,no}` unchanged** |
