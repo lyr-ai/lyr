@@ -29,6 +29,14 @@ not ready.*
   constraint, and stays multi-valued until one does.
 - **F-robust identified set.** `I_Q(d) = ⋃_{f ∈ F(d)} I_Q(Θₙ^{(f)})`. `Q` is
   *F-robustly identified* iff every `f ∈ F(d)` yields the same singleton.
+- **Joint candidate space** (witnessed in §7). `F` is a *third open dimension*, not a new
+  primitive: `Θ* = H × M × F`, pruned jointly by
+  `Θ*ₙ = {(h,m,f) : f(d) ⊢ (h,m,Q), r ⊨_m h} ∩ ⋂ᵢ Sᵢ`. Formalization uncertainty is just
+  another unidentified dimension.
+- **Coverage witness.** Like `H`/`M`, `F` is trusted complete only if *witnessed* so;
+  otherwise `Q`'s identification is reported as *coverage-unestablished*. The union grows
+  monotonically, so **under-coverage spuriously over-identifies** — that is `F`'s only
+  failure mode, and it is `H`/`M`'s existing open-atlas problem, not a new one.
 
 Identifiability is always of a **target `Q`**, relative to `(H, M, {cᵢ}, F)` — never of
 the whole `Θ`, and never relative to a single silently-chosen formalization.
@@ -233,3 +241,43 @@ formalization-honest verdict.
 Falsifier #2 did not break the system: it *located* the disagreement (formalization, not
 evaluation) and forced a witnessed extension, not an arbitrary patch. My earlier guess
 that #2 was "survivable by design" was wrong — it bites, and the bite is productive.
+
+---
+
+## 7. Falsifier 2 — is `F` itself auditor-stable, and does it fold into the joint space?
+
+**Test (tightened).** Not "do two auditors propose the same `F(d)`?" (too strong). The
+falsifier is whether their formalization sets yield **different target results**:
+`I_Q^A(d) = ⋃_{f∈F_A} I_Q^{(f)}` vs `I_Q^B(d)`. Same admissibility protocol: explicit
+allowed-output relation · no mechanism without linguistic basis · a realization · an
+exclusion witness vs another formalization · wording-only variants with the *same*
+compatibility relation collapse to one class.
+
+**(a) The quotient is finite and stable.** On the fixed `(h,m)` grid the only free choice
+is the disputed pair `(h₂, m₁)`: a formalization either **permits** "stopped_worry" under
+`h₂` (*state* reading) or **forbids** it (*disposition* reading). Every candidate induces
+one of these two relations; rule 5 collapses the rest. So `F(d)/∼ = {[permit],[forbid]}`
+— finite, enumerable, and the **same** for both auditors. They cannot diverge on *what*
+the admissible classes are; distinct compatibility relations on a finite grid are finite.
+
+**(b) Target-stable under full coverage.** With `F_A/∼ = F_B/∼ = {[permit],[forbid]}`:
+`I_Q(worry↓) = {yes,no}∪{yes,no} = {yes,no}`;
+`I_{Q''}(h₂∧direct) = {yes,no}∪{no} = {yes,no}` (identified under `[forbid]` only). Both
+auditors compute the **same** `I_Q`, `I_{Q''}`. The falsifier does not bite when both
+apply the full protocol.
+
+**(c) The real failure mode is coverage, not identity.** The union grows monotonically, so
+an auditor who **under-covers** (omits an admissible class) gets a *smaller* union and
+**spuriously over-identifies**: if A proposes only `{[forbid]}`, `I_{Q''}^A = {no}`
+(identified) while `I_{Q''}^B = {yes,no}` (not). A real divergence — but a **coverage
+failure**, identical to `H`/`M`'s open-atlas problem, fixed by the coverage witness (§1).
+No new object.
+
+**(d) `F` folds into `Θ* = H×M×F` — no regress.** Formalization uncertainty is another
+unidentified dimension, absorbed by the same identified-set machinery; `F` needs no higher
+adjudicator, and — like `H`,`M` — keeps multiple candidates until a witness excludes one.
+The framework is **closed over its own modeling step.**
+
+**Two recordable conclusions:** *target-stable despite formalization disagreement* (b);
+*target-sensitive to formalization **coverage*** (c). Both are handled by existing
+machinery. `F` is not the start of a regress — it is a test the framework passed on itself.
