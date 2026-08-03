@@ -32,8 +32,10 @@ Only the five official docs in `explorer/cases/deepseek/`:
         · DSA  — V3.2-Exp  first fine-grained sparse; long-context [v3.2-card]
         · CSA  — V4        hybrid, long-context efficiency          [v4-report]
         · HCA  — V4        hybrid, long-context efficiency          [v4-report]
-      unifying claim:  successive attention mechanisms, each introduced in a specific version,
-                       all targeting inference / long-context / KV-cache efficiency
+      unifying claim:  version-anchored attention mechanisms documented across successive
+                       DeepSeek releases, grouped by their shared inference / long-context /
+                       KV-cache efficiency goal   ("successive" modifies the RELEASES, not the
+                       mechanisms — no lineage is asserted)
       claim-state over versions (quantified, with provenance):
         · V4-Pro vs V3.2: 27% of single-token FLOPs, 10% of KV cache   [v4-report]
         · (V3 → V3.2 magnitude: not quantified in corpus → abstain)
@@ -64,9 +66,17 @@ A Concept knowledge object needs, at minimum:
 
 1. `members`: a set of semantic (concept) nodes — **not** a mention; the object is over the graph.
 2. `unifying_claim`: a statement + its **coverage evidence** (the passages that instantiate it).
-3. `member_relation`: an explicit, evidence-gated field that can be `shared_goal` **and must be able
-   to say `derivation: unknown/abstained`.** *Without a first-class abstention value here, the layer
-   will manufacture lineage.* ← the sharpest finding.
+3. `member_relation`: **not a free field but a committed judgment.** Each relation the object could
+   assert (e.g. `derivation`) carries a *status* the system has actually decided:
+
+       relation_type: derivation
+       status:        ABSTAINED        # one of SUPPORTED / CONTRADICTED / UNKNOWN / NOT_EVALUATED
+       reason:        no supporting evidence in corpus
+
+   `ABSTAINED`/`UNKNOWN` is stronger than `null`: `null` may mean *not yet processed*
+   (`NOT_EVALUATED`); `ABSTAINED` means the system *checked and refused to commit*. Without this
+   distinction the layer manufactures lineage. ← the sharpest finding. (Schema not frozen; the
+   four-way status distinction must survive into later prototypes.)
 4. per-member: `(label, anchor_version, role_in_claim, evidence)`.
 5. `claim_state_over_versions`: quantified deltas with provenance, where the corpus gives them;
    abstain where it does not.
@@ -80,13 +90,51 @@ lineage narrative, which must be abstained. The object is real; the story about 
 representation that can hold both (assert the group, abstain the lineage) is exactly what "no
 fabrication" requires.
 
-## Early convergence hint (to TEST in Prototype 3, not to conclude now)
+**Prototype 1 closed — compressed conclusion:**
 
-Forming this Concept required a `claim_state_over_versions` field (the 27% / 10% claim). That is the
-**State** candidate appearing *inside* a Concept. It hints Concept and State may be one object seen
-statically vs over time — but one prototype cannot establish convergence. Recorded as a hypothesis
-for Prototype 3 (Family → State); explicitly **not** a conclusion. The rule stands: three
-independent worlds must agree before anything earns the name "Knowledge Object."
+> A higher-order grouping can form honestly only when membership, grouping basis, inter-member
+> relations, version-scoped claims, and abstentions are represented **separately**. **Sharing a goal
+> does not license a lineage.**
+
+## The minimal structure Prototype 1 forced
+
+Not a full schema — four constituents that could not be collapsed without either losing information
+or inviting fabrication:
+
+    higher-order grouping
+    ├── members                    (the semantic objects grouped)
+    ├── grouping claim             (on what basis they are one group — with coverage evidence)
+    ├── typed relation assertions  (each with a committed status, per requirement 3)
+    └── explicit abstentions       (what is deliberately NOT asserted, and why)
+
+And every assertion — grouping claim or relation — must carry:
+
+    target · relation/predicate · value · scope · evidence · status
+
+This starts to pull Concept, Theme, and State toward one lower unit: **a scoped, evidenced,
+status-bearing claim.** Candidate primitive (still just a candidate, but more explanatory than
+"Concept/Theme/State are three node kinds"):
+
+> **Knowledge Object = a maintained set of scoped claims and relations over semantic objects.**
+
+## What did NOT converge (tightened)
+
+An earlier draft said the `claim_state_over_versions` field showed **State living inside Concept**,
+hinting the two are one object. That over-reads the evidence. An equally-valid reading: the Concept
+itself does **not** change from V3 to V4 — what changes is a **claim *about* the concept**
+("mechanism X has cost/performance property Y", compared across versions). So the evidence supports
+at most:
+
+> **Higher-order objects require version-indexed claims.**
+
+It does **not** yet support *"Concept and State are one object."* The tighter, carried-forward
+statement is:
+
+> **Concept formation required version-scoped claims, suggesting that claim maintenance — not object
+> type — may be the common substrate.**
+
+Prototype 3 then tests the sharper question directly (not assumes it): *for a fixed target claim,
+when is a change in its committed value licensed by evidence?* (target = **Elizabeth**, not "Family").
 
 ## What Prototype 1 does NOT claim
 

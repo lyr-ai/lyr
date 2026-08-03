@@ -172,20 +172,55 @@ the review conflated three different things.
 Do **not** design a schema or open M3.2. Run **three independent prototypes**, then ask the only
 question that matters:
 
-    Prototype 1  DeepSeek  → Concept   ✓ done — prototype-1-deepseek-concept.md (741c3fb)
-    Prototype 2  P&P       → Theme      pending
-    Prototype 3  Elizabeth → State      pending  (target = the 36-version P&P entity,
-                                                  the exact stateful-claims gap)
+    Prototype 1  DeepSeek  → Concept   ✓ done — prototype-1-deepseek-concept.md
+    Prototype 2  P&P       → Theme     ✓ done — prototype-2-pnp-theme.md
+    Prototype 3  Elizabeth → State     ✓ done — prototype-3-elizabeth-state.md
                     │
                     ▼
          Is there a COMMON representation?
-              yes → it earns the name "Knowledge Object" (then, a layer)
-              no  → the review conflated three things; treat them separately
 
-**Status: paused after Prototype 1, pending PI review.** Prototype 1 already surfaced two things to
-weigh before the next probes: (a) `member_relation` needs a first-class *abstention* value or the
-layer fabricates lineage; (b) a hint that State may live *inside* Concept — to be tested, not
-assumed, in Prototype 3. Prototypes 2 and 3 are not started until review concludes.
+## Convergence result (after three probes) — candidate, not a declared layer
+
+All three worlds reduced to the **same primitive**:
+
+> a **scoped, evidenced, status-bearing claim** over semantic objects, positioned on an index
+> (Concept: *version* · State: *chapter/time* · Theme: *none*), where relations and transitions are
+> **committed** assertions each carrying a status (`SUPPORTED / CONTRADICTED / UNKNOWN /
+> NOT_EVALUATED`).
+
+And in all three the failure mode was **identical** — an *organizing narrative beyond the evidence*,
+which must be abstained:
+
+    Concept → derivation lineage      (MLA → DSA → CSA → HCA)
+    Theme   → thematic argument       (the novel critiques the marriage market)
+    State   → single inner arc        (prejudice → love)
+
+So the candidate the review reached for — "Concept / Theme / State are three kinds of node" — is
+**not** what the evidence supports. The better-supported statement is the tightened one from
+Prototype 1, now confirmed twice more:
+
+> **Knowledge Object = a maintained set of scoped claims and relations over semantic objects.**
+> The three "types" are just different *index/scope profiles* over one claim primitive — claim
+> maintenance, not object type, is the common substrate.
+
+### What this does and does NOT establish
+
+- **Does:** three independent probes converge on one *representation*. That is exactly what the
+  exploration set out to find, and it answers the research question in the affirmative **at the
+  representation level.**
+- **Does NOT:** (1) these were **manual** representation-discovery probes, not system runs — no
+  automated formation exists; (2) no **zero-fabrication measurement at scale** — I abstained by hand;
+  a system must do it and be graded; (3) two corpora only (DeepSeek, P&P) — **Kimi**, the deferred
+  fourth world, has not run; (4) a candidate **representation is not a validated layer.** Naming it
+  or opening "M3.2" is a separate decision, earned by a build + measurement, not by three hand-probes.
+
+### The decision this leaves for the PI
+
+The representation-convergence is strong enough to promote the scoped-claim / claim-maintenance
+substrate to a **working hypothesis**. The open fork: (a) validate it with a *single* build +
+zero-fabrication measurement on one corpus, or (b) run **Kimi** first as an untouched fourth world
+before any build. Either keeps the discipline: the primitive earns "layer" only when a *system* forms
+it honestly on a corpus not used to discover it.
 
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
