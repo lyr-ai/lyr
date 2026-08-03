@@ -1,4 +1,6 @@
-# An Auditable Identification Protocol
+# When Does an Explanation Refer to the World?
+
+### An Auditable Identification Protocol
 
 *Working draft — v1. A methodological paper. It introduces a protocol, not a theorem; it is
 demonstrated on finite classes, not proven in general. The organizing claim is that
@@ -29,10 +31,13 @@ likelihood-free compatibility relation, constraints tagged empirical-or-assumpti
 explicit witness schema, per-question identified sets, and a multi-valued formalization class
 `F` for natural language. We demonstrate it on two hand-computed examples, subject it to three
 structural falsifiers (each of which it survives by *externalizing* a hidden step rather than
-patching over it), and — unusually for a methodological note — test its self-containedness by
-having strangers execute it. Across three rounds and nine independent executions, the protocol
-reproduced its results exactly and drove its "places I had to invent something" list to empty,
-after each round converted a tacit authorial premise into a written one. The scope is finite
+patching over it), and — unusually for a methodological note — turn it on **itself**: a
+**self-audit** in which strangers execute the protocol to find the assumptions its own authors
+could not see. Across three rounds and nine independent executions it reproduced its results
+exactly and drove its "places I had to invent something" list to empty — each round converting
+a tacit authorial premise into a written one. The reproduction is only the mechanism; the
+result is that the protocol externalized the assumptions of its own makers, which is exactly the
+property it claims. The scope is finite
 classes and executability; scaling and a general theorem are explicitly future work.
 
 ---
@@ -229,13 +234,17 @@ The pattern across all three is one sentence: **the protocol survives attacks by
 a previously hidden step, never by adding an unearned rule.** That is the strongest reason to
 believe it — stronger than any example working.
 
-## 6. Independent execution
+## 6. Self-audit of the protocol
 
-Most methodological notes assert their own self-containedness; the authors, who share the
-context that makes a note feel complete, are the worst possible judges of it. So we tested it
-from outside. Executors with **no access** to the development were given the definitions, the
+Here the protocol becomes the object of its own procedure. Its central claim is that executing
+it externalizes hidden assumptions; the sharpest possible test of that claim is to run it on
+**itself** and ask whether it externalizes the assumptions of its own authors. Most
+methodological notes assert their self-containedness — and the authors, who share the context
+that makes a note feel complete, are the worst possible judges of it. So we made the assessment
+external. Executors with **no access** to the development were given the definitions, the
 witness schema, and the example *inputs* (answers withheld), and asked to run the protocol and
-to log every point where they could not continue without inventing something.
+to log every point where they could not continue without inventing something. Independent
+reproduction is the **mechanism**; the **result** is a self-audit.
 
 - **Round 1 (discovery).** Example A reproduced exactly — and all three executors independently
   re-derived the note's own background commitment `A₁`. Example B **diverged** at
@@ -276,16 +285,19 @@ We state the boundaries plainly, because overclaiming would undo the paper's who
 - **Proxy executors.** Reproduction evidence is from language-model executors, a strong but not
   identical proxy for human first-time readers.
 
-## Closing — the discipline underneath
+## Conclusion
 
-The most durable thing here is not `F`, `M`, `Q`, or even the identified set. It is a
-constraint on the research process itself:
+Underneath the objects is a single constraint on the process that produced them — **every new
+object must arrive with a witness.** `F` arrived with one (falsifier 1 located it); the
+`M`-restriction arrived with one (the calibration channel of falsifier 3); each premise the note
+now states arrived with one (an executor could not continue without it). That constraint is what
+keeps an assumption *visible* rather than absorbed, and it is the whole recommendation of the
+paper:
 
-> **Every new object must arrive with a witness.**
+> Identification should not be reported as a property of an explanation. It should be reported
+> as the result of an auditable procedure whose assumptions remain visible.
 
-`F` arrived with a witness (falsifier 1 located it). The `M`-restriction arrived with a witness
-(the calibration channel of falsifier 3). Each premise the note now states arrived with a
-witness (an executor could not continue without it). The protocol is disciplined enough to bind
-its own authors: it does not let them introduce structure they cannot exhibit a reason for. A
-method whose signature property is that it externalizes hidden assumptions must, first of all,
-externalize its makers' — and this one does.
+The protocol was first applied to its own development process, where it repeatedly exposed
+assumptions held by its authors before they were exposed by anyone else. A method whose
+signature property is that it externalizes hidden assumptions must, before anything, externalize
+its makers' — and this one did.
