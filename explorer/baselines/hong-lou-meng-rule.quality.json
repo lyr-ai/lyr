@@ -1,0 +1,28 @@
+{
+  "entities_extracted": 0,
+  "canonical_entities": 0,
+  "resolver": {
+    "merges": 0,
+    "link_pairs": 0,
+    "unsure": 0,
+    "rejects": 0,
+    "guard_warnings": 0
+  },
+  "duplicate_ratio": null,
+  "events": 43,
+  "relationships": 0,
+  "sources": 45,
+  "evidence_coverage_pct": 100.0,
+  "orphan_entities": {
+    "count": 0,
+    "sample": []
+  },
+  "source_types": [
+    "?"
+  ],
+  "claims_themes": "not_derived",
+  "known_capability_gaps": [
+    "stateful semantic claims — entity version chain is evidence accumulation, not interpretation change (docs/design/capability-gap-stateful-claims.md)",
+    "themes / durable ideas — not_yet_derived (docs/design/canonicalization-and-identity.md)"
+  ]
+}

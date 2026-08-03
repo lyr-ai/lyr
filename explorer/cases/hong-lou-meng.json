@@ -5,8 +5,8 @@
   "source_type": "book",
   "public": true,
   "sources": [
-    {"kind": "book", "title": "红楼梦",
-     "url": "",
+    {"kind": "book", "title": "紅樓夢 (traditional Chinese, 120 回)",
+     "url": "https://www.gutenberg.org/cache/epub/24264/pg24264.txt",
      "path": "explorer/data/hong-lou-meng.raw.txt"}
   ],
   "note": "TEMPLATE — put a public-domain 红楼梦 text at `path`, then: python explorer/pipeline/run_case.py --case explorer/cases/hong-lou-meng.json --extractor llm --provider openai. This is the real resolver stress test: 宝玉/宝二爷/怡红公子, 王熙凤/凤姐, context-dependent titles (太太/老太太/姑娘), same-surname kin networks, 120-回 scale. Run the first 15-20 回 (--limit 20) before the whole book."
