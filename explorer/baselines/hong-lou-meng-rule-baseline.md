@@ -28,9 +28,30 @@ Gutenberg #24264 (traditional Chinese, 120 回, public domain). Run: first 20 �
    The resolver's Chinese behaviour (its rules are space-token + English-honorific shaped) becomes a
    witness only after the LLM extractor produces entities.
 
+## Fine ingestion (done — generic, lossless)
+
+Added a generic `PassageIngestor` (harness-level, injected via `LYR(ingestor=...)`, gated by manifest
+`"ingest": "fine"`; **no language/case logic**). Sentence-aware packing into passage-sized records
+(target 800 / max 1500 chars), never cutting a sentence, contiguous slices carrying `char_start` /
+`char_end` / `passage_index`.
+
+Verified free on 红楼梦 first 20 回:
+
+| | coarse (blank-line) | fine (passage) |
+|---|---|---|
+| source records | 45 (whole chapters, max 8,796 chars) | **167** (median 841, max 911) |
+| lossless (whitespace-normalized) | — | **✓ PASS** |
+| empty passages | — | 0 |
+| over max(1500) | — | 0 |
+| rule entities | 0 | 0 (unchanged — extractor, not ingestion) |
+
+The two baselines are kept separate on purpose (`…-rule-coarse` / `…-rule-fine`) so the diffs are
+**attributed**: coarse→fine isolates the *ingestion* effect; rule-fine→LLM-fine isolates the
+*extractor* effect (ingestion held constant).
+
 ## Next
 
-Fix ingestion granularity (generic) → LLM run on the same 20 回 → diff report vs this baseline.
+LLM run on the same 20 回 (fine ingestion) → attributed diff report vs `hong-lou-meng-rule-fine`.
 Per discipline: do **not** add a Chinese-nickname dictionary or 红楼梦 special-case; if identity
 fails on zh, that is a witness for the v0.2 generic proposer (mention → candidate → contextual
 evidence → conflict guards → LINK/CREATE/UNSURE), re-tested on a second non-English/non-person

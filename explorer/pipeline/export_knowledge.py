@@ -128,9 +128,11 @@ def main() -> None:
     _load_env(REPO / "explorer" / ".env")
 
     source_type = "book"
+    ingest_policy = "paragraph"
     if args.manifest:
         manifest = json.loads(_read(args.manifest))
         source_type = manifest.get("source_type", "book")
+        ingest_policy = manifest.get("ingest", "paragraph")
         segs = _segments_from_manifest(manifest)
     else:
         segs = [Segment(c.number, f"pnp-ch{c.number:02d}", f"Chapter {c.roman}", c.text)
@@ -159,7 +161,13 @@ def main() -> None:
         extractor = RuleBasedExtractor()
         consolidator = None
 
-    lyr = LYR(extractor=extractor, **({"consolidator": consolidator} if consolidator else {}))
+    lyr_kwargs = {"extractor": extractor}
+    if consolidator:
+        lyr_kwargs["consolidator"] = consolidator
+    if ingest_policy == "fine":
+        from passage_ingestor import PassageIngestor
+        lyr_kwargs["ingestor"] = PassageIngestor()
+    lyr = LYR(**lyr_kwargs)
 
     # ── run the real pipeline, chapter by chapter, snapshotting growth ──
     formation = []
@@ -193,7 +201,11 @@ def main() -> None:
     for r in lyr.store.sources():
         ch = _chapter_of(r.origin)
         src_chapter[r.id] = ch
-        sources.append({"id": r.id, "chapter": ch, "position": r.position, "content": r.content})
+        rec = {"id": r.id, "chapter": ch, "position": r.position, "content": r.content}
+        for mk in ("passage_index", "char_start", "char_end"):
+            if mk in r.metadata:
+                rec[mk] = r.metadata[mk]
+        sources.append(rec)
     sources.sort(key=lambda s: (s["chapter"] or 0, s["position"]))
 
     def _chapters_for(evidence: list[str]) -> list[int]:

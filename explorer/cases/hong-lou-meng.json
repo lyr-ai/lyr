@@ -3,6 +3,7 @@
   "title": "红楼梦 (Dream of the Red Chamber)",
   "language": "zh",
   "source_type": "book",
+  "ingest": "fine",
   "public": true,
   "sources": [
     {"kind": "book", "title": "紅樓夢 (traditional Chinese, 120 回)",
