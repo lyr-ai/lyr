@@ -21,8 +21,12 @@ from dataclasses import dataclass
 
 # English "CHAPTER <roman>" (any case, tolerant of a trailing "]") …
 _EN_CHAP = re.compile(r"^[^\S\n]*CHAPTER\s+([IVXLCDM]+|\d+)\.?\]?[^\S\n]*$", re.I | re.M)
-# … Chinese 第X回 / 第X章 (numerals 一二三…百千 or digits), on its own line.
-_ZH_CHAP = re.compile(r"^[^\S\n]*第[零一二三四五六七八九十百千两0-9]+[回章][^\S\n]*.*$", re.M)
+# … Chinese 第X回 / 第X章 (numerals 一二三…百千 or digits) as a HEADING: on its own
+# line, and 回/章 followed only by whitespace or end-of-line — so an in-text
+# reference like "第四回中既將…" is NOT mistaken for a chapter break. Generic
+# correctness (heading vs mention), not a 红楼梦 special-case.
+_ZH_CHAP = re.compile(r"^[^\S\n]*第[零一二三四五六七八九十百千兩两0-9]+[回章](?=[\s　]|$).*$", re.M)
+_MAX_HEADING = 60  # a real heading line is short; reject a long prose line that merely starts with 第X回
 _GUTEN_START = re.compile(r"\*\*\*\s*START OF .*?\*\*\*", re.I | re.S)
 _GUTEN_END = re.compile(r"\*\*\*\s*END OF .*?\*\*\*", re.I | re.S)
 
@@ -43,7 +47,7 @@ def _strip_gutenberg(raw: str) -> str:
 def split_book(raw: str, *, language: str = "en", case_id: str = "case") -> list[Segment]:
     body = _strip_gutenberg(raw)
     pat = _ZH_CHAP if language.startswith("zh") else _EN_CHAP
-    marks = list(pat.finditer(body))
+    marks = [m for m in pat.finditer(body) if len(m.group(0).strip()) <= _MAX_HEADING]
     if not marks:  # no chapter markers → one segment
         return [Segment(1, f"{case_id}-seg01", "Full text", body.strip())] if body.strip() else []
     segs: list[Segment] = []

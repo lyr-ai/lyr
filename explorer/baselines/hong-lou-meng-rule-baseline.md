@@ -49,9 +49,39 @@ The two baselines are kept separate on purpose (`…-rule-coarse` / `…-rule-fi
 **attributed**: coarse→fine isolates the *ingestion* effect; rule-fine→LLM-fine isolates the
 *extractor* effect (ingestion held constant).
 
-## Next
+## Segmentation defect → fix (found via the LLM run)
 
-LLM run on the same 20 回 (fine ingestion) → attributed diff report vs `hong-lou-meng-rule-fine`.
+The first LLM run's data was **missing chapters 5 and 17** with numbering shifted after ch4. Cause:
+the zh chapter regex matched an *in-text* reference — `第四回中既將薛家母子在榮府內寄居…` — as a
+chapter heading, inserting a false boundary. A **provenance-correctness** bug (evidence attributed
+to the wrong chapter), not cosmetic.
+
+**Fix (generic, not a 红楼梦 special-case):** a heading must start the line AND have `回/章` followed
+only by whitespace or end-of-line, and the heading line must be short (`_MAX_HEADING`). Verified free
+in rule mode: 123 → **121 segments**, first chapters continuous (第一回…第六回), the false
+`第四回中…` boundary gone, first 20 segments lossless.
+
+Old (defective) baselines preserved as `hong-lou-meng-brokenseg-*` — never overwritten, so the
+defect and the fix both have a record. New fixed-seg rule baseline = `hong-lou-meng-rule-fine`.
+`brokenseg → fixedseg` (rule, ingestion identical): chapters now **1–20 continuous, no 5/17 gap**;
+sources 167 → 174 (aligned content); entities 0 → 0 (rule, unchanged).
+
+## Next (needs your key)
+
+The current **live 红楼梦 Explorer package is on the OLD (broken) segmentation** — its chapter
+attribution is not fully trustworthy. Re-run the same 20 回 with the fix, then diff vs the broken-seg
+LLM baseline:
+
+```bash
+python explorer/pipeline/run_case.py --case explorer/cases/hong-lou-meng.json \
+    --extractor llm --provider openai --limit 20        # regenerates the live package, fixed seg
+python explorer/pipeline/diff_report.py \
+    brokenseg-llm=explorer/baselines/hong-lou-meng-brokenseg-llm-fine.quality.json \
+    fixedseg-llm=site/data/hong-lou-meng/quality.json
+```
+
+Only after that reads clean → the full 120 回 as a **coverage/scale stress test** (resolver
+unchanged; expect Baoyu to keep splitting — that is the scale question, not a fix).
 Per discipline: do **not** add a Chinese-nickname dictionary or 红楼梦 special-case; if identity
 fails on zh, that is a witness for the v0.2 generic proposer (mention → candidate → contextual
 evidence → conflict guards → LINK/CREATE/UNSURE), re-tested on a second non-English/non-person

@@ -9,9 +9,9 @@
     "guard_warnings": 0
   },
   "duplicate_ratio": null,
-  "events": 174,
+  "events": 167,
   "relationships": 0,
-  "sources": 174,
+  "sources": 167,
   "evidence_coverage_pct": 100.0,
   "orphan_entities": {
     "count": 0,
