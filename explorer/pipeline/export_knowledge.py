@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -37,13 +38,41 @@ from lyr.semantic import RuleBasedExtractor  # noqa: E402
 KINDS = ("entity", "event", "relationship")
 
 
-def _client(provider: str):
+def _load_env(path: Path) -> None:
+    """Populate os.environ from a simple KEY=VALUE .env file (no dependency)."""
+    if not path.exists():
+        return
+    for line in path.read_text().splitlines():
+        line = line.strip()
+        if not line or line.startswith("#") or "=" not in line:
+            continue
+        k, v = line.split("=", 1)
+        os.environ.setdefault(k.strip(), v.strip().strip('"').strip("'"))
+
+
+def _resolve_key(explicit: str | None, provider: str) -> str | None:
+    if explicit:
+        return explicit
+    env_name = "ANTHROPIC_API_KEY" if provider == "anthropic" else "OPENAI_API_KEY"
+    return os.environ.get(env_name)
+
+
+def _client(provider: str, api_key: str | None, model: str | None):
     if provider == "anthropic":
-        from lyr.llm.anthropic import AnthropicClient
-        return AnthropicClient()
+        try:
+            from lyr.llm.anthropic import AnthropicClient
+        except Exception as e:  # noqa: BLE001
+            raise SystemExit(str(e))
+        kwargs = {"api_key": api_key}
+        if model:
+            kwargs["model"] = model
+        return AnthropicClient(**kwargs)
     if provider == "openai":
         from lyr.llm.openai import OpenAIClient
-        return OpenAIClient()
+        try:
+            return OpenAIClient(api_key=api_key) if api_key else OpenAIClient()
+        except TypeError:
+            return OpenAIClient()
     raise SystemExit(f"unknown provider {provider!r}")
 
 
@@ -68,7 +97,13 @@ def main() -> None:
     ap.add_argument("--extractor", choices=["rule", "llm"], default="rule")
     ap.add_argument("--provider", choices=["anthropic", "openai"], default="anthropic")
     ap.add_argument("--limit", type=int, default=0, help="max chapters (0 = all)")
+    ap.add_argument("--api-key", default=None, help="LLM API key (else env / explorer/.env)")
+    ap.add_argument("--model", default=None, help="model override, e.g. claude-haiku-4-5")
+    ap.add_argument("--consolidator", choices=["recurrence", "llm"], default="recurrence",
+                    help="durable-idea consolidation; 'llm' needs a key and gives quality ideas")
     args = ap.parse_args()
+
+    _load_env(REPO / "explorer" / ".env")
 
     raw = Path(args.source).read_text(encoding="utf-8", errors="replace")
     chapters = split_chapters(raw)
@@ -77,12 +112,25 @@ def main() -> None:
     if not chapters:
         raise SystemExit("no chapters parsed — check --source")
 
-    extractor = (
-        RuleBasedExtractor()
-        if args.extractor == "rule"
-        else __import__("lyr.semantic", fromlist=["LLMExtractor"]).LLMExtractor(_client(args.provider))
-    )
-    lyr = LYR(extractor=extractor)
+    if args.extractor == "llm":
+        api_key = _resolve_key(args.api_key, args.provider)
+        if not api_key:
+            raise SystemExit(
+                "No API key found. Pass --api-key, set ANTHROPIC_API_KEY, add it to "
+                "explorer/.env, or use the friendly runner:  python explorer/run.py"
+            )
+        client = _client(args.provider, api_key, args.model)
+        from lyr.semantic import LLMExtractor
+        extractor = LLMExtractor(client)
+        consolidator = None
+        if args.consolidator == "llm":
+            from lyr.durable import LLMConsolidator
+            consolidator = LLMConsolidator(client)
+    else:
+        extractor = RuleBasedExtractor()
+        consolidator = None
+
+    lyr = LYR(extractor=extractor, **({"consolidator": consolidator} if consolidator else {}))
 
     # ── run the real pipeline, chapter by chapter, snapshotting growth ──
     formation = []

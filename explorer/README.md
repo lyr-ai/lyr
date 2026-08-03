@@ -31,19 +31,31 @@ of the design's rich views (relationships, unresolved conflicts) are honestly bu
 
 ## Run it
 
+**Easiest — one interactive command (recommended):**
+
 ```bash
-# 1. fetch the public-domain source (not committed)
-bash explorer/pipeline/fetch_source.sh
+python explorer/run.py
+```
 
-# 2a. baseline — no API key, real-but-crude:
-python explorer/pipeline/export_knowledge.py --limit 6 \
-    --out explorer/data/knowledge.sample.json
+It downloads the source if needed, **asks for your Anthropic API key** (hidden input, and offers to
+save it to a gitignored `explorer/.env` so you only enter it once), asks how many chapters (default
+10), and runs the demo-quality LLM extraction. No flags to remember. Requires `pip install anthropic`.
 
-# 2b. demo quality — your key, full book:
-ANTHROPIC_API_KEY=... python explorer/pipeline/export_knowledge.py \
-    --extractor llm --provider anthropic \
+**Manual, if you prefer flags:**
+
+```bash
+# baseline — no API key, real-but-crude:
+python explorer/pipeline/export_knowledge.py --limit 6 --out explorer/data/knowledge.sample.json
+
+# demo quality — key via env, .env, or --api-key:
+python explorer/pipeline/export_knowledge.py --extractor llm --consolidator llm \
+    --model claude-haiku-4-5 --limit 10 --api-key sk-ant-... \
     --out explorer/data/knowledge.full.json
 ```
+
+The key is resolved in order: `--api-key` → `ANTHROPIC_API_KEY` env → `explorer/.env` → (in
+`run.py`) an interactive hidden prompt. It is never committed and never passed on the command line by
+`run.py`.
 
 ### Real baseline numbers (rule-based, first 6 chapters)
 
