@@ -9,14 +9,22 @@ only if, a real application forces a contradiction the protocol *cannot express*
 trigger #3 — and it belongs back in the research process, explicitly, not smuggled in as an
 application tweak. Every domain below is a validation surface, never the design center.
 
-## Active line: Agent Root-Cause Analysis
+## Application lines
 
-One domain is chosen first — **agent root-cause analysis** — because it is closest to the data
-already at hand (bugs, telemetry, git history, incidents, agent logs), yields the cleanest real
-evidence, sits on the long-term path (auditable memory, long-running agents, security), and would
-generate the next paper by itself. The plan is **10 real cases** on a fixed template, not a second
-paper. See `applications/agent-root-cause/` (`README.md` + cases). The other domains below stay
-parked until then.
+- **Agent root-cause analysis** — `applications/agent-root-cause/`. Closest to the data already at
+  hand (bugs, telemetry, git history, incidents, agent logs), cleanest real evidence, on the
+  long-term path (auditable memory, long-running agents, security). Internal / closest-to-home.
+  Seeded: case 001.
+- **Community knowledge (pet health)** — `applications/community-knowledge/` (**Proposal**).
+  Public, reproducible, longitudinal, multi-channel, with eventual real confirmations. Aimed at
+  the first *public* demonstration. Ethically-obtained data only (public → consented → personal);
+  no Facebook API / scraping.
+
+**Open decision (pending):** which is the *active* line. The single-active-line discipline
+("pick one; wait, don't do") was set for agent root-cause; community knowledge is a strong but
+newer proposal and cannot produce cases until real (public or consented) data is in hand. Both
+inherit the same discipline — fixed protocol, preserved failures, reopening metric, failure-mode
+coverage. The remaining candidate domains below stay parked.
 
 ## Candidate domains
 
