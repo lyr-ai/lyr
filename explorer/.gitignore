@@ -1,0 +1,5 @@
+# public-domain source — regenerable via pipeline/fetch_source.sh
+data/*.raw.txt
+# full/large exports — regenerable via pipeline/export_knowledge.py
+data/knowledge.full.json
+__pycache__/
