@@ -172,14 +172,20 @@ the review conflated three different things.
 Do **not** design a schema or open M3.2. Run **three independent prototypes**, then ask the only
 question that matters:
 
-    Prototype 1  DeepSeek → Concept   (first — see below)
-    Prototype 2  P&P      → Theme
-    Prototype 3  Family   → State
+    Prototype 1  DeepSeek  → Concept   ✓ done — prototype-1-deepseek-concept.md (741c3fb)
+    Prototype 2  P&P       → Theme      pending
+    Prototype 3  Elizabeth → State      pending  (target = the 36-version P&P entity,
+                                                  the exact stateful-claims gap)
                     │
                     ▼
          Is there a COMMON representation?
               yes → it earns the name "Knowledge Object" (then, a layer)
               no  → the review conflated three things; treat them separately
+
+**Status: paused after Prototype 1, pending PI review.** Prototype 1 already surfaced two things to
+weigh before the next probes: (a) `member_relation` needs a first-class *abstention* value or the
+layer fabricates lineage; (b) a hint that State may live *inside* Concept — to be tested, not
+assumed, in Prototype 3. Prototypes 2 and 3 are not started until review concludes.
 
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
