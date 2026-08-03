@@ -19,6 +19,12 @@ It answers the questions flat retrieval can't:
 - What evidence changed our understanding?
 - How has this idea evolved over months or years?
 
+**▶ Living Knowledge Explorer — [explore *Pride and Prejudice* as a knowledge space](https://lyr-ai.github.io/lyr/living.html)**
+(live). Pick a person → a chapter-ordered **story timeline** of the relationships and events they
+appear in → click any step → the exact **source passages** it was drawn from. Real data from the LYR
+pipeline; honestly scoped as *a traceable knowledge space formed from the text* (not "knowledge that
+evolves" — [why](docs/design/capability-gap-stateful-claims.md)). No install.
+
 **▶ Live site — [What can LYR identify that current AI cannot?](https://lyr-ai.github.io/lyr/)** —
 an applications-first product site: a real incident run through the auditable identification
 protocol, plus the paper and research.
