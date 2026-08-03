@@ -1,0 +1,41 @@
+name: Submit a case
+description: Share a real incident, log, or evidence timeline to run through the LYR identification protocol.
+title: "[case] "
+labels: ["case"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Share a real record whose explanation you don't fully trust. LYR runs the same audit over it:
+        **evidence → hypotheses → measurement assumptions → witnesses → identified set → next observation.**
+        Real cases only — including ones where the protocol might *fail*. A case the protocol cannot express is
+        as valuable as one it handles.
+  - type: textarea
+    id: incident
+    attributes:
+      label: The incident / question
+      description: One paragraph — what happened, and the world-level question you want answered.
+      placeholder: "e.g. A deploy failed; did component X actually cause it?"
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: The record(s) / evidence
+      description: Paste the log, thread, timeline, or explanation. Note where each piece came from (source, channel, timestamp).
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Known outcome (if any)
+      description: Was the cause ever confirmed? By what independent channel?
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Contact (optional)
+      description: How to reach you, if you'd like a response.
+    validations:
+      required: false

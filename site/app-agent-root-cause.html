@@ -50,8 +50,8 @@
     <h3>3 · Measurement assumptions</h3>
     <p>How did the failure become <em>this</em> record? Two candidate measurement processes:</p>
     <div class="row"><div class="rl">m_specific</div><div class="rv">the action reports the true underlying cause.</div></div>
-    <div class="row"><div class="rl">m_generic</div><div class="rv"><span class="art">the same "Get Pages site failed" is emitted for several causes — a lossy measurement.</span></div></div>
-    <p class="muted" style="margin:10px 0 0">The message did not vary with the cause → <b>m_generic is operative</b>. So <code>r₁</code> is a <span class="art">measurement artifact</span>, not a reading of the cause. Naming this is the move a checklist skips.</p>
+    <div class="row"><div class="rl">m_generic</div><div class="rv"><span class="art">the message is uninformative about the cause — a lossy measurement that would not discriminate among the candidates.</span></div></div>
+    <p class="muted" style="margin:10px 0 0">The message <b>does not discriminate among the candidate causes</b> — on this record alone, none is excluded. So <code>m_generic</code> is the operative <em>candidate model</em> (we have not observed the action emit this message under each cause, so it stays a candidate, not a proven fact), and <code>r₁</code> is treated as a <span class="art">measurement artifact</span> rather than a reading of the cause. Naming this is the move a checklist skips.</p>
   </div>
 
   <!-- 4 -->

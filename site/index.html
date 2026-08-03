@@ -5,6 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>LYR — Does the explanation refer to the world?</title>
 <meta name="description" content="AI can generate explanations. LYR tells you whether they actually refer to the world — by showing what is identified, what is only a measurement artifact, and what stays unknown.">
+<meta property="og:title" content="LYR — Does the explanation refer to the world?">
+<meta property="og:description" content="An auditable way to separate evidence, measurement artifacts, assumptions, and what remains unidentified.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lyr-ai.github.io/lyr/">
+<meta name="twitter:card" content="summary">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔎</text></svg>">
 <link rel="stylesheet" href="product.css">
 </head>
@@ -21,7 +26,7 @@
 <header class="hero"><div class="wrap narrow">
   <div class="kicker">LYR</div>
   <h1><span class="d">AI can generate explanations.</span> LYR tells you whether they actually refer to the world.</h1>
-  <p class="sub">Not "what's most likely" — <b>what is currently identified</b>, what is only a measurement artifact, and what a single next observation would resolve.</p>
+  <p class="sub">Not "what's most likely" — <b>what is currently identified</b>, what is only a measurement artifact, and what evidence would reduce the remaining uncertainty.</p>
   <div class="scroll">A real incident, two ways ↓</div>
 </div></header>
 
@@ -32,17 +37,18 @@
     <div class="inp">A GitHub Action failed. The log shows: <code>configure-pages: Get Pages site failed</code></div>
     <div class="cols2">
       <div class="colL">
-        <p class="coltag old">Traditional AI</p>
-        <p class="flat"><span class="q">"The Pages deployment failed."</span><br><br>It restates the error message as the diagnosis — treating the measurement's output as if it were the cause.</p>
+        <p class="coltag old">Surface reading</p>
+        <p class="flat"><span class="q">"The Pages deployment failed."</span><br><br>This repeats the observed failure but does not identify its cause — it treats the measurement's output as if it were the world.</p>
       </div>
       <div class="colR">
         <p class="coltag new">LYR</p>
         <div class="row"><div class="rl">World hypotheses</div><div class="rv">
           <span class="h">Pages not enabled</span><span class="h">workflow misconfig</span><span class="h">token perms</span><span class="h">transient outage</span>
         </div></div>
-        <div class="row"><div class="rl">Measurement assumption</div><div class="rv">The message <span class="mono">"Get Pages site failed"</span> is <span class="art">generic across all four causes</span> — so it is a <span class="art">measurement artifact</span>, not evidence for any one of them.</div></div>
-        <div class="row"><div class="rl">Identified — on the log alone</div><div class="rv"><b>Nothing.</b> All four hypotheses remain live. The error text identifies no cause.</div></div>
+        <div class="row"><div class="rl">Measurement assumption</div><div class="rv">The message <span class="mono">"Get Pages site failed"</span> <span class="art">does not discriminate among the four candidate causes</span> — so it is treated as a <span class="art">measurement artifact</span>, not evidence for any one of them.</div></div>
+        <div class="row"><div class="rl">Identified — on the log alone</div><div class="rv"><b>Nothing.</b> All four hypotheses remain live. The error text excludes none of them.</div></div>
         <div class="row"><div class="rl">Identified — after a witness</div><div class="rv"><span class="ided">Pages was never enabled.</span> Witnessed by the settings state + a single-line fix (<span class="mono">enablement: true</span>) that made the next run succeed.</div></div>
+        <div class="row"><div class="rl">Identified under</div><div class="rv">the settings state is reliable; no other relevant change occurred; the successful rerun was not explained by a transient recovery.</div></div>
         <div class="row"><div class="rl">Still unidentified</div><div class="rv">Whether token permissions would have blocked a later step; whether any transient contributed.</div></div>
         <div class="row"><div class="rl">Next observation</div><div class="rv">A run with Pages enabled but permissions removed would close the first; GitHub status history closes the second.</div></div>
       </div>
@@ -54,7 +60,7 @@
 <!-- APPLICATIONS -->
 <section id="applications"><div class="wrap">
   <p class="eyebrow">Applications</p>
-  <h2 class="sechead">One protocol. Any domain where evidence is uncertain.</h2>
+  <h2 class="sechead">One protocol, designed for domains where evidence is uncertain.</h2>
   <p class="secnote">The same view everywhere — evidence, hypotheses, measurement assumptions, witnesses, identified set, next observation. When every application looks identical, the protocol is doing the work, not the domain.</p>
   <div class="apps">
     <a class="appcard" href="app-agent-root-cause.html" style="color:inherit">
@@ -78,16 +84,16 @@
   </div>
 </div></section>
 
-<!-- BRING YOUR OWN -->
+<!-- CTA -->
 <section><div class="wrap narrow">
   <div class="byo">
-    <h3>Build with your own evidence</h3>
-    <p>Bring a record whose explanation you don't yet trust — LYR runs the same audit over it.</p>
-    <div class="chips">
+    <h3>Have an explanation you don't trust?</h3>
+    <p>Share a real incident, log, or evidence timeline. I'm collecting cases where the protocol may succeed — or fail.</p>
+    <a class="btn primary" href="https://github.com/lyr-ai/lyr/issues/new?template=submit-a-case.yml">Submit a case →</a>
+    <div class="chips" style="margin-top:18px">
       <span class="chip">Agent logs</span><span class="chip">A book or article</span><span class="chip">A forum thread</span>
       <span class="chip">An incident timeline</span><span class="chip">A medical history</span><span class="chip">Telemetry</span>
     </div>
-    <p class="muted" style="margin:16px 0 0;font-size:13.5px">Coming soon.</p>
   </div>
 </div></section>
 

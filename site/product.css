@@ -112,3 +112,13 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
 footer .sp{flex:1}
 footer a{font-weight:600}
 .backlink{display:inline-block;margin:22px 0 0;font-weight:600}
+
+/* buttons */
+.btn{display:inline-block;padding:13px 26px;border-radius:12px;font-weight:800;font-size:15px;text-decoration:none;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+.btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.btn:hover{text-decoration:none;opacity:.92}
+
+/* mobile: let the witness table scroll instead of overflowing the page */
+@media (max-width:560px){
+  table.w{display:block;overflow-x:auto;white-space:nowrap}
+}
