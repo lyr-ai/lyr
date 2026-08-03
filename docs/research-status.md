@@ -41,6 +41,23 @@ The theory is frozen. A conceptual commit to the paper is warranted **only** if:
 
 Anything else is a *new paper* (see `docs/applications.md`), not an edit to this one.
 
+## The frozen snapshot is immutable
+
+The `research-complete` tag does not move. If a re-open trigger fires, start a **new branch from
+the tag** — do not amend history. The point is to preserve an honest snapshot of what the theory
+looked like *before it met the world*. Rewriting history until it appears the authors "always
+knew" is the exact failure the witness discipline exists to prevent; preserving the frozen state
+is the final act of that discipline.
+
+The three transitions the project crossed, for the record:
+
+- **Discovery** — "Can I think of a new object?" (objects were easy to invent)
+- **Research** — "Can I justify introducing this object?" (every object needed a witness)
+- **Science** — "Can someone else reproduce the consequences of this object?" (the protocol
+  became executable by others without author intervention)
+
+The tag marks the crossing of the third. It is a fact about a moment, and moments are not edited.
+
 ## The research discipline (not a paper contribution — recorded because it is durable)
 
 The rules that produced the object, worth keeping independent of it:
