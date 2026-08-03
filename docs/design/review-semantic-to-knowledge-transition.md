@@ -1,8 +1,22 @@
 # Design Review: the Semantic → Knowledge → Durable transition
 
-**Status:** review / theory, frozen for a charter decision. Not being built. Triggered by a
-*convergence signal*, not a new witness — the first time the backend work looks like optimization
-rather than architecture discovery.
+**Status:** review / theory, frozen. Not being built. Triggered by a *convergence signal*, not a
+new witness — the first time the backend work looks like optimization rather than architecture
+discovery.
+
+> **PI correction (the load-bearing revision).** An earlier draft ended: *"the next architecture is
+> a Knowledge Object layer."* That sentence decides the answer. The honest form, which still lets the
+> world answer, is:
+>
+> **The next research question is whether a single Knowledge-Object representation can unify
+> concepts, themes, and evolving claims across domains.**
+>
+> The review found the **gap** (Durable ≠ Knowledge). It did **not** find the **object** — it
+> assumed one. See "The gap is found; the object is not" below. We do **not** name a layer or open
+> "M3.2" now. This is **Knowledge-Object *Exploration***, not a Knowledge-Object *Layer*. Same
+> discipline that built the resolver: we did not design an "Identity Layer" from the first
+> `Elizabeth / Elizabeth Bennet` observation — identity *grew out* of P&P → 红楼梦 → DeepSeek. A
+> layer earns its name only *after* independent worlds converge on one representation.
 
 ## Why this review exists
 
@@ -136,17 +150,46 @@ redefine core.
 - **v0.1 framing is unchanged and stays honest** ("a traceable knowledge space formed from the
   text") until the layer exists.
 
-## Recommendation
+## The gap is found; the object is not
 
-The charter question — *is the next architecture another Semantic refinement, or a new layer?* — is
-answered by the code: **a Knowledge Object layer** (abstraction + state), distinct from Semantic
-(mentions → entities) and Durable (records → memory).
+The review unified `ideas = 0` and stateful-claims into one "Knowledge Object." That was a step too
+far. There are at least **three candidate objects**, and it is an open question whether they share a
+representation:
 
-Do **not** build yet. Confirm the charter, then the first experiment is a **single-case** knowledge-
-object formation (P&P themes *or* DeepSeek concept-synthesis) held to the same bar the resolver
-fixes were: strict evidence coverage, propose/commit, honest abstention, zero fabrication, fixtures.
-Kimi is then the second witness for **this** layer — not the resolver.
+| candidate | example | shape |
+|-----------|---------|-------|
+| **Theme**   | Marriage · Class · Pride (P&P)      | an abstraction organizing many scenes/relationships; often never stated as one span |
+| **Concept** | MoE · MLA · the DSA→CSA→HCA lineage | a named technical object whose instances/claims/versions must be linked and traced |
+| **State**   | Elizabeth → *current understanding* | an entity's interpretation, revised as evidence accrues over time |
 
-If, instead, the charter review concludes there is no such gap (the Timeline+Evidence experience is
-already "something new"), then Kimi resumes as the next resolver witness. This review's claim is
-that the code says otherwise.
+A Theme is not a Concept is not a State. Declaring them one "Knowledge Object" *before* building each
+is the same mistake as declaring an "Identity Layer" from one alias pair. The whole point of the
+exploration is to find out — empirically — whether one representation covers all three, or whether
+the review conflated three different things.
+
+## Recommendation: exploration, not a layer
+
+Do **not** design a schema or open M3.2. Run **three independent prototypes**, then ask the only
+question that matters:
+
+    Prototype 1  DeepSeek → Concept   (first — see below)
+    Prototype 2  P&P      → Theme
+    Prototype 3  Family   → State
+                    │
+                    ▼
+         Is there a COMMON representation?
+              yes → it earns the name "Knowledge Object" (then, a layer)
+              no  → the review conflated three things; treat them separately
+
+Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
+abstention, **zero fabrication**.
+
+**First prototype: DeepSeek → Concept — chosen for falsifiability, not ease.** Themes (Pride, Class,
+Marriage) are *too easy to hallucinate* — an LLM will happily emit them whether or not a real object
+formed, so they cannot falsify anything. A concept like the attention-compression lineage
+`MLA → DSA → CSA → HCA` cannot be faked: if the Knowledge Object did not genuinely form from the
+evidence, it shows immediately. DeepSeek is the *harder*, more *research-honest* first probe.
+
+**Kimi's role** is deferred accordingly: it is neither a resolver witness nor a given for this
+layer — it becomes a later cross-domain check on whatever representation (if any) the three
+prototypes converge on.
