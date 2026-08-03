@@ -1,0 +1,18 @@
+{
+  "slug": "e-b9829ffa22",
+  "canonical_label": "賈寶玉",
+  "aliases": [
+    "賈寶玉"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 7,
+    "chapter_max": 7,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "e-7a7a142081",
+  "canonical_label": "通靈寶玉",
+  "aliases": [
+    "通靈寶玉"
+  ],
+  "entity_type": "concept",
+  "summary": {
+    "chapter_min": 1,
+    "chapter_max": 1,
+    "evidence_passages": 3,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

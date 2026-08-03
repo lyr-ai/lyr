@@ -1,0 +1,18 @@
+{
+  "slug": "e-ed87019092",
+  "canonical_label": "賈璜",
+  "aliases": [
+    "賈璜"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 11,
+    "chapter_max": 11,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

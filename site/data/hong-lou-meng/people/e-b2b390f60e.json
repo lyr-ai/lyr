@@ -1,0 +1,18 @@
+{
+  "slug": "e-b2b390f60e",
+  "canonical_label": "林母",
+  "aliases": [
+    "林母"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 2,
+    "chapter_max": 2,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

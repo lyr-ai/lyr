@@ -33,7 +33,11 @@ def _norm(s: str) -> str:
 
 
 def _slug(label: str) -> str:
-    return re.sub(r"[^a-z0-9]+", "-", label.casefold()).strip("-")
+    s = re.sub(r"[^a-z0-9]+", "-", label.casefold()).strip("-")
+    if not s:  # pure non-ASCII (e.g. Chinese) → stable safe id from the label
+        import hashlib
+        s = "e-" + hashlib.md5(label.encode("utf-8")).hexdigest()[:10]
+    return s
 
 
 def main() -> None:

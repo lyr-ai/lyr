@@ -1,13 +1,13 @@
 {
-  "slug": "",
-  "canonical_label": "賈妃",
+  "slug": "e-a9bf3c9534",
+  "canonical_label": "饅頭庵（水月庵）",
   "aliases": [
-    "賈妃"
+    "饅頭庵（水月庵）"
   ],
-  "entity_type": "person",
+  "entity_type": "place",
   "summary": {
-    "chapter_min": 20,
-    "chapter_max": 20,
+    "chapter_min": 16,
+    "chapter_max": 16,
     "evidence_passages": 1,
     "relationships": 0,
     "events": 0,
