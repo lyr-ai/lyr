@@ -35,6 +35,11 @@ Rules:
   - Every item MUST cite at least one record number in "evidence".
   - Do not invent facts that are not supported by the records.
   - Prefer a few high-quality items over many noisy ones.
+  - SOURCE FIDELITY: write each "label" (and a relationship's "subject"/"object") using the
+    name EXACTLY as it appears in the cited source passage — same script and same language.
+    Do NOT translate, transliterate, simplify, traditionalize, expand, or invent a canonical
+    name. If the passage says 寶玉, output 寶玉 (never 宝玉 or "Baoyu"). Deciding whether two
+    differently-written mentions are the same entity is done downstream, not here.
 
 Records:
 {records}
