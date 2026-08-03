@@ -148,13 +148,12 @@ def main() -> None:
 
     if result.returncode == 0:
         say(f"\n✓  Extracted → explorer/data/{out.name}")
-        # Canonicalization Layer — Explorer-side presentation; LYR core untouched.
-        adapter = HERE / "adapters" / "pride-and-prejudice.aliases.json"
+        # Canonicalization Layer — generic resolver (no per-book data); core untouched.
         canon = DATA / "knowledge.canonical.json"
-        say("\n▶  Canonicalizing aliases (Explorer presentation layer)…\n")
+        say("\n▶  Resolving entities (generic resolver) + canonicalizing…\n")
         subprocess.run([
             sys.executable, str(HERE / "pipeline" / "canonicalize.py"),
-            "--in", str(out), "--adapter", str(adapter), "--out", str(canon),
+            "--in", str(out), "--out", str(canon),
         ])
         say(f"\n✓  Done. The explorer reads explorer/data/{canon.name}")
         say("   Re-run any time to redo or extend it.")

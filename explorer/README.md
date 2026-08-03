@@ -103,9 +103,11 @@ These are the actual "knowledge growing" numbers — the §7 formation panel is 
 
 The raw `knowledge.json` keys entities by exact label, so a character appears under aliases
 ("Elizabeth" vs "Elizabeth Bennet"; three Wickham nodes). The **Canonicalization Layer**
-(`pipeline/canonicalize.py`) reads the raw file plus a per-book **alias adapter**
-(`adapters/*.aliases.json`, *validation data — not core code*) and writes `knowledge.canonical.json`
-for the explorer. **LYR core nodes and identities are never modified** — every original id, label,
+(`pipeline/canonicalize.py`) writes `knowledge.canonical.json` for the explorer. Its grouping now
+comes from the **generic resolver** (`lyr/semantic/resolution.py`, `--groups resolver`, default) —
+no per-book data, verified cross-domain (see `../experiments/entity-resolution/`). The hand
+**alias adapter** (`adapters/*.aliases.json`) is demoted to **evaluation data only** (`--groups
+adapter`), no longer the runtime path. **LYR core nodes and identities are never modified** — every original id, label,
 version chain, evidence link, and chapter span is preserved inside each canonical entity, with merge
 provenance. Full rationale + the identity roadmap:
 [`../docs/design/canonicalization-and-identity.md`](../docs/design/canonicalization-and-identity.md).
