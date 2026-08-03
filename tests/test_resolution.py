@@ -68,3 +68,29 @@ def test_helpers():
     assert not title_conflict("Anne", "Anne Vale")
     assert name_expands("Bob", "Bob Smith")
     assert not name_expands("Mrs. Reed", "Sara Reed")
+
+
+# --- cross-domain (git / incident) — Phase 5 behaviour, generic names ---
+
+def test_identifier_tokenization_exact_match():
+    lg, _ = _group_of([_E("1", "Payments Service", "service"), _E("2", "payments-service", "service")])
+    assert lg["Payments Service"] == lg["payments-service"]
+
+
+def test_file_extension_is_prefix_link():
+    lg, _ = _group_of([_E("1", "README", "file"), _E("2", "README.md", "file")])
+    assert lg["README"] == lg["README.md"]
+
+
+def test_component_substring_is_unsure_not_merged():
+    lg, r = _group_of([_E("1", "api-gateway", "service"), _E("2", "gateway", "service")])
+    assert lg["api-gateway"] != lg["gateway"]
+    assert any(d.decision == "UNSURE" for d in r.decisions)
+
+
+def test_bare_form_links_person_but_not_component():
+    # identical structural shape (X ⊆ "<w> X"), opposite decision by entity type
+    lg_p, _ = _group_of([_E("1", "Vale", "person"), _E("2", "George Vale", "person")])
+    assert lg_p["Vale"] == lg_p["George Vale"]
+    lg_s, _ = _group_of([_E("3", "cache", "service"), _E("4", "redis-cache", "service")])
+    assert lg_s["cache"] != lg_s["redis-cache"]

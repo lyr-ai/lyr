@@ -33,8 +33,19 @@ _FEMALE = {"mrs", "miss", "lady", "madam", "madame"}
 _TITLES = _MALE | _FEMALE
 
 
+_SEP = re.compile(r"[\s\-_./]+")
+
+
 def _tokens(label: str) -> list[str]:
-    return [re.sub(r"[.,]", "", t).casefold() for t in str(label).split() if t.strip()]
+    # Separator- and camelCase-aware, so it works for prose names AND identifiers
+    # ("payments-service", "README.md", "apiGateway") — domain-independent.
+    s = re.sub(r"(?<=[a-z])(?=[A-Z])", " ", str(label))
+    out: list[str] = []
+    for part in _SEP.split(s):
+        part = re.sub(r"[.,]", "", part).strip().casefold()
+        if part:
+            out.append(part)
+    return out
 
 
 def _sig(label: str) -> set[str]:
@@ -82,6 +93,21 @@ def name_expands(a: str, b: str) -> bool:
     if _titleless(b) and sb <= sa:
         return True
     return False
+
+
+def _weak_subset(a: str, b: str) -> bool:
+    """A *titleless* significant-token subset that is NOT a prefix — a bare form.
+
+    Strong for people (a bare surname identifies a person) but weak for other
+    types (a bare substring of a service/file is a descriptor, not an identity),
+    so the caller gates this on entity type.
+    """
+    if _prefix_of(a, b) or _prefix_of(b, a):
+        return False
+    sa, sb = _sig(a), _sig(b)
+    if not sa or not sb:
+        return False
+    return (_titleless(a) and sa <= sb) or (_titleless(b) and sb <= sa)
 
 
 def _shared_surname(a: str, b: str) -> bool:
@@ -176,18 +202,25 @@ def resolve(entities, relationships=()) -> ResolutionResult:
                 continue
             na, nb = " ".join(_tokens(a.label)), " ".join(_tokens(b.label))
             if na == nb:
-                continue
-            if title_conflict(a.label, b.label):
+                decisions.append(Decision(a.label, b.label, LINK, "same normalized form"))
+                link_pairs.append((a, b))
+            elif title_conflict(a.label, b.label):
                 decisions.append(Decision(a.label, b.label, REJECT, "title/gender conflict"))
                 reject_pairs.add(frozenset((a.label, b.label)))
             elif frozenset((na, nb)) in exclusion:
                 decisions.append(Decision(a.label, b.label, REJECT, "related as two distinct entities"))
                 reject_pairs.add(frozenset((a.label, b.label)))
-            elif name_expands(a.label, b.label):
-                decisions.append(Decision(a.label, b.label, LINK, "name expansion"))
+            elif _prefix_of(a.label, b.label) or _prefix_of(b.label, a.label):
+                decisions.append(Decision(a.label, b.label, LINK, "name expansion (prefix)"))
                 link_pairs.append((a, b))
+            elif _weak_subset(a.label, b.label):
+                if a.entity_type == "person" and b.entity_type == "person":
+                    decisions.append(Decision(a.label, b.label, LINK, "bare surname (person)"))
+                    link_pairs.append((a, b))
+                else:
+                    decisions.append(Decision(a.label, b.label, UNSURE, "bare substring of non-person — candidate"))
             elif _shared_surname(a.label, b.label):
-                decisions.append(Decision(a.label, b.label, UNSURE, "shared surname — candidate, needs review"))
+                decisions.append(Decision(a.label, b.label, UNSURE, "shared token — candidate, needs review"))
 
     # pass 2 — union LINK pairs, but never bridge a rejected pair (guards against
     # a bare form transitively merging a Miss/Mr title-conflict pair)

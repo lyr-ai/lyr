@@ -1,0 +1,31 @@
+{
+  "domain": "git / incident (synthetic cross-domain smoke test)",
+  "role": "Phase 5 — a second-domain fixture to test whether the resolver is generic in fact or only after being shaped against a novel. Small on purpose. Not a benchmark program.",
+  "entities": [
+    {"id": "e1", "label": "Payments Service", "entity_type": "service"},
+    {"id": "e2", "label": "payments-service", "entity_type": "service"},
+    {"id": "e3", "label": "README", "entity_type": "file"},
+    {"id": "e4", "label": "README.md", "entity_type": "file"},
+    {"id": "e5", "label": "Authentication API", "entity_type": "service"},
+    {"id": "e6", "label": "auth API", "entity_type": "service"},
+    {"id": "e7", "label": "api-gateway", "entity_type": "service"},
+    {"id": "e8", "label": "gateway", "entity_type": "service"},
+    {"id": "e9", "label": "payments-db", "entity_type": "service"},
+    {"id": "e10", "label": "auth-service", "entity_type": "service"},
+    {"id": "e11", "label": "user-service", "entity_type": "service"},
+    {"id": "e12", "label": "ruxiz", "entity_type": "person"},
+    {"id": "e13", "label": "Ruxi Zhang", "entity_type": "person"}
+  ],
+  "relationships": [],
+  "expect_same": [
+    ["Payments Service", "payments-service"],
+    ["README", "README.md"]
+  ],
+  "expect_different": [
+    ["api-gateway", "gateway"],
+    ["Authentication API", "auth API"],
+    ["ruxiz", "Ruxi Zhang"],
+    ["payments-service", "payments-db"],
+    ["auth-service", "user-service"]
+  ]
+}
