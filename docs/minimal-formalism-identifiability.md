@@ -151,18 +151,31 @@ reported *under its non-collusion assumption* — never as raw data.
 
 ---
 
-## 5. Readiness verdict
+## 5. What this note establishes
 
-In both examples — structurally different (probabilistic-free vs stylometric; single vs
-multi-channel) — the objects `Θ, Q, C(r), Sᵢ, I_Q`, the constraint-witness tables, and
-the empirical/assumption provenance were **constructed unambiguously and computed**.
-`I_Q` moves exactly as the theory predicts, and every identification carries the
-assumptions it rests on.
+The claim is **not** "the theory is validated." It is stronger and more precise: **the
+formalism is operationalizable.** In both examples — structurally different — every
+object the protocol needs (`Θ, Q, C(r), Sᵢ, I_Q`, and the witness table) **already
+existed before computation began. Nothing new had to be invented.** That is the real
+readiness criterion; "the examples worked" is weaker.
 
-By the readiness criterion, the qualitative core is **not merely an attractive
-formulation**: it is a computable audit procedure on at least two non-trivial cases.
-Example A additionally sharpened the theory — *"did she change?"* is itself
-underdetermined without a measurement constraint, which point-identification of the
-whole explanation would have hidden.
+Three things, stated precisely:
+
+- **Executable, not merely computable.** Given a *finite* hypothesis class, the audit
+  protocol can be carried out unambiguously to a definite `I_Q`. ("Computable" would
+  wrongly suggest a complexity-theoretic claim; none is made here.)
+- **Compatibility is the primitive.** Example B ran entirely on `r ⊨_m h` — no
+  likelihood, no Bayes, no metric, no embeddings. Probability was not secretly essential.
+- **The formalism made a counterintuitive prediction.** Example A was *expected* to
+  identify "did she change?"; it did not (world/measurement compensation). The framework
+  corrected its own designers' intuition — it is no longer merely re-expressing prior
+  belief. This gives the theory a fourth part beyond definitions, principles, and
+  examples: **predictions that can surprise.**
+
+So commit `1149ff4` is where the project's character changes: **from a conceptual
+research program to a minimal formal system with an executable audit procedure.** That
+is stronger and easier to defend than "we have a nice theory," and it does not overstate
+what was done: the examples are hand-computed 2×2 joints, so what is established is
+*executability on a finite class*, not scaling.
 
 The paper is now an expansion of this note, not the proposal of an idea.
