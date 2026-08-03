@@ -4,6 +4,11 @@
 audit schema, and two worked examples. If these do not compute cleanly, the theory is
 not ready.*
 
+*Organizing claim: **identification is not a property of an explanation; it is the output
+of an auditable procedure.** Everything below is that procedure and its objects; every
+corollary — target-specificity, witnesses, visible measurement assumptions, formalization
+sets — follows from taking that claim literally.*
+
 ---
 
 ## 1. Definitions
@@ -82,7 +87,15 @@ its own background commitments, so the honest report is one of *direct empirical
 | `h_change` (attitude shifts to family) | `r` forbidden? **no** → ✓ | **no** → ✓ |
 | `h_stable` (attitude constant) | content should be constant, but rises → **forbidden ✗** | **no** → ✓ |
 
-`C(r) = { (h_change, m_stable), (h_change, m_change), (h_stable, m_change) }`, `|C(r)| = 3`.
+The `✗` cell rests on a **closure premise** `A₀`: the record is generated *only* by
+(attitude × framing) — no exogenous third driver (e.g. real family events) can raise the
+family share under constant attitude *and* constant framing. Without `A₀` the cell is
+`underspecified`, not forbidden. `A₀` is therefore the *first* constraint, logged before
+`c₁`; three independent executors of this note re-invented it unprompted (reproduction
+experiment 1), which is why it is now stated rather than assumed.
+
+`C(r) = { (h_change, m_stable), (h_change, m_change), (h_stable, m_change) }`, `|C(r)| = 3`
+(under `A₀`).
 
 **Q₁ = "did her attitude change?"**
 `I_{Q₁}(C(r)) = { yes, yes, no } = {yes, no}` → **not identified.**
@@ -126,15 +139,28 @@ pattern persist?") would be needed — and the diary may or may not contain it.
 | | `m_complete` (logs all) | `m_censored` (drops failed calls) |
 |---|---|---|
 | `h_X` (failure caused by `X`) | `X` failed ⇒ must appear, but absent → **forbidden ✗** | `X` failed ⇒ dropped ⇒ absent → ✓ |
-| `h_notX` (failure caused by a logged call) | consistent → ✓ | consistent → ✓ |
+| `h_notX` (failure caused by a logged call) | consistent → ✓ | **`F`-split** (below) |
 
-`C(r) = { (h_X, m_censored), (h_notX, m_complete), (h_notX, m_censored) }`, `|C(r)| = 3`.
+The `(h_notX, m_censored)` cell is **not a bare `✓`** — it is a formalization split.
+Whether a failure "caused by a logged call" is consistent with a process that "drops failed
+calls" turns on an undefined predicate: *does the causing call itself count as "failed"?* So
+`d` = "caused by a logged call" admits `F(d) = {f_fail, f_nofail}`:
+- `f_fail` — the cause is a *failed* call: under `m_censored` it is dropped ⇒ **not logged** ⇒
+  contradicts "logged" ⇒ cell **incompatible ✗**.
+- `f_nofail` — a call can trigger terminal failure while itself returning success ⇒ not
+  dropped ⇒ stays logged ⇒ cell **compatible ✓**.
+
+Per formalization the compatible set differs:
+`C(r)^{f_fail}  = { (h_X, m_cens), (h_notX, m_complete) }`  (`|·| = 2`);
+`C(r)^{f_nofail} = { (h_X, m_cens), (h_notX, m_complete), (h_notX, m_cens) }`  (`|·| = 3`).
 Only the **compatibility relation** is used — no probabilities.
 
-**Q = "was the failure caused by `X`?"**
-`I_Q(C(r)) = { yes, no, no } = {yes, no}` → **not identified** (X-absent ≡ X-censored *or* X-innocent).
+**Q = "was the failure caused by `X`?"** The `F`-robust identified set unions over `F(d)`:
+`I_Q^{f_fail}(C(r)) = {yes, no}`, `I_Q^{f_nofail}(C(r)) = {yes, no}`, so
+`I_Q(d) = {yes,no} ∪ {yes,no} = {yes, no}` → **not identified** (X-absent ≡ X-censored *or*
+X-innocent), robustly across both readings.
 
-**`c₁` — schema continuity** (a constraint that shrinks `Θ` but does *not* identify `Q`):
+**`c₁` — schema continuity** (shrinks `Θ`; `F`-robustly does *not* identify `Q`):
 
 | field | content |
 |---|---|
@@ -143,32 +169,39 @@ Only the **compatibility relation** is used — no probabilities.
 | Witness | ID gap: `[1,2,4]` is missing `3` |
 | Type | empirical, under commitment |
 | Background commitments | `A_schema`: IDs are assigned consecutively |
-| Target affected | (none directly) |
+| Target affected | `Q` (formalization-dependently — see `Δ_Q`) |
 | Excluded joint hyps | `(h_notX, m_complete)` |
-| `Δ_Q` | `{yes, no}` → `{yes, no}` (unchanged) |
+| `Δ_Q` | `f_fail`: `{yes,no}→{yes}` (identified) · `f_nofail`: `{yes,no}→{yes,no}` · **`F`-robust: `{yes,no}` unchanged** |
 
-`Θ₁ = { (h_X, m_censored), (h_notX, m_censored) }`. Knowing *that* censoring happened
-does not identify *what* was censored.
+`Θ₁^{f_fail} = { (h_X, m_cens) }`; `Θ₁^{f_nofail} = { (h_X, m_cens), (h_notX, m_cens) }`.
+So `c₁` **identifies `Q` under `f_fail` alone** — the reading in which the omitted call is the
+failed cause — but not `F`-robustly: under `f_nofail`, knowing *that* censoring happened does
+not identify *what* was censored. The honest report names the formalization its identification
+depends on (exactly as §6). This makes B a **second `F` example**, not only the
+"no-likelihood" one.
 
 **`c₂` — independent channel:**
 
 | field | content |
 |---|---|
-| Constraint `c₂` | the omitted call at position 3 was `X`, and it failed |
+| Constraint `c₂` | the omitted call at position 3 was `X`, and it caused the failure |
 | Restriction `S₂` | `H = {h_X}` |
 | Witness | an **external audit log** (separate channel) recording `deploy failed @ 3` |
-| Type | empirical, under commitment |
-| Background commitments | `A_audit`: audit channel is independent / non-colluding with the agent's self-log |
+| Type | empirical, under commitments |
+| Background commitments | `A_audit`: audit channel is independent / non-colluding with the self-log · `A_cause`: the failed call `X` is the *terminal* cause — the audit witnesses `X` *failed*, not that it *caused*, so `S₂ = {h_X}` needs this bridge |
 | Target affected | `Q` |
-| Excluded joint hyps | `(h_notX, m_censored)` |
-| `Δ_Q` | `{yes, no}` → `{yes}` |
+| Excluded joint hyps | `(h_notX, m_censored)` (live only under `f_nofail`; already absent under `f_fail`) |
+| `Δ_Q` | `f_fail`: `{yes}→{yes}` · `f_nofail`: `{yes,no}→{yes}` · **`F`-robust: `{yes,no}→{yes}`** |
 
-`Θ₂ = { (h_X, m_censored) }`. **`Q` identified (`yes`) — under `{A_schema, A_audit}`.**
+`Θ₂^{f} = { (h_X, m_cens) }` for **both** `f ∈ F(d)`. **`Q` is `F`-robustly identified
+(`yes`) — under `{A_schema, A_audit, A_cause}`.** The independent channel closes the split:
+whichever way "caused" is formalized, the audit pins the cause to `X`.
 
-**What B computes:** the whole pipeline runs on `⊨_m` with **no likelihood** (censoring
-is a deterministic, adversarial-leaning `m`); one constraint can shrink `Θ` without
-moving `I_Q`; identification arrives only with an **independent channel**, and is
-reported *under its non-collusion assumption* — never as raw data.
+**What B computes:** the whole pipeline runs on `⊨_m` with **no likelihood** (censoring is a
+deterministic, adversarial-leaning `m`); `F` reappears here — whether "caused" implies
+"failed" — so `c₁` identifies `Q` under one formalization yet *not* `F`-robustly;
+`F`-robust identification arrives only with an **independent channel**, reported *under its
+non-collusion (`A_audit`) and causal-bridge (`A_cause`) assumptions* — never as raw data.
 
 ---
 
@@ -179,6 +212,15 @@ formalism is operationalizable.** In both examples — structurally different �
 object the protocol needs (`Θ, Q, C(r), Sᵢ, I_Q`, and the witness table) **already
 existed before computation began. Nothing new had to be invented.** That is the real
 readiness criterion; "the examples worked" is weaker.
+
+*Corrected by reproduction experiment 1.* This claim was true for the **authors** and false
+for **strangers**: three premises the authors supplied tacitly were not on the page — the
+closure premise `A₀` (§3), and the `F`-split plus the causal bridge `A_cause` (§4). Three
+independent executors re-invented exactly those three. §3/§4 above are the **patched**
+versions; "nothing new had to be invented" is honest only of the patched note, and only if a
+re-run reproduces with an empty invention list. Self-assessment of "self-contained" is
+precisely the thing an author cannot do — which is why Phase 1 is external execution, not
+re-reading.
 
 Three things, stated precisely:
 
