@@ -1,6 +1,7 @@
 # Application Data Strategy — Community Knowledge (Pet Health)
 
-**Status:** Proposal
+**Status:** Proposal — **deferred** (committed but not started; queued behind the active
+agent-root-cause line, and awaiting real public/consented pet-health data)
 **Project:** LYR Applications
 **Purpose:** Define a sustainable, ethical, and reproducible data strategy for LYR applications
 using real community knowledge.

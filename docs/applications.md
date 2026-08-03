@@ -15,16 +15,17 @@ application tweak. Every domain below is a validation surface, never the design 
   hand (bugs, telemetry, git history, incidents, agent logs), cleanest real evidence, on the
   long-term path (auditable memory, long-running agents, security). Internal / closest-to-home.
   Seeded: case 001.
-- **Community knowledge (pet health)** — `applications/community-knowledge/` (**Proposal**).
-  Public, reproducible, longitudinal, multi-channel, with eventual real confirmations. Aimed at
-  the first *public* demonstration. Ethically-obtained data only (public → consented → personal);
-  no Facebook API / scraping.
+- **Community knowledge (pet health)** — `applications/community-knowledge/`
+  (**Proposal — deferred**). Public, reproducible, longitudinal, multi-channel, with eventual real
+  confirmations. Aimed at the first *public* demonstration. Ethically-obtained data only
+  (public → consented → personal); no Facebook API / scraping.
 
-**Open decision (pending):** which is the *active* line. The single-active-line discipline
-("pick one; wait, don't do") was set for agent root-cause; community knowledge is a strong but
-newer proposal and cannot produce cases until real (public or consented) data is in hand. Both
-inherit the same discipline — fixed protocol, preserved failures, reopening metric, failure-mode
-coverage. The remaining candidate domains below stay parked.
+**Active line: agent root-cause (single).** Decided — the strictest reading of "pick one; wait,
+don't do." Agent root-cause has data in hand and stays the one active line. Community knowledge
+is **committed but deferred**: queued, not started, until the agent-root-cause line has
+accumulated real cases (and until real public/consented pet-health data exists). Both inherit the
+same discipline — fixed protocol, preserved failures, reopening metric, failure-mode coverage.
+The remaining candidate domains below stay parked.
 
 ## Candidate domains
 
