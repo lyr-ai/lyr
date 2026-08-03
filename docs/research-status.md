@@ -1,0 +1,55 @@
+# Research Status — Auditable Identification Protocol
+
+**State: Research complete. Awaiting external evidence.**
+
+This is not "paper accepted." It is a statement about *where the uncertainty now lives*: no
+longer in the internal soundness or the executability of the protocol, but in whether someone
+outside this research process can use it. The paper is no longer the bottleneck — external use
+is.
+
+## The arc (four phases, now complete)
+
+- **I — Discovery.** *What is cognition? What is the right ontology?* The object kept changing.
+- **II — Stabilization.** The falsifier program. Objects entered only with witnesses; the
+  protocol became internally coherent.
+- **III — Operationalization.** Minimal formalism, worked examples, independent execution. The
+  object became executable by strangers.
+- **IV — Communication.** Narrative freeze, positioning, reviewer classification. The object
+  stopped changing; only the paper changed.
+
+Transition complete. The paper matured by adding **evidence, not layers**: nearly every concept
+in it now has a corresponding experiment, falsifier, reproduction, or protocol run.
+
+## Frozen artifacts
+
+- `docs/minimal-formalism-identifiability.md` — the note: definitions, witness schema, two
+  worked examples, three structural falsifiers.
+- `docs/reproduction-experiment-1.md` — three rounds / nine independent executions; Phase-1
+  gate met (exact reproduction, empty invention list).
+- `docs/paper-narrative.md` — the locked narrative (what is in the paper, what stays out).
+- `docs/paper-auditable-identification.md` — the paper draft. **Frozen at the theory level.**
+
+## Re-open triggers — the ONLY reasons to make a conceptual change
+
+The theory is frozen. A conceptual commit to the paper is warranted **only** if:
+
+1. **Human reproduction** uncovers a genuine ambiguity (LLM executors are a proxy; a human is
+   the stronger test).
+2. **A reviewer** finds a concrete counterexample — a real mathematical error, *not* a
+   classification objection (those are answered by placement, see paper §7).
+3. **A real application** forces a contradiction the protocol cannot express.
+
+Anything else is a *new paper* (see `docs/applications.md`), not an edit to this one.
+
+## The research discipline (not a paper contribution — recorded because it is durable)
+
+The rules that produced the object, worth keeping independent of it:
+
+- Don't add an object without a witness.
+- Don't claim a limitation without a witness.
+- Stop arguing once arguments stop generating witnesses.
+- Separate discovery notebooks from paper narratives (how you found it ≠ what it is).
+- Freeze theory before optimizing communication.
+
+These are methodological rules for *doing* research, not the paper's contribution. They are
+recorded here because they outlast this paper.
