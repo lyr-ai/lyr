@@ -1,0 +1,18 @@
+{
+  "product": "LYR — Living Knowledge Explorer",
+  "framing": "A traceable knowledge space formed from the text.",
+  "case_id": "hong-lou-meng",
+  "demo_source": "红楼梦 (Dream of the Red Chamber)",
+  "public_domain": true,
+  "extractor": "llm:openai",
+  "identity_resolution": "generic entity resolution v0 — production path for Explorer v0.1; persistent, evolving identity formation remains future work",
+  "canonicalization": "resolver",
+  "people": 31,
+  "chapters": 20,
+  "themes": {
+    "status": "not_yet_derived"
+  },
+  "known_gap": "Version chain is evidence accumulation, not interpretation change — see docs/design/capability-gap-stateful-claims.md",
+  "generation_commit": null,
+  "data_version": "0.1"
+}

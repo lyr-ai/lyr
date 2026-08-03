@@ -1,0 +1,18 @@
+{
+  "slug": "fragrant-pill",
+  "canonical_label": "冷香丸 (Fragrant Pill)",
+  "aliases": [
+    "冷香丸 (Fragrant Pill)"
+  ],
+  "entity_type": "concept",
+  "summary": {
+    "chapter_min": 8,
+    "chapter_max": 8,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

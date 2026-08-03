@@ -1,0 +1,39 @@
+{
+  "entities_extracted": 50,
+  "canonical_entities": 47,
+  "resolver": {
+    "merges": 3,
+    "link_pairs": 3,
+    "unsure": 1,
+    "rejects": 14,
+    "guard_warnings": 0
+  },
+  "duplicate_ratio": 1.06,
+  "events": 31,
+  "relationships": 39,
+  "sources": 167,
+  "evidence_coverage_pct": 73.1,
+  "orphan_entities": {
+    "count": 28,
+    "sample": [
+      "通靈寶玉",
+      "石頭",
+      "林如海",
+      "林母",
+      "贾雨村",
+      "荣国府",
+      "賈府",
+      "英蓮",
+      "王子騰",
+      "薛宝钗"
+    ]
+  },
+  "source_types": [
+    "?"
+  ],
+  "claims_themes": "not_derived",
+  "known_capability_gaps": [
+    "stateful semantic claims — entity version chain is evidence accumulation, not interpretation change (docs/design/capability-gap-stateful-claims.md)",
+    "themes / durable ideas — not_yet_derived (docs/design/canonicalization-and-identity.md)"
+  ]
+}

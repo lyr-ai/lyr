@@ -1,0 +1,376 @@
+[
+  {
+    "slug": "",
+    "label": "寶玉",
+    "aliases": [
+      "寶玉"
+    ],
+    "evidence_passages": 20,
+    "chapter_min": 9,
+    "chapter_max": 20,
+    "relationships": 7,
+    "events": 7
+  },
+  {
+    "slug": "",
+    "label": "宝玉",
+    "aliases": [
+      "宝玉"
+    ],
+    "evidence_passages": 11,
+    "chapter_min": 15,
+    "chapter_max": 18,
+    "relationships": 2,
+    "events": 4
+  },
+  {
+    "slug": "",
+    "label": "秦鐘",
+    "aliases": [
+      "秦鐘"
+    ],
+    "evidence_passages": 8,
+    "chapter_min": 9,
+    "chapter_max": 16,
+    "relationships": 4,
+    "events": 4
+  },
+  {
+    "slug": "",
+    "label": "林黛玉",
+    "aliases": [
+      "林黛玉"
+    ],
+    "evidence_passages": 7,
+    "chapter_min": 3,
+    "chapter_max": 9,
+    "relationships": 3,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "鳳姐",
+    "aliases": [
+      "鳳姐"
+    ],
+    "evidence_passages": 7,
+    "chapter_min": 13,
+    "chapter_max": 16,
+    "relationships": 1,
+    "events": 4
+  },
+  {
+    "slug": "",
+    "label": "贾政",
+    "aliases": [
+      "贾政"
+    ],
+    "evidence_passages": 7,
+    "chapter_min": 18,
+    "chapter_max": 18,
+    "relationships": 1,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "襲人",
+    "aliases": [
+      "襲人"
+    ],
+    "evidence_passages": 7,
+    "chapter_min": 20,
+    "chapter_max": 20,
+    "relationships": 2,
+    "events": 0
+  },
+  {
+    "slug": "",
+    "label": "賈雨村",
+    "aliases": [
+      "賈雨村"
+    ],
+    "evidence_passages": 6,
+    "chapter_min": 2,
+    "chapter_max": 4,
+    "relationships": 3,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "凤姐",
+    "aliases": [
+      "凤姐"
+    ],
+    "evidence_passages": 6,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 1,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "賈瑞",
+    "aliases": [
+      "賈瑞"
+    ],
+    "evidence_passages": 5,
+    "chapter_min": 13,
+    "chapter_max": 13,
+    "relationships": 1,
+    "events": 3
+  },
+  {
+    "slug": "",
+    "label": "宁国府",
+    "aliases": [
+      "宁国府"
+    ],
+    "evidence_passages": 5,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 0,
+    "events": 2
+  },
+  {
+    "slug": "xue-baochai",
+    "label": "薛寶釵 (Xue Baochai)",
+    "aliases": [
+      "薛寶釵",
+      "薛寶釵 (Xue Baochai)"
+    ],
+    "evidence_passages": 4,
+    "chapter_min": 8,
+    "chapter_max": 9,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "薛蟠",
+    "aliases": [
+      "薛蟠"
+    ],
+    "evidence_passages": 4,
+    "chapter_min": 4,
+    "chapter_max": 4,
+    "relationships": 1,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "賈政",
+    "aliases": [
+      "賈政"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 2,
+    "chapter_max": 16,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "賈母",
+    "aliases": [
+      "賈母"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 9,
+    "chapter_max": 10,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "秦钟",
+    "aliases": [
+      "秦钟"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 11,
+    "chapter_max": 18,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "贾珍",
+    "aliases": [
+      "贾珍"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 0,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "智能儿",
+    "aliases": [
+      "智能儿"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 16,
+    "chapter_max": 16,
+    "relationships": 1,
+    "events": 0
+  },
+  {
+    "slug": "liu-laolao",
+    "label": "劉姥姥 (Liu Laolao)",
+    "aliases": [
+      "劉姥姥",
+      "劉姥姥 (Liu Laolao)"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 7,
+    "chapter_max": 8,
+    "relationships": 1,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "甄士隱",
+    "aliases": [
+      "甄士隱"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 1,
+    "chapter_max": 1,
+    "relationships": 1,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "贾雨村",
+    "aliases": [
+      "贾雨村"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 3,
+    "chapter_max": 3,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "荣国府",
+    "aliases": [
+      "荣国府"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 3,
+    "chapter_max": 3,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "英蓮",
+    "aliases": [
+      "英蓮"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 4,
+    "chapter_max": 4,
+    "relationships": 0,
+    "events": 2
+  },
+  {
+    "slug": "",
+    "label": "鳳姐兒",
+    "aliases": [
+      "鳳姐兒"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 7,
+    "chapter_max": 7,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "水溶",
+    "aliases": [
+      "水溶"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "林如海",
+    "aliases": [
+      "林如海"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 2,
+    "chapter_max": 2,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "贾母",
+    "aliases": [
+      "贾母"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 3,
+    "chapter_max": 3,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "贾宝玉",
+    "aliases": [
+      "贾宝玉"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 6,
+    "chapter_max": 6,
+    "relationships": 1,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "警幻仙姑",
+    "aliases": [
+      "警幻仙姑"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 6,
+    "chapter_max": 6,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "金荣",
+    "aliases": [
+      "金荣"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 11,
+    "chapter_max": 11,
+    "relationships": 1,
+    "events": 1
+  },
+  {
+    "slug": "",
+    "label": "北靜王水溶",
+    "aliases": [
+      "北靜王水溶"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 16,
+    "chapter_max": 16,
+    "relationships": 1,
+    "events": 0
+  }
+]

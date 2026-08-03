@@ -7,3 +7,5 @@ data/knowledge.canonical.json
 __pycache__/
 # secrets — never commit an API key
 .env
+data/*.knowledge.json
+data/*.canonical.json

@@ -1,5 +1,13 @@
 [
   {
+    "case_id": "hong-lou-meng",
+    "title": "红楼梦 (Dream of the Red Chamber)",
+    "language": "zh",
+    "source_type": "book",
+    "dir": "hong-lou-meng",
+    "public": true
+  },
+  {
     "case_id": "pride-and-prejudice",
     "title": "Pride and Prejudice",
     "language": "en",

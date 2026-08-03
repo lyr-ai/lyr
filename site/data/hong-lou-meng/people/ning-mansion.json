@@ -1,0 +1,18 @@
+{
+  "slug": "ning-mansion",
+  "canonical_label": "Ning Mansion",
+  "aliases": [
+    "Ning Mansion"
+  ],
+  "entity_type": "place",
+  "summary": {
+    "chapter_min": 12,
+    "chapter_max": 12,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

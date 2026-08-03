@@ -1,0 +1,18 @@
+{
+  "slug": "ningguo-mansion",
+  "canonical_label": "Ningguo Mansion",
+  "aliases": [
+    "Ningguo Mansion"
+  ],
+  "entity_type": "place",
+  "summary": {
+    "chapter_min": 14,
+    "chapter_max": 14,
+    "evidence_passages": 2,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "",
+  "canonical_label": "賈妃",
+  "aliases": [
+    "賈妃"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 20,
+    "chapter_max": 20,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}
