@@ -1,128 +1,151 @@
-# Design Note: LYR Explorer — Product Positioning
+# LYR Explorer Design — Beyond RAG
 
-**Status:** Proposal — **not adopted.** This repositions the product away from the current live
-site (auditable identification — *"does the explanation refer to the world?"*) toward a
-RAG-alternative / knowledge-building framing (*"RAG retrieves, LYR builds knowledge"*). Two things
-are unresolved before adoption, recorded honestly here so the repo does not imply this is decided:
+**Status:** Proposed — **the long-term product vision (north star).**
 
-1. **Relationship to the identification framing.** These are two different front doors. The
-   strongest resolution may *nest* them (their own positioning statement below already does:
-   *"knowledge that becomes harder to fool over time"*), but the homepage's first screen must pick
-   an emphasis.
-2. **Evidence asymmetry.** The knowledge-*organization* claims here (a "living knowledge space,"
-   relationships, knowledge "forming in real time") rest on the durable→cognitive line, where the
-   project has a **documented negative result** ([`M3.2-A`](../../experiments/navigation/EXPERIMENT-M3.2-A.md):
-   provenance could not organize; 0 shared-semantic links) and the Cognitive layer is **unbuilt**.
-   The identification protocol is by contrast the frozen, falsifier-tested, independently
-   reproduced result. Leading with the less-validated line would cut against the project's own
-   discipline (*real, validated demos only*). See [`../research-status.md`](../research-status.md).
+This describes the *destination*, not today's validated capability. Separating the two keeps the
+repo honest without constraining the vision:
 
-What *is* validated in this line: durable judgment **formation with provenance and verification**
-(the `durability-v1` benchmark, the Judgment Explorer over real records). What is **not**:
-organization into a navigable knowledge space (M3.2-A failed) and the Cognitive layer (not built).
-A "knowledge forming in real time" demo must be backed by a **real** run, and must not show the
-organization output as working until it is.
+- **Validated now:** durable knowledge **formation + provenance + verification** (the
+  `durability-v1` benchmark; the Judgment Explorer over real records) — and, on the theory side,
+  auditable **identification** (frozen, reproduced), which is the "harder to fool" property this
+  vision names.
+- **Still to build:** the **living knowledge space** — organization, relationships, the navigable
+  structure, the Cognitive layer. Current evidence for the organization step is the *negative*
+  result [`M3.2-A`](../../experiments/navigation/EXPERIMENT-M3.2-A.md); this is a build target, not
+  a shipped capability. Tracked in [`../research-status.md`](../research-status.md).
+- **Guardrail (from the project's discipline):** when the "knowledge forming" experience (§7, §12)
+  is built, it must run on a **real** source — no mocked entity/relationship counts.
 
 ---
 
-*(Proposal text as authored, preserved verbatim below.)*
+## 1. Motivation
 
----
+Most AI knowledge systems are retrieval systems: `Source → Chunking → Retrieval → LLM → Answer`.
+This is **question-driven** — knowledge is reconstructed for every query and disappears when the
+conversation ends. The system becomes no smarter than before.
 
-# Problem
+LYR takes the opposite approach: instead of retrieving information to answer questions, it
+continuously transforms information into a persistent, evolving knowledge space. Questions become
+one way of interacting with that knowledge, not the mechanism that creates it.
 
-Most AI systems today treat external knowledge as something to **retrieve**:
-`Source → Chunks → Retrieval → LLM → Answer`. The retrieved information disappears once the
-conversation ends. The system answers questions; it does **not** become more knowledgeable.
-
-# Observation
-
-People do not learn this way. Humans gradually build concepts, relationships, long-term beliefs,
-evolving understanding, stable knowledge. Questions happen **after** knowledge exists.
-
-# Core Thesis
+## 2. Core Thesis
 
 > **RAG retrieves information. LYR builds knowledge.**
 
-The goal of LYR is not better retrieval. It is to continuously transform evolving information into
-living knowledge.
+The goal is not a better retrieval engine — it is a system that continuously forms, maintains, and
+evolves knowledge over time. Knowledge exists independently of any particular question.
 
-# Product Vision
+## 3. Product Vision
 
-The product is not a Book / YouTube / GitHub Explorer — those are validation domains. The product
-is a **Knowledge Explorer**. Users connect any long-form knowledge source (book, paper, transcript,
-repo, forum thread, journal, medical record); the same pipeline operates on all of them.
+LYR Explorer is **not** a Book / Paper / GitHub / YouTube Explorer — those are validation domains.
+The product is **a Living Knowledge Explorer**: users connect a knowledge source, and LYR
+continuously transforms it into an explorable knowledge space.
 
-# User Flow
+## 4. Supported Knowledge Sources
 
-`Connect Source → Knowledge Growing → Explore Knowledge → Ask Questions → Knowledge Continues To
-Evolve`. The conversation is built **on top of** knowledge; it is not the mechanism that creates it.
+Eventually any long-form source — books, research papers, YouTube, podcasts, git repos,
+documentation, community forums, personal journals, medical histories. Every source enters the same
+pipeline; the representation never changes.
 
-# Difference from RAG
+## 5. User Journey
 
-- **RAG:** `Source → Retrieve → Answer → Done`. Knowledge does not persist; the next question
-  starts over.
-- **LYR:** `Source → Semantic → Durable → Living Knowledge Space → Questions → Knowledge Updates`.
-  Knowledge exists independently of any particular question.
+Not `Upload PDF → Ask Question → Answer`, but:
 
-# Product Principle
+```
+Connect Source → Knowledge Begins Growing → Explore Knowledge → Ask Questions → Knowledge Continues To Evolve
+```
 
-Questions come **after** knowledge, not before. The system improves its understanding regardless of
-whether a user asks anything.
+The conversation happens **after** knowledge exists.
 
-# Home Page
+## 6. Product Architecture
 
-The landing page should immediately answer *"Why is this not another RAG?"* before explaining what
-users can upload.
+```
+Source → Source Layer → Semantic Layer → Durable Layer → Living Knowledge Space → Conversation
+```
 
-**Suggested hero:** *RAG retrieves documents. LYR builds knowledge.*
-**Subtitle:** *Turn books, papers, videos, forums, and repositories into living knowledge that
-continues to evolve.*
+Conversation is built **on top of** knowledge; it never replaces it.
 
-# Product Experience
+## 7. Knowledge Formation
 
-The first thing users see is **knowledge growing**, not a chat box. E.g. `Chapter 1 processed → 14
-people discovered → 9 relationships proposed → 6 durable ideas emerging → 3 unresolved conflicts`.
-*(Any such figures must come from a real run — see the status note above.)*
+Users should immediately see knowledge forming — not a spinner, not a chat box. E.g.:
 
-# Conversation
+```
+Chapter 1 processed → 14 people discovered → 9 relationships identified → 6 durable ideas emerging → 3 unresolved conflicts
+```
 
-Conversation is not the product; it is one way to explore existing knowledge. The workflow is
-`Question → Knowledge → Evidence → Answer → Knowledge remains`.
+*(Real run only — see the guardrail in the status header.)*
 
-# Knowledge Representation
+## 8. Knowledge Explorer
 
-Expose knowledge, not documents: people, events, relationships, durable knowledge, claims,
-supporting evidence, alternative interpretations, remaining uncertainty. Every object links back to
-source evidence.
+Expose knowledge directly: People · Events · Relationships · Timeline · Durable Knowledge · Claims ·
+Supporting Evidence · Alternative Interpretations · Remaining Uncertainty. Every object stays fully
+traceable back to source evidence.
 
-# Product Philosophy
+## 9. Conversation
 
-Never appear to answer directly from documents; answer from continuously maintained knowledge. The
-visible interaction is always `Source → Knowledge → Answer`, never `Source → Answer`.
+One interaction mode, not the product. Not `Question → Answer`, but:
 
-# Validation Domains
+```
+Question → Knowledge → Evidence → Answer → Knowledge Persists
+```
+
+The answer never becomes the primary artifact — knowledge does.
+
+## 10. Difference from RAG
+
+- **RAG:** `Source → Retrieve → Answer → Finished`. Every question starts over.
+- **LYR:** `Source → Semantic → Durable → Living Knowledge → Conversation → Knowledge Updates`.
+  Knowledge continues to evolve after every interaction.
+
+## 11. First Impression
+
+The homepage answers one question immediately — *"Why is this fundamentally different from RAG?"* —
+before asking users to upload anything.
+
+**Hero:** *RAG retrieves documents. LYR builds knowledge.*
+**Subtitle:** *Transform books, papers, videos, repositories, and communities into living knowledge
+that continuously evolves.*
+
+## 12. Visual Principle
+
+The first visual is **knowledge growing** — not conversation, retrieval, or search. Users watch
+entities appear, relationships connect, events accumulate, durable knowledge emerge, and conflicts
+remain unresolved until evidence arrives. The visual system communicates that knowledge is alive.
+
+## 13. Product Philosophy
+
+Never answer directly from documents; always answer from maintained knowledge: `Source → Knowledge
+→ Answer`, never `Source → Answer`.
+
+## 14. Applications
 
 Books first; then research papers, YouTube, git repos, forums, diaries, medical records, parenting
-logs. Demonstrations of the same representation — never the design center.
+logs. Applications validate the representation; they never redefine it.
 
-# Product Goal
+## 15. Product Positioning
 
-After two minutes, users should say *"I've never seen knowledge represented like this before,"* not
+After two minutes users should say *"I've never seen knowledge represented like this before,"* not
 *"this is another Chat-with-PDF."*
 
-# Positioning Statement
+## 16. Design Principles
 
-> **RAG helps AI answer your next question. LYR helps AI build knowledge that becomes harder to fool
-> over time.**
+1. Knowledge first.
+2. Conversation follows knowledge.
+3. Knowledge survives beyond individual conversations.
+4. Every source follows the same representation.
+5. Applications validate the representation.
+6. Knowledge formation should be visible.
+7. Every knowledge object remains traceable to evidence.
+8. The product communicates its difference from RAG before users ask their first question.
 
-# Design Principles
+## 17. Long-term Vision
 
-1. Knowledge first; conversation is built on top of knowledge.
-2. Knowledge persists beyond individual conversations.
-3. Every source follows the same pipeline.
-4. Applications validate the representation; they never redefine it.
-5. The product demonstrates living knowledge, not better retrieval.
-6. Users should see knowledge forming in real time.
-7. The first impression must communicate that LYR is fundamentally different from RAG, without
-   requiring users to read the paper.
+Today's AI systems retrieve information; tomorrow's will maintain living knowledge. LYR Explorer is
+designed to make that knowledge visible — not a better retrieval system, a continuously evolving
+knowledge system.
+
+---
+
+> **RAG helps AI answer your next question.**
+> **LYR helps AI build knowledge that survives after the question is over** — and that becomes
+> harder to fool over time.
