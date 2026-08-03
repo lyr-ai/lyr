@@ -203,24 +203,41 @@ Prototype 1, now confirmed twice more:
 > The three "types" are just different *index/scope profiles* over one claim primitive — claim
 > maintenance, not object type, is the common substrate.
 
+### Fourth world (falsification) — Kimi did not break it
+
+Kimi was run next (`prototype-4-kimi-falsification.md`) as an **untouched** corpus, to try to break
+the primitive rather than confirm it. It held, and strengthened the claim:
+
+- It **exercised the previously-untested `SUPPORTED` derivation** — `MuonClip improves upon Muon` is
+  *explicitly stated*, the mirror of DeepSeek's *unstated* attention lineage (which was `ABSTAINED`).
+  Same relation type, opposite status, driven by evidence. The status enum is real, not theater.
+- Version-departure and over-general comparative claims fit the same two-layer, status-bearing shape.
+- The one new thing Kimi added is a **boundary, not a counterexample:** `MLA` appears in *both* the
+  DeepSeek and Kimi corpora, and the within-corpus primitive says nothing about whether they are the
+  same object. **Cross-corpus concept identity** is a layer *above* the primitive — the knowledge-
+  object analogue of entity resolution, lifted across corpora. Recorded as the next open question.
+
+Four independent worlds now converge on the scoped-claim substrate.
+
 ### What this does and does NOT establish
 
-- **Does:** three independent probes converge on one *representation*. That is exactly what the
-  exploration set out to find, and it answers the research question in the affirmative **at the
-  representation level.**
+- **Does:** four independent probes (DeepSeek Concept, P&P Theme, Elizabeth State, Kimi
+  optimizer/claims) converge on one *representation* — the research question answered in the
+  affirmative **at the representation level.**
 - **Does NOT:** (1) these were **manual** representation-discovery probes, not system runs — no
-  automated formation exists; (2) no **zero-fabrication measurement at scale** — I abstained by hand;
-  a system must do it and be graded; (3) two corpora only (DeepSeek, P&P) — **Kimi**, the deferred
-  fourth world, has not run; (4) a candidate **representation is not a validated layer.** Naming it
-  or opening "M3.2" is a separate decision, earned by a build + measurement, not by three hand-probes.
+  automated formation exists; (2) no **zero-fabrication measurement at scale** — abstention was done
+  by hand; a system must do it and be graded; (3) the **cross-corpus identity boundary** Kimi
+  surfaced is unbuilt; (4) a **representation surviving four worlds is a strong working hypothesis,
+  not a validated layer.** It earns "layer" only when a *system* forms it honestly and is graded.
 
 ### The decision this leaves for the PI
 
-The representation-convergence is strong enough to promote the scoped-claim / claim-maintenance
-substrate to a **working hypothesis**. The open fork: (a) validate it with a *single* build +
-zero-fabrication measurement on one corpus, or (b) run **Kimi** first as an untouched fourth world
-before any build. Either keeps the discipline: the primitive earns "layer" only when a *system* forms
-it honestly on a corpus not used to discover it.
+The scoped-claim / claim-maintenance substrate is now a working hypothesis validated across four
+worlds at the representation level. The open fork is no longer "which corpus" but **build vs. keep
+exploring**: (a) a first minimal **build + zero-fabrication measurement** (a system forms scoped
+claims on one corpus, graded against the hand-probe), or (b) probe the newly-surfaced **cross-corpus
+concept-identity** boundary before any build. Naming the substrate a layer / opening "M3.2" is earned
+by (a), not by the probes.
 
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
