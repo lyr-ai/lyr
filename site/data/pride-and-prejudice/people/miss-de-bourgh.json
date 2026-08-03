@@ -1,0 +1,43 @@
+{
+  "slug": "miss-de-bourgh",
+  "canonical_label": "Miss de Bourgh",
+  "aliases": [
+    "Miss de Bourgh"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 14,
+    "chapter_max": 14,
+    "evidence_passages": 3,
+    "relationships": 0,
+    "events": 1,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 28,
+      "kind": "event",
+      "text": "Meeting Lady Catherine and Miss De Bourgh",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_42d725c993e3",
+          "chapter": 28,
+          "text": "“I like her appearance,” said Elizabeth, struck with other ideas. “She\nlooks sickly and cross. Yes, she will do for him very well. She will\nmake him a very proper wife.”"
+        },
+        {
+          "id": "src_43f83f444c64",
+          "chapter": 28,
+          "text": "“Oh, my dear Eliza! pray make haste and come into the dining-room, for\nthere is such a sight to be seen! I will not tell you what it is. Make\nhaste, and come down this moment.”"
+        },
+        {
+          "id": "src_639dd6d2d3d1",
+          "chapter": 28,
+          "text": "“And is this all?” cried Elizabeth. “I expected at least that the pigs\nwere got into the garden, and here is nothing but Lady Catherine and her\ndaughter!”"
+        }
+      ]
+    }
+  ]
+}

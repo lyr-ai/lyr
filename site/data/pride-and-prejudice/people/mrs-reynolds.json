@@ -1,0 +1,43 @@
+{
+  "slug": "mrs-reynolds",
+  "canonical_label": "Mrs. Reynolds",
+  "aliases": [
+    "Mrs. Reynolds"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 43,
+    "chapter_max": 43,
+    "evidence_passages": 3,
+    "relationships": 0,
+    "events": 1,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 43,
+      "kind": "event",
+      "text": "Elizabeth visits Pemberley",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_3839785a4f85",
+          "chapter": 43,
+          "text": "Elizabeth, as they drove along, watched for the first appearance of\nPemberley Woods with some perturbation; and when at length they turned\nin at the lodge, her spirits were in a high flutter."
+        },
+        {
+          "id": "src_8ab74492f7bd",
+          "chapter": 43,
+          "text": "Elizabeth’s mind was too full for conversation, but she saw and admired\nevery remarkable spot and point of view. They gradually ascended for\nhalf a mile, and then found themselves at the top of a considerable\neminence, where the wood ceased, and the eye was instantly caught by\nPemberley House, situated on the opposite side of the valley, into which\nthe road with some abruptness wound. It was a large, handsome stone\nbuilding, standing well on rising ground, and backed by a ridge of high\nwoody hills; and in front a stream of some natural importance was\nswelled into greater, but without any artificial appearance. Its banks\nwere neither formal nor falsely adorned. Elizabeth was delighted. She\nhad never seen a place for which nature had done more, or where natural\nbeauty had been so little counteracted by an awkward taste. They were\nall of them warm in their admiration; and at that moment she felt that\nto be mistress of Pemberley might be something!"
+        },
+        {
+          "id": "src_db3f9bf7746c",
+          "chapter": 43,
+          "text": "The housekeeper came; a respectable looking elderly woman, much less\nfine, and more civil, than she had any notion of finding her. They\nfollowed her into the dining-parlour. It was a large, well-proportioned\nroom, handsomely fitted up. Elizabeth, after slightly surveying it, went\nto a window to enjoy its prospect. The hill, crowned with wood, from\nwhich they had descended, receiving increased abruptness from the\ndistance, was a beautiful object. Every disposition of the ground was\ngood; and she looked on the whole scene, the river, the trees scattered\non its banks, and the winding of the valley, as far as she could trace\nit, with delight. As they passed into other rooms, these objects were\ntaking different positions; but from every window there were beauties\nto be seen. The rooms were lofty and handsome, and their furniture\nsuitable to the fortune of their proprietor; but Elizabeth saw, with\nadmiration of his taste, that it was neither gaudy nor uselessly\nfine,--with less of splendour, and more real elegance, than the\nfurniture of Rosings."
+        }
+      ]
+    }
+  ]
+}

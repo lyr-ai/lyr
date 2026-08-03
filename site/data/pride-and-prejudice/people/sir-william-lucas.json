@@ -1,0 +1,86 @@
+{
+  "slug": "sir-william-lucas",
+  "canonical_label": "Sir William Lucas",
+  "aliases": [
+    "Sir William",
+    "Sir William Lucas"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 5,
+    "chapter_max": 30,
+    "evidence_passages": 2,
+    "relationships": 0,
+    "events": 4,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 23,
+      "kind": "event",
+      "text": "Engagement Announcement",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_26d792b89f63",
+          "chapter": 23,
+          "text": "Elizabeth, feeling it incumbent on her to relieve him from so unpleasant\na situation, now put herself forward to confirm his account, by\nmentioning her prior knowledge of it from Charlotte herself; and\nendeavoured to put a stop to the exclamations of her mother and sisters,\nby the earnestness of her congratulations to Sir William, in which she\nwas readily joined by Jane, and by making a variety of remarks on the\nhappiness that might be expected from the match, the excellent character\nof Mr. Collins, and the convenient distance of Hunsford from London."
+        },
+        {
+          "id": "src_daaa70472ee7",
+          "chapter": 23,
+          "text": "Elizabeth was sitting with her mother and sisters, reflecting on what\nshe had heard, and doubting whether she was authorized to mention it,\nwhen Sir William Lucas himself appeared, sent by his daughter to\nannounce her engagement to the family. With many compliments to them,\nand much self-gratulation on the prospect of a connection between the\nhouses, he unfolded the matter,--to an audience not merely wondering,\nbut incredulous; for Mrs. Bennet, with more perseverance than\npoliteness, protested he must be entirely mistaken; and Lydia, always\nunguarded and often uncivil, boisterously exclaimed,--"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "kind": "event",
+      "text": "Elizabeth's journey to Hunsford",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_42644a60feac",
+          "chapter": 27,
+          "text": "With no greater events than these in the Longbourn family, and otherwise\ndiversified by little beyond the walks to Meryton, sometimes dirty and\nsometimes cold, did January and February pass away. March was to take\nElizabeth to Hunsford. She had not at first thought very seriously of\ngoing thither; but Charlotte, she soon found, was depending on the\nplan, and she gradually learned to consider it herself with greater\npleasure as well as greater certainty. Absence had increased her desire\nof seeing Charlotte again, and weakened her disgust of Mr. Collins.\nThere was novelty in the scheme; and as, with such a mother and such\nuncompanionable sisters, home could not be faultless, a little change\nwas not unwelcome for its own sake. The journey would, moreover, give\nher a peep at Jane; and, in short, as the time drew near, she would have\nbeen very sorry for any delay. Everything, however, went on smoothly,\nand was finally settled according to Charlotte’s first sketch. She was\nto accompany Sir William and his second daughter. The improvement of\nspending a night in London was added in time, and the plan became as\nperfect as plan could be."
+        }
+      ]
+    },
+    {
+      "chapter": 29,
+      "kind": "event",
+      "text": "Dinner at Rosings",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_48631d3bdf59",
+          "chapter": 29,
+          "text": "The dinner was exceedingly handsome, and there were all the servants,\nand all the articles of plate which Mr. Collins had promised; and, as he\nhad likewise foretold, he took his seat at the bottom of the table, by\nher Ladyship’s desire, and looked as if he felt that life could furnish\nnothing greater. He carved and ate and praised with delighted alacrity;\nand every dish was commended first by him, and then by Sir William, who\nwas now enough recovered to echo whatever his son-in-law said, in a\nmanner which Elizabeth wondered Lady Catherine could bear. But Lady\nCatherine seemed gratified by their excessive admiration, and gave most\ngracious smiles, especially when any dish on the table proved a novelty\nto them. The party did not supply much conversation. Elizabeth was ready\nto speak whenever there was an opening, but she was seated between\nCharlotte and Miss de Bourgh--the former of whom was engaged in\nlistening to Lady Catherine, and the latter said not a word to her all\nthe dinnertime. Mrs. Jenkinson was chiefly employed in watching how\nlittle Miss de Bourgh ate, pressing her to try some other dish and\nfearing she was indisposed. Maria thought speaking out of the question,\nand the gentlemen did nothing but eat and admire."
+        },
+        {
+          "id": "src_88eb02c0e2e3",
+          "chapter": 29,
+          "text": "When Lady Catherine and her daughter had played as long as they chose,\nthe tables were broken up, the carriage was offered to Mrs. Collins,\ngratefully accepted, and immediately ordered. The party then gathered\nround the fire to hear Lady Catherine determine what weather they were\nto have on the morrow. From these instructions they were summoned by the\narrival of the coach; and with many speeches of thankfulness on Mr.\nCollins’s side, and as many bows on Sir William’s, they departed. As\nsoon as they had driven from the door, Elizabeth was called on by her\ncousin to give her opinion of all that she had seen at Rosings, which,\nfor Charlotte’s sake, she made more favourable than it really was. But\nher commendation, though costing her some trouble, could by no means\nsatisfy Mr. Collins, and he was very soon obliged to take her Ladyship’s\npraise into his own hands."
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "kind": "event",
+      "text": "Visit of Sir William",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_e0faf6e5cdcc",
+          "chapter": 30,
+          "text": "Sir William stayed only a week at Hunsford; but his visit was long\nenough to convince him of his daughter’s being most comfortably settled,\nand of her possessing such a husband and such a neighbour as were not\noften met with. While Sir William was with them, Mr. Collins devoted his\nmornings to driving him out in his gig, and showing him the country: but\nwhen he went away, the whole family returned to their usual employments,\nand Elizabeth was thankful to find that they did not see more of her\ncousin by the alteration; for the chief of the time between breakfast\nand dinner was now passed by him either at work in the garden, or in\nreading and writing, and looking out of window in his own book room,\nwhich fronted the road. The room in which the ladies sat was backwards.\nElizabeth at first had rather wondered that Charlotte should not prefer\nthe dining parlour for common use; it was a better sized room, and had a\npleasanter aspect: but she soon saw that her friend had an excellent\nreason for what she did, for Mr. Collins would undoubtedly have been\nmuch less in his own apartment had they sat in one equally lively; and\nshe gave Charlotte credit for the arrangement."
+        }
+      ]
+    }
+  ]
+}

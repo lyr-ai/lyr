@@ -1,0 +1,310 @@
+{
+  "slug": "lady-catherine-de-bourgh",
+  "canonical_label": "Lady Catherine de Bourgh",
+  "aliases": [
+    "Lady Catherine",
+    "Lady Catherine de Bourgh"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 14,
+    "chapter_max": 57,
+    "evidence_passages": 22,
+    "relationships": 7,
+    "events": 8,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 4
+  },
+  "timeline": [
+    {
+      "chapter": 14,
+      "kind": "relationship",
+      "text": "Affectionate Patronage",
+      "other": "Mr. Collins",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_5ab438afdb68",
+          "chapter": 14,
+          "text": "“Her indifferent state of health unhappily prevents her being in town;\nand by that means, as I told Lady Catherine myself one day, has deprived\nthe British Court of its brightest ornament. Her Ladyship seemed pleased\nwith the idea; and you may imagine that I am happy on every occasion to\noffer those little delicate compliments which are always acceptable to\nladies. I have more than once observed to Lady Catherine, that her\ncharming daughter seemed born to be a duchess; and that the most\nelevated rank, instead of giving her consequence, would be adorned by\nher. These are the kind of little things which please her Ladyship, and\nit is a sort of attention which I conceive myself peculiarly bound to\npay.”"
+        },
+        {
+          "id": "src_f20990abf0b9",
+          "chapter": 14,
+          "text": "During dinner, Mr. Bennet scarcely spoke at all; but when the servants\nwere withdrawn, he thought it time to have some conversation with his\nguest, and therefore started a subject in which he expected him to\nshine, by observing that he seemed very fortunate in his patroness. Lady\nCatherine de Bourgh’s attention to his wishes, and consideration for his\ncomfort, appeared very remarkable. Mr. Bennet could not have chosen\nbetter. Mr. Collins was eloquent in her praise. The subject elevated him\nto more than usual solemnity of manner; and with a most important aspect\nhe protested that he had never in his life witnessed such behaviour in a\nperson of rank--such affability and condescension, as he had himself\nexperienced from Lady Catherine. She had been graciously pleased to\napprove of both the discourses which he had already had the honour of\npreaching before her. She had also asked him twice to dine at Rosings,\nand had sent for him only the Saturday before, to make up her pool of\nquadrille in the evening. Lady Catherine was reckoned proud by many\npeople, he knew, but _he_ had never seen anything but affability in her.\nShe had always spoken to him as she would to any other gentleman; she\nmade not the smallest objection to his joining in the society of the\nneighbourhood, nor to his leaving his parish occasionally for a week or\ntwo to visit his relations. She had even condescended to advise him to\nmarry as soon as he could, provided he chose with discretion; and had\nonce paid him a visit in his humble parsonage, where she had perfectly\napproved all the alterations he had been making, and had even vouchsafed\nto suggest some herself,--some shelves in the closets upstairs."
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "kind": "event",
+      "text": "Meeting Lady Catherine and Miss De Bourgh",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_42d725c993e3",
+          "chapter": 28,
+          "text": "“I like her appearance,” said Elizabeth, struck with other ideas. “She\nlooks sickly and cross. Yes, she will do for him very well. She will\nmake him a very proper wife.”"
+        },
+        {
+          "id": "src_43f83f444c64",
+          "chapter": 28,
+          "text": "“Oh, my dear Eliza! pray make haste and come into the dining-room, for\nthere is such a sight to be seen! I will not tell you what it is. Make\nhaste, and come down this moment.”"
+        },
+        {
+          "id": "src_639dd6d2d3d1",
+          "chapter": 28,
+          "text": "“And is this all?” cried Elizabeth. “I expected at least that the pigs\nwere got into the garden, and here is nothing but Lady Catherine and her\ndaughter!”"
+        }
+      ]
+    },
+    {
+      "chapter": 29,
+      "kind": "event",
+      "text": "Dinner at Rosings",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_48631d3bdf59",
+          "chapter": 29,
+          "text": "The dinner was exceedingly handsome, and there were all the servants,\nand all the articles of plate which Mr. Collins had promised; and, as he\nhad likewise foretold, he took his seat at the bottom of the table, by\nher Ladyship’s desire, and looked as if he felt that life could furnish\nnothing greater. He carved and ate and praised with delighted alacrity;\nand every dish was commended first by him, and then by Sir William, who\nwas now enough recovered to echo whatever his son-in-law said, in a\nmanner which Elizabeth wondered Lady Catherine could bear. But Lady\nCatherine seemed gratified by their excessive admiration, and gave most\ngracious smiles, especially when any dish on the table proved a novelty\nto them. The party did not supply much conversation. Elizabeth was ready\nto speak whenever there was an opening, but she was seated between\nCharlotte and Miss de Bourgh--the former of whom was engaged in\nlistening to Lady Catherine, and the latter said not a word to her all\nthe dinnertime. Mrs. Jenkinson was chiefly employed in watching how\nlittle Miss de Bourgh ate, pressing her to try some other dish and\nfearing she was indisposed. Maria thought speaking out of the question,\nand the gentlemen did nothing but eat and admire."
+        },
+        {
+          "id": "src_88eb02c0e2e3",
+          "chapter": 29,
+          "text": "When Lady Catherine and her daughter had played as long as they chose,\nthe tables were broken up, the carriage was offered to Mrs. Collins,\ngratefully accepted, and immediately ordered. The party then gathered\nround the fire to hear Lady Catherine determine what weather they were\nto have on the morrow. From these instructions they were summoned by the\narrival of the coach; and with many speeches of thankfulness on Mr.\nCollins’s side, and as many bows on Sir William’s, they departed. As\nsoon as they had driven from the door, Elizabeth was called on by her\ncousin to give her opinion of all that she had seen at Rosings, which,\nfor Charlotte’s sake, she made more favourable than it really was. But\nher commendation, though costing her some trouble, could by no means\nsatisfy Mr. Collins, and he was very soon obliged to take her Ladyship’s\npraise into his own hands."
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "kind": "relationship",
+      "text": "Mr. Collins' admiration for Lady Catherine",
+      "other": "Mr. Collins",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_49cc9fc9ad20",
+          "chapter": 30,
+          "text": "Elizabeth soon perceived, that though this great lady was not in the\ncommission of the peace for the county, she was a most active magistrate\nin her own parish, the minutest concerns of which were carried to her by\nMr. Collins; and whenever any of the cottagers were disposed to be\nquarrelsome, discontented, or too poor, she sallied forth into the\nvillage to settle their differences, silence their complaints, and scold\nthem into harmony and plenty."
+        },
+        {
+          "id": "src_e865eeea5427",
+          "chapter": 30,
+          "text": "Very few days passed in which Mr. Collins did not walk to Rosings, and\nnot many in which his wife did not think it necessary to go likewise;\nand till Elizabeth recollected that there might be other family livings\nto be disposed of, she could not understand the sacrifice of so many\nhours. Now and then they were honoured with a call from her Ladyship,\nand nothing escaped her observation that was passing in the room during\nthese visits. She examined into their employments, looked at their work,\nand advised them to do it differently; found fault with the arrangement\nof the furniture, or detected the housemaid in negligence; and if she\naccepted any refreshment, seemed to do it only for the sake of finding\nout that Mrs. Collins’s joints of meat were too large for her family."
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "kind": "relationship",
+      "text": "Mr. Darcy's connection to Lady Catherine",
+      "other": "Mr. Darcy",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_55107ed6f4e2",
+          "chapter": 30,
+          "text": "In this quiet way the first fortnight of her visit soon passed away.\nEaster was approaching, and the week preceding it was to bring an\naddition to the family at Rosings, which in so small a circle must be\nimportant. Elizabeth had heard, soon after her arrival, that Mr. Darcy\nwas expected there in the course of a few weeks; and though there were\nnot many of her acquaintance whom she did not prefer, his coming would\nfurnish one comparatively new to look at in their Rosings parties, and\nshe might be amused in seeing how hopeless Miss Bingley’s designs on him\nwere, by his behaviour to his cousin, for whom he was evidently destined\nby Lady Catherine, who talked of his coming with the greatest\nsatisfaction, spoke of him in terms of the highest admiration, and\nseemed almost angry to find that he had already been frequently seen by\nMiss Lucas and herself."
+        },
+        {
+          "id": "src_6b362f17a7c4",
+          "chapter": 30,
+          "text": "the earliest assurance of it; and, after making his bow as the carriage\nturned into the park, hurried home with the great intelligence. On the\nfollowing morning he hastened to Rosings to pay his respects. There were\ntwo nephews of Lady Catherine to require them, for Mr. Darcy had brought\nwith him a Colonel Fitzwilliam, the younger son of his uncle, Lord ----;\nand, to the great surprise of all the party, when Mr. Collins returned,\nthe gentlemen accompanied him. Charlotte had seen them from her\nhusband’s room, crossing the road, and immediately running into the\nother, told the girls what an honour they might expect, adding,--"
+        }
+      ]
+    },
+    {
+      "chapter": 31,
+      "kind": "event",
+      "text": "Lady Catherine critiques music performance",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_365519c44bd1",
+          "chapter": 31,
+          "text": "“So much the better. It cannot be done too much; and when I next write\nto her, I shall charge her not to neglect it on any account. I often\ntell young ladies, that no excellence in music is to be acquired without\nconstant practice. I have told Miss Bennet several times, that she will\nnever play really well, unless she practises more; and though Mrs.\nCollins has no instrument, she is very welcome, as I have often told\nher, to come to Rosings every day, and play on the pianoforte in Mrs.\nJenkinson’s room. She would be in nobody’s way, you know, in that part\nof the house.”"
+        },
+        {
+          "id": "src_e25afc22b278",
+          "chapter": 31,
+          "text": "“Miss Bennet would not play at all amiss if she practised more, and\ncould have the advantage of a London master. She has a very good notion\nof fingering, though her taste is not equal to Anne’s. Anne would have\nbeen a delightful performer, had her health allowed her to learn.”"
+        }
+      ]
+    },
+    {
+      "chapter": 31,
+      "kind": "relationship",
+      "text": "Lady Catherine receives guests",
+      "other": "Colonel Fitzwilliam and Elizabeth Bennet",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_004443994f56",
+          "chapter": 31,
+          "text": "The invitation was accepted, of course, and at a proper hour they joined\nthe party in Lady Catherine’s drawing-room. Her Ladyship received them\ncivilly, but it was plain that their company was by no means so\nacceptable as when she could get nobody else; and she was, in fact,\nalmost engrossed by her nephews, speaking to them, especially to Darcy,\nmuch more than to any other person in the room."
+        },
+        {
+          "id": "src_e93331f43381",
+          "chapter": 31,
+          "text": "Colonel Fitzwilliam’s manners were very much admired at the Parsonage,\nand the ladies all felt that he must add considerably to the pleasure of\ntheir engagements at Rosings. It was some days, however, before they\nreceived any invitation thither, for while there were visitors in the\nhouse they could not be necessary; and it was not till Easter-day,\nalmost a week after the gentlemen’s arrival, that they were honoured by\nsuch an attention, and then they were merely asked on leaving church to\ncome there in the evening. For the last week they had seen very little\nof either Lady Catherine or her daughter. Colonel Fitzwilliam had called\nat the Parsonage more than once during the time, but Mr. Darcy they had\nonly seen at church."
+        }
+      ]
+    },
+    {
+      "chapter": 37,
+      "kind": "event",
+      "text": "Departure from Rosings",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_9d82aabff89c",
+          "chapter": 37,
+          "text": "The two gentlemen left Rosings the next morning; and Mr. Collins having\nbeen in waiting near the lodges, to make them his parting obeisance, was\nable to bring home the pleasing intelligence of their appearing in very\ngood health, and in as tolerable spirits as could be expected, after the\nmelancholy scene so lately gone through at Rosings. To Rosings he then\nhastened to console Lady Catherine and her daughter; and on his return\nbrought back, with great satisfaction, a message from her Ladyship,\nimporting that she felt herself so dull as to make her very desirous of\nhaving them all to dine with her."
+        },
+        {
+          "id": "src_a6ef9cd5db99",
+          "chapter": 37,
+          "text": "Their first subject was the diminution of the Rosings’ party. “I assure\nyou, I feel it exceedingly,” said Lady Catherine; “I believe nobody\nfeels the loss of friends so much as I do. But I am particularly\nattached to these young men; and know them to be so much attached to me!\nThey were excessively sorry to go! But so they always are. The dear\nColonel rallied his spirits tolerably till just at last; but Darcy\nseemed to feel it most acutely--more, I think, than last year. His\nattachment to Rosings certainly increases.”"
+        }
+      ]
+    },
+    {
+      "chapter": 37,
+      "kind": "event",
+      "text": "Elizabeth's refusal to extend her stay",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_52dad69f01b8",
+          "chapter": 37,
+          "text": "“You are all kindness, madam; but I believe we must abide by our\noriginal plan.”"
+        },
+        {
+          "id": "src_c96042f9e5ad",
+          "chapter": 37,
+          "text": "“I am much obliged to your Ladyship for your kind invitation,” replied\nElizabeth; “but it is not in my power to accept it. I must be in town\nnext Saturday.”"
+        }
+      ]
+    },
+    {
+      "chapter": 37,
+      "kind": "relationship",
+      "text": "Lady Catherine's attachment to the young men",
+      "other": "the young men",
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_a6ef9cd5db99",
+          "chapter": 37,
+          "text": "Their first subject was the diminution of the Rosings’ party. “I assure\nyou, I feel it exceedingly,” said Lady Catherine; “I believe nobody\nfeels the loss of friends so much as I do. But I am particularly\nattached to these young men; and know them to be so much attached to me!\nThey were excessively sorry to go! But so they always are. The dear\nColonel rallied his spirits tolerably till just at last; but Darcy\nseemed to feel it most acutely--more, I think, than last year. His\nattachment to Rosings certainly increases.”"
+        }
+      ]
+    },
+    {
+      "chapter": 37,
+      "kind": "relationship",
+      "text": "Lady Catherine's care for young women's travel safety",
+      "other": "young women's travel safety",
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_c4253fbd9c81",
+          "chapter": 37,
+          "text": "Lady Catherine seemed resigned. “Mrs. Collins, you must send a servant\nwith them. You know I always speak my mind, and I cannot bear the idea\nof two young women travelling post by themselves. It is highly improper.\nYou must contrive to send somebody. I have the greatest dislike in the\nworld to that sort of thing. Young women should always be properly\nguarded and attended, according to their situation in life. When my\nniece Georgiana went to Ramsgate last summer, I made a point of her\nhaving two men-servants go with her. Miss Darcy, the daughter of Mr.\nDarcy of Pemberley, and Lady Anne, could not have appeared with\npropriety in a different manner. I am excessively attentive to all those\nthings. You must send John with the young ladies, Mrs. Collins. I am\nglad it occurred to me to mention it; for it would really be\ndiscreditable to _you_ to let them go alone.”"
+        }
+      ]
+    },
+    {
+      "chapter": 56,
+      "kind": "event",
+      "text": "Lady Catherine visits Elizabeth",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_1cc6b949a0ba",
+          "chapter": 56,
+          "text": "“Miss Bennet,” replied her Ladyship, in an angry tone, “you ought to\nknow that I am not to be trifled with. But however insincere _you_ may\nchoose to be, you shall not find _me_ so. My character has ever been\ncelebrated for its sincerity and frankness; and in a cause of such\nmoment as this, I shall certainly not depart from it. A report of a most\nalarming nature reached me two days ago. I was told, that not only your\nsister was on the point of being most advantageously married, but that\n_you_--that Miss Elizabeth Bennet would, in all likelihood, be soon\nafterwards united to my nephew--my own nephew, Mr. Darcy. Though I\n_know_ it must be a scandalous falsehood, though I would not injure him\nso much as to suppose the truth of it possible, I instantly resolved on\nsetting off for this place, that I might make my sentiments known to\nyou.”"
+        },
+        {
+          "id": "src_2c68d6840751",
+          "chapter": 56,
+          "text": "One morning, about a week after Bingley’s engagement with Jane had been\nformed, as he and the females of the family were sitting together in the\ndining-room, their attention was suddenly drawn to the window by the\nsound of a carriage; and they perceived a chaise and four driving up the\nlawn. It was too early in the morning for visitors; and besides, the\nequipage did not answer to that of any of their neighbours. The horses\nwere post; and neither the carriage, nor the livery of the servant who\npreceded it, were familiar to them. As it was certain, however, that\nsomebody was coming, Bingley instantly prevailed on Miss Bennet to avoid\nthe confinement of such an intrusion, and walk away with him into the\nshrubbery. They both set off; and the conjectures of the remaining three\ncontinued, though with little satisfaction, till the door was thrown\nopen, and their visitor entered. It was Lady Catherine de Bourgh."
+        },
+        {
+          "id": "src_fa87ab3792e2",
+          "chapter": 56,
+          "text": "Elizabeth made no answer; and without attempting to persuade her\nLadyship to return into the house, walked quietly into it herself. She\nheard the carriage drive away as she proceeded upstairs. Her mother\nimpatiently met her at the door of her dressing-room, to ask why Lady\nCatherine would not come in again and rest herself."
+        }
+      ]
+    },
+    {
+      "chapter": 56,
+      "kind": "relationship",
+      "text": "Lady Catherine's opposition to Elizabeth and Darcy",
+      "other": "Elizabeth Bennet's potential marriage to Mr. Darcy",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_1cc6b949a0ba",
+          "chapter": 56,
+          "text": "“Miss Bennet,” replied her Ladyship, in an angry tone, “you ought to\nknow that I am not to be trifled with. But however insincere _you_ may\nchoose to be, you shall not find _me_ so. My character has ever been\ncelebrated for its sincerity and frankness; and in a cause of such\nmoment as this, I shall certainly not depart from it. A report of a most\nalarming nature reached me two days ago. I was told, that not only your\nsister was on the point of being most advantageously married, but that\n_you_--that Miss Elizabeth Bennet would, in all likelihood, be soon\nafterwards united to my nephew--my own nephew, Mr. Darcy. Though I\n_know_ it must be a scandalous falsehood, though I would not injure him\nso much as to suppose the truth of it possible, I instantly resolved on\nsetting off for this place, that I might make my sentiments known to\nyou.”"
+        },
+        {
+          "id": "src_c4987869b412",
+          "chapter": 56,
+          "text": "“Let me be rightly understood. This match, to which you have the\npresumption to aspire, can never take place. No, never. Mr. Darcy is\nengaged to _my daughter_. Now, what have you to say?”"
+        },
+        {
+          "id": "src_dc105d225370",
+          "chapter": 56,
+          "text": "“Neither duty, nor honour, nor gratitude,” replied Elizabeth, “has any\npossible claim on me, in the present instance. No principle of either\nwould be violated by my marriage with Mr. Darcy. And with regard to the\nresentment of his family, or the indignation of the world, if the former\n_were_ excited by his marrying me, it would not give me one moment’s\nconcern--and the world in general would have too much sense to join in\nthe scorn.”"
+        }
+      ]
+    },
+    {
+      "chapter": 57,
+      "kind": "event",
+      "text": "Mr. Collins writes to Elizabeth about Mr. Darcy",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_16f9e4ee0655",
+          "chapter": 57,
+          "text": "“Something very much to the purpose, of course. He begins with\ncongratulations on the approaching nuptials of my eldest daughter, of\nwhich, it seems, he has been told by some of the good-natured, gossiping\nLucases. I shall not sport with your impatience by reading what he says\non that point. What relates to yourself is as follows:--‘Having thus\noffered you the sincere congratulations of Mrs. Collins and myself on\nthis happy event, let me now add a short hint on the subject of another,\nof which we have been advertised by the same authority. Your daughter\nElizabeth, it is presumed, will not long bear the name of Bennet, after\nher eldest sister has resigned it; and the chosen partner of her fate\nmay be reasonably looked up to as one of the most illustrious personages\nin this land.’ Can you possibly guess, Lizzy, who is meant by this?\n‘This young gentleman is blessed, in a peculiar way, with everything the\nheart of mortal can most desire,--splendid property, noble kindred, and\nextensive patronage. Yet, in spite of all these temptations, let me warn\nmy cousin Elizabeth, and yourself, of what evils you may incur by a\nprecipitate closure with this gentleman’s proposals, which, of course,\nyou will be inclined to take immediate advantage of.’ Have you any idea,\nLizzy, who this gentleman is? But now it comes out. ‘My motive for\ncautioning you is as follows:--We have reason to imagine that his aunt,\nLady Catherine de Bourgh, does not look on the match with a friendly\neye.’ _Mr. Darcy_, you see, is the man! Now, Lizzy, I think I _have_\nsurprised you. Could he, or the Lucases, have pitched on any man, within\nthe circle of our acquaintance, whose name would have given the lie more\neffectually to what they related? Mr. Darcy, who never looks at any\nwoman but to see a blemish, and who probably never looked at _you_ in\nhis life! It is admirable!”"
+        },
+        {
+          "id": "src_1a1ea1bc01c1",
+          "chapter": 57,
+          "text": "“You look conscious. Young ladies have great penetration in such matters\nas these; but I think I may defy even _your_ sagacity to discover the\nname of your admirer. This letter is from Mr. Collins.”"
+        },
+        {
+          "id": "src_6c01e267ce52",
+          "chapter": 57,
+          "text": "“I have received a letter this morning that has astonished me\nexceedingly. As it principally concerns yourself, you ought to know its\ncontents. I did not know before that I had _two_ daughters on the brink\nof matrimony. Let me congratulate you on a very important conquest.”"
+        }
+      ]
+    },
+    {
+      "chapter": 61,
+      "kind": "event",
+      "text": "Lady Catherine's indignation over Darcy's marriage",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_619d0fae53ee",
+          "chapter": 61,
+          "text": "Lady Catherine was extremely indignant on the marriage of her nephew;\nand as she gave way to all the genuine frankness of her character, in\nher reply to the letter which announced its arrangement, she sent him\nlanguage so very abusive, especially of Elizabeth, that for some time\nall intercourse was at an end. But at length, by Elizabeth’s persuasion,\nhe was prevailed on to overlook the offence, and seek a reconciliation;\nand, after a little further resistance on the part of his aunt, her\nresentment gave way, either to her affection for him, or her curiosity\nto see how his wife conducted herself; and she condescended to wait on\nthem at Pemberley, in spite of that pollution which its woods had\nreceived, not merely from the presence of such a mistress, but the\nvisits of her uncle and aunt from the city."
+        }
+      ]
+    }
+  ]
+}

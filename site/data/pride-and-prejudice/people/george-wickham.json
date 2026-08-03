@@ -1,0 +1,380 @@
+{
+  "slug": "george-wickham",
+  "canonical_label": "George Wickham",
+  "aliases": [
+    "George Wickham",
+    "Mr. Wickham",
+    "Wickham"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 15,
+    "chapter_max": 51,
+    "evidence_passages": 39,
+    "relationships": 7,
+    "events": 9,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 8
+  },
+  "timeline": [
+    {
+      "chapter": 15,
+      "kind": "event",
+      "text": "Introduction of Mr. Wickham to the Bennet sisters",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_534caf30b108",
+          "chapter": 15,
+          "text": "Mrs. Philips was always glad to see her nieces; and the two eldest, from\ntheir recent absence, were particularly welcome; and she was eagerly\nexpressing her surprise at their sudden return home, which, as their own\ncarriage had not fetched them, she should have known nothing about, if\nshe had not happened to see Mr. Jones’s shopboy in the street, who had\ntold her that they were not to send any more draughts to Netherfield,\nbecause the Miss Bennets were come away, when her civility was claimed\ntowards Mr. Collins by Jane’s introduction of him. She received him with\nher very best politeness, which he returned with as much more,\napologizing for his intrusion, without any previous acquaintance with\nher, which he could not help flattering himself, however, might be\njustified by his relationship to the young ladies who introduced him to\nher notice. Mrs. Philips was quite awed by such an excess of good\nbreeding; but her contemplation of one stranger was soon put an end to\nby exclamations and inquiries about the other, of whom, however, she\ncould only tell her nieces what they already knew, that Mr. Denny had\nbrought him from London, and that he was to have a lieutenant’s\ncommission in the ----shire. She had been watching him the last hour,\nshe said, as he walked up and down the street,--and had Mr. Wickham\nappeared, Kitty and Lydia would certainly have continued the occupation;\nbut unluckily no one passed the windows now except a few of the\nofficers, who, in comparison with the stranger, were become “stupid,\ndisagreeable fellows.” Some of them were to dine with the Philipses the\nnext day, and their aunt promised to make her husband call on Mr.\nWickham, and give him an invitation also, if the family from Longbourn\nwould come in the evening. This was agreed to; and Mrs. Philips\nprotested that they would have a nice comfortable noisy game of lottery\ntickets, and a little bit of hot supper afterwards. The prospect of such\ndelights was very cheering, and they parted in mutual good spirits. Mr.\nCollins repeated his apologies in quitting the room, and was assured,\nwith unwearying civility, that they were perfectly needless."
+        },
+        {
+          "id": "src_ac77f933d02c",
+          "chapter": 15,
+          "text": "But the attention of every lady was soon caught by a young man, whom\nthey had never seen before, of most gentlemanlike appearance, walking\nwith an officer on the other side of the way. The officer was the very\nMr. Denny concerning whose return from London Lydia came to inquire, and\nhe bowed as they passed. All were struck with the stranger’s air, all\nwondered who he could be; and Kitty and Lydia, determined if possible\nto find out, led the way across the street, under pretence of wanting\nsomething in an opposite shop, and fortunately had just gained the\npavement, when the two gentlemen, turning back, had reached the same\nspot. Mr. Denny addressed them directly, and entreated permission to\nintroduce his friend, Mr. Wickham, who had returned with him the day\nbefore from town, and, he was happy to say, had accepted a commission in\ntheir corps. This was exactly as it should be; for the young man wanted\nonly regimentals to make him completely charming. His appearance was\ngreatly in his favour: he had all the best parts of beauty, a fine\ncountenance, a good figure, and very pleasing address. The introduction\nwas followed up on his side by a happy readiness of conversation--a\nreadiness at the same time perfectly correct and unassuming; and the\nwhole party were still standing and talking together very agreeably,\nwhen the sound of horses drew their notice, and Darcy and Bingley were\nseen riding down the street. On distinguishing the ladies of the group\nthe two gentlemen came directly towards them, and began the usual\ncivilities. Bingley was the principal spokesman, and Miss Bennet the\nprincipal object. He was then, he said, on his way to Longbourn on\npurpose to inquire after her. Mr. Darcy corroborated it with a bow, and\nwas beginning to determine not to fix his eyes on Elizabeth, when they\nwere suddenly arrested by the sight of the stranger; and Elizabeth\nhappening to see the countenance of both as they looked at each other,\nwas all astonishment at the effect of the meeting. Both changed colour,\none looked white, the other red. Mr. Wickham, after a few moments,\ntouched his hat--a salutation which Mr. Darcy just deigned to return.\nWhat could be the meaning of it? It was impossible to imagine; it was\nimpossible not to long to know."
+        },
+        {
+          "id": "src_db66bf16e02d",
+          "chapter": 15,
+          "text": "Mr. Denny and Mr. Wickham walked with the young ladies to the door of\nMr. Philips’s house, and then made their bows, in spite of Miss Lydia’s\npressing entreaties that they would come in, and even in spite of Mrs.\nPhilips’s throwing up the parlour window, and loudly seconding the\ninvitation."
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "kind": "event",
+      "text": "Mr. Collins visits Meryton with his cousins",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_0d71559b5276",
+          "chapter": 16,
+          "text": "When this information was given, and they had all taken their seats, Mr.\nCollins was at leisure to look around him and admire, and he was so much\nstruck with the size and furniture of the apartment, that he declared he\nmight almost have supposed himself in the small summer breakfast parlour\nat Rosings; a comparison that did not at first convey much\ngratification; but when Mrs. Philips understood from him what Rosings\nwas, and who was its proprietor, when she had listened to the\ndescription of only one of Lady Catherine’s drawing-rooms, and found\nthat the chimney-piece alone had cost eight hundred pounds, she felt all\nthe force of the compliment, and would hardly have resented a comparison\nwith the housekeeper’s room."
+        },
+        {
+          "id": "src_25adc97357a1",
+          "chapter": 16,
+          "text": "As no objection was made to the young people’s engagement with their\naunt, and all Mr. Collins’s scruples of leaving Mr. and Mrs. Bennet for\na single evening during his visit were most steadily resisted, the coach\nconveyed him and his five cousins at a suitable hour to Meryton; and the\ngirls had the pleasure of hearing, as they entered the drawing-room,\nthat Mr. Wickham had accepted their uncle’s invitation, and was then in\nthe house."
+        },
+        {
+          "id": "src_ffd79f50dc31",
+          "chapter": 16,
+          "text": "In describing to her all the grandeur of Lady Catherine and her mansion,\nwith occasional digressions in praise of his own humble abode, and the\nimprovements it was receiving, he was happily employed until the\ngentlemen joined them; and he found in Mrs. Philips a very attentive\nlistener, whose opinion of his consequence increased with what she\nheard, and who was resolving to retail it all among her neighbours as\nsoon as she could. To the girls, who could not listen to their cousin,\nand who had nothing to do but to wish for an instrument, and examine\ntheir own indifferent imitations of china on the mantel-piece, the\ninterval of waiting appeared very long. It was over at last, however.\nThe gentlemen did approach: and when Mr. Wickham walked into the room,\nElizabeth felt that she had neither been seeing him before, nor thinking\nof him since, with the smallest degree of unreasonable admiration. The\nofficers of the ----shire were in general a very creditable,\ngentlemanlike set and the best of them were of the present party; but\nMr, Wickham was as far beyond them all in person, countenance, air, and\nwalk, as _they_ were superior to the broad-faced stuffy uncle Philips,\nbreathing port wine, who followed them into the room."
+        }
+      ]
+    },
+    {
+      "chapter": 16,
+      "kind": "relationship",
+      "text": "Mr. Wickham's past connection to Mr. Darcy",
+      "other": "Mr. Darcy",
+      "evidence_count": 5,
+      "passages": [
+        {
+          "id": "src_5a2bcde5982c",
+          "chapter": 16,
+          "text": "“Yes,” replied Wickham; “his estate there is a noble one. A clear ten\nthousand per annum. You could not have met with a person more capable of\ngiving you certain information on that head than myself--for I have been\nconnected with his family, in a particular manner, from my infancy.”"
+        },
+        {
+          "id": "src_64fbea30293a",
+          "chapter": 16,
+          "text": "“There was just such an informality in the terms of the bequest as to\ngive me no hope from law. A man of honour could not have doubted the\nintention, but Mr. Darcy chose to doubt it--or to treat it as a merely\nconditional recommendation, and to assert that I had forfeited all claim\nto it by extravagance, imprudence, in short, anything or nothing.\nCertain it is that the living became vacant two years ago, exactly as I\nwas of an age to hold it, and that it was given to another man; and no\nless certain is it, that I cannot accuse myself of having really done\nanything to deserve to lose it. I have a warm unguarded temper, and I\nmay perhaps have sometimes spoken my opinion _of_ him, and _to_ him, too\nfreely. I can recall nothing worse. But the fact is, that we are very\ndifferent sort of men, and that he hates me.”"
+        },
+        {
+          "id": "src_95ee6d54b8ae",
+          "chapter": 16,
+          "text": "“Can such abominable pride as his have ever done him good?”"
+        },
+        {
+          "id": "src_9b78b8360ec2",
+          "chapter": 16,
+          "text": "“It _is_ wonderful,” replied Wickham; “for almost all his actions may be\ntraced to pride; and pride has often been his best friend. It has\nconnected him nearer with virtue than any other feeling. But we are none\nof us consistent; and in his behaviour to me there were stronger\nimpulses even than pride.”"
+        },
+        {
+          "id": "src_fc0e337e2f37",
+          "chapter": 16,
+          "text": "“We were born in the same parish, within the same park; the greatest\npart of our youth was passed together: inmates of the same house,\nsharing the same amusements, objects of the same parental care. _My_\nfather began life in the profession which your uncle, Mr. Philips,\nappears to do so much credit to; but he gave up everything to be of use\nto the late Mr. Darcy, and devoted all his time to the care of the\nPemberley property. He was most highly esteemed by Mr. Darcy, a most\nintimate, confidential friend. Mr. Darcy often acknowledged himself to\nbe under the greatest obligations to my father’s active superintendence;\nand when, immediately before my father’s death, Mr. Darcy gave him a\nvoluntary promise of providing for me, I am convinced that he felt it\nto be as much a debt of gratitude to _him_ as of affection to myself.”"
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "kind": "relationship",
+      "text": "Connection between Mr. Wickham and Mrs. Gardiner",
+      "other": "Mrs. Gardiner",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_86101acc7388",
+          "chapter": 25,
+          "text": "Mrs. Gardiner had seen Pemberley, and known the late Mr. Darcy by\ncharacter perfectly well. Here, consequently, was an inexhaustible\nsubject of discourse. In comparing her recollection of Pemberley with\nthe minute description which Wickham could give, and in bestowing her\ntribute of praise on the character of its late possessor, she was\ndelighting both him and herself. On being made acquainted with the\npresent Mr. Darcy’s treatment of him, she tried to remember something of\nthat gentleman’s reputed disposition, when quite a lad, which might\nagree with it; and was confident, at last, that she recollected having\nheard Mr. Fitzwilliam Darcy formerly spoken of as a very proud,\nill-natured boy."
+        },
+        {
+          "id": "src_aba49e3e70e2",
+          "chapter": 25,
+          "text": "To Mrs. Gardiner, Wickham had one means of affording pleasure,\nunconnected with his general powers. About ten or a dozen years ago,\nbefore her marriage, she had spent a considerable time in that very part\nof Derbyshire to which he belonged. They had, therefore, many\nacquaintance in common; and, though Wickham had been little there since\nthe death of Darcy’s father, five years before, it was yet in his power\nto give her fresher intelligence of her former friends than she had been\nin the way of procuring."
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "kind": "relationship",
+      "text": "Elizabeth's feelings towards Mr. Wickham",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_1937835af0eb",
+          "chapter": 26,
+          "text": "Mrs. Gardiner about this time reminded Elizabeth of her promise\nconcerning that gentleman, and required information; and Elizabeth had\nsuch to send as might rather give contentment to her aunt than to\nherself. His apparent partiality had subsided, his attentions were over,\nhe was the admirer of some one else. Elizabeth was watchful enough to\nsee it all, but she could see it and write of it without material pain.\nHer heart had been but slightly touched, and her vanity was satisfied\nwith believing that _she_ would have been his only choice, had fortune\npermitted it. The sudden acquisition of ten thousand pounds was the most\nremarkable charm of the young lady to whom he was now rendering himself\nagreeable; but Elizabeth, less clear-sighted perhaps in this case than\nin Charlotte’s, did not quarrel with him for his wish of independence.\nNothing, on the contrary, could be more natural; and, while able to\nsuppose that it cost him a few struggles to relinquish her, she was\nready to allow it a wise and desirable measure for both, and could very\nsincerely wish him happy."
+        },
+        {
+          "id": "src_89d107abb10b",
+          "chapter": 26,
+          "text": "“I beg your pardon. I will try again. At present I am not in love with\nMr. Wickham; no, I certainly am not. But he is, beyond all comparison,\nthe most agreeable man I ever saw--and if he becomes really attached to\nme--I believe it will be better that he should not. I see the imprudence\nof it. Oh, _that_ abominable Mr. Darcy! My father’s opinion of me does\nme the greatest honour; and I should be miserable to forfeit it. My\nfather, however, is partial to Mr. Wickham. In short, my dear aunt, I\nshould be very sorry to be the means of making any of you unhappy; but\nsince we see, every day, that where there is affection young people are\nseldom withheld, by immediate want of fortune, from entering into\nengagements with each other, how can I promise to be wiser than so many\nof my fellow-creatures, if I am tempted, or how am I even to know that\nit would be wiser to resist? All that I can promise you, therefore, is\nnot to be in a hurry. I will not be in a hurry to believe myself his\nfirst object. When I am in company with him, I will not be wishing. In\nshort, I will do my best.”"
+        },
+        {
+          "id": "src_bdb955385536",
+          "chapter": 26,
+          "text": "All this was acknowledged to Mrs. Gardiner; and, after relating the\ncircumstances, she thus went on:--“I am now convinced, my dear aunt,\nthat I have never been much in love; for had I really experienced that\npure and elevating passion, I should at present detest his very name,\nand wish him all manner of evil. But my feelings are not only cordial\ntowards _him_, they are even impartial towards Miss King. I cannot find\nout that I hate her at all, or that I am in the least unwilling to think\nher a very good sort of girl. There can be no love in all this. My\nwatchfulness has been effectual; and though I should certainly be a more\ninteresting object to all my acquaintance, were I distractedly in love\nwith him, I cannot say that I regret my comparative insignificance.\nImportance may sometimes be purchased too dearly. Kitty and Lydia take\nhis defection much more to heart than I do. They are young in the ways\nof the world, and not yet open to the mortifying conviction that\nhandsome young men must have something to live on as well as the\nplain.”"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "kind": "relationship",
+      "text": "Elizabeth's farewell to Mr. Wickham",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_0bf68ccab8ba",
+          "chapter": 27,
+          "text": "The farewell between herself and Mr. Wickham was perfectly friendly; on\nhis side even more. His present pursuit could not make him forget that\nElizabeth had been the first to excite and to deserve his attention, the\nfirst to listen and to pity, the first to be admired; and in his manner\nof bidding her adieu, wishing her every enjoyment, reminding her of what\nshe was to expect in Lady Catherine de Bourgh, and trusting their\nopinion of her--their opinion of everybody--would always coincide, there\nwas a solicitude, an interest, which she felt must ever attach her to\nhim with a most sincere regard; and she parted from him convinced, that,\nwhether married or single, he must always be her model of the amiable\nand pleasing."
+        }
+      ]
+    },
+    {
+      "chapter": 40,
+      "kind": "event",
+      "text": "Jane's distress over Mr. Wickham's true character",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_2e1849043758",
+          "chapter": 40,
+          "text": "“I do not know when I have been more shocked,” said she. “Wickham so\nvery bad! It is almost past belief. And poor Mr. Darcy! dear Lizzy,\nonly consider what he must have suffered. Such a disappointment! and\nwith the knowledge of your ill opinion too! and having to relate such a\nthing of his sister! It is really too distressing, I am sure you must\nfeel it so.”"
+        },
+        {
+          "id": "src_84b0a1700a7d",
+          "chapter": 40,
+          "text": "“Indeed, I could not. I was uncomfortable enough, I was very\nuncomfortable--I may say unhappy. And with no one to speak to of what I\nfelt, no Jane to comfort me, and say that I had not been so very weak,\nand vain, and nonsensical, as I knew I had! Oh, how I wanted you!”"
+        }
+      ]
+    },
+    {
+      "chapter": 46,
+      "kind": "event",
+      "text": "Lydia elopes with Wickham",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_a71ee6972e1c",
+          "chapter": 46,
+          "text": "“By this time, my dearest sister, you have received my hurried letter; I\nwish this may be more intelligible, but though not confined for time, my\nhead is so bewildered that I cannot answer for being coherent. Dearest\nLizzy, I hardly know what I would write, but I have bad news for you,\nand it cannot be delayed. Imprudent as a marriage between Mr. Wickham\nand our poor Lydia would be, we are now anxious to be assured it has\ntaken place, for there is but too much reason to fear they are not gone\nto Scotland. Colonel Forster came yesterday, having left Brighton the\nday before, not many hours after the express. Though Lydia’s short\nletter to Mrs. F. gave them to understand that they were going to Gretna\nGreen, something was dropped by Denny expressing his belief that W.\nnever intended to go there, or to marry Lydia at all, which was repeated\nto Colonel F., who, instantly taking the alarm, set off from B.,\nintending to trace their route. He did trace them easily to Clapham, but\nno farther; for on entering that place, they removed into a\nhackney-coach, and dismissed the chaise that brought them from Epsom.\nAll that is known after this is, that they were seen to continue the\nLondon road. I know not what to think. After making every possible\ninquiry on that side of London, Colonel F. came on into Hertfordshire,\nanxiously renewing them at all the turnpikes, and at the inns in Barnet\nand Hatfield, but without any success,--no such people had been seen to\npass through. With the kindest concern he came on to Longbourn, and\nbroke his apprehensions to us in a manner most creditable to his heart.\nI am sincerely grieved for him and Mrs. F.; but no one can throw any\nblame on them. Our distress, my dear Lizzy, is very great. My father and\nmother believe the worst, but I cannot think so ill of him. Many\ncircumstances might make it more eligible for them to be married\nprivately in town than to pursue their first plan; and even if _he_\ncould form such a design against a young woman of Lydia’s connections,\nwhich is not likely, can I suppose her so lost to everything?\nImpossible! I grieve to find, however, that Colonel F. is not disposed\nto depend upon their marriage: he shook his head when I expressed my\nhopes, and said he feared W. was not a man to be trusted. My poor mother\nis really ill, and keeps her room. Could she exert herself, it would be\nbetter, but this is not to be expected; and as to my father, I never in\nmy life saw him so affected. Poor Kitty has anger for having concealed\ntheir attachment; but as it was a matter of confidence, one cannot\nwonder. I am truly glad, dearest Lizzy, that you have been spared\nsomething of these distressing scenes; but now, as the first shock is\nover, shall I own that I long for your return? I am not so selfish,\nhowever, as to press for it, if inconvenient. Adieu! I take up my pen\nagain to do, what I have just told you I would not; but circumstances\nare such, that I cannot help earnestly begging you all to come here as\nsoon as possible. I know my dear uncle and aunt so well, that I am not\nafraid of requesting it, though I have still something more to ask of\nthe former. My father is going to London with Colonel Forster instantly,\nto try to discover her. What he means to do, I am sure I know not; but\nhis excessive distress will not allow him to pursue any measure in the\nbest and safest way, and Colonel Forster is obliged to be at Brighton\nagain to-morrow evening. In such an exigence my uncle’s advice and\nassistance would be everything in the world; he will immediately\ncomprehend what I must feel, and I rely upon his goodness.”"
+        },
+        {
+          "id": "src_c500b47f0f0a",
+          "chapter": 46,
+          "text": "concern, and observe her in compassionate silence. At length she spoke\nagain. “I have just had a letter from Jane, with such dreadful news. It\ncannot be concealed from anyone. My youngest sister has left all her\nfriends--has eloped; has thrown herself into the power of--of Mr.\nWickham. They are gone off together from Brighton. _You_ know him too\nwell to doubt the rest. She has no money, no connections, nothing that\ncan tempt him to--she is lost for ever.”"
+        },
+        {
+          "id": "src_e1d4b52dab60",
+          "chapter": 46,
+          "text": "“Since writing the above, dearest Lizzy, something has occurred of a\nmost unexpected and serious nature; but I am afraid of alarming you--be\nassured that we are all well. What I have to say relates to poor Lydia.\nAn express came at twelve last night, just as we were all gone to bed,\nfrom Colonel Forster, to inform us that she was gone off to Scotland\nwith one of his officers; to own the truth, with Wickham! Imagine our\nsurprise. To Kitty, however, it does not seem so wholly unexpected. I am\nvery, very sorry. So imprudent a match on both sides! But I am willing\nto hope the best, and that his character has been misunderstood.\nThoughtless and indiscreet I can easily believe him, but this step (and\nlet us rejoice over it) marks nothing bad at heart. His choice is\ndisinterested at least, for he must know my father can give her nothing.\nOur poor mother is sadly grieved. My father bears it better. How\nthankful am I, that we never let them know what has been said against\nhim; we must forget it ourselves. They were off Saturday night about\ntwelve, as is conjectured, but were not missed till yesterday morning at\neight. The express was sent off directly. My dear Lizzy, they must have\npassed within ten miles of us. Colonel Forster gives us reason to expect\nhim here soon. Lydia left a few lines for his wife, informing her of\ntheir intention. I must conclude, for I cannot be long from my poor\nmother. I am afraid you will not be able to make it out, but I hardly\nknow what I have written.”"
+        }
+      ]
+    },
+    {
+      "chapter": 47,
+      "kind": "event",
+      "text": "Lydia's elopement",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_3957ec05b239",
+          "chapter": 47,
+          "text": "“I never saw anyone so shocked. He could not speak a word for full ten\nminutes. My mother was taken ill immediately, and the whole house in\nsuch confusion!”"
+        },
+        {
+          "id": "src_b28dfabdb711",
+          "chapter": 47,
+          "text": "“Oh, thoughtless, thoughtless Lydia!” cried Elizabeth when she had\nfinished it. “What a letter is this, to be written at such a moment! But\nat least it shows that _she_ was serious in the object of her journey.\nWhatever he might afterwards persuade her to, it was not on her side a\n_scheme_ of infamy. My poor father! how he must have felt it!”"
+        },
+        {
+          "id": "src_cfede3de43bf",
+          "chapter": 47,
+          "text": "“Oh, Jane,” cried Elizabeth, “was there a servant belonging to it who\ndid not know the whole story before the end of the day?”"
+        }
+      ]
+    },
+    {
+      "chapter": 47,
+      "kind": "relationship",
+      "text": "Elizabeth's disapproval of Wickham",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_36a76c24019d",
+          "chapter": 47,
+          "text": "“I do, indeed,” replied Elizabeth, colouring. “I told you the other day\nof his infamous behaviour to Mr. Darcy; and you, yourself, when last at\nLongbourn, heard in what manner he spoke of the man who had behaved with\nsuch forbearance and liberality towards him. And there are other\ncircumstances which I am not at liberty--which it is not worth while to\nrelate; but his lies about the whole Pemberley family are endless. From\nwhat he said of Miss Darcy, I was thoroughly prepared to see a proud,\nreserved, disagreeable girl. Yet he knew to the contrary himself. He\nmust know that she was as amiable and unpretending as we have found\nher.”"
+        },
+        {
+          "id": "src_ea6be69f629d",
+          "chapter": 47,
+          "text": "Elizabeth jumped out; and after giving each of them a hasty kiss,\nhurried into the vestibule, where Jane, who came running downstairs from\nher mother’s apartment, immediately met her."
+        },
+        {
+          "id": "src_f731d20db8a8",
+          "chapter": 47,
+          "text": "“Of whom does Jane ever think ill? And who is there, whatever might be\ntheir former conduct, that she would believe capable of such an attempt,\ntill it were proved against them? But Jane knows, as well as I do, what\nWickham really is. We both know that he has been profligate in every\nsense of the word; that he has neither integrity nor honour; that he is\nas false and deceitful as he is insinuating.”"
+        }
+      ]
+    },
+    {
+      "chapter": 49,
+      "kind": "event",
+      "text": "Lydia's Engagement",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_2ff4278438ef",
+          "chapter": 49,
+          "text": "“My dear, dear Lydia!” she cried: “this is delightful indeed! She will\nbe married! I shall see her again! She will be married at sixteen! My\ngood, kind brother! I knew how it would be--I knew he would manage\neverything. How I long to see her! and to see dear Wickham too! But the\nclothes, the wedding clothes! I will write to my sister Gardiner about\nthem directly. Lizzy, my dear, run down to your father, and ask him how\nmuch he will give her. Stay, stay, I will go myself. Ring the bell,\nKitty, for Hill. I will put on my things in a moment. My dear, dear\nLydia! How merry we shall be together when we meet!”"
+        },
+        {
+          "id": "src_61355987b154",
+          "chapter": 49,
+          "text": "“Then it is as I always hoped,” cried Jane: “they are married!”"
+        }
+      ]
+    },
+    {
+      "chapter": 49,
+      "kind": "relationship",
+      "text": "Mr. Gardiner assists Mr. Wickham",
+      "other": "Mr. Gardiner",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_85933e877072",
+          "chapter": 49,
+          "text": "“Well,” cried her mother, “it is all very right; who should do it but\nher own uncle? If he had not had a family of his own, I and my children\nmust have had all his money, you know; and it is the first time we have\never had anything from him except a few presents. Well! I am so happy.\nIn a short time, I shall have a daughter married. Mrs. Wickham! How well\nit sounds! And she was only sixteen last June. My dear Jane, I am in\nsuch a flutter, that I am sure I can’t write; so I will dictate, and you\nwrite for me. We will settle with your father about the money\nafterwards; but the things should be ordered immediately.”"
+        },
+        {
+          "id": "src_c2282d4dbb6d",
+          "chapter": 49,
+          "text": "“For we must attribute this happy conclusion,” she added, “in a great\nmeasure to his kindness. We are persuaded that he has pledged himself to\nassist Mr. Wickham with money.”"
+        }
+      ]
+    },
+    {
+      "chapter": 50,
+      "kind": "event",
+      "text": "Lydia Bennet's marriage",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_b612676c5f52",
+          "chapter": 50,
+          "text": "Elizabeth was now most heartily sorry that she had, from the distress of\nthe moment, been led to make Mr. Darcy acquainted with their fears for\nher sister; for since her marriage would so shortly give the proper\ntermination to the elopement, they might hope to conceal its\nunfavourable beginning from all those who were not immediately on the\nspot."
+        },
+        {
+          "id": "src_f5951154dde9",
+          "chapter": 50,
+          "text": "The good news quickly spread through the house; and with proportionate\nspeed through the neighbourhood. It was borne in the latter with decent\nphilosophy. To be sure, it would have been more for the advantage of\nconversation, had Miss Lydia Bennet come upon the town; or, as the\nhappiest alternative, been secluded from the world in some distant\nfarm-house. But there was much to be talked of, in marrying her; and the\ngood-natured wishes for her well-doing, which had proceeded before from\nall the spiteful old ladies in Meryton, lost but little of their spirit\nin this change of circumstances, because with such a husband her misery\nwas considered certain."
+        },
+        {
+          "id": "src_fe04e3d781c6",
+          "chapter": 50,
+          "text": "His daughter’s request, for such it might be considered, of being\nadmitted into her family again, before she set off for the north,\nreceived at first an absolute negative. But Jane and Elizabeth, who\nagreed in wishing, for the sake of their sister’s feelings and\nconsequence, that she should be noticed on her marriage by her parents,\nurged him so earnestly, yet so rationally and so mildly, to receive her\nand her husband at Longbourn, as soon as they were married, that he was\nprevailed on to think as they thought, and act as they wished. And their\nmother had the satisfaction of knowing, that she should be able to show\nher married daughter in the neighbourhood, before she was banished to\nthe north. When Mr. Bennet wrote again to his brother, therefore, he\nsent his permission for them to come; and it was settled, that, as soon\nas the ceremony was over, they should proceed to Longbourn. Elizabeth\nwas surprised, however, that Wickham should consent to such a scheme;\nand, had she consulted only her own inclination, any meeting with him\nwould have been the last object of her wishes."
+        }
+      ]
+    },
+    {
+      "chapter": 51,
+      "kind": "event",
+      "text": "Lydia's Wedding",
+      "other": null,
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_013aa1a9bc79",
+          "chapter": 51,
+          "text": "“Only think of its being three months,” she cried, “since I went away:\nit seems but a fortnight, I declare; and yet there have been things\nenough happened in the time. Good gracious! when I went away, I am sure\nI had no more idea of being married till I came back again! though I\nthought it would be very good fun if I was.”"
+        },
+        {
+          "id": "src_0fcd806ae17f",
+          "chapter": 51,
+          "text": "Lydia’s voice was heard in the vestibule; the door was thrown open, and\nshe ran into the room. Her mother stepped forwards, embraced her, and\nwelcomed her with rapture; gave her hand with an affectionate smile to\nWickham, who followed his lady; and wished them both joy, with an\nalacrity which showed no doubt of their happiness."
+        },
+        {
+          "id": "src_16f11d6d4814",
+          "chapter": 51,
+          "text": "Their sister’s wedding-day arrived; and Jane and Elizabeth felt for her\nprobably more than she felt for herself. The carriage was sent to meet\nthem at----, and they were to return in it by dinnertime. Their arrival\nwas dreaded by the elder Miss Bennets--and Jane more especially, who\ngave Lydia the feelings which would have attended herself, had _she_\nbeen the culprit, and was wretched in the thought of what her sister\nmust endure."
+        },
+        {
+          "id": "src_8f34061922cd",
+          "chapter": 51,
+          "text": "“La! You are so strange! But I must tell you how it went off. We were\nmarried, you know, at St. Clement’s, because Wickham’s lodgings were in\nthat parish. And it was settled that we should all be there by eleven\no’clock. My uncle and aunt and I were to go together; and the others\nwere to meet us at the church."
+        }
+      ]
+    },
+    {
+      "chapter": 51,
+      "kind": "relationship",
+      "text": "Marriage of Lydia and Wickham",
+      "other": "Lydia Bennet",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_0fcd806ae17f",
+          "chapter": 51,
+          "text": "Lydia’s voice was heard in the vestibule; the door was thrown open, and\nshe ran into the room. Her mother stepped forwards, embraced her, and\nwelcomed her with rapture; gave her hand with an affectionate smile to\nWickham, who followed his lady; and wished them both joy, with an\nalacrity which showed no doubt of their happiness."
+        },
+        {
+          "id": "src_a3919f02a61f",
+          "chapter": 51,
+          "text": "“Well, mamma,” said she, when they were all returned to the\nbreakfast-room, “and what do you think of my husband? Is not he a\ncharming man? I am sure my sisters must all envy me. I only hope they\nmay have half my good luck. They must all go to Brighton. That is the\nplace to get husbands. What a pity it is, mamma, we did not all go!”"
+        },
+        {
+          "id": "src_b80ec437e681",
+          "chapter": 51,
+          "text": "“Oh, mamma, do the people hereabouts know I am married to-day? I was\nafraid they might not; and we overtook William Goulding in his curricle,\nso I was determined he should know it, and so I let down the side glass\nnext to him, and took off my glove and let my hand just rest upon the\nwindow frame, so that he might see the ring, and then I bowed and\nsmiled like anything.”"
+        }
+      ]
+    },
+    {
+      "chapter": 52,
+      "kind": "event",
+      "text": "Mr. Darcy finds Lydia and Wickham",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_a3cd420d212a",
+          "chapter": 52,
+          "text": "“I have just received your letter, and shall devote this whole\n     morning to answering it, as I foresee that a _little_ writing will\n     not comprise what I have to tell you. I must confess myself\n     surprised by your application; I did not expect it from _you_.\n     Don’t think me angry, however, for I only mean to let you know,\n     that I had not imagined such inquiries to be necessary on _your_\n     side. If you do not choose to understand me, forgive my\n     impertinence. Your uncle is as much surprised as I am; and nothing\n     but the belief of your being a party concerned would have allowed\n     him to act as he has done. But if you are really innocent and\n     ignorant, I must be more explicit. On the very day of my coming\n     home from Longbourn, your uncle had a most unexpected visitor. Mr.\n     Darcy called, and was shut up with him several hours. It was all\n     over before I arrived; so my curiosity was not so dreadfully racked\n     as _yours_ seems to have been. He came to tell Mr. Gardiner that he\n     had found out where your sister and Mr. Wickham were, and that he\n     had seen and talked with them both--Wickham repeatedly, Lydia once.\n     From what I can collect, he left Derbyshire only one day after\n     ourselves, and came to town with the resolution of hunting for\n     them. The motive professed was his conviction of its being owing to\n     himself that Wickham’s worthlessness had not been so well known as\n     to make it impossible for any young woman of character to love or\n     confide in him. He generously imputed the whole to his mistaken\n     pride, and confessed that he had before thought it beneath him to\n     lay his private actions open to the world. His character was to\n     speak for itself. He called it, therefore, his duty to step\n     forward, and endeavour to remedy an evil which had been brought on\n     by himself. If he _had another_ motive, I am sure it would never\n     disgrace him. He had been some days in town before he was able to\n     discover them; but he had something to direct his search, which was\n     more than _we_ had; and the consciousness of this was another\n     reason for his resolving to follow us. There is a lady, it seems, a\n     Mrs. Younge, who was some time ago governess to Miss Darcy, and was\n     dismissed from her charge on some cause of disapprobation, though\n     he did not say what. She then took a large house in Edward Street,\n     and has since maintained herself by letting lodgings. This Mrs.\n     Younge was, he knew, intimately acquainted with Wickham; and he\n     went to her for intelligence of him, as soon as he got to town. But\n     it was two or three days before he could get from her what he\n     wanted. She would not betray her trust, I suppose, without bribery\n     and corruption, for she really did know where her friend was to be\n     found. Wickham, indeed, had gone to her on their first arrival in\n     London; and had she been able to receive them into her house, they\n     would have taken up their abode with her. At length, however, our\n     kind friend procured the wished-for direction. They were in ----\n     Street. He saw Wickham, and afterwards insisted on seeing Lydia.\n     His first object with her, he acknowledged, had been to persuade\n     her to quit her present disgraceful situation, and return to her\n     friends as soon as they could be prevailed on to receive her,\n     offering his assistance as far as it would go. But he found Lydia\n     absolutely resolved on remaining where she was. She cared for none\n     of her friends; she wanted no help of his; she would not hear of\n     leaving Wickham. She was sure they should be married some time or\n     other, and it did not much signify when. Since such were her\n     feelings, it only remained, he thought, to secure and expedite a\n     marriage, which, in his very first conversation with Wickham, he\n     easily learnt had never been _his_ design. He confessed himself\n     obliged to leave the regiment on account of some debts of honour\n     which were very pressing; and scrupled not to lay all the ill\n     consequences of Lydia’s flight on her own folly alone. He meant to\n     resign his commission immediately; and as to his future situation,\n     he could conjecture very little about it. He must go somewhere, but\n     he did not know where, and he knew he should have nothing to live\n     on. Mr. Darcy asked why he did not marry your sister at once.\n     Though Mr. Bennet was not imagined to be very rich, he would have\n     been able to do something for him, and his situation must have been\n     benefited by marriage. But he found, in reply to this question,\n     that Wickham still cherished the hope of more effectually making\n     his fortune by marriage, in some other country. Under such\n     circumstances, however, he was not likely to be proof against the\n     temptation of immediate relief. They met several times, for there\n     was much to be discussed. Wickham, of course, wanted more than he\n     could get; but at length was reduced to be reasonable. Everything\n     being settled between _them_, Mr. Darcy’s next step was to make\n     your uncle acquainted with it, and he first called in Gracechurch\n     Street the evening before I came home. But Mr. Gardiner could not\n     be seen; and Mr. Darcy found, on further inquiry, that your father\n     was still with him, but would quit town the next morning. He did\n     not judge your father to be a person whom he could so properly\n     consult as your uncle, and therefore readily postponed seeing him\n     till after the departure of the former. He did not leave his name,\n     and till the next day it was only known that a gentleman had called\n     on business. On Saturday he came again. Your father was gone, your\n     uncle at home, and, as I said before, they had a great deal of talk\n     together. They met again on Sunday, and then _I_ saw him too. It\n     was not all settled before Monday: as soon as it was, the express\n     was sent off to Longbourn. But our visitor was very obstinate. I\n     fancy, Lizzy, that obstinacy is the real defect of his character,\n     after all. He has been accused of many faults at different times;\n     but _this_ is the true one. Nothing was to be done that he did not\n     do himself; though I am sure (and I do not speak it to be thanked,\n     therefore say nothing about it) your uncle would most readily have\n     settled the whole. They battled it together for a long time, which\n     was more than either the gentleman or lady concerned in it\n     deserved. But at last your uncle was forced to yield, and instead\n     of being allowed to be of use to his niece, was forced to put up\n     with only having the probable credit of it, which went sorely\n     against the grain; and I really believe your letter this morning\n     gave him great pleasure, because it required an explanation that\n     would rob him of his borrowed feathers, and give the praise where\n     it was due. But, Lizzy, this must go no further than yourself, or\n     Jane at most. You know pretty well, I suppose, what has been done\n     for the young people. His debts are to be paid, amounting, I\n     believe, to considerably more than a thousand pounds, another\n     thousand in addition to her own settled upon _her_, and his\n     commission purchased. The reason why all this was to be done by him\n     alone, was such as I have given above. It was owing to him, to his\n     reserve and want of proper consideration, that Wickham’s character\n     had been so misunderstood, and consequently that he had been\n     received and noticed as he was. Perhaps there was some truth in\n     _this_; though I doubt whether _his_ reserve, or _anybody’s_\n     reserve can be answerable for the event. But in spite of all this\n     fine talking, my dear Lizzy, you may rest perfectly assured that\n     your uncle would never have yielded, if we had not given him credit\n     for _another interest_ in the affair. When all this was resolved\n     on, he returned again to his friends, who were still staying at\n     Pemberley; but it was agreed that he should be in London once more\n     when the wedding took place, and all money matters were then to\n     receive the last finish. I believe I have now told you everything.\n     It is a relation which you tell me is to give you great surprise; I\n     hope at least it will not afford you any displeasure. Lydia came to\n     us, and Wickham had constant admission to the house. _He_ was\n     exactly what he had been when I knew him in Hertfordshire; but I\n     would not tell you how little I was satisfied with _her_ behaviour\n     while she stayed with us, if I had not perceived, by Jane’s letter\n     last Wednesday, that her conduct on coming home was exactly of a\n     piece with it, and therefore what I now tell you can give you no\n     fresh pain. I talked to her repeatedly in the most serious manner,\n     representing to her the wickedness of what she had done, and all\n     the unhappiness she had brought on her family. If she heard me, it\n     was by good luck, for I am sure she did not listen. I was sometimes\n     quite provoked; but then I recollected my dear Elizabeth and Jane,\n     and for their sakes had patience with her. Mr. Darcy was punctual\n     in his return, and, as Lydia informed you, attended the wedding. He\n     dined with us the next day, and was to leave town again on\n     Wednesday or Thursday. Will you be very angry with me, my dear\n     Lizzy, if I take this opportunity of saying (what I was never bold\n     enough to say before) how much I like him? His behaviour to us has,\n     in every respect, been as pleasing as when we were in Derbyshire.\n     His understanding and opinions all please me; he wants nothing but\n     a little more liveliness, and _that_, if he marry _prudently_, his\n     wife may teach him. I thought him very sly; he hardly ever\n     mentioned your name. But slyness seems the fashion. Pray forgive\n     me, if I have been very presuming, or at least do not punish me so\n     far as to exclude me from P. I shall never be quite happy till I\n     have been all round the park. A low phaeton with a nice little pair\n     of ponies would be the very thing. But I must write no more. The\n     children have been wanting me this half hour."
+        }
+      ]
+    }
+  ]
+}

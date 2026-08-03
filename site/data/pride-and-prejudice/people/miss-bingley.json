@@ -1,0 +1,241 @@
+{
+  "slug": "miss-bingley",
+  "canonical_label": "Miss Bingley",
+  "aliases": [
+    "Miss Bingley"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 10,
+    "chapter_max": 10,
+    "evidence_passages": 3,
+    "relationships": 3,
+    "events": 5,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 7,
+      "kind": "event",
+      "text": "Visit to Netherfield",
+      "other": null,
+      "evidence_count": 6,
+      "passages": [
+        {
+          "id": "src_171745758f7d",
+          "chapter": 7,
+          "text": "“This was a lucky idea of mine, indeed!” said Mrs. Bennet, more than\nonce, as if the credit of making it rain were all her own. Till the next\nmorning, however, she was not aware of all the felicity of her\ncontrivance. Breakfast was scarcely over when a servant from Netherfield\nbrought the following note for Elizabeth:--"
+        },
+        {
+          "id": "src_4b480af0c476",
+          "chapter": 9,
+          "text": "Elizabeth passed the chief of the night in her sister’s room, and in the\nmorning had the pleasure of being able to send a tolerable answer to the\ninquiries which she very early received from Mr. Bingley by a housemaid,\nand some time afterwards from the two elegant ladies who waited on his\nsisters. In spite of this amendment, however, she requested to have a\nnote sent to Longbourn, desiring her mother to visit Jane, and form her\nown judgment of her situation. The note was immediately despatched, and\nits contents as quickly complied with. Mrs. Bennet, accompanied by her\ntwo youngest girls, reached Netherfield soon after the family breakfast."
+        },
+        {
+          "id": "src_4d641aab7073",
+          "chapter": 9,
+          "text": "Mrs. Bennet and her daughters then departed, and Elizabeth returned\ninstantly to Jane, leaving her own and her relations’ behaviour to the\nremarks of the two ladies and Mr. Darcy; the latter of whom, however,\ncould not be prevailed on to join in their censure of _her_, in spite of\nall Miss Bingley’s witticisms on _fine eyes_."
+        },
+        {
+          "id": "src_9f692a73542f",
+          "chapter": 7,
+          "text": "Mrs. Bennet was prevented replying by the entrance of the footman with a\nnote for Miss Bennet; it came from Netherfield, and the servant waited\nfor an answer. Mrs. Bennet’s eyes sparkled with pleasure, and she was\neagerly calling out, while her daughter read,--"
+        },
+        {
+          "id": "src_ad2b06982c35",
+          "chapter": 7,
+          "text": "When the clock struck three, Elizabeth felt that she must go, and very\nunwillingly said so. Miss Bingley offered her the carriage, and she only\nwanted a little pressing to accept it, when Jane testified such concern\nat parting with her that Miss Bingley was obliged to convert the offer\nof the chaise into an invitation to remain at Netherfield for the\npresent. Elizabeth most thankfully consented, and a servant was\ndespatched to Longbourn, to acquaint the family with her stay, and bring\nback a supply of clothes."
+        },
+        {
+          "id": "src_cf9bbdec1fc7",
+          "chapter": 9,
+          "text": "Had she found Jane in any apparent danger, Mrs. Bennet would have been\nvery miserable; but being satisfied on seeing her that her illness was\nnot alarming, she had no wish of her recovering immediately, as her\nrestoration to health would probably remove her from Netherfield. She\nwould not listen, therefore, to her daughter’s proposal of being carried\nhome; neither did the apothecary, who arrived about the same time, think\nit at all advisable. After sitting a little while with Jane, on Miss\nBingley’s appearance and invitation, the mother and three daughters all\nattended her into the breakfast parlour. Bingley met them with hopes\nthat Mrs. Bennet had not found Miss Bennet worse than she expected."
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "kind": "event",
+      "text": "Discussion of accomplishments among ladies",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_0114eccc12aa",
+          "chapter": 8,
+          "text": "“All this she must possess,” added Darcy; “and to all she must yet add\nsomething more substantial in the improvement of her mind by extensive\nreading.”"
+        },
+        {
+          "id": "src_7288299d65c0",
+          "chapter": 8,
+          "text": "“Oh, certainly,” cried his faithful assistant, “no one can be really\nesteemed accomplished who does not greatly surpass what is usually met\nwith. A woman must have a thorough knowledge of music, singing, drawing,\ndancing, and the modern languages, to deserve the word; and, besides all\nthis, she must possess a certain something in her air and manner of\nwalking, the tone of her voice, her address and expressions, or the word\nwill be but half deserved.”"
+        },
+        {
+          "id": "src_d07b1cae8c40",
+          "chapter": 8,
+          "text": "“Your list of the common extent of accomplishments,” said Darcy, “has\ntoo much truth. The word is applied to many a woman who deserves it no\notherwise than by netting a purse or covering a screen; but I am very\nfar from agreeing with you in your estimation of ladies in general. I\ncannot boast of knowing more than half-a-dozen in the whole range of my\nacquaintance that are really accomplished.”"
+        }
+      ]
+    },
+    {
+      "chapter": 8,
+      "kind": "relationship",
+      "text": "Miss Bingley criticizes Elizabeth Bennet",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_36757bef922a",
+          "chapter": 8,
+          "text": "“Undoubtedly,” replied Darcy, to whom this remark was chiefly addressed,\n“there is meanness in _all_ the arts which ladies sometimes condescend\nto employ for captivation. Whatever bears affinity to cunning is\ndespicable.”"
+        },
+        {
+          "id": "src_6d5773be6eea",
+          "chapter": 8,
+          "text": "“Eliza Bennet,” said Miss Bingley, when the door was closed on her, “is\none of those young ladies who seek to recommend themselves to the other\nsex by undervaluing their own; and with many men, I daresay, it\nsucceeds; but, in my opinion, it is a paltry device, a very mean art.”"
+        }
+      ]
+    },
+    {
+      "chapter": 10,
+      "kind": "event",
+      "text": "Social gathering in the drawing-room",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_48cbc57a30d6",
+          "chapter": 10,
+          "text": "The day passed much as the day before had done. Mrs. Hurst and Miss\nBingley had spent some hours of the morning with the invalid, who\ncontinued, though slowly, to mend; and, in the evening, Elizabeth joined\ntheir party in the drawing-room. The loo table, however, did not appear.\nMr. Darcy was writing, and Miss Bingley, seated near him, was watching\nthe progress of his letter, and repeatedly calling off his attention by\nmessages to his sister. Mr. Hurst and Mr. Bingley were at piquet, and\nMrs. Hurst was observing their game."
+        },
+        {
+          "id": "src_4f4aca542dae",
+          "chapter": 10,
+          "text": "Elizabeth took up some needlework, and was sufficiently amused in\nattending to what passed between Darcy and his companion. The perpetual\ncommendations of the lady either on his hand-writing, or on the evenness\nof his lines, or on the length of his letter, with the perfect unconcern\nwith which her praises were received, formed a curious dialogue, and was\nexactly in unison with her opinion of each."
+        },
+        {
+          "id": "src_5cbfe7c64bca",
+          "chapter": 10,
+          "text": "When that business was over, he applied to Miss Bingley and Elizabeth\nfor the indulgence of some music. Miss Bingley moved with alacrity to\nthe pianoforte, and after a polite request that Elizabeth would lead the\nway, which the other as politely and more earnestly negatived, she\nseated herself."
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "kind": "event",
+      "text": "Conversation after dinner at Netherfield",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_869df859236b",
+          "chapter": 11,
+          "text": "But when the gentlemen entered, Jane was no longer the first object;\nMiss Bingley’s eyes were instantly turned towards Darcy, and she had\nsomething to say to him before he had advanced many steps. He addressed\nhimself directly to Miss Bennet with a polite congratulation; Mr. Hurst\nalso made her a slight bow, and said he was “very glad;” but diffuseness\nand warmth remained for Bingley’s salutation. He was full of joy and\nattention. The first half hour was spent in piling up the fire, lest she\nshould suffer from the change of room; and she removed, at his desire,\nto the other side of the fireplace, that she might be farther from the\ndoor. He then sat down by her, and talked scarcely to anyone else.\nElizabeth, at work in the opposite corner, saw it all with great\ndelight."
+        },
+        {
+          "id": "src_9c170f0e692c",
+          "chapter": 11,
+          "text": "When the ladies removed after dinner Elizabeth ran up to her sister, and\nseeing her well guarded from cold, attended her into the drawing-room,\nwhere she was welcomed by her two friends with many professions of\npleasure; and Elizabeth had never seen them so agreeable as they were\nduring the hour which passed before the gentlemen appeared. Their powers\nof conversation were considerable. They could describe an entertainment\nwith accuracy, relate an anecdote with humour, and laugh at their\nacquaintance with spirit."
+        },
+        {
+          "id": "src_adbfc1adc62e",
+          "chapter": 11,
+          "text": "Miss Bingley, however, was incapable of disappointing Mr. Darcy in\nanything, and persevered, therefore, in requiring an explanation of his\ntwo motives."
+        }
+      ]
+    },
+    {
+      "chapter": 11,
+      "kind": "relationship",
+      "text": "Miss Bingley attempts to engage Mr. Darcy",
+      "other": "Mr. Darcy",
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_50bbca5b4cb2",
+          "chapter": 11,
+          "text": "Miss Bingley’s attention was quite as much engaged in watching Mr.\nDarcy’s progress through _his_ book, as in reading her own; and she was\nperpetually either making some inquiry, or looking at his page. She\ncould not win him, however, to any conversation; he merely answered her\nquestion and read on. At length, quite exhausted by the attempt to be\namused with her own book, which she had only chosen because it was the\nsecond volume of his, she gave a great yawn and said, “How pleasant it\nis to spend an evening in this way! I declare, after all, there is no\nenjoyment like reading! How much sooner one tires of anything than of a\nbook! When I have a house of my own, I shall be miserable if I have not\nan excellent library.”"
+        },
+        {
+          "id": "src_824e789fa304",
+          "chapter": 11,
+          "text": "“No,” said Darcy, “I have made no such pretension. I have faults enough,\nbut they are not, I hope, of understanding. My temper I dare not vouch\nfor. It is, I believe, too little yielding; certainly too little for the\nconvenience of the world. I cannot forget the follies and vices of\nothers so soon as I ought, nor their offences against myself. My\nfeelings are not puffed about with every attempt to move them. My temper\nwould perhaps be called resentful. My good opinion once lost is lost for\never.”"
+        },
+        {
+          "id": "src_d5b052fb5079",
+          "chapter": 11,
+          "text": "Elizabeth was surprised, but agreed to it immediately. Miss Bingley\nsucceeded no less in the real object of her civility: Mr. Darcy looked\nup. He was as much awake to the novelty of attention in that quarter as\nElizabeth herself could be, and unconsciously closed his book. He was\ndirectly invited to join their party, but he declined it, observing that\nhe could imagine but two motives for their choosing to walk up and down\nthe room together, with either of which motives his joining them would\ninterfere. What could he mean? She was dying to know what could be his\nmeaning--and asked Elizabeth whether she could at all understand him."
+        },
+        {
+          "id": "src_f02a249b94fe",
+          "chapter": 11,
+          "text": "Miss Bingley made no answer, and soon afterwards got up and walked about\nthe room. Her figure was elegant, and she walked well; but Darcy, at\nwhom it was all aimed, was still inflexibly studious. In the\ndesperation of her feelings, she resolved on one effort more; and,\nturning to Elizabeth, said,--"
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "kind": "event",
+      "text": "Departure from Netherfield",
+      "other": null,
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_378db94616e0",
+          "chapter": 12,
+          "text": "In consequence of an agreement between the sisters, Elizabeth wrote the\nnext morning to her mother, to beg that the carriage might be sent for\nthem in the course of the day. But Mrs. Bennet, who had calculated on\nher daughters remaining at Netherfield till the following Tuesday, which\nwould exactly finish Jane’s week, could not bring herself to receive\nthem with pleasure before. Her answer, therefore, was not propitious, at\nleast not to Elizabeth’s wishes, for she was impatient to get home. Mrs.\nBennet sent them word that they could not possibly have the carriage\nbefore Tuesday; and in her postscript it was added, that if Mr. Bingley\nand his sister pressed them to stay longer, she could spare them very\nwell. Against staying longer, however, Elizabeth was positively\nresolved--nor did she much expect it would be asked; and fearful, on the\ncontrary, of being considered as intruding themselves needlessly long,\nshe urged Jane to borrow Mr. Bingley’s carriage immediately, and at\nlength it was settled that their original design of leaving Netherfield\nthat morning should be mentioned, and the request made."
+        },
+        {
+          "id": "src_9f2829ae36df",
+          "chapter": 12,
+          "text": "The master of the house heard with real sorrow that they were to go so\nsoon, and repeatedly tried to persuade Miss Bennet that it would not be\nsafe for her--that she was not enough recovered; but Jane was firm where\nshe felt herself to be right."
+        },
+        {
+          "id": "src_b121342f7df6",
+          "chapter": 12,
+          "text": "On Sunday, after morning service, the separation, so agreeable to almost\nall, took place. Miss Bingley’s civility to Elizabeth increased at last\nvery rapidly, as well as her affection for Jane; and when they parted,\nafter assuring the latter of the pleasure it would always give her to\nsee her either at Longbourn or Netherfield, and embracing her most\ntenderly, she even shook hands with the former. Elizabeth took leave of\nthe whole party in the liveliest spirits."
+        },
+        {
+          "id": "src_d05e99484b96",
+          "chapter": 12,
+          "text": "The communication excited many professions of concern; and enough was\nsaid of wishing them to stay at least till the following day to work on\nJane; and till the morrow their going was deferred. Miss Bingley was\nthen sorry that she had proposed the delay; for her jealousy and dislike\nof one sister much exceeded her affection for the other."
+        }
+      ]
+    },
+    {
+      "chapter": 45,
+      "kind": "relationship",
+      "text": "Miss Bingley's jealousy of Elizabeth",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 5,
+      "passages": [
+        {
+          "id": "src_06b4ea954138",
+          "chapter": 45,
+          "text": "Elizabeth soon saw that she was herself closely watched by Miss Bingley,\nand that she could not speak a word, especially to Miss Darcy, without\ncalling her attention. This observation would not have prevented her\nfrom trying to talk to the latter, had they not been seated at an\ninconvenient distance; but she was not sorry to be spared the necessity\nof saying much: her own thoughts were employing her. She expected every\nmoment that some of the gentlemen would enter the room: she wished, she\nfeared, that the master of the house might be amongst them; and whether\nshe wished or feared it most, she could scarcely determine. After\nsitting in this manner a quarter of an hour, without hearing Miss\nBingley’s voice, Elizabeth was roused by receiving from her a cold\ninquiry after the health of her family. She answered with equal\nindifference and brevity, and the other said no more."
+        },
+        {
+          "id": "src_07f46617786f",
+          "chapter": 45,
+          "text": "Their visit did not continue long after the question and answer above\nmentioned; and while Mr. Darcy was attending them to their carriage,\nMiss Bingley was venting her feelings in criticisms on Elizabeth’s\nperson, behaviour, and dress. But Georgiana would not join her. Her\nbrother’s recommendation was enough to insure her favour: his judgment\ncould not err; and he had spoken in such terms of Elizabeth, as to leave\nGeorgiana without the power of finding her otherwise than lovely and\namiable. When Darcy returned to the saloon, Miss Bingley could not help\nrepeating to him some part of what she had been saying to his sister."
+        },
+        {
+          "id": "src_1a00969ee800",
+          "chapter": 45,
+          "text": "“How very ill Eliza Bennet looks this morning, Mr. Darcy,” she cried: “I\nnever in my life saw anyone so much altered as she is since the winter.\nShe is grown so brown and coarse! Louisa and I were agreeing that we\nshould not have known her again.”"
+        },
+        {
+          "id": "src_372244065e52",
+          "chapter": 45,
+          "text": "In Darcy’s presence she dared not mention Wickham’s name: but Elizabeth\ninstantly comprehended that he was uppermost in her thoughts; and the\nvarious recollections connected with him gave her a moment’s distress;\nbut, exerting herself vigorously to repel the ill-natured attack, she\npresently answered the question in a tolerably disengaged tone. While\nshe spoke, an involuntary glance showed her Darcy with a heightened\ncomplexion, earnestly looking at her, and his sister overcome with\nconfusion, and unable to lift up her eyes. Had Miss Bingley known what\npain she was then giving her beloved friend, she undoubtedly would have\nrefrained from the hint; but she had merely intended to discompose\nElizabeth, by bringing forward the idea of a man to whom she believed\nher partial, to make her betray a sensibility which might injure her in\nDarcy’s opinion, and, perhaps, to remind the latter of all the follies\nand absurdities by which some part of her family were connected with\nthat corps. Not a syllable had ever reached her of Miss Darcy’s\nmeditated elopement. To no creature had it been revealed, where secrecy\nwas possible, except to Elizabeth; and from all Bingley’s connections\nher brother was particularly anxious to conceal it, from that very wish\nwhich Elizabeth had long ago attributed to him, of their becoming\nhereafter her own. He had certainly formed such a plan; and without\nmeaning that it should affect his endeavour to separate him from Miss\nBennet, it is probable that it might add something to his lively concern\nfor the welfare of his friend."
+        },
+        {
+          "id": "src_d6a03dbbb5e5",
+          "chapter": 45,
+          "text": "Convinced as Elizabeth now was that Miss Bingley’s dislike of her had\noriginated in jealousy, she could not help feeling how very unwelcome\nher appearance at Pemberley must be to her, and was curious to know\nwith how much civility on that lady’s side the acquaintance would now\nbe renewed."
+        }
+      ]
+    }
+  ]
+}

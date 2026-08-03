@@ -1,0 +1,201 @@
+{
+  "slug": "mrs-gardiner",
+  "canonical_label": "Mrs. Gardiner",
+  "aliases": [
+    "Mrs. Gardiner"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 26,
+    "chapter_max": 26,
+    "evidence_passages": 2,
+    "relationships": 2,
+    "events": 6,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 25,
+      "kind": "event",
+      "text": "Mrs. Gardiner's Visit to Longbourn",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_1c4dca021b53",
+          "chapter": 25,
+          "text": "The first part of Mrs. Gardiner’s business, on her arrival, was to\ndistribute her presents and describe the newest fashions. When this was\ndone, she had a less active part to play. It became her turn to listen.\nMrs. Bennet had many grievances to relate, and much to complain of. They\nhad all been very ill-used since she last saw her sister. Two of her\ngirls had been on the point of marriage, and after all there was nothing\nin it."
+        },
+        {
+          "id": "src_8f4826d4e037",
+          "chapter": 25,
+          "text": "On the following Monday, Mrs. Bennet had the pleasure of receiving her\nbrother and his wife, who came, as usual, to spend the Christmas at\nLongbourn. Mr. Gardiner was a sensible, gentlemanlike man, greatly\nsuperior to his sister, as well by nature as education. The Netherfield\nladies would have had difficulty in believing that a man who lived by\ntrade, and within view of his own warehouses, could have been so\nwell-bred and agreeable. Mrs. Gardiner, who was several years younger\nthan Mrs. Bennet and Mrs. Philips, was an amiable, intelligent, elegant\nwoman, and a great favourite with her Longbourn nieces. Between the two\neldest and herself especially, there subsisted a very particular regard.\nThey had frequently been staying with her in town."
+        },
+        {
+          "id": "src_d9cebfa3b243",
+          "chapter": 25,
+          "text": "The Gardiners stayed a week at Longbourn; and what with the Philipses,\nthe Lucases, and the officers, there was not a day without its\nengagement. Mrs. Bennet had so carefully provided for the entertainment\nof her brother and sister, that they did not once sit down to a family\ndinner. When the engagement was for home, some of the officers always\nmade part of it, of which officers Mr. Wickham was sure to be one; and\non these occasions Mrs. Gardiner, rendered suspicious by Elizabeth’s\nwarm commendation of him, narrowly observed them both. Without supposing\nthem, from what she saw, to be very seriously in love, their preference\nof each other was plain enough to make her a little uneasy; and she\nresolved to speak to Elizabeth on the subject before she left\nHertfordshire, and represent to her the imprudence of encouraging such\nan attachment."
+        }
+      ]
+    },
+    {
+      "chapter": 25,
+      "kind": "relationship",
+      "text": "Connection between Mr. Wickham and Mrs. Gardiner",
+      "other": "George Wickham",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_86101acc7388",
+          "chapter": 25,
+          "text": "Mrs. Gardiner had seen Pemberley, and known the late Mr. Darcy by\ncharacter perfectly well. Here, consequently, was an inexhaustible\nsubject of discourse. In comparing her recollection of Pemberley with\nthe minute description which Wickham could give, and in bestowing her\ntribute of praise on the character of its late possessor, she was\ndelighting both him and herself. On being made acquainted with the\npresent Mr. Darcy’s treatment of him, she tried to remember something of\nthat gentleman’s reputed disposition, when quite a lad, which might\nagree with it; and was confident, at last, that she recollected having\nheard Mr. Fitzwilliam Darcy formerly spoken of as a very proud,\nill-natured boy."
+        },
+        {
+          "id": "src_aba49e3e70e2",
+          "chapter": 25,
+          "text": "To Mrs. Gardiner, Wickham had one means of affording pleasure,\nunconnected with his general powers. About ten or a dozen years ago,\nbefore her marriage, she had spent a considerable time in that very part\nof Derbyshire to which he belonged. They had, therefore, many\nacquaintance in common; and, though Wickham had been little there since\nthe death of Darcy’s father, five years before, it was yet in his power\nto give her fresher intelligence of her former friends than she had been\nin the way of procuring."
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "kind": "event",
+      "text": "Elizabeth receives advice from Mrs. Gardiner",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_03dd57d6b86b",
+          "chapter": 26,
+          "text": "Mrs. Gardiner’s caution to Elizabeth was punctually and kindly given on\nthe first favourable opportunity of speaking to her alone: after\nhonestly telling her what she thought, she thus went on:--"
+        },
+        {
+          "id": "src_05014353eafe",
+          "chapter": 26,
+          "text": "Her aunt assured her that she was; and Elizabeth, having thanked her for\nthe kindness of her hints, they parted,--a wonderful instance of advice\nbeing given on such a point without being resented."
+        },
+        {
+          "id": "src_59817eac4705",
+          "chapter": 26,
+          "text": "“You are too sensible a girl, Lizzy, to fall in love merely because you\nare warned against it; and, therefore, I am not afraid of speaking\nopenly. Seriously, I would have you be on your guard. Do not involve\nyourself, or endeavour to involve him, in an affection which the want of\nfortune would make so very imprudent. I have nothing to say against\n_him_: he is a most interesting young man; and if he had the fortune he\nought to have, I should think you could not do better. But as it is--you\nmust not let your fancy run away with you. You have sense, and we all\nexpect you to use it. Your father would depend on _your_ resolution and\ngood conduct, I am sure. You must not disappoint your father.”"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "kind": "event",
+      "text": "Elizabeth's acceptance of summer tour invitation",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_ba839309c20f",
+          "chapter": 27,
+          "text": "Before they were separated by the conclusion of the play, she had the\nunexpected happiness of an invitation to accompany her uncle and aunt in\na tour of pleasure which they proposed taking in the summer."
+        },
+        {
+          "id": "src_d4d1f97d65b2",
+          "chapter": 27,
+          "text": "No scheme could have been more agreeable to Elizabeth, and her\nacceptance of the invitation was most ready and grateful. “My dear, dear\naunt,” she rapturously cried, “what delight! what felicity! You give me\nfresh life and vigour. Adieu to disappointment and spleen. What are men\nto rocks and mountains? Oh, what hours of transport we shall spend! And\nwhen we _do_ return, it shall not be like other travellers, without\nbeing able to give one accurate idea of anything. We _will_ know where\nwe have gone--we _will_ recollect what we have seen. Lakes, mountains,\nand rivers, shall not be jumbled together in our imaginations; nor, when\nwe attempt to describe any particular scene, will we begin quarrelling\nabout its relative situation. Let _our_ first effusions be less\ninsupportable than those of the generality of travellers.”"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "kind": "relationship",
+      "text": "Mrs. Gardiner's advice to Elizabeth about Mr. Wickham",
+      "other": "Elizabeth about Mr. Wickham",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_a186a0e2716b",
+          "chapter": 27,
+          "text": "Mrs. Gardiner then rallied her niece on Wickham’s desertion, and\ncomplimented her on bearing it so well."
+        },
+        {
+          "id": "src_cf4fad89731e",
+          "chapter": 27,
+          "text": "“But, my dear Elizabeth,” she added, “what sort of girl is Miss King? I\nshould be sorry to think our friend mercenary.”"
+        }
+      ]
+    },
+    {
+      "chapter": 42,
+      "kind": "event",
+      "text": "Journey to Pemberley",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_4c0ac44df897",
+          "chapter": 42,
+          "text": "To Pemberley, therefore, they were to go."
+        },
+        {
+          "id": "src_6d59daf6faba",
+          "chapter": 42,
+          "text": "It is not the object of this work to give a description of Derbyshire,\nnor of any of the remarkable places through which their route thither\nlay--Oxford, Blenheim, Warwick, Kenilworth, Birmingham, etc., are\nsufficiently known. A small part of Derbyshire is all the present\nconcern. To the little town of Lambton, the scene of Mrs. Gardiner’s\nformer residence, and where she had lately learned that some\nacquaintance still remained, they bent their steps, after having seen\nall the principal wonders of the country; and within five miles of\nLambton, Elizabeth found, from her aunt, that Pemberley was situated. It\nwas not in their direct road; nor more than a mile or two out of it. In\ntalking over their route the evening before, Mrs. Gardiner expressed an\ninclination to see the place again. Mr. Gardiner declared his\nwillingness, and Elizabeth was applied to for her approbation."
+        }
+      ]
+    },
+    {
+      "chapter": 44,
+      "kind": "event",
+      "text": "Visit to Pemberley",
+      "other": null,
+      "evidence_count": 8,
+      "passages": [
+        {
+          "id": "src_07f46617786f",
+          "chapter": 45,
+          "text": "Their visit did not continue long after the question and answer above\nmentioned; and while Mr. Darcy was attending them to their carriage,\nMiss Bingley was venting her feelings in criticisms on Elizabeth’s\nperson, behaviour, and dress. But Georgiana would not join her. Her\nbrother’s recommendation was enough to insure her favour: his judgment\ncould not err; and he had spoken in such terms of Elizabeth, as to leave\nGeorgiana without the power of finding her otherwise than lovely and\namiable. When Darcy returned to the saloon, Miss Bingley could not help\nrepeating to him some part of what she had been saying to his sister."
+        },
+        {
+          "id": "src_2de34382760c",
+          "chapter": 45,
+          "text": "By Mrs. Hurst and Miss Bingley they were noticed only by a courtesy; and\non their being seated, a pause, awkward as such pauses must always be,\nsucceeded for a few moments. It was first broken by Mrs. Annesley, a\ngenteel, agreeable-looking woman, whose endeavour to introduce some kind\nof discourse proved her to be more truly well-bred than either of the\nothers; and between her and Mrs. Gardiner, with occasional help from\nElizabeth, the conversation was carried on. Miss Darcy looked as if she\nwished for courage enough to join in it; and sometimes did venture a\nshort sentence, when there was least danger of its being heard."
+        },
+        {
+          "id": "src_44723e2c2454",
+          "chapter": 45,
+          "text": "The next variation which their visit afforded was produced by the\nentrance of servants with cold meat, cake, and a variety of all the\nfinest fruits in season; but this did not take place till after many a\nsignificant look and smile from Mrs. Annesley to Miss Darcy had been\ngiven, to remind her of her post. There was now employment for the whole\nparty; for though they could not all talk, they could all eat; and the\nbeautiful pyramids of grapes, nectarines, and peaches, soon collected\nthem round the table."
+        },
+        {
+          "id": "src_51ff203d7258",
+          "chapter": 44,
+          "text": "It had been settled in the evening, between the aunt and niece, that\nsuch a striking civility as Miss Darcy’s, in coming to them on the very\nday of her arrival at Pemberley--for she had reached it only to a late\nbreakfast--ought to be imitated, though it could not be equalled, by\nsome exertion of politeness on their side; and, consequently, that it\nwould be highly expedient to wait on her at Pemberley the following\nmorning. They were, therefore, to go. Elizabeth was pleased; though when\nshe asked herself the reason, she had very little to say in reply."
+        },
+        {
+          "id": "src_7493a1670252",
+          "chapter": 45,
+          "text": "In this room they were received by Miss Darcy, who was sitting there\nwith Mrs. Hurst and Miss Bingley, and the lady with whom she lived in\nLondon. Georgiana’s reception of them was very civil, but attended with\nall that embarrassment which, though proceeding from shyness and the\nfear of doing wrong, would easily give to those who felt themselves\ninferior the belief of her being proud and reserved. Mrs. Gardiner and\nher niece, however, did her justice, and pitied her."
+        },
+        {
+          "id": "src_90bf70e7546a",
+          "chapter": 45,
+          "text": "On reaching the house, they were shown through the hall into the saloon,\nwhose northern aspect rendered it delightful for summer. Its windows,\nopening to the ground, admitted a most refreshing view of the high woody\nhills behind the house, and of the beautiful oaks and Spanish chestnuts\nwhich were scattered over the intermediate lawn."
+        }
+      ]
+    },
+    {
+      "chapter": 48,
+      "kind": "event",
+      "text": "Mr. Bennet's return to Longbourn",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_0e7fbea2d6dc",
+          "chapter": 48,
+          "text": "Mr. Gardiner added, in his letter, that they might expect to see their\nfather at home on the following day, which was Saturday. Rendered\nspiritless by the ill success of all their endeavours, he had yielded to\nhis brother-in-law’s entreaty that he would return to his family and\nleave it to him to do whatever occasion might suggest to be advisable\nfor continuing their pursuit. When Mrs. Bennet was told of this, she did\nnot express so much satisfaction as her children expected, considering\nwhat her anxiety for his life had been before."
+        },
+        {
+          "id": "src_d1c14142e4a1",
+          "chapter": 48,
+          "text": "“What! is he coming home, and without poor Lydia?” she cried. “Sure he\nwill not leave London before he has found them. Who is to fight Wickham,\nand make him marry her, if he comes away?”"
+        }
+      ]
+    }
+  ]
+}

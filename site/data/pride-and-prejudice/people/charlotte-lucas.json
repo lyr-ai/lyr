@@ -1,0 +1,235 @@
+{
+  "slug": "charlotte-lucas",
+  "canonical_label": "Charlotte Lucas",
+  "aliases": [
+    "Charlotte",
+    "Charlotte Lucas"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 22,
+    "chapter_max": 38,
+    "evidence_passages": 13,
+    "relationships": 4,
+    "events": 6,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 3
+  },
+  "timeline": [
+    {
+      "chapter": 22,
+      "kind": "event",
+      "text": "Charlotte Lucas accepts Mr. Collins' proposal",
+      "other": null,
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_57f7acd7ac5e",
+          "chapter": 22,
+          "text": "With proper civilities, the ladies then withdrew; all of them equally\nsurprised to find that he meditated a quick return. Mrs. Bennet wished\nto understand by it that he thought of paying his addresses to one of\nher younger girls, and Mary might have been prevailed on to accept him.\nShe rated his abilities much higher than any of the others: there was a\nsolidity in his reflections which often struck her; and though by no\nmeans so clever as herself, she thought that, if encouraged to read and\nimprove himself by such an example as hers, he might become a very\nagreeable companion. But on the following morning every hope of this\nkind was done away. Miss Lucas called soon after breakfast, and in a\nprivate conference with Elizabeth related the event of the day before."
+        },
+        {
+          "id": "src_7703b10ecb48",
+          "chapter": 22,
+          "text": "Charlotte assured her friend of her satisfaction in being useful, and\nthat it amply repaid her for the little sacrifice of her time. This was\nvery amiable; but Charlotte’s kindness extended farther than Elizabeth\nhad any conception of:--its object was nothing less than to secure her\nfrom any return of Mr. Collins’s addresses, by engaging them towards\nherself. Such was Miss Lucas’s scheme; and appearances were so\nfavourable, that when they parted at night, she would have felt almost\nsure of success if he had not been to leave Hertfordshire so very soon.\nBut here she did injustice to the fire and independence of his\ncharacter; for it led him to escape out of Longbourn House the next\nmorning with admirable slyness, and hasten to Lucas Lodge to throw\nhimself at her feet. He was anxious to avoid the notice of his cousins,\nfrom a conviction that, if they saw him depart, they could not fail to\nconjecture his design, and he was not willing to have the attempt known\ntill its success could be known likewise; for, though feeling almost\nsecure, and with reason, for Charlotte had been tolerably encouraging,\nhe was comparatively diffident since the adventure of Wednesday. His\nreception, however, was of the most flattering kind. Miss Lucas\nperceived him from an upper window as he walked towards the house, and\ninstantly set out to meet him accidentally in the lane. But little had\nshe dared to hope that so much love and eloquence awaited her there."
+        },
+        {
+          "id": "src_8876212a41a9",
+          "chapter": 22,
+          "text": "Sir William and Lady Lucas were speedily applied to for their consent;\nand it was bestowed with a most joyful alacrity. Mr. Collins’s present\ncircumstances made it a most eligible match for their daughter, to whom\nthey could give little fortune; and his prospects of future wealth were\nexceedingly fair. Lady Lucas began directly to calculate, with more\ninterest than the matter had ever"
+        },
+        {
+          "id": "src_dfa9e16fe973",
+          "chapter": 22,
+          "text": "In as short a time as Mr. Collins’s long speeches would allow,\neverything was settled between them to the satisfaction of both; and as\nthey entered the house, he earnestly entreated her to name the day that\nwas to make him the happiest of men; and though such a solicitation must\nbe waived for the present, the lady felt no inclination to trifle with\nhis happiness. The stupidity with which he was favoured by nature must\nguard his courtship from any charm that could make a woman wish for its\ncontinuance; and Miss Lucas, who accepted him solely from the pure and\ndisinterested desire of an establishment, cared not how soon that\nestablishment were gained."
+        }
+      ]
+    },
+    {
+      "chapter": 22,
+      "kind": "relationship",
+      "text": "Engagement of Charlotte Lucas and Mr. Collins",
+      "other": "Mr. Collins",
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_652b7a910fc8",
+          "chapter": 22,
+          "text": "“I see what you are feeling,” replied Charlotte; “you must be surprised,\nvery much surprised, so lately as Mr. Collins was wishing to marry you.\nBut when you have had time to think it all over, I hope you will be\nsatisfied with what I have done. I am not romantic, you know. I never\nwas. I ask only a comfortable home; and, considering Mr. Collins’s\ncharacter, connections, and situation in life, I am convinced that my\nchance of happiness with him is as fair as most people can boast on\nentering the marriage state.”"
+        },
+        {
+          "id": "src_7703b10ecb48",
+          "chapter": 22,
+          "text": "Charlotte assured her friend of her satisfaction in being useful, and\nthat it amply repaid her for the little sacrifice of her time. This was\nvery amiable; but Charlotte’s kindness extended farther than Elizabeth\nhad any conception of:--its object was nothing less than to secure her\nfrom any return of Mr. Collins’s addresses, by engaging them towards\nherself. Such was Miss Lucas’s scheme; and appearances were so\nfavourable, that when they parted at night, she would have felt almost\nsure of success if he had not been to leave Hertfordshire so very soon.\nBut here she did injustice to the fire and independence of his\ncharacter; for it led him to escape out of Longbourn House the next\nmorning with admirable slyness, and hasten to Lucas Lodge to throw\nhimself at her feet. He was anxious to avoid the notice of his cousins,\nfrom a conviction that, if they saw him depart, they could not fail to\nconjecture his design, and he was not willing to have the attempt known\ntill its success could be known likewise; for, though feeling almost\nsecure, and with reason, for Charlotte had been tolerably encouraging,\nhe was comparatively diffident since the adventure of Wednesday. His\nreception, however, was of the most flattering kind. Miss Lucas\nperceived him from an upper window as he walked towards the house, and\ninstantly set out to meet him accidentally in the lane. But little had\nshe dared to hope that so much love and eloquence awaited her there."
+        },
+        {
+          "id": "src_8876212a41a9",
+          "chapter": 22,
+          "text": "Sir William and Lady Lucas were speedily applied to for their consent;\nand it was bestowed with a most joyful alacrity. Mr. Collins’s present\ncircumstances made it a most eligible match for their daughter, to whom\nthey could give little fortune; and his prospects of future wealth were\nexceedingly fair. Lady Lucas began directly to calculate, with more\ninterest than the matter had ever"
+        },
+        {
+          "id": "src_bbaabd21ca38",
+          "chapter": 22,
+          "text": "Elizabeth quietly answered “undoubtedly;” and, after an awkward pause,\nthey returned to the rest of the family. Charlotte did not stay much\nlonger; and Elizabeth was then left to reflect on what she had heard. It\nwas a long time before she became at all reconciled to the idea of so\nunsuitable a match. The strangeness of Mr. Collins’s making two offers\nof marriage within three days was nothing in comparison of his being now\naccepted. She had always felt that Charlotte’s opinion of matrimony was\nnot exactly like her own; but she could not have supposed it possible\nthat, when called into action, she would have sacrificed every better\nfeeling to worldly advantage. Charlotte, the wife of Mr. Collins, was a\nmost humiliating picture! And to the pang of a friend disgracing\nherself, and sunk in her esteem, was added the distressing conviction\nthat it was impossible for that friend to be tolerably happy in the lot\nshe had chosen."
+        }
+      ]
+    },
+    {
+      "chapter": 23,
+      "kind": "relationship",
+      "text": "Mrs. Bennet's resentment towards Charlotte",
+      "other": "Mrs. Bennet",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_0fae5ff0b562",
+          "chapter": 23,
+          "text": "Mrs. Bennet was really in a most pitiable state. The very mention of\nanything concerning the match threw her into an agony of ill-humour, and\nwherever she went she was sure of hearing it talked of. The sight of\nMiss Lucas was odious to her. As her successor in that house, she\nregarded her with jealous abhorrence. Whenever Charlotte came to see\nthem, she concluded her to be anticipating the hour of possession; and\nwhenever she spoke in a low voice to Mr. Collins, was convinced that\nthey were talking of the Longbourn estate, and resolving to turn herself\nand her daughters out of the house as soon as Mr. Bennet was dead. She\ncomplained bitterly of all this to her husband."
+        },
+        {
+          "id": "src_60b5cae34e43",
+          "chapter": 23,
+          "text": "[Illustration:"
+        },
+        {
+          "id": "src_c8de597f9101",
+          "chapter": 23,
+          "text": "“Indeed, Mr. Bennet,” said she, “it is very hard to think that Charlotte\nLucas should ever be mistress of this house, that _I_ should be forced\nto make way for _her_, and live to see her take my place in it!”"
+        }
+      ]
+    },
+    {
+      "chapter": 26,
+      "kind": "event",
+      "text": "Charlotte's wedding",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_913f2be7b822",
+          "chapter": 26,
+          "text": "The wedding took place: the bride and bridegroom set off for Kent from\nthe church door, and everybody had as much to say or to hear on the\nsubject as usual. Elizabeth soon heard from her friend, and their\ncorrespondence was as regular and frequent as it ever had been: that it\nshould be equally unreserved was impossible. Elizabeth could never\naddress her without feeling that all the comfort of intimacy was over;\nand, though determined not to slacken as a correspondent, it was for the\nsake of what had been rather than what was. Charlotte’s first letters\nwere received with a good deal of eagerness: there could not but be\ncuriosity to know how she would speak of her new home, how she would\nlike Lady Catherine, and how happy she would dare pronounce herself to\nbe; though, when the letters were read, Elizabeth felt that Charlotte\nexpressed herself on every point exactly as she might have foreseen. She\nwrote cheerfully, seemed surrounded with comforts, and mentioned nothing\nwhich she could not praise. The house, furniture, neighbourhood, and\nroads, were all to her taste, and Lady Catherine’s behaviour was most\nfriendly and obliging. It was Mr. Collins’s picture of Hunsford and\nRosings rationally softened; and Elizabeth perceived that she must wait\nfor her own visit there, to know the rest."
+        },
+        {
+          "id": "src_b611640952e2",
+          "chapter": 26,
+          "text": "Mr. Collins returned into Hertfordshire soon after it had been quitted\nby the Gardiners and Jane; but, as he took up his abode with the\nLucases, his arrival was no great inconvenience to Mrs. Bennet. His\nmarriage was now fast approaching; and she was at length so far resigned\nas to think it inevitable, and even repeatedly to say, in an ill-natured\ntone, that she “_wished_ they might be happy.” Thursday was to be the\nwedding-day, and on Wednesday Miss Lucas paid her farewell visit; and\nwhen she rose to take leave, Elizabeth, ashamed of her mother’s\nungracious and reluctant good wishes, and sincerely affected herself,\naccompanied her out of the room. As they went down stairs together,\nCharlotte said,--"
+        }
+      ]
+    },
+    {
+      "chapter": 27,
+      "kind": "event",
+      "text": "Elizabeth's journey to Hunsford",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_42644a60feac",
+          "chapter": 27,
+          "text": "With no greater events than these in the Longbourn family, and otherwise\ndiversified by little beyond the walks to Meryton, sometimes dirty and\nsometimes cold, did January and February pass away. March was to take\nElizabeth to Hunsford. She had not at first thought very seriously of\ngoing thither; but Charlotte, she soon found, was depending on the\nplan, and she gradually learned to consider it herself with greater\npleasure as well as greater certainty. Absence had increased her desire\nof seeing Charlotte again, and weakened her disgust of Mr. Collins.\nThere was novelty in the scheme; and as, with such a mother and such\nuncompanionable sisters, home could not be faultless, a little change\nwas not unwelcome for its own sake. The journey would, moreover, give\nher a peep at Jane; and, in short, as the time drew near, she would have\nbeen very sorry for any delay. Everything, however, went on smoothly,\nand was finally settled according to Charlotte’s first sketch. She was\nto accompany Sir William and his second daughter. The improvement of\nspending a night in London was added in time, and the plan became as\nperfect as plan could be."
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "kind": "event",
+      "text": "Visit to the Parsonage",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_21dc4d5b342a",
+          "chapter": 28,
+          "text": "At length the Parsonage was discernible. The garden sloping to the\nroad, the house standing in it, the green pales and the laurel hedge,\neverything declared they were arriving. Mr. Collins and Charlotte\nappeared at the door, and the carriage stopped at the small gate, which\nled by a short gravel walk to the house, amidst the nods and smiles of\nthe whole party. In a moment they were all out of the chaise, rejoicing\nat the sight of each other. Mrs. Collins welcomed her friend with the\nliveliest pleasure, and Elizabeth was more and more satisfied with\ncoming, when she found herself so affectionately received. She saw\ninstantly that her cousin’s manners were not altered by his marriage:\nhis formal civility was just what it had been; and he detained her some\nminutes at the gate to hear and satisfy his inquiries after all her\nfamily. They were then, with no other delay than his pointing out the\nneatness of the entrance, taken into the house; and as soon as they were\nin the parlour, he welcomed them a second time, with ostentatious\nformality, to his humble abode, and punctually repeated all his wife’s\noffers of refreshment."
+        },
+        {
+          "id": "src_371f416a70b8",
+          "chapter": 28,
+          "text": "From his garden, Mr. Collins would have led them round his two meadows;\nbut the ladies, not having shoes to encounter the remains of a white\nfrost, turned back; and while Sir William accompanied him, Charlotte\ntook her sister and friend over the house, extremely well pleased,\nprobably, to have the opportunity of showing it without her husband’s\nhelp. It was rather small, but well built and convenient; and everything\nwas fitted up and arranged with a neatness and consistency, of which\nElizabeth gave Charlotte all the credit. When Mr. Collins could be\nforgotten, there was really a great air of comfort throughout, and by\nCharlotte’s evident enjoyment of it, Elizabeth supposed he must be often\nforgotten."
+        },
+        {
+          "id": "src_9361dc51bccb",
+          "chapter": 28,
+          "text": "Every object in the next day’s journey was new and interesting to\nElizabeth; and her spirits were in a state of enjoyment; for she had\nseen her sister looking so well as to banish all fear for her health,\nand the prospect of her northern tour was a constant source of delight."
+        }
+      ]
+    },
+    {
+      "chapter": 28,
+      "kind": "relationship",
+      "text": "Mr. Collins marriage to Charlotte",
+      "other": "Mr. Collins",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_21dc4d5b342a",
+          "chapter": 28,
+          "text": "At length the Parsonage was discernible. The garden sloping to the\nroad, the house standing in it, the green pales and the laurel hedge,\neverything declared they were arriving. Mr. Collins and Charlotte\nappeared at the door, and the carriage stopped at the small gate, which\nled by a short gravel walk to the house, amidst the nods and smiles of\nthe whole party. In a moment they were all out of the chaise, rejoicing\nat the sight of each other. Mrs. Collins welcomed her friend with the\nliveliest pleasure, and Elizabeth was more and more satisfied with\ncoming, when she found herself so affectionately received. She saw\ninstantly that her cousin’s manners were not altered by his marriage:\nhis formal civility was just what it had been; and he detained her some\nminutes at the gate to hear and satisfy his inquiries after all her\nfamily. They were then, with no other delay than his pointing out the\nneatness of the entrance, taken into the house; and as soon as they were\nin the parlour, he welcomed them a second time, with ostentatious\nformality, to his humble abode, and punctually repeated all his wife’s\noffers of refreshment."
+        },
+        {
+          "id": "src_c4d0fa777889",
+          "chapter": 28,
+          "text": "Elizabeth was prepared to see him in his glory; and she could not help\nfancying that in displaying the good proportion of the room, its aspect,\nand its furniture, he addressed himself particularly to her, as if\nwishing to make her feel what she had lost in refusing him. But though\neverything seemed neat and comfortable, she was not able to gratify him\nby any sigh of repentance; and rather looked with wonder at her friend,\nthat she could have so cheerful an air with such a companion. When Mr.\nCollins said anything of which his wife might reasonably be ashamed,\nwhich certainly was not seldom, she involuntarily turned her eye on\nCharlotte. Once or twice she could discern a faint blush; but in general\nCharlotte wisely did not hear. After sitting long enough to admire\nevery article of furniture in the room, from the sideboard to the\nfender, to give an account of their journey, and of all that had\nhappened in London, Mr. Collins invited them to take a stroll in the\ngarden, which was large and well laid out, and to the cultivation of\nwhich he attended himself. To work in his garden was one of his most\nrespectable pleasures; and Elizabeth admired the command of countenance\nwith which Charlotte talked of the healthfulness of the exercise, and\nowned she encouraged it as much as possible. Here, leading the way\nthrough every walk and cross walk, and scarcely allowing them an\ninterval to utter the praises he asked for, every view was pointed out\nwith a minuteness which left beauty entirely behind. He could number the\nfields in every direction, and could tell how many trees there were in\nthe most distant clump. But of all the views which his garden, or which\nthe country or the kingdom could boast, none were to be compared with\nthe prospect of Rosings, afforded by an opening in the trees that\nbordered the park nearly opposite the front of his house. It was a\nhandsome modern building, well situated on rising ground."
+        }
+      ]
+    },
+    {
+      "chapter": 29,
+      "kind": "event",
+      "text": "Dinner at Rosings",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_48631d3bdf59",
+          "chapter": 29,
+          "text": "The dinner was exceedingly handsome, and there were all the servants,\nand all the articles of plate which Mr. Collins had promised; and, as he\nhad likewise foretold, he took his seat at the bottom of the table, by\nher Ladyship’s desire, and looked as if he felt that life could furnish\nnothing greater. He carved and ate and praised with delighted alacrity;\nand every dish was commended first by him, and then by Sir William, who\nwas now enough recovered to echo whatever his son-in-law said, in a\nmanner which Elizabeth wondered Lady Catherine could bear. But Lady\nCatherine seemed gratified by their excessive admiration, and gave most\ngracious smiles, especially when any dish on the table proved a novelty\nto them. The party did not supply much conversation. Elizabeth was ready\nto speak whenever there was an opening, but she was seated between\nCharlotte and Miss de Bourgh--the former of whom was engaged in\nlistening to Lady Catherine, and the latter said not a word to her all\nthe dinnertime. Mrs. Jenkinson was chiefly employed in watching how\nlittle Miss de Bourgh ate, pressing her to try some other dish and\nfearing she was indisposed. Maria thought speaking out of the question,\nand the gentlemen did nothing but eat and admire."
+        },
+        {
+          "id": "src_88eb02c0e2e3",
+          "chapter": 29,
+          "text": "When Lady Catherine and her daughter had played as long as they chose,\nthe tables were broken up, the carriage was offered to Mrs. Collins,\ngratefully accepted, and immediately ordered. The party then gathered\nround the fire to hear Lady Catherine determine what weather they were\nto have on the morrow. From these instructions they were summoned by the\narrival of the coach; and with many speeches of thankfulness on Mr.\nCollins’s side, and as many bows on Sir William’s, they departed. As\nsoon as they had driven from the door, Elizabeth was called on by her\ncousin to give her opinion of all that she had seen at Rosings, which,\nfor Charlotte’s sake, she made more favourable than it really was. But\nher commendation, though costing her some trouble, could by no means\nsatisfy Mr. Collins, and he was very soon obliged to take her Ladyship’s\npraise into his own hands."
+        }
+      ]
+    },
+    {
+      "chapter": 30,
+      "kind": "event",
+      "text": "Arrival of Mr. Darcy",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_513dbcce2a88",
+          "chapter": 30,
+          "text": "His arrival was soon known at the Parsonage; for Mr. Collins was walking\nthe whole morning within view of the lodges opening into Hunsford Lane,\nin order to have"
+        },
+        {
+          "id": "src_55107ed6f4e2",
+          "chapter": 30,
+          "text": "In this quiet way the first fortnight of her visit soon passed away.\nEaster was approaching, and the week preceding it was to bring an\naddition to the family at Rosings, which in so small a circle must be\nimportant. Elizabeth had heard, soon after her arrival, that Mr. Darcy\nwas expected there in the course of a few weeks; and though there were\nnot many of her acquaintance whom she did not prefer, his coming would\nfurnish one comparatively new to look at in their Rosings parties, and\nshe might be amused in seeing how hopeless Miss Bingley’s designs on him\nwere, by his behaviour to his cousin, for whom he was evidently destined\nby Lady Catherine, who talked of his coming with the greatest\nsatisfaction, spoke of him in terms of the highest admiration, and\nseemed almost angry to find that he had already been frequently seen by\nMiss Lucas and herself."
+        },
+        {
+          "id": "src_6b362f17a7c4",
+          "chapter": 30,
+          "text": "the earliest assurance of it; and, after making his bow as the carriage\nturned into the park, hurried home with the great intelligence. On the\nfollowing morning he hastened to Rosings to pay his respects. There were\ntwo nephews of Lady Catherine to require them, for Mr. Darcy had brought\nwith him a Colonel Fitzwilliam, the younger son of his uncle, Lord ----;\nand, to the great surprise of all the party, when Mr. Collins returned,\nthe gentlemen accompanied him. Charlotte had seen them from her\nhusband’s room, crossing the road, and immediately running into the\nother, told the girls what an honour they might expect, adding,--"
+        }
+      ]
+    },
+    {
+      "chapter": 32,
+      "kind": "relationship",
+      "text": "Charlotte speculates about Mr. Darcy's feelings",
+      "other": "Mr. Darcy's feelings for Elizabeth Bennet",
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_76cda96d3c59",
+          "chapter": 32,
+          "text": "“What can be the meaning of this?” said Charlotte, as soon as he was\ngone. “My dear Eliza, he must be in love with you, or he would never\nhave called on us in this familiar way.”"
+        }
+      ]
+    }
+  ]
+}

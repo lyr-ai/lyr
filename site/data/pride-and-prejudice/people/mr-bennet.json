@@ -1,0 +1,382 @@
+{
+  "slug": "mr-bennet",
+  "canonical_label": "Mr. Bennet",
+  "aliases": [
+    "Mr. Bennet"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 1,
+    "chapter_max": 50,
+    "evidence_passages": 22,
+    "relationships": 7,
+    "events": 10,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 8
+  },
+  "timeline": [
+    {
+      "chapter": 1,
+      "kind": "relationship",
+      "text": "Mr. Bennet's marriage intentions for daughters",
+      "other": "Mrs. Bennet to consider Mr. Bingley for their daughters",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_7dc312ab33cf",
+          "chapter": 1,
+          "text": "“My dear Mr. Bennet,” replied his wife, “how can you be so tiresome? You\nmust know that I am thinking of his marrying one of them.”"
+        },
+        {
+          "id": "src_7dfee63ab8a3",
+          "chapter": 1,
+          "text": "“Oh, single, my dear, to be sure! A single man of large fortune; four or\nfive thousand a year. What a fine thing for our girls!”"
+        },
+        {
+          "id": "src_ecb1c61c09b1",
+          "chapter": 1,
+          "text": "“You are over scrupulous, surely. I dare say Mr. Bingley will be very\nglad to see you; and I will send a few lines by you to assure him of my\nhearty consent to his marrying whichever he chooses of the girls--though\nI must throw in a good word for my little Lizzy.”"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "kind": "event",
+      "text": "Visit to Mr. Bingley",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_00268551fd05",
+          "chapter": 2,
+          "text": "“I am sorry to hear _that_; but why did you not tell me so before? If I\nhad known as much this morning, I certainly would not have called on\nhim. It is very unlucky; but as I have actually paid the visit, we\ncannot escape the acquaintance now.”"
+        },
+        {
+          "id": "src_7fd03f5bc364",
+          "chapter": 2,
+          "text": "Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He\nhad always intended to visit him, though to the last always assuring his\nwife that he should not go; and till the evening after the visit was\npaid she had no knowledge of it. It was then disclosed in the following\nmanner. Observing his second daughter employed in trimming a hat, he\nsuddenly addressed her with,--"
+        }
+      ]
+    },
+    {
+      "chapter": 2,
+      "kind": "relationship",
+      "text": "Mr. Bennet's visit to Mr. Bingley",
+      "other": "Mr. Bingley",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_00268551fd05",
+          "chapter": 2,
+          "text": "“I am sorry to hear _that_; but why did you not tell me so before? If I\nhad known as much this morning, I certainly would not have called on\nhim. It is very unlucky; but as I have actually paid the visit, we\ncannot escape the acquaintance now.”"
+        },
+        {
+          "id": "src_7fd03f5bc364",
+          "chapter": 2,
+          "text": "Mr. Bennet was among the earliest of those who waited on Mr. Bingley. He\nhad always intended to visit him, though to the last always assuring his\nwife that he should not go; and till the evening after the visit was\npaid she had no knowledge of it. It was then disclosed in the following\nmanner. Observing his second daughter employed in trimming a hat, he\nsuddenly addressed her with,--"
+        }
+      ]
+    },
+    {
+      "chapter": 7,
+      "kind": "relationship",
+      "text": "familial relation",
+      "other": "Elizabeth Bennet",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_c9838332bc39",
+          "chapter": 7,
+          "text": "She did at last extort from her father an acknowledgment that the horses\nwere engaged; Jane was therefore obliged to go on horseback, and her\nmother attended her to the door with many cheerful prognostics of a bad\nday. Her hopes were answered; Jane had not been gone long before it\nrained hard. Her sisters were uneasy for her, but her mother was\ndelighted. The rain continued the whole evening without intermission;\nJane certainly could not come back."
+        },
+        {
+          "id": "src_d7089e4b03b2",
+          "chapter": 7,
+          "text": "Mr. Bennet’s property consisted almost entirely in an estate of two\nthousand a year, which, unfortunately for his daughters, was entailed,\nin default of heirs male, on a distant relation; and their mother’s\nfortune, though ample for her situation in life, could but ill supply\nthe deficiency of his. Her father had been an attorney in Meryton, and\nhad left her four thousand pounds."
+        },
+        {
+          "id": "src_f15ef90e60a3",
+          "chapter": 7,
+          "text": "She had a sister married to a Mr. Philips, who had been a clerk to their\nfather and succeeded him in the business, and a brother settled in\nLondon in a respectable line of trade."
+        }
+      ]
+    },
+    {
+      "chapter": 12,
+      "kind": "event",
+      "text": "Reception at Home",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_1b77595ba4dd",
+          "chapter": 12,
+          "text": "They were not welcomed home very cordially by their mother. Mrs. Bennet\nwondered at their coming, and thought them very wrong to give so much\ntrouble, and was sure Jane would have caught cold again. But their\nfather, though very laconic in his expressions of pleasure, was really\nglad to see them; he had felt their importance in the family circle. The\nevening conversation, when they were all assembled, had lost much of its\nanimation, and almost all its sense, by the absence of Jane and\nElizabeth."
+        }
+      ]
+    },
+    {
+      "chapter": 13,
+      "kind": "event",
+      "text": "Mr. Collins visits the Bennet family",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_113331e9db7c",
+          "chapter": 13,
+          "text": "Mr. Collins was punctual to his time, and was received with great\npoliteness by the whole family. Mr. Bennet indeed said little; but the\nladies were ready enough to talk, and Mr. Collins seemed neither in need\nof encouragement, nor inclined to be silent himself. He was a tall,\nheavy-looking young man of five-and-twenty. His air was grave and\nstately, and his manners were very formal. He had not been long seated\nbefore he complimented Mrs. Bennet on having so fine a family of\ndaughters, said he had heard much of their beauty, but that, in this\ninstance, fame had fallen short of the truth; and added, that he did not\ndoubt her seeing them all in due time well disposed of in marriage. This\ngallantry was not much to the taste of some of his hearers; but Mrs.\nBennet, who quarrelled with no compliments, answered most readily,--"
+        },
+        {
+          "id": "src_ec261a9fcca3",
+          "chapter": 13,
+          "text": "He was interrupted by a summons to dinner; and the girls smiled on each\nother. They were not the only objects of Mr. Collins’s admiration. The\nhall, the dining-room, and all its furniture, were examined and praised;\nand his commendation of everything would have touched Mrs. Bennet’s\nheart, but for the mortifying supposition of his viewing it all as his\nown future property. The dinner, too, in its turn, was highly admired;\nand he begged to know to which of his fair cousins the excellence of its\ncookery was owing. But here he was set right by Mrs. Bennet, who assured\nhim, with some asperity, that they were very well able to keep a good\ncook, and that her daughters had nothing to do in the kitchen. He begged\npardon for having displeased her. In a softened tone she declared\nherself not at all offended; but he continued to apologize for about a\nquarter of an hour."
+        }
+      ]
+    },
+    {
+      "chapter": 14,
+      "kind": "event",
+      "text": "Dinner with Mr. Collins",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_4aa4ebc41fc7",
+          "chapter": 14,
+          "text": "Then, turning to Mr. Bennet, he offered himself as his antagonist at\nbackgammon. Mr. Bennet accepted the challenge, observing that he acted\nvery wisely in leaving the girls to their own trifling amusements. Mrs.\nBennet and her daughters apologized most civilly for Lydia’s\ninterruption, and promised that it should not occur again, if he would\nresume his book; but Mr. Collins, after assuring them that he bore his\nyoung cousin no ill-will, and should never resent her behaviour as any\naffront, seated himself at another table with Mr. Bennet, and prepared\nfor backgammon."
+        },
+        {
+          "id": "src_b5e98170bdeb",
+          "chapter": 14,
+          "text": "Mr. Bennet’s expectations were fully answered. His cousin was as absurd\nas he had hoped; and he listened to him with the keenest enjoyment,\nmaintaining at the same time the most resolute composure of countenance,\nand, except in an occasional glance at Elizabeth, requiring no partner\nin his pleasure."
+        },
+        {
+          "id": "src_f20990abf0b9",
+          "chapter": 14,
+          "text": "During dinner, Mr. Bennet scarcely spoke at all; but when the servants\nwere withdrawn, he thought it time to have some conversation with his\nguest, and therefore started a subject in which he expected him to\nshine, by observing that he seemed very fortunate in his patroness. Lady\nCatherine de Bourgh’s attention to his wishes, and consideration for his\ncomfort, appeared very remarkable. Mr. Bennet could not have chosen\nbetter. Mr. Collins was eloquent in her praise. The subject elevated him\nto more than usual solemnity of manner; and with a most important aspect\nhe protested that he had never in his life witnessed such behaviour in a\nperson of rank--such affability and condescension, as he had himself\nexperienced from Lady Catherine. She had been graciously pleased to\napprove of both the discourses which he had already had the honour of\npreaching before her. She had also asked him twice to dine at Rosings,\nand had sent for him only the Saturday before, to make up her pool of\nquadrille in the evening. Lady Catherine was reckoned proud by many\npeople, he knew, but _he_ had never seen anything but affability in her.\nShe had always spoken to him as she would to any other gentleman; she\nmade not the smallest objection to his joining in the society of the\nneighbourhood, nor to his leaving his parish occasionally for a week or\ntwo to visit his relations. She had even condescended to advise him to\nmarry as soon as he could, provided he chose with discretion; and had\nonce paid him a visit in his humble parsonage, where she had perfectly\napproved all the alterations he had been making, and had even vouchsafed\nto suggest some herself,--some shelves in the closets upstairs."
+        }
+      ]
+    },
+    {
+      "chapter": 39,
+      "kind": "event",
+      "text": "Visit to the Inn",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_7694efbb047a",
+          "chapter": 39,
+          "text": "After welcoming their sisters, they triumphantly displayed a table set\nout with such cold meat as an inn larder usually affords, exclaiming,\n“Is not this nice? is not this an agreeable surprise?”"
+        },
+        {
+          "id": "src_7b5f61edcc29",
+          "chapter": 39,
+          "text": "Their reception at home was most kind. Mrs. Bennet rejoiced to see Jane\nin undiminished beauty; and more than once during dinner did Mr. Bennet\nsay voluntarily to Elizabeth,----"
+        },
+        {
+          "id": "src_d013a58c3b83",
+          "chapter": 39,
+          "text": "It was the second week in May, in which the three young ladies set out\ntogether from Gracechurch Street for the town of ----, in Hertfordshire;\nand, as they drew near the appointed inn where Mr. Bennet’s carriage was\nto meet them, they quickly perceived, in token of the coachman’s\npunctuality, both Kitty and Lydia looking out of a dining-room upstairs.\nThese two girls had been above an hour in the place, happily employed\nin visiting an opposite milliner, watching the sentinel on guard, and\ndressing a salad and cucumber."
+        }
+      ]
+    },
+    {
+      "chapter": 39,
+      "kind": "event",
+      "text": "Discussion about Brighton",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_5ffd2f3ae1ee",
+          "chapter": 39,
+          "text": "She had not been many hours at home, before she found that the Brighton\nscheme, of which Lydia had given them a hint at the inn, was under\nfrequent discussion between her parents. Elizabeth saw directly that her\nfather had not the smallest intention of yielding; but his answers were\nat the same time so vague and equivocal, that her mother, though often\ndisheartened, had never yet despaired of succeeding at last."
+        },
+        {
+          "id": "src_cffbe45d037f",
+          "chapter": 39,
+          "text": "“They are going to be encamped near Brighton; and I do so want papa to\ntake us all there for the summer! It would be such a delicious scheme,\nand I dare say would hardly cost anything at all. Mamma would like to\ngo, too, of all things! Only think what a miserable summer else we shall\nhave!”"
+        }
+      ]
+    },
+    {
+      "chapter": 42,
+      "kind": "relationship",
+      "text": "Mr. Bennet's marriage",
+      "other": "Mrs. Bennet",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_b02ea780e11b",
+          "chapter": 42,
+          "text": "Elizabeth, however, had never been blind to the impropriety of her\nfather’s behaviour as a husband. She had always seen it with pain; but\nrespecting his abilities, and grateful for his affectionate treatment of\nherself, she endeavoured to forget what she could not overlook, and to\nbanish from her thoughts that continual breach of conjugal obligation\nand decorum which, in exposing his wife to the contempt of her own\nchildren, was so highly reprehensible. But she had never felt so\nstrongly as now the disadvantages which must attend the children of so\nunsuitable a marriage, nor ever been so fully aware of the evils arising\nfrom so ill-judged a direction of talents--talents which, rightly used,\nmight at least have preserved the respectability of his daughters, even\nif incapable of enlarging the mind of his wife."
+        },
+        {
+          "id": "src_f5af12fb95eb",
+          "chapter": 42,
+          "text": "Had Elizabeth’s opinion been all drawn from her own family, she could\nnot have formed a very pleasing picture of conjugal felicity or domestic\ncomfort. Her father, captivated by youth and beauty, and that appearance\nof good-humour which youth and beauty generally give, had married a\nwoman whose weak understanding and illiberal mind had very early in\ntheir marriage put an end to all real affection for her. Respect,\nesteem, and confidence had vanished for ever; and all his views of\ndomestic happiness were overthrown. But Mr. Bennet was not of a\ndisposition to seek comfort for the disappointment which his own\nimprudence had brought on in any of those pleasures which too often\nconsole the unfortunate for their folly or their vice. He was fond of\nthe country and of books; and from these tastes had arisen his principal\nenjoyments. To his wife he was very little otherwise indebted than as\nher ignorance and folly had contributed to his amusement. This is not\nthe sort of happiness which a man would in general wish to owe to his\nwife; but where other powers of entertainment are wanting, the true\nphilosopher will derive benefit from such as are given."
+        }
+      ]
+    },
+    {
+      "chapter": 48,
+      "kind": "event",
+      "text": "Mr. Gardiner's search for Mr. Bennet",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_4ec610ae9821",
+          "chapter": 48,
+          "text": "“I have written to Colonel Forster to desire him to find out, if\npossible, from some of the young man’s intimates in the regiment,\nwhether Wickham has any relations or connections who would be likely to\nknow in what part of the town he has now concealed himself. If there\nwere anyone that one could apply to, with a probability of gaining such\na clue as that, it might be of essential consequence. At present we have\nnothing to guide us. Colonel Forster will, I dare say, do everything in\nhis power to satisfy us on this head. But, on second thoughts, perhaps\nLizzy could tell us what relations he has now living better than any\nother person.”"
+        },
+        {
+          "id": "src_cea24e53a47a",
+          "chapter": 48,
+          "text": "Mr. Gardiner left Longbourn on Sunday; on Tuesday, his wife received a\nletter from him: it told them, that on his arrival he had immediately\nfound out his brother, and persuaded him to come to Gracechurch Street.\nThat Mr. Bennet had been to Epsom and Clapham, before his arrival, but\nwithout gaining any satisfactory information; and that he was now\ndetermined to inquire at all the principal hotels in town, as Mr. Bennet\nthought it possible they might have gone to one of them, on their first\ncoming to London, before they procured lodgings. Mr. Gardiner himself\ndid not expect any success from this measure; but as his brother was\neager in it, he meant to assist him in pursuing it. He added, that Mr.\nBennet seemed wholly disinclined at present to leave London, and\npromised to write again very soon. There was also a postscript to this\neffect:--"
+        }
+      ]
+    },
+    {
+      "chapter": 48,
+      "kind": "event",
+      "text": "Mr. Bennet's return to Longbourn",
+      "other": null,
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_0e7fbea2d6dc",
+          "chapter": 48,
+          "text": "Mr. Gardiner added, in his letter, that they might expect to see their\nfather at home on the following day, which was Saturday. Rendered\nspiritless by the ill success of all their endeavours, he had yielded to\nhis brother-in-law’s entreaty that he would return to his family and\nleave it to him to do whatever occasion might suggest to be advisable\nfor continuing their pursuit. When Mrs. Bennet was told of this, she did\nnot express so much satisfaction as her children expected, considering\nwhat her anxiety for his life had been before."
+        },
+        {
+          "id": "src_d1c14142e4a1",
+          "chapter": 48,
+          "text": "“What! is he coming home, and without poor Lydia?” she cried. “Sure he\nwill not leave London before he has found them. Who is to fight Wickham,\nand make him marry her, if he comes away?”"
+        }
+      ]
+    },
+    {
+      "chapter": 48,
+      "kind": "relationship",
+      "text": "Mr. Bennet's relationship with Lydia",
+      "other": "Lydia's infamy",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_8b05d5ebfd63",
+          "chapter": 48,
+          "text": "But before they heard again from Mr. Gardiner, a letter arrived for\ntheir father, from a different quarter, from Mr. Collins; which, as Jane\nhad received directions to open all that came for him in his absence,\nshe accordingly read; and Elizabeth, who knew what curiosities his\nletters always were, looked over her, and read it likewise. It was as\nfollows:--"
+        },
+        {
+          "id": "src_948d5b0cd8ca",
+          "chapter": 48,
+          "text": "“I feel myself called upon, by our relationship, and my situation\n     in life, to condole with you on the grievous affliction you are now\n     suffering under, of which we were yesterday informed by a letter\n     from Hertfordshire. Be assured, my dear sir, that Mrs. Collins and\n     myself sincerely sympathize with you, and all your respectable\n     family, in your present distress, which must be of the bitterest\n     kind, because proceeding from a cause which no time can remove. No\n     arguments shall be wanting on my part, that can alleviate so severe\n     a misfortune; or that may comfort you, under a circumstance that\n     must be, of all others, most afflicting to a parent’s mind. The\n     death of your daughter would have been a blessing in comparison of\n     this. And it is the more to be lamented, because there is reason to\n     suppose, as my dear Charlotte informs me, that this licentiousness\n     of behaviour in your"
+        },
+        {
+          "id": "src_d1c14142e4a1",
+          "chapter": 48,
+          "text": "“What! is he coming home, and without poor Lydia?” she cried. “Sure he\nwill not leave London before he has found them. Who is to fight Wickham,\nand make him marry her, if he comes away?”"
+        }
+      ]
+    },
+    {
+      "chapter": 48,
+      "kind": "relationship",
+      "text": "Mr. Gardiner's relationship with Mr. Bennet",
+      "other": "Mr. Gardiner",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_0e7fbea2d6dc",
+          "chapter": 48,
+          "text": "Mr. Gardiner added, in his letter, that they might expect to see their\nfather at home on the following day, which was Saturday. Rendered\nspiritless by the ill success of all their endeavours, he had yielded to\nhis brother-in-law’s entreaty that he would return to his family and\nleave it to him to do whatever occasion might suggest to be advisable\nfor continuing their pursuit. When Mrs. Bennet was told of this, she did\nnot express so much satisfaction as her children expected, considering\nwhat her anxiety for his life had been before."
+        },
+        {
+          "id": "src_3c2d3706d907",
+          "chapter": 48,
+          "text": "The whole party were in hopes of a letter from Mr. Bennet the next\nmorning, but the post came in without bringing a single line from him.\nHis family knew him to be, on all common occasions, a most negligent and\ndilatory correspondent; but at such a time they had hoped for exertion.\nThey were forced to conclude, that he had no pleasing intelligence to\nsend; but even of _that_ they would have been glad to be certain. Mr.\nGardiner had waited only for the letters before he set off."
+        }
+      ]
+    },
+    {
+      "chapter": 50,
+      "kind": "relationship",
+      "text": "Mr. Bennet's disapproval of Lydia's marriage",
+      "other": "Lydia Bennet's marriage to Mr. Wickham",
+      "evidence_count": 2,
+      "passages": [
+        {
+          "id": "src_04472df096ed",
+          "chapter": 50,
+          "text": "Mr. Bennet and his daughters saw all the advantages of Wickham’s\nremoval from the ----shire, as clearly as Mr. Gardiner could do. But\nMrs. Bennet was not so well pleased with it. Lydia’s being settled in\nthe north, just when she had expected most pleasure and pride in her\ncompany, for she had by no means given up her plan of their residing in\nHertfordshire, was a severe disappointment; and, besides, it was such a\npity that Lydia should be taken from a regiment where she was acquainted\nwith everybody, and had so many favourites."
+        },
+        {
+          "id": "src_7a218112abb1",
+          "chapter": 50,
+          "text": "A long dispute followed this declaration; but Mr. Bennet was firm: it\nsoon led to another; and Mrs. Bennet found, with amazement and horror,\nthat her husband would not advance a guinea to buy clothes for his\ndaughter. He protested that she should receive from him no mark of\naffection whatever on the occasion. Mrs. Bennet could hardly comprehend\nit. That his anger could be carried to such a point of inconceivable\nresentment as to refuse his daughter a privilege, without which her\nmarriage would scarcely seem valid, exceeded all that she could believe\npossible. She was more alive to the disgrace, which her want of new\nclothes must reflect on her daughter’s nuptials, than to any sense of\nshame at her eloping and living with Wickham a fortnight before they\ntook place."
+        }
+      ]
+    },
+    {
+      "chapter": 55,
+      "kind": "event",
+      "text": "Bingley visits Bennets",
+      "other": null,
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_18f6f136febd",
+          "chapter": 55,
+          "text": "A few days after this visit, Mr. Bingley called again, and alone. His\nfriend had left him that morning for London, but was to return home in\nten days’ time. He sat with them above an hour, and was in remarkably\ngood spirits. Mrs. Bennet invited him to dine with them; but, with many\nexpressions of concern, he confessed himself engaged elsewhere."
+        },
+        {
+          "id": "src_1fadb000bfc4",
+          "chapter": 55,
+          "text": "Bingley was punctual to his appointment; and he and Mr. Bennet spent the\nmorning together, as had been agreed on. The latter was much more\nagreeable than his companion expected. There was nothing of presumption\nor folly in Bingley that could provoke his ridicule, or disgust him into\nsilence; and he was more communicative, and less eccentric, than the\nother had ever seen him. Bingley of course returned with him to dinner;\nand in the evening Mrs. Bennet’s invention was again at work to get\neverybody away from him and her daughter. Elizabeth, who had a letter to\nwrite, went into the breakfast-room for that purpose soon after tea; for\nas the others were all going to sit down to cards, she could not be\nwanted to counteract her mother’s schemes."
+        },
+        {
+          "id": "src_c3ff9b72cd2c",
+          "chapter": 55,
+          "text": "Bingley, from this time, was of course a daily visitor at Longbourn;\ncoming frequently before breakfast, and always remaining till after\nsupper; unless when some barbarous neighbour, who could not be enough\ndetested, had given him an invitation to dinner, which he thought\nhimself obliged to accept."
+        },
+        {
+          "id": "src_c7fefe9fc7ea",
+          "chapter": 55,
+          "text": "He scarcely needed an invitation to stay supper; and before he went away\nan engagement was formed, chiefly through his own and Mrs. Bennet’s\nmeans, for his coming next morning to shoot with her husband."
+        }
+      ]
+    },
+    {
+      "chapter": 55,
+      "kind": "event",
+      "text": "Mr. Bennet's congratulations to Jane",
+      "other": null,
+      "evidence_count": 4,
+      "passages": [
+        {
+          "id": "src_14a44d7681c4",
+          "chapter": 55,
+          "text": "“You are a good girl,” he replied, “and I have great pleasure in\nthinking you will be so happily settled. I have not a doubt of your\ndoing very well together. Your tempers are by no means unlike. You are\neach of you so complying, that nothing will ever be resolved on; so\neasy, that every servant will cheat you; and so generous, that you will\nalways exceed your income.”"
+        },
+        {
+          "id": "src_720e93b25790",
+          "chapter": 55,
+          "text": "Jane went to him instantly, kissed him, and thanked him for his\ngoodness."
+        },
+        {
+          "id": "src_9007d613a32a",
+          "chapter": 55,
+          "text": "It was an evening of no common delight to them all; the satisfaction of\nMiss Bennet’s mind gave such a glow of sweet animation to her face, as\nmade her look handsomer than ever. Kitty simpered and smiled, and hoped\nher turn was coming soon. Mrs. Bennet could not give her consent, or\nspeak her approbation in terms warm enough to satisfy her feelings,\nthough she talked to Bingley of nothing else, for half an hour; and when\nMr. Bennet joined them at supper, his voice and manner plainly showed\nhow really happy he was."
+        },
+        {
+          "id": "src_c2fa35fd9554",
+          "chapter": 55,
+          "text": "“Jane, I congratulate you. You will be a very happy woman.”"
+        }
+      ]
+    }
+  ]
+}

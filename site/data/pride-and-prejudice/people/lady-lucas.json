@@ -1,0 +1,18 @@
+{
+  "slug": "lady-lucas",
+  "canonical_label": "Lady Lucas",
+  "aliases": [
+    "Lady Lucas"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 5,
+    "chapter_max": 5,
+    "evidence_passages": 1,
+    "relationships": 0,
+    "events": 0,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": []
+}

@@ -1,0 +1,96 @@
+{
+  "slug": "miss-darcy",
+  "canonical_label": "Miss Darcy",
+  "aliases": [
+    "Miss Darcy"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 44,
+    "chapter_max": 44,
+    "evidence_passages": 3,
+    "relationships": 2,
+    "events": 1,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 21,
+      "kind": "relationship",
+      "text": "Caroline Bingley's intentions regarding Mr. Bingley and Miss Darcy",
+      "other": "Caroline Bingley",
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_4d0c32de4055",
+          "chapter": 21,
+          "text": "“‘When my brother left us yesterday, he imagined that the business which\ntook him to London might be concluded in three or four days; but as we\nare certain it cannot be so, and at the same time convinced that when\nCharles gets to town he will be in no hurry to leave it again, we have\ndetermined on following him thither, that he may not be obliged to spend\nhis vacant hours in a comfortless hotel. Many of my acquaintance are\nalready there for the winter: I wish I could hear that you, my dearest\nfriend, had any intention of making one in the crowd, but of that I\ndespair. I sincerely hope your Christmas in Hertfordshire may abound in\nthe gaieties which that season generally brings, and that your beaux\nwill be so numerous as to prevent your feeling the loss of the three of\nwhom we shall deprive you.’"
+        },
+        {
+          "id": "src_75ea7df9538e",
+          "chapter": 21,
+          "text": "“You shall have it in a few words. Miss Bingley sees that her brother is\nin love with you and wants him to marry Miss Darcy. She follows him to\ntown in the hope of keeping him there, and tries to persuade you that he\ndoes not care about you.”"
+        },
+        {
+          "id": "src_d7413a12cb27",
+          "chapter": 21,
+          "text": "“That is right. You could not have started a more happy idea, since you\nwill not take comfort in mine: believe her to be deceived, by all means.\nYou have now done your duty by her, and must fret no longer.”"
+        }
+      ]
+    },
+    {
+      "chapter": 33,
+      "kind": "relationship",
+      "text": "Colonel Fitzwilliam's guardianship of Miss Darcy",
+      "other": "Colonel Fitzwilliam",
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_573506db53fb",
+          "chapter": 33,
+          "text": "“No,” said Colonel Fitzwilliam, “that is an advantage which he must\ndivide with me. I am joined with him in the guardianship of Miss Darcy.”"
+        }
+      ]
+    },
+    {
+      "chapter": 44,
+      "kind": "event",
+      "text": "Visit to Pemberley",
+      "other": null,
+      "evidence_count": 8,
+      "passages": [
+        {
+          "id": "src_07f46617786f",
+          "chapter": 45,
+          "text": "Their visit did not continue long after the question and answer above\nmentioned; and while Mr. Darcy was attending them to their carriage,\nMiss Bingley was venting her feelings in criticisms on Elizabeth’s\nperson, behaviour, and dress. But Georgiana would not join her. Her\nbrother’s recommendation was enough to insure her favour: his judgment\ncould not err; and he had spoken in such terms of Elizabeth, as to leave\nGeorgiana without the power of finding her otherwise than lovely and\namiable. When Darcy returned to the saloon, Miss Bingley could not help\nrepeating to him some part of what she had been saying to his sister."
+        },
+        {
+          "id": "src_2de34382760c",
+          "chapter": 45,
+          "text": "By Mrs. Hurst and Miss Bingley they were noticed only by a courtesy; and\non their being seated, a pause, awkward as such pauses must always be,\nsucceeded for a few moments. It was first broken by Mrs. Annesley, a\ngenteel, agreeable-looking woman, whose endeavour to introduce some kind\nof discourse proved her to be more truly well-bred than either of the\nothers; and between her and Mrs. Gardiner, with occasional help from\nElizabeth, the conversation was carried on. Miss Darcy looked as if she\nwished for courage enough to join in it; and sometimes did venture a\nshort sentence, when there was least danger of its being heard."
+        },
+        {
+          "id": "src_44723e2c2454",
+          "chapter": 45,
+          "text": "The next variation which their visit afforded was produced by the\nentrance of servants with cold meat, cake, and a variety of all the\nfinest fruits in season; but this did not take place till after many a\nsignificant look and smile from Mrs. Annesley to Miss Darcy had been\ngiven, to remind her of her post. There was now employment for the whole\nparty; for though they could not all talk, they could all eat; and the\nbeautiful pyramids of grapes, nectarines, and peaches, soon collected\nthem round the table."
+        },
+        {
+          "id": "src_51ff203d7258",
+          "chapter": 44,
+          "text": "It had been settled in the evening, between the aunt and niece, that\nsuch a striking civility as Miss Darcy’s, in coming to them on the very\nday of her arrival at Pemberley--for she had reached it only to a late\nbreakfast--ought to be imitated, though it could not be equalled, by\nsome exertion of politeness on their side; and, consequently, that it\nwould be highly expedient to wait on her at Pemberley the following\nmorning. They were, therefore, to go. Elizabeth was pleased; though when\nshe asked herself the reason, she had very little to say in reply."
+        },
+        {
+          "id": "src_7493a1670252",
+          "chapter": 45,
+          "text": "In this room they were received by Miss Darcy, who was sitting there\nwith Mrs. Hurst and Miss Bingley, and the lady with whom she lived in\nLondon. Georgiana’s reception of them was very civil, but attended with\nall that embarrassment which, though proceeding from shyness and the\nfear of doing wrong, would easily give to those who felt themselves\ninferior the belief of her being proud and reserved. Mrs. Gardiner and\nher niece, however, did her justice, and pitied her."
+        },
+        {
+          "id": "src_90bf70e7546a",
+          "chapter": 45,
+          "text": "On reaching the house, they were shown through the hall into the saloon,\nwhose northern aspect rendered it delightful for summer. Its windows,\nopening to the ground, admitted a most refreshing view of the high woody\nhills behind the house, and of the beautiful oaks and Spanish chestnuts\nwhich were scattered over the intermediate lawn."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+[
+  {
+    "slug": "elizabeth-bennet",
+    "label": "Elizabeth Bennet",
+    "aliases": [
+      "Elizabeth",
+      "Elizabeth Bennet"
+    ],
+    "evidence_passages": 128,
+    "chapter_min": 4,
+    "chapter_max": 61,
+    "relationships": 34,
+    "events": 64
+  },
+  {
+    "slug": "mr-darcy",
+    "label": "Mr. Darcy",
+    "aliases": [
+      "Mr. Darcy"
+    ],
+    "evidence_passages": 74,
+    "chapter_min": 3,
+    "chapter_max": 60,
+    "relationships": 22,
+    "events": 24
+  },
+  {
+    "slug": "george-wickham",
+    "label": "George Wickham",
+    "aliases": [
+      "George Wickham",
+      "Mr. Wickham",
+      "Wickham"
+    ],
+    "evidence_passages": 39,
+    "chapter_min": 15,
+    "chapter_max": 51,
+    "relationships": 7,
+    "events": 9
+  },
+  {
+    "slug": "mr-bingley",
+    "label": "Mr. Bingley",
+    "aliases": [
+      "Mr. Bingley"
+    ],
+    "evidence_passages": 38,
+    "chapter_min": 1,
+    "chapter_max": 61,
+    "relationships": 12,
+    "events": 15
+  },
+  {
+    "slug": "jane-bennet",
+    "label": "Jane Bennet",
+    "aliases": [
+      "Jane",
+      "Jane Bennet"
+    ],
+    "evidence_passages": 35,
+    "chapter_min": 3,
+    "chapter_max": 60,
+    "relationships": 8,
+    "events": 25
+  },
+  {
+    "slug": "mr-collins",
+    "label": "Mr. Collins",
+    "aliases": [
+      "Mr. Collins"
+    ],
+    "evidence_passages": 33,
+    "chapter_min": 13,
+    "chapter_max": 38,
+    "relationships": 11,
+    "events": 16
+  },
+  {
+    "slug": "lydia-bennet",
+    "label": "Lydia Bennet",
+    "aliases": [
+      "Lydia",
+      "Lydia Bennet"
+    ],
+    "evidence_passages": 27,
+    "chapter_min": 39,
+    "chapter_max": 53,
+    "relationships": 3,
+    "events": 12
+  },
+  {
+    "slug": "mrs-bennet",
+    "label": "Mrs. Bennet",
+    "aliases": [
+      "Mrs. Bennet"
+    ],
+    "evidence_passages": 24,
+    "chapter_min": 1,
+    "chapter_max": 61,
+    "relationships": 9,
+    "events": 14
+  },
+  {
+    "slug": "lady-catherine-de-bourgh",
+    "label": "Lady Catherine de Bourgh",
+    "aliases": [
+      "Lady Catherine",
+      "Lady Catherine de Bourgh"
+    ],
+    "evidence_passages": 22,
+    "chapter_min": 14,
+    "chapter_max": 57,
+    "relationships": 7,
+    "events": 8
+  },
+  {
+    "slug": "mr-bennet",
+    "label": "Mr. Bennet",
+    "aliases": [
+      "Mr. Bennet"
+    ],
+    "evidence_passages": 22,
+    "chapter_min": 1,
+    "chapter_max": 50,
+    "relationships": 7,
+    "events": 10
+  },
+  {
+    "slug": "charlotte-lucas",
+    "label": "Charlotte Lucas",
+    "aliases": [
+      "Charlotte",
+      "Charlotte Lucas"
+    ],
+    "evidence_passages": 13,
+    "chapter_min": 22,
+    "chapter_max": 38,
+    "relationships": 4,
+    "events": 6
+  },
+  {
+    "slug": "colonel-fitzwilliam",
+    "label": "Colonel Fitzwilliam",
+    "aliases": [
+      "Colonel Fitzwilliam"
+    ],
+    "evidence_passages": 6,
+    "chapter_min": 31,
+    "chapter_max": 33,
+    "relationships": 1,
+    "events": 4
+  },
+  {
+    "slug": "mr-gardiner",
+    "label": "Mr. Gardiner",
+    "aliases": [
+      "Mr. Gardiner"
+    ],
+    "evidence_passages": 6,
+    "chapter_min": 48,
+    "chapter_max": 49,
+    "relationships": 4,
+    "events": 5
+  },
+  {
+    "slug": "miss-bingley",
+    "label": "Miss Bingley",
+    "aliases": [
+      "Miss Bingley"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 10,
+    "chapter_max": 10,
+    "relationships": 3,
+    "events": 5
+  },
+  {
+    "slug": "miss-de-bourgh",
+    "label": "Miss de Bourgh",
+    "aliases": [
+      "Miss de Bourgh"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 14,
+    "chapter_max": 14,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "miss-bennet",
+    "label": "Miss Bennet",
+    "aliases": [
+      "Miss Bennet"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 0,
+    "events": 3
+  },
+  {
+    "slug": "mrs-reynolds",
+    "label": "Mrs. Reynolds",
+    "aliases": [
+      "Mrs. Reynolds"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 43,
+    "chapter_max": 43,
+    "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "miss-darcy",
+    "label": "Miss Darcy",
+    "aliases": [
+      "Miss Darcy"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 44,
+    "chapter_max": 44,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "sir-william-lucas",
+    "label": "Sir William Lucas",
+    "aliases": [
+      "Sir William",
+      "Sir William Lucas"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 5,
+    "chapter_max": 30,
+    "relationships": 0,
+    "events": 4
+  },
+  {
+    "slug": "mrs-gardiner",
+    "label": "Mrs. Gardiner",
+    "aliases": [
+      "Mrs. Gardiner"
+    ],
+    "evidence_passages": 2,
+    "chapter_min": 26,
+    "chapter_max": 26,
+    "relationships": 2,
+    "events": 6
+  }
+]

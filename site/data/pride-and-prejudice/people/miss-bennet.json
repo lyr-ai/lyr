@@ -1,0 +1,81 @@
+{
+  "slug": "miss-bennet",
+  "canonical_label": "Miss Bennet",
+  "aliases": [
+    "Miss Bennet"
+  ],
+  "entity_type": "person",
+  "summary": {
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "evidence_passages": 3,
+    "relationships": 0,
+    "events": 3,
+    "note": "Version count reflects evidence accumulation, not interpretation change.",
+    "primary_versions": 1
+  },
+  "timeline": [
+    {
+      "chapter": 5,
+      "kind": "event",
+      "text": "Ball assembly discussion",
+      "other": null,
+      "evidence_count": 1,
+      "passages": [
+        {
+          "id": "src_ec8a432a8f6c",
+          "chapter": 5,
+          "text": "That the Miss Lucases and the Miss Bennets should meet to talk over a\nball was absolutely necessary; and the morning after the assembly\nbrought the former to Longbourn to hear and to communicate."
+        }
+      ]
+    },
+    {
+      "chapter": 15,
+      "kind": "event",
+      "text": "Mr. Collins' visit to Longbourn",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_099c3f7700b6",
+          "chapter": 15,
+          "text": "Mrs. Bennet treasured up the hint, and trusted that she might soon have\ntwo daughters married; and the man whom she could not bear to speak of\nthe day before, was now high in her good graces."
+        },
+        {
+          "id": "src_17da7a6a7193",
+          "chapter": 15,
+          "text": "Mr. Collins on his return highly gratified Mrs. Bennet by admiring Mrs.\nPhilips’s manners and politeness. He protested that, except Lady\nCatherine and her daughter, he had never seen a more elegant woman; for\nshe had not only received him with the utmost civility, but had even\npointedly included him in her invitation for the next evening, although\nutterly unknown to her before. Something, he supposed, might be\nattributed to his connection with them, but yet he had never met with so\nmuch attention in the whole course of his life."
+        },
+        {
+          "id": "src_598f2b74bd66",
+          "chapter": 15,
+          "text": "Mr. Collins was not a sensible man, and the deficiency of nature had\nbeen but little assisted by education or society; the greatest part of\nhis life having been spent under the guidance of an illiterate and\nmiserly father; and though he belonged to one of the universities, he\nhad merely kept the necessary terms without forming at it any useful\nacquaintance. The subjection in which his father had brought him up had\ngiven him originally great humility of manner; but it was now a good\ndeal counteracted by the self-conceit of a weak head, living in\nretirement, and the consequential feelings of early and unexpected\nprosperity. A fortunate chance had recommended him to Lady Catherine de\nBourgh when the living of Hunsford was vacant; and the respect which he\nfelt for her high rank, and his veneration for her as his patroness,\nmingling with a very good opinion of himself, of his authority as a\nclergyman, and his right as a rector, made him altogether a mixture of\npride and obsequiousness, self-importance and humility."
+        }
+      ]
+    },
+    {
+      "chapter": 15,
+      "kind": "event",
+      "text": "Introduction of Mr. Wickham to the Bennet sisters",
+      "other": null,
+      "evidence_count": 3,
+      "passages": [
+        {
+          "id": "src_534caf30b108",
+          "chapter": 15,
+          "text": "Mrs. Philips was always glad to see her nieces; and the two eldest, from\ntheir recent absence, were particularly welcome; and she was eagerly\nexpressing her surprise at their sudden return home, which, as their own\ncarriage had not fetched them, she should have known nothing about, if\nshe had not happened to see Mr. Jones’s shopboy in the street, who had\ntold her that they were not to send any more draughts to Netherfield,\nbecause the Miss Bennets were come away, when her civility was claimed\ntowards Mr. Collins by Jane’s introduction of him. She received him with\nher very best politeness, which he returned with as much more,\napologizing for his intrusion, without any previous acquaintance with\nher, which he could not help flattering himself, however, might be\njustified by his relationship to the young ladies who introduced him to\nher notice. Mrs. Philips was quite awed by such an excess of good\nbreeding; but her contemplation of one stranger was soon put an end to\nby exclamations and inquiries about the other, of whom, however, she\ncould only tell her nieces what they already knew, that Mr. Denny had\nbrought him from London, and that he was to have a lieutenant’s\ncommission in the ----shire. She had been watching him the last hour,\nshe said, as he walked up and down the street,--and had Mr. Wickham\nappeared, Kitty and Lydia would certainly have continued the occupation;\nbut unluckily no one passed the windows now except a few of the\nofficers, who, in comparison with the stranger, were become “stupid,\ndisagreeable fellows.” Some of them were to dine with the Philipses the\nnext day, and their aunt promised to make her husband call on Mr.\nWickham, and give him an invitation also, if the family from Longbourn\nwould come in the evening. This was agreed to; and Mrs. Philips\nprotested that they would have a nice comfortable noisy game of lottery\ntickets, and a little bit of hot supper afterwards. The prospect of such\ndelights was very cheering, and they parted in mutual good spirits. Mr.\nCollins repeated his apologies in quitting the room, and was assured,\nwith unwearying civility, that they were perfectly needless."
+        },
+        {
+          "id": "src_ac77f933d02c",
+          "chapter": 15,
+          "text": "But the attention of every lady was soon caught by a young man, whom\nthey had never seen before, of most gentlemanlike appearance, walking\nwith an officer on the other side of the way. The officer was the very\nMr. Denny concerning whose return from London Lydia came to inquire, and\nhe bowed as they passed. All were struck with the stranger’s air, all\nwondered who he could be; and Kitty and Lydia, determined if possible\nto find out, led the way across the street, under pretence of wanting\nsomething in an opposite shop, and fortunately had just gained the\npavement, when the two gentlemen, turning back, had reached the same\nspot. Mr. Denny addressed them directly, and entreated permission to\nintroduce his friend, Mr. Wickham, who had returned with him the day\nbefore from town, and, he was happy to say, had accepted a commission in\ntheir corps. This was exactly as it should be; for the young man wanted\nonly regimentals to make him completely charming. His appearance was\ngreatly in his favour: he had all the best parts of beauty, a fine\ncountenance, a good figure, and very pleasing address. The introduction\nwas followed up on his side by a happy readiness of conversation--a\nreadiness at the same time perfectly correct and unassuming; and the\nwhole party were still standing and talking together very agreeably,\nwhen the sound of horses drew their notice, and Darcy and Bingley were\nseen riding down the street. On distinguishing the ladies of the group\nthe two gentlemen came directly towards them, and began the usual\ncivilities. Bingley was the principal spokesman, and Miss Bennet the\nprincipal object. He was then, he said, on his way to Longbourn on\npurpose to inquire after her. Mr. Darcy corroborated it with a bow, and\nwas beginning to determine not to fix his eyes on Elizabeth, when they\nwere suddenly arrested by the sight of the stranger; and Elizabeth\nhappening to see the countenance of both as they looked at each other,\nwas all astonishment at the effect of the meeting. Both changed colour,\none looked white, the other red. Mr. Wickham, after a few moments,\ntouched his hat--a salutation which Mr. Darcy just deigned to return.\nWhat could be the meaning of it? It was impossible to imagine; it was\nimpossible not to long to know."
+        },
+        {
+          "id": "src_db66bf16e02d",
+          "chapter": 15,
+          "text": "Mr. Denny and Mr. Wickham walked with the young ladies to the door of\nMr. Philips’s house, and then made their bows, in spite of Miss Lydia’s\npressing entreaties that they would come in, and even in spite of Mrs.\nPhilips’s throwing up the parlour window, and loudly seconding the\ninvitation."
+        }
+      ]
+    }
+  ]
+}
