@@ -147,8 +147,17 @@ def main() -> None:
     result = subprocess.run(cmd, env=env)
 
     if result.returncode == 0:
-        say(f"\n✓  Done. Knowledge written to explorer/data/{out.name}")
-        say("   That file is what the explorer renders. Re-run any time to redo or extend it.")
+        say(f"\n✓  Extracted → explorer/data/{out.name}")
+        # Canonicalization Layer — Explorer-side presentation; LYR core untouched.
+        adapter = HERE / "adapters" / "pride-and-prejudice.aliases.json"
+        canon = DATA / "knowledge.canonical.json"
+        say("\n▶  Canonicalizing aliases (Explorer presentation layer)…\n")
+        subprocess.run([
+            sys.executable, str(HERE / "pipeline" / "canonicalize.py"),
+            "--in", str(out), "--adapter", str(adapter), "--out", str(canon),
+        ])
+        say(f"\n✓  Done. The explorer reads explorer/data/{canon.name}")
+        say("   Re-run any time to redo or extend it.")
     else:
         say("\n✗  The run failed above. Most common causes:")
         say("   • the API key is wrong, or the account has no credit/billing set up")

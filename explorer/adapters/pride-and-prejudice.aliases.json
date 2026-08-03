@@ -1,0 +1,13 @@
+{
+  "book": "Pride and Prejudice",
+  "note": "VALIDATION DATA — a presentation-time alias map for the Explorer's Canonicalization Layer. This is NOT LYR core identity semantics: LYR's semantic nodes and their identities are never touched. It only tells the Explorer which surface labels to display as one person. High-confidence aliases only; every merge is re-checked at canonicalization time (title-guarded, evidence-guarded). Swap this file to canonicalize a different book; the Explorer code does not change.",
+  "canonical": {
+    "Elizabeth Bennet": ["Elizabeth", "Miss Elizabeth", "Miss Eliza Bennet", "Eliza"],
+    "Jane Bennet": ["Jane"],
+    "Lydia Bennet": ["Lydia"],
+    "Charlotte Lucas": ["Charlotte"],
+    "Lady Catherine de Bourgh": ["Lady Catherine"],
+    "George Wickham": ["Wickham", "Mr. Wickham"],
+    "Pemberley": ["Pemberley House"]
+  }
+}

@@ -99,6 +99,34 @@ These are the actual "knowledge growing" numbers — the §7 formation panel is 
 - **Not produced by the current pipeline:** "unresolved conflicts" (§7/§12). Left out rather than
   faked; it is a future extraction step, not a hidden field.
 
+## Canonicalization (Explorer presentation — core untouched)
+
+The raw `knowledge.json` keys entities by exact label, so a character appears under aliases
+("Elizabeth" vs "Elizabeth Bennet"; three Wickham nodes). The **Canonicalization Layer**
+(`pipeline/canonicalize.py`) reads the raw file plus a per-book **alias adapter**
+(`adapters/*.aliases.json`, *validation data — not core code*) and writes `knowledge.canonical.json`
+for the explorer. **LYR core nodes and identities are never modified** — every original id, label,
+version chain, evidence link, and chapter span is preserved inside each canonical entity, with merge
+provenance. Full rationale + the identity roadmap:
+[`../docs/design/canonicalization-and-identity.md`](../docs/design/canonicalization-and-identity.md).
+
+Every merge is guarded even though the adapter is curated: **no title conflict** (Mr./Sir vs
+Mrs./Miss/Lady refused — keeps *Miss Darcy* ≠ *Mr. Darcy*), **evidence link** required (full-name
+expansion or shared token), ambiguous stays split. On Pride and Prejudice: **32 raw → 24 canonical,
+7 merges, 0 false merges.** `run.py` runs this automatically after extraction.
+
+```bash
+python explorer/pipeline/canonicalize.py \
+    --in explorer/data/knowledge.full.json \
+    --adapter explorer/adapters/pride-and-prejudice.aliases.json \
+    --out explorer/data/knowledge.canonical.json
+```
+
+Canonical entity shape: `{ canonical_label, entity_type, aliases[], source_node_ids[], evidence[],
+chapters[], n_updates, timeline[{alias,version,label,chapters,evidence}], merge{from,via} }`.
+Relationships gain `subject_canonical` / `object_canonical`. **Ideas/themes are omitted in v0.1**
+(`meta.themes = "not_yet_derived"`) — no real durable themes yet, and we don't fake them.
+
 ## Layout
 
 ```

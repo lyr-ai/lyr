@@ -3,6 +3,7 @@ data/*.raw.txt
 # full/large exports — regenerable via pipeline/export_knowledge.py
 data/knowledge.full.json
 data/knowledge.ch*.json
+data/knowledge.canonical.json
 __pycache__/
 # secrets — never commit an API key
 .env

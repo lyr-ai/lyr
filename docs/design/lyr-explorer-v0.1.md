@@ -9,6 +9,15 @@ text of *Pride and Prejudice*** — never illustrative, never hand-authored. Wee
 `knowledge.json` from an actual run; the frontend (Weeks 2–5) visualizes **only what that file
 actually contains.** If the pipeline does not produce something, the explorer does not show it.
 
+**Amendments (after the first real run).** The full-book OpenAI run confirmed the core is real
+(characters, relationships, and dramatic evolution — Elizabeth v36, Darcy v24) and surfaced two
+things: (1) surface-label aliasing splits characters ("Elizabeth" vs "Elizabeth Bennet"), fixed by a
+**Canonicalization Layer** — an Explorer-side, adapter-driven presentation pass that leaves LYR core
+identities untouched (see [`canonicalization-and-identity.md`](canonicalization-and-identity.md));
+(2) the durable layer produced **0 themes**, so **Ideas is dropped from v0.1** (§12 is deferred) —
+we do not loosen the durability prompt or add a book-specific themes pass. v0.1 ships People ·
+Relationships · Events · Evolution · Evidence, all real.
+
 **Scope reality to verify in Week 1.** The existing LYR durable layer produces *durable judgments*
 (claims/lessons with evidence + verdicts), not a character graph with temporal relationships and
 belief revision. The rich views here (entity timelines, evolving relationships, unresolved
