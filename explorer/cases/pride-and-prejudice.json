@@ -1,0 +1,13 @@
+{
+  "case_id": "pride-and-prejudice",
+  "title": "Pride and Prejudice",
+  "language": "en",
+  "source_type": "book",
+  "public": true,
+  "sources": [
+    {"kind": "book", "title": "Pride and Prejudice",
+     "url": "https://www.gutenberg.org/files/1342/1342-0.txt",
+     "path": "explorer/data/pride-and-prejudice.raw.txt"}
+  ],
+  "note": "Case 1 / baseline (public domain). English novel — people, relationships, chapter evidence."
+}
