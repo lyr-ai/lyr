@@ -1,47 +1,52 @@
-# DeepSeek case — official corpus contract
+# DeepSeek case — official evolution corpus
 
 This case is the **second independent identity witness** (after 红楼梦). It moves
 the identity question off *people* and onto:
 
-    model / version / component / concept identity
+    model / version / component / claim identity — across a version chain
 
-The question the resolver must survive here is different from a novel's:
+It is an **evolution corpus** (V3 → V3.2 → V4), not a single-model snapshot. The
+product question it probes is not "what is V4" but **how knowledge changes across
+versions** — and, honestly, where LYR's current backend cannot yet represent that
+change (see the capability-gap note below).
 
-- Is `DeepSeek V4` vs `V4-Pro` the **same entity at two versions**, or **two
-  distinct entities**? (LYR must not silently merge or silently split.)
-- Are `repo`, `model artifact`, `API product`, and the *named model* one thing
-  or several?
-- Do abbreviations vs full names (`MoE` / `Mixture-of-Experts`,
-  `MLA` / `Multi-head Latent Attention`) need normalization?
-- Can one technical component be unified across report + README + changelog?
-- Does a benchmark claim trace back precisely to its source doc?
-- Does the People-centered Explorer model bend naturally to
-  Models / Components / Claims — or does it break?
+## Corpus (official first-party only)
 
-## Official-only (source-reliability is held constant)
+Five real DeepSeek documents spanning the chain. Provenance + fidelity note:
+[`SOURCES.md`](SOURCES.md).
 
-Use **only first-party documents** so any failure localizes to the LYR backend,
-not to source disagreement. Drop these as `.md` files in this directory:
+| file | version | doc |
+|------|---------|-----|
+| `v3-technical-report.md` | V3   | technical report (arXiv:2412.19437) |
+| `v3-readme.md`           | V3   | repository README |
+| `v3_2-model-card.md`     | V3.2 | model card (V3.2-Exp) |
+| `v3_2-release.md`        | V3.2 | release notes |
+| `v4-technical-report.md` | V4   | technical report (arXiv:2606.19348) |
 
-| file | what it is |
-|------|-----------|
-| `technical-report.md` | the official technical report (arXiv/PDF → text) |
-| `model-card.md`       | the official model card (HuggingFace / repo) |
-| `readme.md`           | the official repository README |
-| `changelog.md`        | release notes / changelog |
-| `announcement.md`     | official announcement / blog (first-party only) |
+No news / blogs / third-party commentary — that would add a source-reliability
+variable and make a backend failure impossible to isolate. Headings are
+preserved as sections (`MarkdownParser`), lossless.
 
-Do **not** add news, third-party blogs, or Reddit yet — that introduces a
-source-reliability variable and makes a backend failure impossible to isolate.
+## What it tests
 
-Headings inside each doc are preserved as sections (`MarkdownParser`), so keep
-the documents' own `#`/`##` structure intact when you paste them in.
+See [`SOURCES.md`](SOURCES.md) for the concrete identity questions (version
+identity, component identity, claim tracing, whether the People-centered Explorer
+bends to Models/Components/Claims).
 
-## Run (once the docs are here)
+## Honest boundary (recorded, not hidden)
+
+This corpus tests identity **across** a version chain — LYR can resolve whether
+`V3` and `V4` are related-but-distinct entities. It does **not** yet model a V4
+claim *revising* a V3 claim: that is the recorded `stateful semantic claims`
+capability gap (`docs/design/capability-gap-stateful-claims.md`). This corpus is
+expected to **expose** that gap sharply; that exposure is the witness, reported
+as-is, not smoothed over.
+
+## Run
 
     OPENAI_API_KEY=... python explorer/pipeline/run_case.py \
         --case explorer/cases/deepseek.json --extractor llm --provider openai
 
 Then read `site/data/deepseek/quality.json` and compare its resolver block
 (merges / unsure / rejects / guard_warnings) against 红楼梦's — that comparison
-is what decides whether the v0.2 proposer has earned a second witness.
+decides whether the gated v0.2 proposer has earned a second independent witness.

@@ -1,17 +1,17 @@
 {
   "case_id": "deepseek",
-  "title": "DeepSeek (official docs)",
+  "title": "DeepSeek (V3 → V3.2 → V4, official docs)",
   "language": "en",
   "source_type": "docs",
   "parser": "markdown",
   "ingest": "fine",
   "public": true,
   "sources": [
-    { "kind": "report",       "title": "Technical Report",  "path": "explorer/cases/deepseek/technical-report.md" },
-    { "kind": "model-card",   "title": "Model Card",        "path": "explorer/cases/deepseek/model-card.md" },
-    { "kind": "readme",       "title": "README",            "path": "explorer/cases/deepseek/readme.md" },
-    { "kind": "changelog",    "title": "Changelog",         "path": "explorer/cases/deepseek/changelog.md" },
-    { "kind": "announcement", "title": "Announcement",      "path": "explorer/cases/deepseek/announcement.md" }
+    { "kind": "report",     "title": "DeepSeek-V3 Technical Report",   "path": "explorer/cases/deepseek/v3-technical-report.md" },
+    { "kind": "readme",     "title": "DeepSeek-V3 README",             "path": "explorer/cases/deepseek/v3-readme.md" },
+    { "kind": "model-card", "title": "DeepSeek-V3.2-Exp Model Card",   "path": "explorer/cases/deepseek/v3_2-model-card.md" },
+    { "kind": "release",    "title": "DeepSeek-V3.2 Release Notes",    "path": "explorer/cases/deepseek/v3_2-release.md" },
+    { "kind": "report",     "title": "DeepSeek-V4 Technical Report",   "path": "explorer/cases/deepseek/v4-technical-report.md" }
   ],
-  "note": "Second identity witness — model/version/component/concept identity (not people). Official first-party docs only (see explorer/cases/deepseek/CORPUS.md); no news/blogs, to hold source-reliability constant and localize any failure to the LYR backend. Drop the .md files, then: python explorer/pipeline/run_case.py --case explorer/cases/deepseek.json --extractor llm --provider openai. Missing source files are skipped (empty text → no section), so a partial corpus still runs."
+  "note": "Second identity witness — an EVOLUTION corpus (V3 → V3.2 → V4), not a snapshot. Tests model/version/component/claim identity across a version chain: is DeepSeek-V3 vs V4 the same persistent entity updated, or a false merge / false duplicate? Are MLA/MoE and the DSA→CSA→HCA attention lineage components or concepts? Official first-party docs only (see CORPUS.md + SOURCES.md); no news/blogs, to localize any failure to the LYR backend. Run: python explorer/pipeline/run_case.py --case explorer/cases/deepseek.json --extractor llm --provider openai. Missing source files are skipped, so a partial corpus still runs."
 }
