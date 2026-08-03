@@ -1,0 +1,114 @@
+{
+  "durables": [
+    {
+      "id": "dur_117fbb04ba6e",
+      "kind": "decision",
+      "statement": "The team has decided to sunset the legacy billing API by Q3 2026.",
+      "semantic_evidence": [
+        "sem_5becf9f36a24"
+      ],
+      "source_origins": [
+        "src_8eb0747f110d"
+      ]
+    },
+    {
+      "id": "dur_1452e0789bed",
+      "kind": "pattern",
+      "statement": "Flaky CI on the payments suite is a recurring release blocker.",
+      "semantic_evidence": [
+        "sem_83eb160ea10c",
+        "sem_95b50a2abc3b",
+        "sem_e108a5410ed5"
+      ],
+      "source_origins": [
+        "src_66f10cae57f6",
+        "src_8eb0747f110d",
+        "src_ead4ce07b070"
+      ]
+    },
+    {
+      "id": "dur_6822f6df2d2a",
+      "kind": "decision",
+      "statement": "The organization has hired a second Site Reliability Engineer (SRE) to handle the on-call rotation, suggesting a growth in the team or an increased focus on operational reliability.",
+      "semantic_evidence": [
+        "sem_d3c115a1a042"
+      ],
+      "source_origins": [
+        "src_3bd25fe6643d"
+      ]
+    },
+    {
+      "id": "dur_86385f914fdf",
+      "kind": "decision",
+      "statement": "The decision to standardize on Postgres for new services was reversed in favor of DynamoDB after load testing.",
+      "semantic_evidence": [
+        "sem_7586e57c4661",
+        "sem_9c8744312a55"
+      ],
+      "source_origins": [
+        "src_5122c80b9db4",
+        "src_c4855967d08f"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_00",
+      "label": "Flaky CI on the payments suite is a recurring release blocker.",
+      "members": [
+        "dur_117fbb04ba6e",
+        "dur_1452e0789bed"
+      ]
+    },
+    {
+      "id": "grp_01",
+      "label": "The organization has hired a second Site Reliability Engineer (SRE) to handle the on-call rotation, suggesting a growth in the team or an increased focus on operational reliability.",
+      "members": [
+        "dur_6822f6df2d2a"
+      ]
+    },
+    {
+      "id": "grp_02",
+      "label": "The decision to standardize on Postgres for new services was reversed in favor of DynamoDB after load testing.",
+      "members": [
+        "dur_86385f914fdf"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "frm": "dur_117fbb04ba6e",
+      "to": "dur_1452e0789bed",
+      "relation": "shared_source",
+      "support": [
+        "src_8eb0747f110d"
+      ]
+    }
+  ],
+  "entry_points": {
+    "entity": [],
+    "event": [
+      "Agreed to standardize new services on Postgres.",
+      "Donuts again at Friday standup.",
+      "Flaky CI on the payments suite blocked the release again.",
+      "Flaky CI on the payments suite came up as a blocker once more.",
+      "Hired a second SRE to own on-call rotation.",
+      "Payments CI flakiness raised as a recurring release blocker.",
+      "Reconfirmed the decision to retire the legacy billing API before Q3.",
+      "Reversed the earlier Postgres decision and chose DynamoDB for the new services after load testing.",
+      "Someone brought donuts to the Friday standup.",
+      "The team decided to sunset the legacy billing API by Q3 2026."
+    ],
+    "durable_kind": {
+      "decision": 3,
+      "pattern": 1
+    }
+  },
+  "metrics": {
+    "n_durables": 4,
+    "n_groups": 3,
+    "compression": 1.333,
+    "singletons": 2,
+    "largest_group": 2
+  }
+}

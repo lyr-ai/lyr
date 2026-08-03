@@ -1,0 +1,96 @@
+{
+  "durables": [
+    {
+      "id": "dur_21e42e0f05c9",
+      "kind": "pattern",
+      "statement": "Auth middleware has recurrent issues with session handling and token expiration, requiring multiple patches.",
+      "semantic_evidence": [
+        "sem_174e09281827",
+        "sem_37991d8c0254",
+        "sem_56fa2625e4ec"
+      ],
+      "source_origins": [
+        "src_3dc3a9ef52ff",
+        "src_6b265b47c45c",
+        "src_e6e9ebf2a8d1"
+      ]
+    },
+    {
+      "id": "dur_81d58af477c2",
+      "kind": "lesson",
+      "statement": "Implementing a Redis cache for the product catalog can lead to stale-read incidents.",
+      "semantic_evidence": [
+        "sem_01a492f02686",
+        "sem_0320eb24882e"
+      ],
+      "source_origins": [
+        "src_55d37365f65b",
+        "src_5aa78e95bf56"
+      ]
+    },
+    {
+      "id": "dur_e4d617949e3e",
+      "kind": "decision",
+      "statement": "Migrating the public API from REST to gRPC was a significant event.",
+      "semantic_evidence": [
+        "sem_0a1ae27188f3",
+        "sem_43354218b0bb"
+      ],
+      "source_origins": [
+        "src_4713945a1e4c",
+        "src_8bef3aa68692"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_00",
+      "label": "Auth middleware has recurrent issues with session handling and token expiration, requiring multiple patches.",
+      "members": [
+        "dur_21e42e0f05c9"
+      ]
+    },
+    {
+      "id": "grp_01",
+      "label": "Implementing a Redis cache for the product catalog can lead to stale-read incidents.",
+      "members": [
+        "dur_81d58af477c2"
+      ]
+    },
+    {
+      "id": "grp_02",
+      "label": "Migrating the public API from REST to gRPC was a significant event.",
+      "members": [
+        "dur_e4d617949e3e"
+      ]
+    }
+  ],
+  "connections": [],
+  "entry_points": {
+    "entity": [],
+    "event": [
+      "Added a Redis cache in front of the product catalog.",
+      "Bumped version to 2.3.1.",
+      "Bumped version to 2.3.2.",
+      "Bumped version to 2.3.3.",
+      "Fixed a race condition in the auth token refresh.",
+      "Hardened auth middleware after a third session-handling regression.",
+      "Merge pull request #482: migrate public API from REST to gRPC.",
+      "Migrated the public API from REST to gRPC.",
+      "Patched another auth session bug: tokens expiring early.",
+      "Reverted the Redis catalog cache due to stale-read incidents."
+    ],
+    "durable_kind": {
+      "decision": 1,
+      "lesson": 1,
+      "pattern": 1
+    }
+  },
+  "metrics": {
+    "n_durables": 3,
+    "n_groups": 3,
+    "compression": 1.0,
+    "singletons": 3,
+    "largest_group": 1
+  }
+}

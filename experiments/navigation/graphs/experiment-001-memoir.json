@@ -1,0 +1,94 @@
+{
+  "durables": [
+    {
+      "id": "dur_762bdabbb3f2",
+      "kind": "pattern",
+      "statement": "She has shown a pattern of making high-risk financial decisions at different stages of her life.",
+      "semantic_evidence": [
+        "sem_30c74c3015a0",
+        "sem_350c022331ba"
+      ],
+      "source_origins": [
+        "src_04e299e29b5a",
+        "src_21041a84f3fa"
+      ]
+    },
+    {
+      "id": "dur_8a2a95b84715",
+      "kind": "preference",
+      "statement": "Consistently prioritizes family commitments over career advancement.",
+      "semantic_evidence": [
+        "sem_476f94873d00",
+        "sem_85970f53784f",
+        "sem_c3518f7789be"
+      ],
+      "source_origins": [
+        "src_5ceaca92584c",
+        "src_789c0583c31b",
+        "src_a19b91100b64"
+      ]
+    },
+    {
+      "id": "dur_a3b2bfa83c5d",
+      "kind": "pattern",
+      "statement": "Maintained a long-distance relationship with her sister in Poland for thirty years through weekly letters, after emigrating to Canada in 1990.",
+      "semantic_evidence": [
+        "sem_497abc1ab7db",
+        "sem_ed7429320c65"
+      ],
+      "source_origins": [
+        "src_bacf7778e615",
+        "src_d5c51b7907f7"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_00",
+      "label": "She has shown a pattern of making high-risk financial decisions at different stages of her life.",
+      "members": [
+        "dur_762bdabbb3f2"
+      ]
+    },
+    {
+      "id": "grp_01",
+      "label": "Consistently prioritizes family commitments over career advancement.",
+      "members": [
+        "dur_8a2a95b84715"
+      ]
+    },
+    {
+      "id": "grp_02",
+      "label": "Maintained a long-distance relationship with her sister in Poland for thirty years through weekly letters, after emigrating to Canada in 1990.",
+      "members": [
+        "dur_a3b2bfa83c5d"
+      ]
+    }
+  ],
+  "connections": [],
+  "entry_points": {
+    "entity": [],
+    "event": [
+      "Declined a promotion to regional director in 1998 to stay in her hometown near her aging parents.",
+      "Drank a cup of black coffee every morning before writing.",
+      "Emigrated from Poland to Canada in 1990, leaving her parents and siblings behind, never to live in the same country as them again.",
+      "In her sixties she invested a large share of her retirement fund in her nephew's unproven restaurant venture.",
+      "In her thirties she kept all savings in cash and refused to invest, fearing loss.",
+      "Left a fast-growing startup in 2012 to care for her husband through his cancer treatment.",
+      "Mentions her morning coffee ritual again while describing her writing desk.",
+      "Recalls the 1998 promotion she gave up, still sure it was the right choice.",
+      "Turned down an overseas transfer to Singapore in 2005 so the children could stay in the same school."
+    ],
+    "durable_kind": {
+      "pattern": 2,
+      "preference": 1
+    }
+  },
+  "metrics": {
+    "n_durables": 3,
+    "n_groups": 3,
+    "compression": 1.0,
+    "singletons": 3,
+    "largest_group": 1
+  }
+}

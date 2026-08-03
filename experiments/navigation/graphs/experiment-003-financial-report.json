@@ -1,0 +1,90 @@
+{
+  "durables": [
+    {
+      "id": "dur_0007f2ffd97f",
+      "kind": "fact",
+      "statement": "The company took a one-time $180M goodwill impairment on the 2019 Helios acquisition.",
+      "semantic_evidence": [
+        "sem_a2413445aab9"
+      ],
+      "source_origins": [
+        "src_688297ae9798"
+      ]
+    },
+    {
+      "id": "dur_b1248c44fe1a",
+      "kind": "pattern",
+      "statement": "The company has a pattern of raising its quarterly dividend consistently for 12 consecutive years.",
+      "semantic_evidence": [
+        "sem_5b46df7a7400"
+      ],
+      "source_origins": [
+        "src_e89317bdfac4"
+      ]
+    },
+    {
+      "id": "dur_bb4cff4eb60d",
+      "kind": "fact",
+      "statement": "The company acquired Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+      "semantic_evidence": [
+        "sem_906d05a67f88",
+        "sem_fac0613c82a3"
+      ],
+      "source_origins": [
+        "src_d08f97e5a97d",
+        "src_e89317bdfac4"
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "grp_00",
+      "label": "The company took a one-time $180M goodwill impairment on the 2019 Helios acquisition.",
+      "members": [
+        "dur_0007f2ffd97f"
+      ]
+    },
+    {
+      "id": "grp_01",
+      "label": "The company acquired Northwind Analytics for approximately $2.1 billion in Q2 2025.",
+      "members": [
+        "dur_b1248c44fe1a",
+        "dur_bb4cff4eb60d"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "frm": "dur_b1248c44fe1a",
+      "to": "dur_bb4cff4eb60d",
+      "relation": "shared_source",
+      "support": [
+        "src_e89317bdfac4"
+      ]
+    }
+  ],
+  "entry_points": {
+    "entity": [],
+    "event": [
+      "Acquired competitor Northwind Analytics for $2.1B in Q2 2025.",
+      "Cloud segment revenue grew 31% year over year in Q2 2025.",
+      "Lowered full-year revenue guidance to $8.8B at the Q3 2025 report, citing softening enterprise demand.",
+      "Raised full-year revenue guidance to $9.4B at the Q1 2025 report.",
+      "Raised the quarterly dividend for the 12th consecutive year.",
+      "Recorded routine quarterly rent expense of $4.2M.",
+      "The Northwind acquisition closed in the second quarter for approximately $2.1 billion.",
+      "Took a one-time $180M goodwill impairment on the 2019 Helios acquisition."
+    ],
+    "durable_kind": {
+      "fact": 2,
+      "pattern": 1
+    }
+  },
+  "metrics": {
+    "n_durables": 3,
+    "n_groups": 2,
+    "compression": 1.5,
+    "singletons": 1,
+    "largest_group": 2
+  }
+}
