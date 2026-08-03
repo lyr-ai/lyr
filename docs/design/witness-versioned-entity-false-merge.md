@@ -75,13 +75,44 @@ revises a V3 claim. That is the standing `stateful semantic claims` gap
 (`capability-gap-stateful-claims.md`). Fix D makes the identities correct; it does
 not add interpretation-change modeling. Both statements stay honest in the demo.
 
-## Next admissible steps (deterministic first, per the 红楼梦 discipline)
+## Outcome of fix D (digit-only, shipped)
+
+Fix D lands the narrow, fully-generic signal: for a non-person prefix expansion,
+if the **added** tokens include a digit-bearing token, emit `UNSURE` (reason
+`version discriminator`) instead of `LINK`. No wordlist.
+
+Result on the corpus entity set (10 models): the cross-version blob is broken —
+
+    before fix D: 4 groups  (V3..V3.2-Speciale all merged into one)
+    after  fix D: 6 groups  (V3 | V3.1-Terminus | V3.2* | V2 | V4-Pro* | V4-Flash)
+
+The three **version numbers** V3 / V3.1 / V3.2 are now distinct groups, and V4 is
+separate. 红楼梦 (45 groups / 4 merges) and P&P are unchanged — no new false split.
+
+### Residual (documented, deferred — NOT tolerated silently)
+
+Within a single version point, **word-qualifier** variants still auto-LINK,
+because the digit sits in the shared base, not the added token:
+
+    [V3, V3-Base]                        (added "base")
+    [V3.2-Exp, V3.2, V3.2-Speciale]      (added "exp" / "speciale")
+    [V4-Pro, V4-Pro-Max]                 (added "max")
+
+These are the same class the digit signal deliberately does not touch. The fix
+here is **not** a `pro/max/flash/base/exp` wordlist in the generic resolver (that
+would encode naming convention into structure). It waits for a non-wordlist
+structural signal — official `base_model` metadata, a release/variant graph, a
+model-card parent field, or a package/version schema — i.e. **metadata-aware
+variant resolution**, gated until a second heterogeneous corpus shows the same
+pattern with such metadata available.
+
+## Next admissible steps
 
 1. Record this witness (done).
-2. **Fix D** — type-gated version-prefix in the resolver; add fixtures
-   (V3/V3.2/V4 stay distinct; `Elizabeth ⊂ Elizabeth Bennet` still merges;
-   person/service/model all covered). Free, deterministic re-run.
-3. Re-run the resolver on the corpus; confirm the 6-way merge is gone and no new
-   false split appears on P&P / 红楼梦 / Git.
-4. Only then decide whether a paid `llm` extraction run adds anything the free
-   resolver witness has not already established.
+2. **Fix D** — digit-only version-prefix gating, with fixtures (done; suite green).
+3. Re-run the resolver on the corpus; 6-way merge gone, 红楼梦/P&P unchanged (done).
+4. Decide whether a paid `llm` extraction run adds anything the free resolver
+   witness has not already established (open — the identity verdict is already in
+   hand; the paid run would add claim/evidence tracing + the Explorer package).
+5. Kimi corpus later provides the potential second witness for metadata-aware
+   variant resolution (the qualifier residual above).

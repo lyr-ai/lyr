@@ -112,6 +112,62 @@ def test_cjk_type_conflict_not_merged():
     assert lg["寶玉"] != lg["通靈寶玉"]
 
 
+# --- fix D: versioned-entity identity (digit-bearing added token = sibling) ---
+
+def test_version_suffix_not_auto_merged():
+    # DeepSeek-V3 ⊂ DeepSeek-V3.2 is a sibling RELEASE, not a name expansion.
+    lg, r = _group_of([_E("1", "DeepSeek-V3", "model"), _E("2", "DeepSeek-V3.2", "model")])
+    assert lg["DeepSeek-V3"] != lg["DeepSeek-V3.2"]
+    assert any(d.decision == "UNSURE" and d.reason == "version discriminator" for d in r.decisions)
+
+
+def test_version_chain_stays_distinct():
+    # the witnessed cross-version false merge must not recur: distinct version
+    # NUMBERS land in distinct groups. (Within-version word qualifiers like
+    # -Base / -Exp / -Speciale still merge — the documented residual, digit-only.)
+    labels = ["DeepSeek-V3", "DeepSeek-V3-Base", "DeepSeek-V3.1-Terminus",
+              "DeepSeek-V3.2-Exp", "DeepSeek-V3.2", "DeepSeek-V3.2-Speciale"]
+    lg, _ = _group_of([_E(str(i), l, "model") for i, l in enumerate(labels)])
+    # the three version points V3, V3.1, V3.2 are pairwise distinct (was 1 group)
+    assert lg["DeepSeek-V3"] != lg["DeepSeek-V3.1-Terminus"]
+    assert lg["DeepSeek-V3.1-Terminus"] != lg["DeepSeek-V3.2"]
+    assert lg["DeepSeek-V3"] != lg["DeepSeek-V3.2"]
+    assert len({lg[l] for l in labels}) >= 3  # was 1 before fix D
+
+
+def test_numeric_dotted_version_not_merged():
+    lg, _ = _group_of([_E("1", "Model 2", "system"), _E("2", "Model 2.1", "system")])
+    assert lg["Model 2"] != lg["Model 2.1"]
+
+
+def test_same_normalized_version_still_links():
+    # punctuation/spacing only — same tokens, same entity: MUST still LINK
+    lg, _ = _group_of([_E("1", "DeepSeek-V3.2", "model"), _E("2", "DeepSeek V3.2", "model")])
+    assert lg["DeepSeek-V3.2"] == lg["DeepSeek V3.2"]
+
+
+def test_file_extension_added_token_has_no_digit_still_links():
+    # README ⊂ README.md — added token "md" has no digit → remains a LINK
+    lg, _ = _group_of([_E("1", "README", "file"), _E("2", "README.md", "file")])
+    assert lg["README"] == lg["README.md"]
+
+
+def test_person_version_like_suffix_unaffected():
+    # a person is never demoted by the digit rule (guarded on non-person)
+    lg, _ = _group_of([_E("1", "Henry", "person"), _E("2", "Henry 3rd", "person")])
+    assert lg["Henry"] == lg["Henry 3rd"]
+
+
+def test_word_qualifier_variant_is_known_residual_still_links():
+    # DOCUMENTED residual: V4-Pro ⊂ V4-Pro-Max adds "max" (no digit), so digit-only
+    # fix D does NOT demote it — it still LINKs. Recorded, not silently accepted:
+    # see docs/design/witness-versioned-entity-false-merge.md (deferred to a future
+    # metadata-aware variant signal, NOT a pro/max/flash wordlist). If a later fix
+    # changes this, this test should be updated intentionally.
+    lg, _ = _group_of([_E("1", "V4-Pro", "model"), _E("2", "V4-Pro-Max", "model")])
+    assert lg["V4-Pro"] == lg["V4-Pro-Max"]
+
+
 def test_bare_form_links_person_but_not_component():
     # identical structural shape (X ⊆ "<w> X"), opposite decision by entity type
     lg_p, _ = _group_of([_E("1", "Vale", "person"), _E("2", "George Vale", "person")])

@@ -36,6 +36,10 @@ _TITLES = _MALE | _FEMALE
 _SEP = re.compile(r"[\s\-_./]+")
 
 
+def _has_digit(tok: str) -> bool:
+    return any(c.isdigit() for c in tok)
+
+
 def _tokens(label: str) -> list[str]:
     # Separator- and camelCase-aware, so it works for prose names AND identifiers
     # ("payments-service", "README.md", "apiGateway") — domain-independent.
@@ -211,8 +215,23 @@ def resolve(entities, relationships=()) -> ResolutionResult:
                 decisions.append(Decision(a.label, b.label, REJECT, "related as two distinct entities"))
                 reject_pairs.add(frozenset((a.label, b.label)))
             elif _prefix_of(a.label, b.label) or _prefix_of(b.label, a.label):
-                decisions.append(Decision(a.label, b.label, LINK, "name expansion (prefix)"))
-                link_pairs.append((a, b))
+                # A token-prefix expansion means "same entity, fuller name" for a
+                # PERSON (Elizabeth ⊂ Elizabeth Bennet). For a versioned artifact it
+                # can mean the OPPOSITE — a sibling release (DeepSeek-V3 ⊂
+                # DeepSeek-V3.2 are different models). Fix D: if the added tokens
+                # carry a digit-bearing token (a version discriminator: v3, 2, 4.1),
+                # the two are NOT auto-linked — they are UNSURE (we lack a
+                # sibling/parent relation to record, so we stop guessing rather than
+                # false-merge). Kept deliberately narrow: only a *witnessed*,
+                # fully-generic structural signal (a digit), no naming-convention
+                # wordlist. See docs/design/witness-versioned-entity-false-merge.md.
+                short_l, long_l = (a.label, b.label) if _prefix_of(a.label, b.label) else (b.label, a.label)
+                added = _tokens(long_l)[len(_tokens(short_l)):]
+                if a.entity_type != "person" and any(_has_digit(t) for t in added):
+                    decisions.append(Decision(a.label, b.label, UNSURE, "version discriminator"))
+                else:
+                    decisions.append(Decision(a.label, b.label, LINK, "name expansion (prefix)"))
+                    link_pairs.append((a, b))
             elif _weak_subset(a.label, b.label):
                 if a.entity_type == "person" and b.entity_type == "person":
                     decisions.append(Decision(a.label, b.label, LINK, "bare surname (person)"))
