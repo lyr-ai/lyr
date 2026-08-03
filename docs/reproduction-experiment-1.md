@@ -185,7 +185,40 @@ identically through the `F`-split. The three patches did what they were meant to
    flaw in packet construction, not the note. A faithful packet would supply it.
 
 **Status.** Numerical reproduction is solved; the Phase-1 gate (empty invention list) is not
-yet met, but the two real residuals are closed and the third is a packet fix. A third,
-faithful-packet re-run (supplying `A₁`'s content, as the note does) is the remaining check
-before Phase 2. Recorded honestly: two rounds in, the note reproduces its numbers in strangers'
-hands, and each round has converted a tacit authorial premise into a written one.
+yet met after this round, but the two real residuals are closed and the third is a packet fix.
+A third, faithful-packet re-run (supplying `A₁`'s content, as the note does) is the remaining
+check before Phase 2.
+
+---
+
+## Gate run — faithful packet (Phase-1 criterion)
+
+Third run: three fresh executors, packet reconstructed to mirror the **fully patched** note —
+supplying exactly what §1–§4 now state (`A₀`, `A₁`'s content, `A₀ᴮ`, sharpened `A_schema`,
+the `F`-split, `A_cause`), answers withheld.
+
+**Result — gate MET:**
+
+| criterion | outcome |
+|---|---|
+| Numerical reproduction of committed answers | **exact, 3/3** (incl. Ex B's F-robust `c₁`/`c₂` stages) |
+| "Places I had to invent something" | **EMPTY, 3/3** — stated explicitly, both examples |
+
+One *"worth tightening, not an invention"* observation (1/3): the `(h_X, m_censored)` cell's
+`✓` also uses the "X failed" reading while `F` is flagged only on `h_notX`. It self-resolves —
+compatibility is existential, so the "X caused *and* X failed" world satisfies the cell under
+both formalizations — and the note now states this explicitly. No invention was required to
+proceed; recorded as polish, applied.
+
+**Interpretation.** By the Phase-1 criterion the user set — *a stranger executes both examples
+to the committed `I_Q` without supplying any premise the note did not give* — the patched note
+**passes**. Three rounds converted every tacit authorial premise the process could find
+(`A₀`, the `F`-split, `A_cause`, `A₀ᴮ`, sharpened `A_schema`, the `h_X`-cell clarification)
+into written ones, and the numbers reproduced exactly at every round. The spine held under its
+first external test: identification came out as *the output of running the procedure*, not a
+property the executors had to pre-agree on.
+
+**Standing caveat (unchanged).** The strangers are independent LLM executors, not human
+first-time readers. This removes the authors' shared context but not model-shared priors; a
+human execution remains the stronger Phase 1 and is not replaced by this. Subject to that, the
+gate is met and **Phase 2 (the methodological paper) is unlocked.**

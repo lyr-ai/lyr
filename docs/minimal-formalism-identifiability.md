@@ -157,6 +157,11 @@ calls" turns on an undefined predicate: *does the causing call itself count as "
 - `f_nofail` — a call can trigger terminal failure while itself returning success ⇒ not
   dropped ⇒ stays logged ⇒ cell **compatible ✓**.
 
+Only the `h_notX` cell splits: `h_notX` demands the cause be *in* the log, so whether
+"caused" implies "failed" decides it. The `(h_X, m_censored)` cell is **not** `F`-dependent —
+compatibility is existential, and the world "X caused the failure *and* X itself failed ⇒
+dropped ⇒ absent" satisfies it under **both** `f`.
+
 Per formalization the compatible set differs:
 `C(r)^{f_fail}  = { (h_X, m_cens), (h_notX, m_complete) }`  (`|·| = 2`);
 `C(r)^{f_nofail} = { (h_X, m_cens), (h_notX, m_complete), (h_notX, m_cens) }`  (`|·| = 3`).
