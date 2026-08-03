@@ -33,7 +33,8 @@ sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
 from chapters import split_chapters  # noqa: E402
-from segments import Segment, split_book, split_docs  # noqa: E402
+from segments import Segment  # noqa: E402
+from parsers import get_parser  # noqa: E402
 from lyr import LYR  # noqa: E402
 from lyr.semantic import RuleBasedExtractor  # noqa: E402
 
@@ -103,12 +104,11 @@ def _read(path: str) -> str:
 
 
 def _segments_from_manifest(m: dict) -> list[Segment]:
-    cid = m.get("case_id", "case")
-    lang = m.get("language", "en")
-    if m.get("source_type", "book") == "book":
-        return split_book(_read(m["sources"][0]["path"]), language=lang, case_id=cid)
+    # Document Parser Layer: the manifest's `parser` chooses how structure is read;
+    # every parser returns the same Section shape (see parsers.py).
+    parser = get_parser(m)
     docs = [(s.get("title", Path(s["path"]).name), _read(s["path"])) for s in m["sources"]]
-    return split_docs(docs, case_id=cid)
+    return parser.parse(docs, m.get("case_id", "case"))
 
 
 def main() -> None:

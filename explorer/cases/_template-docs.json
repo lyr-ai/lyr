@@ -1,0 +1,16 @@
+{
+  "case_id": "example-technical-corpus",
+  "title": "Example — a technical corpus (report + docs)",
+  "language": "en",
+  "source_type": "docs",
+  "parser": "markdown",
+  "ingest": "paragraph",
+  "public": true,
+  "sources": [
+    {"kind": "report",    "title": "Technical report", "path": "explorer/data/<case>/report.md"},
+    {"kind": "modelcard", "title": "Model card",       "path": "explorer/data/<case>/model_card.md"},
+    {"kind": "changelog", "title": "API changelog",    "path": "explorer/data/<case>/changelog.md"},
+    {"kind": "readme",    "title": "Repo README",      "path": "explorer/data/<case>/README.md"}
+  ],
+  "note": "TEMPLATE for DeepSeek V4 / Kimi K3-style cases. Multiple official docs, one Section per heading (parser=markdown) or per document (parser=docs). Tests cross-document identity (same object in report/docs/release notes), version-vs-alias, component-vs-package-path — the second non-English / non-person witness for the resolver. Copy, fill sources, run: python explorer/pipeline/run_case.py --case explorer/cases/<this>.json --extractor llm --provider openai"
+}
