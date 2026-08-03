@@ -66,7 +66,7 @@
   <header class="lead">
     <h1>Living Knowledge Explorer</h1>
     <div class="fr">A traceable knowledge space formed from the text — every observation links back to the passage it came from.</div>
-    <div class="src"><b>Demo source:</b> Pride and Prejudice (public domain) · <b>Identity:</b> generic resolver v0 · <span id="mstat"></span></div>
+    <div class="src"><b>Case:</b> <select id="case" style="font:inherit;padding:2px 7px;border-radius:6px;border:1px solid var(--line);background:var(--panel);color:var(--ink)"></select> · <b>Identity:</b> generic resolver v0 · <span id="mstat"></span></div>
   </header>
 
   <div class="cols3">
@@ -106,16 +106,25 @@
 </div>
 
 <script>
-const BASE = "data/pride-and-prejudice/";
-let PERSON = null, FILTER = "all", STEP = -1;
+let BASE = "", PERSON = null, FILTER = "all", STEP = -1;
 
 async function boot(){
+  const cases = await fetch("data/cases.json").then(r=>r.json());
+  const sel = document.getElementById("case");
+  sel.innerHTML = cases.map(c=>`<option value="${c.dir}">${c.title}</option>`).join("");
+  sel.onchange = ()=>loadCase(sel.value);
+  if(cases[0]) loadCase(cases[0].dir);
+}
+
+async function loadCase(dir){
+  BASE = "data/"+dir+"/"; PERSON=null; STEP=-1; FILTER="all";
   const [manifest, people] = await Promise.all([
     fetch(BASE+"manifest.json").then(r=>r.json()),
     fetch(BASE+"people.json").then(r=>r.json()),
   ]);
+  const themes = manifest.themes && manifest.themes.status ? manifest.themes.status : manifest.themes;
   document.getElementById("mstat").textContent =
-    `${manifest.people} people · resolver ${manifest.canonicalization} · themes ${manifest.themes.status}`;
+    `${manifest.people} entities · resolver ${manifest.canonicalization} · themes ${themes}`;
   const el = document.getElementById("people");
   el.innerHTML = people.map(p=>
     `<button class="person" data-slug="${p.slug}">
@@ -123,6 +132,9 @@ async function boot(){
        <div class="mt">ch${p.chapter_min}–${p.chapter_max} · ${p.relationships} rel · ${p.evidence_passages} passages</div>
      </button>`).join("");
   el.querySelectorAll(".person").forEach(b=>b.onclick=()=>selectPerson(b.dataset.slug));
+  document.getElementById("summary").innerHTML = "";
+  document.getElementById("timeline").innerHTML = "";
+  document.getElementById("evidence").innerHTML = `<div class="ev-empty">Select a step in the timeline to see the source passages it was drawn from.</div>`;
   if(people[0]) selectPerson(people[0].slug);
 }
 

@@ -39,16 +39,20 @@ def _slug(label: str) -> str:
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--in", dest="inp", default=str(REPO / "explorer/data/knowledge.canonical.json"))
-    ap.add_argument("--out", default=str(REPO / "site/data/pride-and-prejudice"))
+    ap.add_argument("--case-id", default="pride-and-prejudice")
+    ap.add_argument("--title", default="Pride and Prejudice")
+    ap.add_argument("--entity-types", default="all", help="'all' or a specific type e.g. 'person'")
+    ap.add_argument("--out", default="", help="default site/data/<case-id>")
     ap.add_argument("--commit", default="", help="optional generation commit sha")
     args = ap.parse_args()
 
     k = json.loads(Path(args.inp).read_text(encoding="utf-8"))
-    out = Path(args.out)
+    out = Path(args.out) if args.out else (REPO / "site/data" / args.case_id)
     (out / "people").mkdir(parents=True, exist_ok=True)
 
     src = {s["id"]: s for s in k.get("sources", [])}
-    entities = [e for e in k["entities"] if e.get("entity_type") == "person"]
+    entities = [e for e in k["entities"]
+                if args.entity_types == "all" or e.get("entity_type") == args.entity_types]
     canon_by_norm = {}
     for e in k["entities"]:
         for a in e["aliases"]:
@@ -150,8 +154,8 @@ def main() -> None:
     manifest = {
         "product": "LYR — Living Knowledge Explorer",
         "framing": "A traceable knowledge space formed from the text.",
-        "demo_source": "Pride and Prejudice",
-        "source_author": "Jane Austen",
+        "case_id": args.case_id,
+        "demo_source": args.title,
         "public_domain": True,
         "extractor": meta.get("extractor"),
         "identity_resolution": "generic entity resolution v0 — production path for Explorer v0.1; persistent, evolving identity formation remains future work",
@@ -165,7 +169,7 @@ def main() -> None:
     }
     (out / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print(f"✓ wrote {out.relative_to(REPO)}/  — {len(people_rows)} people with timelines")
+    print(f"✓ wrote {out}/  — {len(people_rows)} entities with timelines")
     for r in people_rows[:6]:
         print(f"    {r['label']:24} ch{r['chapter_min']}–{r['chapter_max']}  "
               f"{r['relationships']} rel · {r['events']} ev · {r['evidence_passages']} passages")

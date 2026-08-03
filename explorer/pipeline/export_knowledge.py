@@ -23,6 +23,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -32,6 +33,7 @@ sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(HERE))
 
 from chapters import split_chapters  # noqa: E402
+from segments import Segment, split_book, split_docs  # noqa: E402
 from lyr import LYR  # noqa: E402
 from lyr.semantic import RuleBasedExtractor  # noqa: E402
 
@@ -88,14 +90,31 @@ def _tally(nodes) -> dict[str, int]:
 
 
 def _chapter_of(origin: str) -> int | None:
-    # origin is "pnp-chNN"
-    tail = origin.rsplit("ch", 1)[-1]
-    return int(tail) if tail.isdigit() else None
+    # origin ends in the segment number, e.g. "pnp-ch03", "hlm-seg012", "case-doc02"
+    m = re.search(r"(\d+)$", origin)
+    return int(m.group(1)) if m else None
+
+
+def _read(path: str) -> str:
+    p = Path(path)
+    if not p.is_absolute():
+        p = REPO / p
+    return p.read_text(encoding="utf-8", errors="replace")
+
+
+def _segments_from_manifest(m: dict) -> list[Segment]:
+    cid = m.get("case_id", "case")
+    lang = m.get("language", "en")
+    if m.get("source_type", "book") == "book":
+        return split_book(_read(m["sources"][0]["path"]), language=lang, case_id=cid)
+    docs = [(s.get("title", Path(s["path"]).name), _read(s["path"])) for s in m["sources"]]
+    return split_docs(docs, case_id=cid)
 
 
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", default=str(REPO / "explorer/data/pride-and-prejudice.raw.txt"))
+    ap.add_argument("--manifest", default=None, help="case manifest JSON (generic multi-source path)")
     ap.add_argument("--out", default=str(REPO / "explorer/data/knowledge.sample.json"))
     ap.add_argument("--extractor", choices=["rule", "llm"], default="rule")
     ap.add_argument("--provider", choices=["anthropic", "openai"], default="anthropic")
@@ -108,12 +127,18 @@ def main() -> None:
 
     _load_env(REPO / "explorer" / ".env")
 
-    raw = Path(args.source).read_text(encoding="utf-8", errors="replace")
-    chapters = split_chapters(raw)
+    source_type = "book"
+    if args.manifest:
+        manifest = json.loads(_read(args.manifest))
+        source_type = manifest.get("source_type", "book")
+        segs = _segments_from_manifest(manifest)
+    else:
+        segs = [Segment(c.number, f"pnp-ch{c.number:02d}", f"Chapter {c.roman}", c.text)
+                for c in split_chapters(Path(args.source).read_text(encoding="utf-8", errors="replace"))]
     if args.limit:
-        chapters = chapters[: args.limit]
-    if not chapters:
-        raise SystemExit("no chapters parsed — check --source")
+        segs = segs[: args.limit]
+    if not segs:
+        raise SystemExit("no segments parsed — check --source / --manifest")
 
     if args.extractor == "llm":
         api_key = _resolve_key(args.api_key, args.provider)
@@ -139,13 +164,13 @@ def main() -> None:
     # ── run the real pipeline, chapter by chapter, snapshotting growth ──
     formation = []
     prev = {k: 0 for k in KINDS}
-    for ch in chapters:
-        lyr.ingest(ch.text, origin=f"pnp-ch{ch.number:02d}", kind="book", chapter=ch.number)
+    for seg in segs:
+        lyr.ingest(seg.text, origin=seg.origin, kind=source_type, chapter=seg.number)
         cur = _tally(lyr.semantic_nodes())
         formation.append(
             {
-                "chapter": ch.number,
-                "roman": ch.roman,
+                "chapter": seg.number,
+                "roman": seg.title,
                 "entities": cur["entity"],
                 "events": cur["event"],
                 "relationships": cur["relationship"],
@@ -155,8 +180,8 @@ def main() -> None:
             }
         )
         prev = cur
-        print(f"  ch{ch.number:>2} ({ch.roman:<6}) entities={cur['entity']:>4} "
-              f"events={cur['event']:>4} relationships={cur['relationship']:>4}")
+        print(f"  seg{seg.number:>3} ({seg.title[:16]:<16}) entities={cur['entity']:>4} "
+              f"events={cur['event']:>4} rel={cur['relationship']:>4}")
 
     print("consolidating durable knowledge…")
     lyr.build_durable()
@@ -228,7 +253,7 @@ def main() -> None:
             "public_domain": True,
             "extractor": args.extractor if args.extractor == "rule" else f"llm:{args.provider}",
             "real_run": True,
-            "chapters_processed": len(chapters),
+            "chapters_processed": len(segs),
             "totals": {
                 "entities": counts["entity"],
                 "events": counts["event"],
@@ -257,7 +282,7 @@ def main() -> None:
 
     t = knowledge["meta"]["totals"]
     print(f"\n✓ wrote {out_path}")
-    print(f"  {len(chapters)} chapters · {t['entities']} entities · {t['events']} events · "
+    print(f"  {len(segs)} segments · {t['entities']} entities · {t['events']} events · "
           f"{t['relationships']} relationships · {t['ideas']} ideas · {t['sources']} source records")
 
 
