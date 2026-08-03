@@ -7,6 +7,41 @@ longer in the internal soundness or the executability of the protocol, but in wh
 outside this research process can use it. The paper is no longer the bottleneck — external use
 is.
 
+## The three lines (current structure)
+
+The project is now three mutually supporting, mutually non-interfering lines:
+
+- **① Theory — frozen.** Answers *what is auditable identification?* Reopens only on a real-world
+  witness (the three triggers below).
+- **② Method — the paper.** Answers *how does someone else execute the protocol?* Open to
+  reader-clarity / positioning / reproducibility edits until reviewers and a human execution
+  respond.
+- **③ Applications — continuous.** Answers *is the protocol useful in the real world?* Accumulates
+  real cases; see `applications/`.
+
+They form a feedback loop whose one invariant is that **only the real world may reopen Theory**:
+
+```
+Theory (frozen)
+    │
+    ▼
+Method (paper)
+    │
+    ▼
+Applications (real cases)
+    │
+    ▼
+Real contradiction the protocol cannot express?
+    │
+ ┌──┴──┐
+ │ No  │ → continue applications
+ │ Yes │ → Theory reopens (trigger #3), on a NEW branch from `research-complete`
+ └─────┘
+```
+
+An author may improve the Method line and extend the Applications line at will. Neither may reach
+back and edit Theory. That privilege belongs to the world.
+
 ## The arc (four phases, now complete)
 
 - **I — Discovery.** *What is cognition? What is the right ontology?* The object kept changing.

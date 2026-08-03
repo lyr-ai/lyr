@@ -16,10 +16,28 @@ It runs the protocol on real incidents to answer a different question:
 - **Generates the next paper by itself** — ten working cases turn "here is a theory" into
   "applying auditable identification to agent root-cause analysis." Theory becomes tool.
 
-## Goal: 10 real cases. Not a second paper (yet).
+## Goal: cover 10 failure *modes*, not 10 cases. Not a second paper (yet).
 
-Each case is ~2 pages on one fixed template. At case 10, the world — not the desk — will have
-shown where the protocol is strong, where it is painful, and where it needs automation.
+The paper claims a **protocol** — not Pages, not GitHub, not a diary. So cases must cover the
+**protocol's failure modes**, not a product surface. Ten well-chosen modes are worth more than
+ten pretty cases of the same mode. Target coverage:
+
+| failure mode | covered by |
+|---|---|
+| ambiguous / generic measurement (artifact vs. cause) | **case 001** |
+| censoring (dropped records) | — |
+| stale state | — |
+| contradictory logs | — |
+| multiple independent channels | — |
+| missing provenance | — |
+| human self-report | — |
+| agent self-explanation | — |
+| telemetry drift | — |
+| delayed observation | — |
+
+Each case is ~2 pages on the fixed template. **Slow is correct.** The value of an application is
+that the world does not let you choose the data — so a real incident of a *new mode* beats any
+designed toy case of an old one. Wait for real incidents; do not manufacture modes.
 
 ## Fixed template (every case)
 
@@ -42,8 +60,33 @@ Unidentified        — what stayed open, and which missing witness would close 
 - **The protocol is fixed.** A case is a *use*, not a patch. If a real incident forces a
   contradiction the protocol *cannot express*, that is re-open trigger #3 — record it loudly and
   send it back to the research process; never fix it silently inside a case.
+- **Failure cases are preserved, never fixed.** If the protocol cannot express a real incident,
+  do not repair the protocol to make the case succeed. Keep the case, with a status header:
+
+  ```
+  Status:        Protocol failed
+  Reason:        cannot express …
+  Open trigger:  research #3
+  ```
+
+  `applications/` is therefore not a gallery of successes — it is also the record of *how the
+  world reopens the theory*. Hiding a failure to keep the application line looking healthy is the
+  same error as hiding a measurement assumption to keep a diagnosis looking certain.
 - **Honest provenance.** Where the raw witness is weaker than ideal (summary-level, a missing
   log), say so in the case. That is the protocol's own witness discipline turned on itself.
+
+## Application status
+
+```
+Cases completed:       1
+Failure modes covered: 1 / 10
+Research reopenings:    0
+Outstanding triggers:   0
+```
+
+The number that matters is **not** cases completed — it is **research reopenings**. Many completed
+cases with zero reopenings is strong evidence that the frozen protocol holds in the world. The
+first reopening is itself a result worth studying (which mode? why inexpressible?), not a defeat.
 
 ## Cases
 
