@@ -37,6 +37,12 @@ not ready.*
   otherwise `Q`'s identification is reported as *coverage-unestablished*. The union grows
   monotonically, so **under-coverage spuriously over-identifies** — that is `F`'s only
   failure mode, and it is `H`/`M`'s existing open-atlas problem, not a new one.
+- **No free identification** (witnessed in §8). The output-constant map `m*(w)=r` lies in
+  an unrestricted `M`, so **no non-trivial target is identified without an explicit
+  `M`-restriction.** Such a restriction is a constraint like any other: *structural
+  assumption only* until a witness *independent of `r`* makes it *empirical under
+  commitments*. Identification is never assumption-free; the schema's job is to keep the
+  assumption visible.
 
 Identifiability is always of a **target `Q`**, relative to `(H, M, {cᵢ}, F)` — never of
 the whole `Θ`, and never relative to a single silently-chosen formalization.
@@ -281,3 +287,62 @@ The framework is **closed over its own modeling step.**
 **Two recordable conclusions:** *target-stable despite formalization disagreement* (b);
 *target-sensitive to formalization **coverage*** (c). Both are handled by existing
 machinery. `F` is not the start of a regress — it is a test the framework passed on itself.
+
+---
+
+## 8. Falsifier 3 — unbounded `M`: exposed, not solved
+
+**Sharper test.** Not "can the framework delete `m*`?" (it cannot) but: **can it
+distinguish "not identified because `M` is open" from "identified only after an analyst
+silently bounded `M`"?**
+
+`r` = "the switch was off at 10:00" · `h_off, h_on` · `Q` = "was it off?".
+`m_faithful` (reports the state), `m_inverted` (reports the opposite), `m*` (outputs `r`
+for every world). Compatibility = does `(h,m)` produce the report "off"?
+
+| stage | `M` | `C(r)` | `I_Q` |
+|---|---|---|---|
+| 0 | `{faithful, inverted}` | `{(h_off,faithful),(h_on,inverted)}` | `{yes,no}` — not identified |
+| 1 | `+ m*` (+ constant maps) | `+ (h_off,m*),(h_on,m*)` | `{yes,no}` — **still** not identified |
+
+**Stage 1 is the point:** *more complete* `M` did not create certainty. Completing `M`
+only preserves or enlarges `I_Q`; identifying `Q` requires **shrinking** `M`, never growing it.
+
+**Stage 2 — analyst restriction, no witness.** `S_copy = {(h,m) : m = faithful}` →
+`C(r) ∩ S_copy = {(h_off, faithful)}`, `I_Q = {yes}`.
+
+| Constraint | Witness | Type | Background | `Δ_Q` |
+|---|---|---|---|---|
+| `M = {faithful}` | **none** | **structural assumption only** | `A_copy`: sensor is faithful (asserted) | `{yes,no}→{yes}` |
+
+**Stage 3 — calibration witness.** Independent record `Z`: on states known by a *separate*
+channel, the sensor's output *matched*. The **same** restriction is now:
+
+| Constraint | Witness | Type | Background | `Δ_Q` |
+|---|---|---|---|---|
+| `M = {faithful}` | calibration `Z` (independent of `r`) | **empirical, under commitments** | `A1` integrity · `A2` non-tampering · `A3` stationarity | `{yes,no}→{yes}` |
+
+`I_Q = {yes}` — **the same set as Stage 2**, different epistemic status. *That difference is
+the payoff.*
+
+**Decisive falsifier — passed.** The framework (i) does **not** report Stage 2 and 3
+identically (same `I_Q`, different Type/witness); (ii) does **not** drop `m_inverted`/`m*`
+because the record "looks obvious" — they survive until a *tagged* constraint removes them.
+
+**Control (`Q_M` = "is the sensor faithful?").** Stage 2: `I_{Q_M} = {yes}` *only because it
+was assumed* — tagged assumption-only, so "trustworthy" cannot be smuggled in as fact.
+Stage 3: calibration is *direct* evidence for faithfulness on the calibration states, but
+`Q_M` **at 10:00** still needs `A2, A3` to transport. Identification is target-*and-time*-
+specific — faithful-at-calibration is witnessed; faithful/off-at-10:00 are
+witnessed-then-transported.
+
+**Self-witness defense.** `r` cannot witness its own `m_faithful` (equally produced by
+`(h_on, m_inverted)`); the witness must be independent of `r`, and `Z` rests on `A1`,
+extending the §6 dependency graph and terminating at declared assumptions. No new regress.
+
+**Conclusion.** The formalism does **not** solve unbounded `M`; it makes every solution to
+it **visible** as an assumption or a witnessed restriction. *Bounding `M` is itself an
+auditable identification act* — the first genuine **structural** requirement (unlike #1/#2,
+which were procedural), met by the **existing** constraint–witness machinery, no new
+primitive. There is no assumption-free identification; the schema's whole value is to keep
+that assumption visible.
