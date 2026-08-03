@@ -108,8 +108,13 @@
 <script>
 let BASE = "", PERSON = null, FILTER = "all", STEP = -1;
 
+// Always revalidate data files against the server. The knowledge package is
+// regenerated on every re-run/redeploy; a stale disk-cached JSON would silently
+// show pre-fix data (e.g. a fragmented entity that has since been merged).
+const getJSON = (url)=>fetch(url,{cache:"no-store"}).then(r=>r.json());
+
 async function boot(){
-  const cases = await fetch("data/cases.json").then(r=>r.json());
+  const cases = await getJSON("data/cases.json");
   const sel = document.getElementById("case");
   sel.innerHTML = cases.map(c=>`<option value="${c.dir}">${c.title}</option>`).join("");
   sel.onchange = ()=>loadCase(sel.value);
@@ -119,8 +124,8 @@ async function boot(){
 async function loadCase(dir){
   BASE = "data/"+dir+"/"; PERSON=null; STEP=-1; FILTER="all";
   const [manifest, people] = await Promise.all([
-    fetch(BASE+"manifest.json").then(r=>r.json()),
-    fetch(BASE+"people.json").then(r=>r.json()),
+    getJSON(BASE+"manifest.json"),
+    getJSON(BASE+"people.json"),
   ]);
   const themes = manifest.themes && manifest.themes.status ? manifest.themes.status : manifest.themes;
   document.getElementById("mstat").textContent =
@@ -140,7 +145,7 @@ async function loadCase(dir){
 
 async function selectPerson(slug){
   document.querySelectorAll(".person").forEach(b=>b.classList.toggle("on", b.dataset.slug===slug));
-  PERSON = await fetch(BASE+"people/"+slug+".json").then(r=>r.json());
+  PERSON = await getJSON(BASE+"people/"+slug+".json");
   STEP = -1;
   const s = PERSON.summary;
   document.getElementById("summary").innerHTML =
