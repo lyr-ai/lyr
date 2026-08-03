@@ -7,7 +7,7 @@
   "extractor": "llm:openai",
   "identity_resolution": "generic entity resolution v0 — production path for Explorer v0.1; persistent, evolving identity formation remains future work",
   "canonicalization": "resolver",
-  "people": 31,
+  "people": 39,
   "chapters": 20,
   "themes": {
     "status": "not_yet_derived"

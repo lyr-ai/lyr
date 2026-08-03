@@ -6,8 +6,8 @@
   ],
   "entity_type": "person",
   "summary": {
-    "chapter_min": 20,
-    "chapter_max": 20,
+    "chapter_min": 19,
+    "chapter_max": 19,
     "evidence_passages": 1,
     "relationships": 0,
     "events": 0,

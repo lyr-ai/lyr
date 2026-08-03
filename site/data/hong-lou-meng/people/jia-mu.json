@@ -1,14 +1,14 @@
 {
-  "slug": "e-0c062513e0",
-  "canonical_label": "荣国府",
+  "slug": "jia-mu",
+  "canonical_label": "賈母 (Jia Mu)",
   "aliases": [
-    "荣国府"
+    "賈母 (Jia Mu)"
   ],
-  "entity_type": "place",
+  "entity_type": "person",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 3,
-    "evidence_passages": 2,
+    "chapter_min": 8,
+    "chapter_max": 8,
+    "evidence_passages": 3,
     "relationships": 0,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",

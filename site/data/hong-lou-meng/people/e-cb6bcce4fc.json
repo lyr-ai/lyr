@@ -1,13 +1,13 @@
 {
-  "slug": "e-0c062513e0",
-  "canonical_label": "荣国府",
+  "slug": "e-cb6bcce4fc",
+  "canonical_label": "铁檻寺",
   "aliases": [
-    "荣国府"
+    "铁檻寺"
   ],
   "entity_type": "place",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 3,
+    "chapter_min": 15,
+    "chapter_max": 15,
     "evidence_passages": 2,
     "relationships": 0,
     "events": 0,

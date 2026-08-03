@@ -52,3 +52,26 @@ Three distinct, generic failure modes:
 
 The 红楼梦 Explorer package is committed **as-is (splits and all)** — an honest demonstration that
 the harness runs cross-language and exactly where genericity currently ends.
+
+## Fixed-segmentation re-run (attributed diff)
+
+Re-ran the same 20 回 after the Document-Parser segmentation fix. Attribution is clean:
+
+| metric | broken-seg | fixed-seg | attributed to |
+|---|---|---|---|
+| sources | 167 | 174 | segmentation (aligned content) |
+| entities | 50 | 52 | comparable, no distortion |
+| duplicate ratio | 1.06 | **1.06** | **resolver unchanged** |
+| merges / orphans | 3 / 28 | 3 / 28 | unchanged |
+| coverage | 73.1% | 70.7% | comparable |
+
+- **Segmentation fixed** — source-record chapters now **1–20 continuous** (no 5/17 gap). Provenance
+  is passage-precise (174 records with char ranges).
+- **Resolver fragmentation unchanged** (dup 1.06; Baoyu still 贾宝玉 / 寶玉 / 賈寶玉 / Jia Baoyu) — the
+  fix did not touch the resolver witness, as intended.
+- **New witness — extractor coverage:** chapters **9 and 14 produced 0 surviving entities** despite
+  8 and 7 source passages (ch14 added nothing at all). An **extractor** degeneracy on some
+  chapters, distinct from segmentation and resolver. Recorded, not fixed.
+
+The live package is now the fixed-seg run (trustworthy chapter attribution); the broken-seg baseline
+is preserved as `hong-lou-meng-brokenseg-llm-fine.quality.json`.

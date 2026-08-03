@@ -1,13 +1,13 @@
 {
-  "slug": "e-0c062513e0",
-  "canonical_label": "荣国府",
+  "slug": "e-22d404bb75",
+  "canonical_label": "空空道人",
   "aliases": [
-    "荣国府"
+    "空空道人"
   ],
-  "entity_type": "place",
+  "entity_type": "person",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 3,
+    "chapter_min": 1,
+    "chapter_max": 1,
     "evidence_passages": 2,
     "relationships": 0,
     "events": 0,

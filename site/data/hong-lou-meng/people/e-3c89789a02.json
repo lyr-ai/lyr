@@ -1,13 +1,13 @@
 {
-  "slug": "e-0c062513e0",
-  "canonical_label": "荣国府",
+  "slug": "e-3c89789a02",
+  "canonical_label": "冷香丸",
   "aliases": [
-    "荣国府"
+    "冷香丸"
   ],
-  "entity_type": "place",
+  "entity_type": "concept",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 3,
+    "chapter_min": 7,
+    "chapter_max": 7,
     "evidence_passages": 2,
     "relationships": 0,
     "events": 0,
