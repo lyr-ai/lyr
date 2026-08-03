@@ -1,14 +1,14 @@
 {
-  "slug": "e-3aee628e62",
-  "canonical_label": "雨村",
+  "slug": "e-17a6c5179a",
+  "canonical_label": "嬌杏",
   "aliases": [
-    "雨村"
+    "嬌杏"
   ],
   "entity_type": "person",
   "summary": {
     "chapter_min": 2,
     "chapter_max": 2,
-    "evidence_passages": 8,
+    "evidence_passages": 1,
     "relationships": 1,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",
@@ -19,7 +19,7 @@
       "chapter": 2,
       "kind": "relationship",
       "text": "雨村 marries 嬌杏",
-      "other": "嬌杏",
+      "other": "賈雨村",
       "evidence_count": 1,
       "passages": [
         {

@@ -1,14 +1,14 @@
 {
-  "slug": "e-f46c8e2e0a",
-  "canonical_label": "凤姐",
+  "slug": "e-ce89b48e9d",
+  "canonical_label": "刘姥姥",
   "aliases": [
-    "凤姐"
+    "刘姥姥"
   ],
   "entity_type": "person",
   "summary": {
     "chapter_min": 6,
     "chapter_max": 6,
-    "evidence_passages": 5,
+    "evidence_passages": 6,
     "relationships": 1,
     "events": 1,
     "note": "Version count reflects evidence accumulation, not interpretation change.",
@@ -58,7 +58,7 @@
       "chapter": 6,
       "kind": "relationship",
       "text": "親戚連絡",
-      "other": "刘姥姥",
+      "other": "凤姐",
       "evidence_count": 4,
       "passages": [
         {

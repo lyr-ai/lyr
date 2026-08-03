@@ -1,31 +1,31 @@
 {
-  "entities_extracted": 52,
-  "canonical_entities": 49,
+  "entities_extracted": 49,
+  "canonical_entities": 45,
   "resolver": {
-    "merges": 3,
-    "link_pairs": 3,
-    "unsure": 6,
-    "rejects": 12,
+    "merges": 4,
+    "link_pairs": 4,
+    "unsure": 0,
+    "rejects": 19,
     "guard_warnings": 0
   },
-  "duplicate_ratio": 1.06,
-  "events": 30,
+  "duplicate_ratio": 1.09,
+  "events": 24,
   "relationships": 38,
   "sources": 174,
-  "evidence_coverage_pct": 70.7,
+  "evidence_coverage_pct": 76.4,
   "orphan_entities": {
-    "count": 28,
+    "count": 18,
     "sample": [
-      "空空道人",
-      "封氏",
-      "封肅",
-      "黛玉",
-      "贾雨村",
-      "荣国府",
+      "無稽崖青埂峰",
+      "薛蟠",
       "馮淵",
-      "警幻仙姑",
-      "Wang Xifeng",
-      "Ban'er"
+      "賈蘭",
+      "賈珠",
+      "李紈",
+      "秦氏",
+      "冷香丸",
+      "金釧儿",
+      "薛姨媽"
     ]
   },
   "source_types": [

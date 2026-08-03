@@ -1,40 +1,65 @@
 [
   {
-    "slug": "e-b899359174",
-    "label": "贾宝玉",
+    "slug": "e-b9829ffa22",
+    "label": "賈寶玉",
     "aliases": [
-      "贾宝玉"
+      "寶玉",
+      "賈寶玉"
     ],
-    "evidence_passages": 18,
+    "evidence_passages": 58,
     "chapter_min": 5,
     "chapter_max": 20,
-    "relationships": 7,
+    "relationships": 15,
+    "events": 14
+  },
+  {
+    "slug": "e-ac09fdafa1",
+    "label": "秦鐘",
+    "aliases": [
+      "秦鐘"
+    ],
+    "evidence_passages": 22,
+    "chapter_min": 7,
+    "chapter_max": 16,
+    "relationships": 6,
     "events": 4
   },
   {
-    "slug": "e-33b40e4586",
-    "label": "寶玉",
+    "slug": "e-24ba583435",
+    "label": "賈雨村",
     "aliases": [
-      "寶玉"
+      "賈雨村",
+      "雨村"
     ],
     "evidence_passages": 17,
-    "chapter_min": 13,
-    "chapter_max": 19,
+    "chapter_min": 1,
+    "chapter_max": 4,
     "relationships": 3,
-    "events": 5
+    "events": 1
   },
   {
-    "slug": "e-68095e7506",
-    "label": "林黛玉",
+    "slug": "e-1bcd3f7786",
+    "label": "鳳姐",
     "aliases": [
-      "林黛玉",
-      "林黛玉 (Lin Daiyu)"
+      "鳳姐"
+    ],
+    "evidence_passages": 15,
+    "chapter_min": 12,
+    "chapter_max": 15,
+    "relationships": 3,
+    "events": 3
+  },
+  {
+    "slug": "e-5f1a40974d",
+    "label": "賈政",
+    "aliases": [
+      "賈政"
     ],
     "evidence_passages": 13,
     "chapter_min": 3,
-    "chapter_max": 20,
-    "relationships": 5,
-    "events": 3
+    "chapter_max": 17,
+    "relationships": 1,
+    "events": 5
   },
   {
     "slug": "e-82a8c3f56d",
@@ -42,71 +67,72 @@
     "aliases": [
       "襲人"
     ],
-    "evidence_passages": 8,
-    "chapter_min": 19,
-    "chapter_max": 19,
-    "relationships": 1,
-    "events": 1
-  },
-  {
-    "slug": "e-ac09fdafa1",
-    "label": "秦鐘",
-    "aliases": [
-      "秦鐘",
-      "秦鐘 (Qin Zhong)"
-    ],
-    "evidence_passages": 7,
-    "chapter_min": 8,
-    "chapter_max": 16,
+    "evidence_passages": 11,
+    "chapter_min": 6,
+    "chapter_max": 20,
     "relationships": 2,
-    "events": 1
+    "events": 2
   },
   {
-    "slug": "e-24ba583435",
-    "label": "賈雨村",
+    "slug": "e-68095e7506",
+    "label": "林黛玉",
     "aliases": [
-      "賈雨村"
+      "林黛玉",
+      "黛玉"
     ],
-    "evidence_passages": 7,
-    "chapter_min": 1,
-    "chapter_max": 4,
-    "relationships": 1,
-    "events": 1
+    "evidence_passages": 10,
+    "chapter_min": 3,
+    "chapter_max": 20,
+    "relationships": 4,
+    "events": 3
   },
   {
-    "slug": "e-376a9fa6fe",
-    "label": "薛宝钗",
+    "slug": "e-da43c89235",
+    "label": "薛寶釵",
     "aliases": [
-      "薛宝钗"
+      "寶釵",
+      "薛寶釵"
     ],
     "evidence_passages": 7,
     "chapter_min": 5,
-    "chapter_max": 20,
+    "chapter_max": 8,
+    "relationships": 4,
+    "events": 0
+  },
+  {
+    "slug": "e-d7d2fcdc89",
+    "label": "賈母",
+    "aliases": [
+      "賈母"
+    ],
+    "evidence_passages": 7,
+    "chapter_min": 3,
+    "chapter_max": 18,
     "relationships": 2,
     "events": 4
   },
   {
-    "slug": "e-14698bcac4",
-    "label": "贾母",
+    "slug": "e-ce89b48e9d",
+    "label": "刘姥姥",
     "aliases": [
-      "贾母"
+      "刘姥姥"
     ],
     "evidence_passages": 6,
-    "chapter_min": 5,
-    "chapter_max": 18,
-    "relationships": 4,
-    "events": 2
+    "chapter_min": 6,
+    "chapter_max": 6,
+    "relationships": 1,
+    "events": 1
   },
   {
-    "slug": "e-01d858ffe6",
-    "label": "警幻仙姑",
+    "slug": "e-f3d692577e",
+    "label": "宁國府",
     "aliases": [
-      "警幻仙姑"
+      "宁國府"
     ],
     "evidence_passages": 6,
-    "chapter_min": 5,
-    "chapter_max": 5,
-    "relationships": 0,
+    "chapter_min": 14,
+    "chapter_max": 14,
+    "relationships": 1,
     "events": 1
   },
   {
@@ -115,120 +141,35 @@
     "aliases": [
       "秦氏"
     ],
-    "evidence_passages": 6,
+    "evidence_passages": 5,
     "chapter_min": 5,
     "chapter_max": 13,
-    "relationships": 2,
-    "events": 3
-  },
-  {
-    "slug": "wang-xifeng",
-    "label": "Wang Xifeng",
-    "aliases": [
-      "Wang Xifeng"
-    ],
-    "evidence_passages": 5,
-    "chapter_min": 6,
-    "chapter_max": 6,
     "relationships": 0,
     "events": 2
   },
   {
-    "slug": "e-f370ad9040",
-    "label": "贾瑞",
+    "slug": "e-f46c8e2e0a",
+    "label": "凤姐",
     "aliases": [
-      "贾瑞"
+      "凤姐"
+    ],
+    "evidence_passages": 5,
+    "chapter_min": 6,
+    "chapter_max": 6,
+    "relationships": 1,
+    "events": 1
+  },
+  {
+    "slug": "e-2bee87bb72",
+    "label": "賈瑞",
+    "aliases": [
+      "賈瑞"
     ],
     "evidence_passages": 5,
     "chapter_min": 12,
     "chapter_max": 12,
-    "relationships": 1,
-    "events": 2
-  },
-  {
-    "slug": "e-1bcd3f7786",
-    "label": "鳳姐",
-    "aliases": [
-      "鳳姐"
-    ],
-    "evidence_passages": 5,
-    "chapter_min": 15,
-    "chapter_max": 16,
     "relationships": 2,
-    "events": 1
-  },
-  {
-    "slug": "grand-view-garden",
-    "label": "Grand View Garden",
-    "aliases": [
-      "Grand View Garden"
-    ],
-    "evidence_passages": 5,
-    "chapter_min": 17,
-    "chapter_max": 17,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "jia-baoyu",
-    "label": "Jia Baoyu",
-    "aliases": [
-      "Baoyu",
-      "Jia Baoyu"
-    ],
-    "evidence_passages": 4,
-    "chapter_min": 6,
-    "chapter_max": 17,
-    "relationships": 3,
-    "events": 3
-  },
-  {
-    "slug": "e-496ee282ac",
-    "label": "薛蟠",
-    "aliases": [
-      "薛蟠"
-    ],
-    "evidence_passages": 4,
-    "chapter_min": 4,
-    "chapter_max": 4,
-    "relationships": 1,
-    "events": 1
-  },
-  {
-    "slug": "e-8de6be1568",
-    "label": "張先生",
-    "aliases": [
-      "張先生"
-    ],
-    "evidence_passages": 4,
-    "chapter_min": 10,
-    "chapter_max": 10,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "jia-zheng",
-    "label": "Jia Zheng",
-    "aliases": [
-      "Jia Zheng"
-    ],
-    "evidence_passages": 4,
-    "chapter_min": 17,
-    "chapter_max": 17,
-    "relationships": 0,
-    "events": 2
-  },
-  {
-    "slug": "ban-er",
-    "label": "Ban'er",
-    "aliases": [
-      "Ban'er"
-    ],
-    "evidence_passages": 3,
-    "chapter_min": 6,
-    "chapter_max": 6,
-    "relationships": 0,
-    "events": 2
+    "events": 4
   },
   {
     "slug": "e-f56b80a8df",
@@ -239,43 +180,67 @@
     "evidence_passages": 3,
     "chapter_min": 10,
     "chapter_max": 10,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "qin-shi",
-    "label": "Qin Shi",
-    "aliases": [
-      "Qin Shi"
-    ],
-    "evidence_passages": 3,
-    "chapter_min": 11,
-    "chapter_max": 11,
     "relationships": 1,
-    "events": 1
+    "events": 4
   },
   {
-    "slug": "jia-rong",
-    "label": "Jia Rong",
+    "slug": "e-ddadbf4b85",
+    "label": "賈敬",
     "aliases": [
-      "Jia Rong"
+      "賈敬"
     ],
     "evidence_passages": 3,
     "chapter_min": 11,
     "chapter_max": 11,
     "relationships": 0,
+    "events": 1
+  },
+  {
+    "slug": "e-d17e13d861",
+    "label": "鳳姐儿",
+    "aliases": [
+      "鳳姐儿"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 13,
+    "chapter_max": 13,
+    "relationships": 2,
+    "events": 1
+  },
+  {
+    "slug": "e-96658cef60",
+    "label": "智能",
+    "aliases": [
+      "智能"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 15,
+    "chapter_max": 15,
+    "relationships": 1,
+    "events": 0
+  },
+  {
+    "slug": "e-9aba85a1f7",
+    "label": "賈妃",
+    "aliases": [
+      "賈妃"
+    ],
+    "evidence_passages": 3,
+    "chapter_min": 18,
+    "chapter_max": 19,
+    "relationships": 1,
     "events": 2
   },
   {
-    "slug": "e-cd253e6570",
-    "label": "王熙凤",
+    "slug": "e-b10d7b54a5",
+    "label": "茗煙",
     "aliases": [
-      "王熙凤"
+      "茗煙"
     ],
     "evidence_passages": 3,
-    "chapter_min": 12,
-    "chapter_max": 12,
-    "relationships": 1,
+    "chapter_min": 19,
+    "chapter_max": 19,
+    "relationships": 0,
     "events": 1
   },
   {
@@ -291,52 +256,16 @@
     "events": 1
   },
   {
-    "slug": "e-82266d8f00",
-    "label": "封氏",
+    "slug": "e-22d404bb75",
+    "label": "空空道人",
     "aliases": [
-      "封氏"
+      "空空道人"
     ],
     "evidence_passages": 2,
     "chapter_min": 1,
     "chapter_max": 1,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "e-3aee628e62",
-    "label": "雨村",
-    "aliases": [
-      "雨村"
-    ],
-    "evidence_passages": 2,
-    "chapter_min": 2,
-    "chapter_max": 2,
     "relationships": 1,
-    "events": 2
-  },
-  {
-    "slug": "e-c70fda216d",
-    "label": "贾雨村",
-    "aliases": [
-      "贾雨村"
-    ],
-    "evidence_passages": 2,
-    "chapter_min": 3,
-    "chapter_max": 3,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "e-bc15c3b323",
-    "label": "馮淵",
-    "aliases": [
-      "馮淵"
-    ],
-    "evidence_passages": 2,
-    "chapter_min": 4,
-    "chapter_max": 4,
-    "relationships": 0,
-    "events": 1
+    "events": 0
   },
   {
     "slug": "e-d3a41a41ce",
@@ -351,52 +280,52 @@
     "events": 0
   },
   {
-    "slug": "rongguo-mansion",
-    "label": "Rongguo Mansion",
+    "slug": "e-49542bafd4",
+    "label": "金榮",
     "aliases": [
-      "Rongguo Mansion"
+      "金榮"
     ],
     "evidence_passages": 2,
-    "chapter_min": 6,
-    "chapter_max": 6,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "liu-laolao",
-    "label": "Liu Laolao",
-    "aliases": [
-      "Liu Laolao"
-    ],
-    "evidence_passages": 2,
-    "chapter_min": 6,
-    "chapter_max": 6,
+    "chapter_min": 10,
+    "chapter_max": 10,
     "relationships": 1,
     "events": 2
   },
   {
-    "slug": "e-96658cef60",
-    "label": "智能",
+    "slug": "e-b66e762f77",
+    "label": "賈蓉",
     "aliases": [
-      "智能"
+      "賈蓉"
     ],
     "evidence_passages": 2,
-    "chapter_min": 15,
-    "chapter_max": 15,
-    "relationships": 2,
-    "events": 0
+    "chapter_min": 10,
+    "chapter_max": 10,
+    "relationships": 0,
+    "events": 4
   },
   {
-    "slug": "jia-zhen",
-    "label": "Jia Zhen",
+    "slug": "e-772b35f354",
+    "label": "元春",
     "aliases": [
-      "Jia Zhen"
+      "元春"
     ],
     "evidence_passages": 2,
-    "chapter_min": 17,
-    "chapter_max": 17,
+    "chapter_min": 16,
+    "chapter_max": 16,
     "relationships": 0,
-    "events": 2
+    "events": 1
+  },
+  {
+    "slug": "e-17a6c5179a",
+    "label": "嬌杏",
+    "aliases": [
+      "嬌杏"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 2,
+    "chapter_max": 2,
+    "relationships": 1,
+    "events": 0
   },
   {
     "slug": "e-b2c387330e",
@@ -411,28 +340,52 @@
     "events": 1
   },
   {
-    "slug": "e-7353f8af26",
-    "label": "黛玉",
+    "slug": "e-f828eb4aa9",
+    "label": "賈氏",
     "aliases": [
-      "黛玉"
+      "賈氏"
     ],
     "evidence_passages": 1,
     "chapter_min": 2,
     "chapter_max": 2,
-    "relationships": 0,
-    "events": 1
-  },
-  {
-    "slug": "xiren",
-    "label": "Xiren",
-    "aliases": [
-      "Xiren"
-    ],
-    "evidence_passages": 1,
-    "chapter_min": 6,
-    "chapter_max": 6,
     "relationships": 1,
     "events": 0
+  },
+  {
+    "slug": "e-ac64cd98fe",
+    "label": "王熙鳳",
+    "aliases": [
+      "王熙鳳"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 3,
+    "chapter_max": 3,
+    "relationships": 1,
+    "events": 0
+  },
+  {
+    "slug": "e-3263389afd",
+    "label": "尤氏",
+    "aliases": [
+      "尤氏"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 10,
+    "chapter_max": 10,
+    "relationships": 1,
+    "events": 2
+  },
+  {
+    "slug": "e-f8509b2968",
+    "label": "張友士",
+    "aliases": [
+      "張友士"
+    ],
+    "evidence_passages": 1,
+    "chapter_min": 10,
+    "chapter_max": 10,
+    "relationships": 0,
+    "events": 1
   },
   {
     "slug": "e-a4a658eff7",
@@ -443,31 +396,7 @@
     "evidence_passages": 1,
     "chapter_min": 15,
     "chapter_max": 15,
-    "relationships": 2,
+    "relationships": 1,
     "events": 0
-  },
-  {
-    "slug": "e-5f1a40974d",
-    "label": "賈政",
-    "aliases": [
-      "賈政"
-    ],
-    "evidence_passages": 1,
-    "chapter_min": 16,
-    "chapter_max": 16,
-    "relationships": 0,
-    "events": 2
-  },
-  {
-    "slug": "e-3dfdf87967",
-    "label": "元妃",
-    "aliases": [
-      "元妃"
-    ],
-    "evidence_passages": 1,
-    "chapter_min": 18,
-    "chapter_max": 18,
-    "relationships": 0,
-    "events": 1
   }
 ]

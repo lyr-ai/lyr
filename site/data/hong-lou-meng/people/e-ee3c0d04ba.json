@@ -1,14 +1,14 @@
 {
-  "slug": "e-bc15c3b323",
-  "canonical_label": "馮淵",
+  "slug": "e-ee3c0d04ba",
+  "canonical_label": "無稽崖青埂峰",
   "aliases": [
-    "馮淵"
+    "無稽崖青埂峰"
   ],
-  "entity_type": "person",
+  "entity_type": "place",
   "summary": {
-    "chapter_min": 4,
-    "chapter_max": 4,
-    "evidence_passages": 2,
+    "chapter_min": 1,
+    "chapter_max": 1,
+    "evidence_passages": 1,
     "relationships": 0,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",

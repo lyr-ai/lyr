@@ -222,6 +222,36 @@ def resolve(entities, relationships=()) -> ResolutionResult:
             elif _shared_surname(a.label, b.label):
                 decisions.append(Decision(a.label, b.label, UNSURE, "shared token — candidate, needs review"))
 
+    # pass 1b — CJK name-expansion. Space-less scripts hide the given-name/full-name
+    # containment the token rules catch for English (寶玉 ⊂ 賈寶玉, like Elizabeth ⊂
+    # Elizabeth Bennet). Guards: same type; the short form is a >=2-CJK-char SUFFIX of
+    # the long (surname + given, surname 1-2 chars); not a rejected pair. Ambiguity
+    # guard: a bare form that fits MULTIPLE longer names is UNSURE, never merged
+    # (红楼梦 has both 甄寶玉 and 賈寶玉, so a bare 寶玉 must not auto-merge).
+    def _cjk(s: str) -> list[str]:
+        return [c for c in s if "一" <= c <= "鿿"]
+
+    cjk_cand: dict[str, list[Mention]] = {}
+    for short in ms:
+        cs = _cjk(short.label)
+        if len(cs) < 2:
+            continue
+        for long in ms:
+            if long.id == short.id or long.entity_type != short.entity_type:
+                continue
+            cl = _cjk(long.label)
+            if 1 <= len(cl) - len(cs) <= 2 and long.label.endswith(short.label):
+                if frozenset((short.label, long.label)) not in reject_pairs:
+                    cjk_cand.setdefault(short.id, []).append(long)
+    for short_id, longs in cjk_cand.items():
+        short = next(m for m in ms if m.id == short_id)
+        if len(longs) == 1:
+            decisions.append(Decision(short.label, longs[0].label, LINK, "CJK name expansion"))
+            link_pairs.append((short, longs[0]))
+        else:
+            for lo in longs:
+                decisions.append(Decision(short.label, lo.label, UNSURE, "ambiguous CJK short form"))
+
     # pass 2 — union LINK pairs, but never bridge a rejected pair (guards against
     # a bare form transitively merging a Miss/Mr title-conflict pair)
     uf = _UF([m.id for m in ms])

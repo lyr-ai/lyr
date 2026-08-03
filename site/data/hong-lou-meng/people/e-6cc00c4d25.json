@@ -1,18 +1,18 @@
 {
-  "slug": "e-496ee282ac",
-  "canonical_label": "薛蟠",
+  "slug": "e-6cc00c4d25",
+  "canonical_label": "金釧儿",
   "aliases": [
-    "薛蟠"
+    "金釧儿"
   ],
   "entity_type": "person",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 4,
-    "evidence_passages": 4,
+    "chapter_min": 7,
+    "chapter_max": 7,
+    "evidence_passages": 1,
     "relationships": 0,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",
-    "primary_versions": 2
+    "primary_versions": 1
   },
   "timeline": []
 }

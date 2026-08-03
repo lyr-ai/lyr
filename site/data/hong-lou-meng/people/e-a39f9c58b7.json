@@ -1,18 +1,18 @@
 {
-  "slug": "e-496ee282ac",
-  "canonical_label": "薛蟠",
+  "slug": "e-a39f9c58b7",
+  "canonical_label": "賈蘭",
   "aliases": [
-    "薛蟠"
+    "賈蘭"
   ],
   "entity_type": "person",
   "summary": {
-    "chapter_min": 3,
+    "chapter_min": 4,
     "chapter_max": 4,
-    "evidence_passages": 4,
+    "evidence_passages": 1,
     "relationships": 0,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",
-    "primary_versions": 2
+    "primary_versions": 1
   },
   "timeline": []
 }

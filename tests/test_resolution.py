@@ -88,6 +88,30 @@ def test_component_substring_is_unsure_not_merged():
     assert any(d.decision == "UNSURE" for d in r.decisions)
 
 
+def test_cjk_name_expansion_links_given_to_full():
+    # space-less script: a >=2-char given name is a suffix of surname+given
+    lg, _ = _group_of([_E("1", "玉明"), _E("2", "李玉明")])
+    assert lg["玉明"] == lg["李玉明"]
+
+
+def test_cjk_two_char_surname_ok():
+    lg, _ = _group_of([_E("1", "玉明"), _E("2", "歐陽玉明")])
+    assert lg["玉明"] == lg["歐陽玉明"]
+
+
+def test_cjk_ambiguous_bare_form_never_merges_two_people():
+    # a bare given-name fitting TWO surnames must stay UNSURE (红楼梦: 甄寶玉/賈寶玉)
+    lg, r = _group_of([_E("1", "玉明"), _E("2", "李玉明"), _E("3", "王玉明")])
+    assert lg["李玉明"] != lg["王玉明"]
+    assert any(d.decision == "UNSURE" and d.reason == "ambiguous CJK short form" for d in r.decisions)
+
+
+def test_cjk_type_conflict_not_merged():
+    # 寶玉 (person) is a suffix of 通靈寶玉 (concept) — different type, no merge
+    lg, _ = _group_of([_E("1", "寶玉", "person"), _E("2", "通靈寶玉", "concept")])
+    assert lg["寶玉"] != lg["通靈寶玉"]
+
+
 def test_bare_form_links_person_but_not_component():
     # identical structural shape (X ⊆ "<w> X"), opposite decision by entity type
     lg_p, _ = _group_of([_E("1", "Vale", "person"), _E("2", "George Vale", "person")])

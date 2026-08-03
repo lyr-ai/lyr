@@ -1,18 +1,18 @@
 {
-  "slug": "e-496ee282ac",
-  "canonical_label": "薛蟠",
+  "slug": "e-3fd76806bd",
+  "canonical_label": "妙玉",
   "aliases": [
-    "薛蟠"
+    "妙玉"
   ],
   "entity_type": "person",
   "summary": {
-    "chapter_min": 3,
-    "chapter_max": 4,
-    "evidence_passages": 4,
+    "chapter_min": 18,
+    "chapter_max": 18,
+    "evidence_passages": 2,
     "relationships": 0,
     "events": 0,
     "note": "Version count reflects evidence accumulation, not interpretation change.",
-    "primary_versions": 2
+    "primary_versions": 1
   },
   "timeline": []
 }
