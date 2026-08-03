@@ -92,6 +92,32 @@ for identification to be the *output of a procedure* rather than a property:
 
 The rest of the paper is these four corollaries made mechanical, then stress-tested.
 
+**Figure 1 — the shift the paper proposes.** A traditional pipeline collapses evidence into an
+explanation and reads a conclusion off it. The protocol inserts three things between the evidence
+and any world claim: the formalization set, the joint hypothesis space, and the witnessed
+constraints that produce an identified set.
+
+```
+ Traditional explanation             Auditable identification
+ ────────────────────────            ────────────────────────────
+       Evidence                            Evidence
+          │                                   │
+          ▼                                   ▼
+    Explanation                       Formalization set  F(d)
+          │                                   │
+          ▼                                   ▼
+    Conclusion                            (H, M, F)
+                                              │
+                                              ▼
+                                  Constraints + Witnesses
+                                              │
+                                              ▼
+                                     Identified set  I_Q
+                                              │
+                                              ▼
+                                        World claim
+```
+
 ## 3. Protocol — objects, witness, audit
 
 ### 3.1 Objects
@@ -269,7 +295,73 @@ This removes the authors' shared context — the thing that makes self-assessmen
 but not model-shared priors. A human execution is the stronger version of this test and is
 deferred to the reproduction package, not claimed here.
 
-## 7. Scope
+## 7. Placement in the map of methods
+
+We do not defend novelty; we state where the paper sits. Every object it uses is borrowed —
+what is new is the protocol that holds them together and keeps them visible. A good placement
+lets a reader classify the contribution correctly on the first read, which for a methodological
+paper is the difference between "useful" and "we have seen this."
+
+### 7.1 Neighboring fields
+
+Each neighbor is stated in three lines: what we **borrow**, what we **do not claim**, and the
+**contribution** relative to it.
+
+**Partial identification.**
+*Borrow:* identified sets as the object of inference when a point estimate is unavailable.
+*Do not claim:* any new identification theory or sharp-bound result.
+*Contribution:* an auditable protocol that runs the identified-set idea over a **joint**
+world × measurement × formalization space, with every contraction of that space tagged by a
+witness.
+
+**Measurement error.**
+*Borrow:* the premise that the record is the world seen through an uncertain measurement.
+*Do not claim:* new error models or correction estimators.
+*Contribution:* keeping the measurement assumption **visible throughout** inference, and making
+"which restriction on `M`" an explicit, witnessed step rather than a silent modeling default.
+
+**Provenance.**
+*Borrow:* the history of a record — where each part came from.
+*Do not claim:* new provenance capture or storage systems.
+*Contribution:* treating provenance as **identification constraints** — a source artifact is a
+witness that shrinks `Θ`, not merely metadata attached to a record.
+
+**Explainability.**
+*Borrow:* the goal of structured, inspectable reasoning about a system's behavior.
+*Do not claim:* better or more persuasive explanations.
+*Contribution:* replacing "a convincing explanation" with an **audited identification** — what
+is and is not entailed about the world, and under exactly which assumptions.
+
+**Knowledge representation (belief revision, truth maintenance, argumentation).**
+*Borrow:* structured belief change with explicit justifications.
+*Do not claim:* new revision operators or argumentation semantics.
+*Contribution:* the assumption is a **first-class, witnessed constraint**, and the output is an
+identified set for a named target rather than a single preferred consistent state.
+
+### 7.2 Anticipated classifications
+
+A reviewer's first move is to classify. Three classifications are likely; each is answered by
+**placement, not argument** — we say what the paper *is*, not that the objection is wrong.
+
+- *"This is partial identification with measurement error."* (causal inference / statistics)
+  Partial identification is one ingredient. The contribution is an auditable protocol that keeps
+  world hypotheses, measurement hypotheses, formalization hypotheses, and assumption provenance
+  visible **throughout** identification — not a new bound.
+
+- *"This is prompt engineering around uncertainty."* (AI / NLP)
+  No language model is required by the formalism. The protocol operates over explicit hypothesis
+  classes and a compatibility relation; a language model, if used at all, is only one possible
+  **source of hypotheses**, never part of the identification machinery.
+
+- *"This is Bayesian model comparison without probabilities."* (epistemology / ML)
+  Bayesian comparison is one possible **evaluator**. The protocol specifies how assumptions enter
+  and stay auditable **before** any scoring mechanism is chosen; it runs on logical compatibility,
+  and a likelihood can be layered on afterward without changing what is audited.
+
+Every one of these is a classification error, not a mathematical one. Preempting it is the whole
+point of this section: a reader who knows where we sit can see the object for what it is.
+
+## 8. Scope
 
 We state the boundaries plainly, because overclaiming would undo the paper's whole posture.
 
