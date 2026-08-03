@@ -19,10 +19,15 @@ It answers the questions flat retrieval can't:
 - What evidence changed our understanding?
 - How has this idea evolved over months or years?
 
-**▶ Live demo — the [Judgment Explorer](https://lyr-ai.github.io/lyr/)** walks one durable
-judgment end to end (`Source → Semantic → Builder → Verifier → Durable`) over real
-records: see *why* [coffee was rejected](https://lyr-ai.github.io/lyr/explorer.html#coffee-ritual)
-and [family-over-career was kept](https://lyr-ai.github.io/lyr/explorer.html#family-over-career).
+**▶ Live site — [What can LYR identify that current AI cannot?](https://lyr-ai.github.io/lyr/)** —
+an applications-first product site: a real incident run through the auditable identification
+protocol, plus the paper and research.
+
+The earlier **durable-layer prototype** is still live as the
+[Judgment Explorer](https://lyr-ai.github.io/lyr/explorer.html) — it walks one durable judgment
+end to end (`Source → Semantic → Builder → Verifier → Durable`) over real records: see *why*
+[coffee was rejected](https://lyr-ai.github.io/lyr/explorer.html#coffee-ritual) and
+[family-over-career was kept](https://lyr-ai.github.io/lyr/explorer.html#family-over-career).
 No install.
 
 ---
@@ -248,7 +253,7 @@ Experience → Ingestion → Source Records → Semantic Builder → Semantic Me
   - **B.2** **judgment decomposition** — solved F7; exposed **F4** (durability judgment)
   - **C0/C** **durability verifier** (task frozen first) — drove benchmark false-positives to **0**; one narrow, characterized false-negative remains
   - a frozen [`durability-v1`](experiments/evaluation/benchmark/durability-v1/) benchmark future verifiers re-run against
-- **Judgment Explorer** ✅ a public site ([`site/`](site/), GitHub Pages, [live](https://lyr-ai.github.io/lyr/)) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records
+- **Judgment Explorer** ✅ a public site ([`site/`](site/), GitHub Pages, [live](https://lyr-ai.github.io/lyr/explorer.html)) that walks one durable judgment's full lifecycle — `Source → Semantic → Builder → Verifier → Durable` — over real records
 - **M3.2 — Generic Knowledge Explorer** (next) browse an entire durable knowledge space (People / Ideas / Events / Places / Themes / Lessons, progressive disclosure, navigation-only grouping; every memory drills into the Judgment Explorer). The goal is **not** "explore a book" — it is to show that *one generic representation stays explorable across fundamentally different domains* (Book · Git · Financial …) with **no core changes** — extending the genericity M3.1-E proved for the builder to the navigation layer. A Book is the first validation domain, never the design center. ([design](docs/design/M3.2-knowledge-explorer.md))
 - **M4 — Cognitive Layer** *what persistent internal state lets an intelligent system stay coherent over years?* — cognition as an additional *explorable* layer over durable knowledge, generic across domains (person / company / book / agent / record), not isolated theories
 

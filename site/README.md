@@ -35,9 +35,9 @@ status badges (🟢 Live / 🟡 Ready / ⚪ Planned) — they are never backed b
 Deployed by [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) on every push touching
 `site/`. One-time: **Settings → Pages → Source: "GitHub Actions."**
 
-- Home: `https://lyr-ai.github.io/lyr/`
-- Agent Root Cause: `.../app-agent-root-cause.html`
-- Research: `.../research.html`
+- Home: <https://lyr-ai.github.io/lyr/>
+- Agent Root Cause: [app-agent-root-cause.html](https://lyr-ai.github.io/lyr/app-agent-root-cause.html)
+- Research: [research.html](https://lyr-ai.github.io/lyr/research.html)
 
 ## Run locally
 
