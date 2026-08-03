@@ -100,6 +100,12 @@ def _read(path: str) -> str:
     p = Path(path)
     if not p.is_absolute():
         p = REPO / p
+    # A partial corpus is a valid state — a case may list five official docs but
+    # only some have been dropped in yet. Skip a missing source (empty text →
+    # the parser emits no section for it) instead of crashing the whole run.
+    if not p.exists():
+        print(f"  · skip missing source: {p}")
+        return ""
     return p.read_text(encoding="utf-8", errors="replace")
 
 

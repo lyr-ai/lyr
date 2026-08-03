@@ -1,0 +1,17 @@
+{
+  "case_id": "deepseek",
+  "title": "DeepSeek (official docs)",
+  "language": "en",
+  "source_type": "docs",
+  "parser": "markdown",
+  "ingest": "fine",
+  "public": true,
+  "sources": [
+    { "kind": "report",       "title": "Technical Report",  "path": "explorer/cases/deepseek/technical-report.md" },
+    { "kind": "model-card",   "title": "Model Card",        "path": "explorer/cases/deepseek/model-card.md" },
+    { "kind": "readme",       "title": "README",            "path": "explorer/cases/deepseek/readme.md" },
+    { "kind": "changelog",    "title": "Changelog",         "path": "explorer/cases/deepseek/changelog.md" },
+    { "kind": "announcement", "title": "Announcement",      "path": "explorer/cases/deepseek/announcement.md" }
+  ],
+  "note": "Second identity witness — model/version/component/concept identity (not people). Official first-party docs only (see explorer/cases/deepseek/CORPUS.md); no news/blogs, to hold source-reliability constant and localize any failure to the LYR backend. Drop the .md files, then: python explorer/pipeline/run_case.py --case explorer/cases/deepseek.json --extractor llm --provider openai. Missing source files are skipped (empty text → no section), so a partial corpus still runs."
+}
