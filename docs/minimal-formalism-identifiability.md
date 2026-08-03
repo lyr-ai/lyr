@@ -22,9 +22,16 @@ not ready.*
 - **Identified set.** `I_Q(Θₙ) = { Q(θ) : θ ∈ Θₙ }`.
 - **Point-identification.** `Q` is identified iff `|I_Q(Θₙ)| = 1`. Otherwise `I_Q`
   gives partial identification (a set, bound, or ordering).
+- **Formalization set** (witnessed in §6). A natural-language description `d` admits a
+  **set** `F(d) = {f₁, f₂, …}` of admissible compilations into `(H, M, Q)` — *not* a
+  function, since one phrase may legitimately formalize several ways. `F` is an open
+  class, audited exactly like `H`/`M`: a formalization is excluded only by a witnessed
+  constraint, and stays multi-valued until one does.
+- **F-robust identified set.** `I_Q(d) = ⋃_{f ∈ F(d)} I_Q(Θₙ^{(f)})`. `Q` is
+  *F-robustly identified* iff every `f ∈ F(d)` yields the same singleton.
 
-Identifiability is always of a **target `Q`**, relative to `(H, M, {cᵢ})` — never of
-the whole `Θ`.
+Identifiability is always of a **target `Q`**, relative to `(H, M, {cᵢ}, F)` — never of
+the whole `Θ`, and never relative to a single silently-chosen formalization.
 
 ---
 
@@ -179,3 +186,50 @@ what was done: the examples are hand-computed 2×2 joints, so what is establishe
 *executability on a finite class*, not scaling.
 
 The paper is now an expansion of this note, not the proposal of an idea.
+
+---
+
+## 6. Falsifier 1 — auditor determinism, and the formalization layer
+
+**Setup.** `r` = *"After that day I no longer worry about her. I just started doing what
+needs to be done."* `h₁` = worry decreased; `h₂` = still worries, may express otherwise.
+`m₁` (natural language) = "reports current subjective state directly"; `m₂` = "after
+conflict, rewrites vulnerable emotion into duty-narrative". `Q` = "did real worry decrease?"
+
+**(a) Un-formalized `m₁` → auditors diverge.** On the four pairs, two competent auditors
+agreed on three; on `(h₂, m₁)` they split — A: *incompatible* (a faithful reporter who
+still worries would not write "I stopped worrying"); B: *compatible* ("current state" = a
+momentary lull, consistent with a persisting disposition).
+`C_A = {(h₁,m₁),(h₁,m₂),(h₂,m₂)}`, `C_B = {all four}`. The split is **not** about reading
+the diary (both read it identically) — it is about what `m₁` *allows*.
+
+**(b) The divergence is target-dependent.** For `Q` ("worry↓"): `I_Q^A = I_Q^B = {yes,no}`
+— the disputed pair carries `no`, already present via `(h₂,m₂)`, so it washes out. For
+`Q'' = "(h₂ ∧ direct-report)"`: `I_{Q''}^A = {no}` (identified), `I_{Q''}^B = {yes,no}`
+(not) — the auditors return **different identification verdicts**. So falsifier #2 *can*
+bite.
+
+**(c) Positive control — pre-formalize `m₁`, evaluation re-agrees.** Compile `m₁` into two
+explicit input→allowed-output relations: `m₁ˢᵗᵃᵗᵉ` (permits "stopped_worry" whenever a
+momentary lull is possible — allowed under `h₁` and `h₂`) and `m₁ᵈⁱˢᵖ` (permits it only if
+the disposition is low — **forbids** it under `h₂`). Judgment is now membership against a
+fixed relation, and `C_A = C_B` under **each** formalization (table above in the cover
+note). The divergence of (a) is therefore **not** in compatibility evaluation.
+
+**(d) The witnessed addition — `F`, multi-valued.** The disagreement relocates, with a
+witness, to natural-language→formal compilation. `F` enters as a **set**
+`F(d) = {m₁ˢᵗᵃᵗᵉ, m₁ᵈⁱˢᵖ}`, and the F-robust identified set is the union
+`I_Q(d) = ⋃_{f∈F(d)} I_Q^{(f)}`:
+- `Q` (worry↓): `{yes,no} ∪ {yes,no} = {yes,no}` — robustly *not* identified.
+- `Q''`: `{no} ∪ {yes,no} = {yes,no}` — identified under `m₁ᵈⁱˢᵖ` **only**; the honest
+  output names the formalization its identification depends on.
+
+**Consequence.** Natural-language formalization is itself an **open hypothesis class**,
+audited like `H` and `M` — multi-valued, shrunk only by witnessed constraints, never
+silently collapsed. The formalism now has **three** open classes — world `H`, measurement
+`M`, formalization `F` — under one discipline, and the union over `F` is the
+formalization-honest verdict.
+
+Falsifier #2 did not break the system: it *located* the disagreement (formalization, not
+evaluation) and forced a witnessed extension, not an arbitrary patch. My earlier guess
+that #2 was "survivable by design" was wrong — it bites, and the bite is productive.
