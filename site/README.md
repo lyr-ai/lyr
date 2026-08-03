@@ -1,63 +1,63 @@
-# LYR site — landing page + Judgment Explorer (M5.0)
+# LYR site — product site (applications-first)
 
-LYR's public site, deployed to **GitHub Pages** (separate audience from the code repo):
+LYR's public site, deployed to **GitHub Pages**. It is a **product** site, not documentation:
+it leads with real applications and shows the protocol working; the research sits behind them.
 
-- **`index.html`** — landing page: the 30-second value proposition + two CTAs
-  (*Open the Judgment Explorer* / *Read the research*).
-- **`explorer.html`** — the **Judgment Explorer**: a read-only walk through one durable
-  judgment's full lifecycle — *Source → Semantic → Builder → Verifier → Durable* —
-  framed as *"Why does the system keep / reject this?"*, ending with the research
-  finding each case demonstrates.
+## Pages
 
-Design: [`docs/design/M5.0-judgment-explorer.md`](../docs/design/M5.0-judgment-explorer.md).
+- **`index.html`** — homepage. One line (*AI can generate explanations; LYR tells you whether they
+  refer to the world*), then a **real** flagship demo (Case 001: a GitHub Pages deploy failure,
+  traditional-AI vs. LYR), the three application cards with honest status badges, and a
+  "build with your own evidence" strip.
+- **`app-agent-root-cause.html`** — the Agent Root-Cause application (🟢 Live). Case 001 in the
+  unified six-part view: Evidence → Hypotheses → Measurement assumptions → Witnesses →
+  Identified set → Next observation.
+- **`app-pet-health.html`** — the Dog Health / community-knowledge application (🟡 Ready). The same
+  view, shown **empty**, awaiting real ethically-obtained cases (no fabricated examples), plus the
+  tiered data-ethics table.
+- **`research.html`** — for researchers: the paper, the protocol note, the reproduction
+  experiment, and the durable-layer Judgment Explorer prototype.
+- **`about.html`** — what LYR is, the three lines (Theory frozen / Method / Applications), status,
+  and the discipline.
+- **`product.css`** — shared styles (theme-aware; self-contained).
+
+**Discipline on this site:** every demo is a **real** case. Domains without real cases show honest
+status badges (🟢 Live / 🟡 Ready / ⚪ Planned) — they are never backed by invented examples.
+
+## Durable-layer prototype (earlier line, still live)
+
+- **`explorer.html`** + **`data.js`** + **`records/`** + **`build_data.py`** — the Judgment
+  Explorer (model-driven durable memory with provenance, from the M3.1-C.1 run). Linked from
+  `research.html`. Regenerate: `python site/build_data.py`.
 
 ## Live
 
-Deployed by [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) on every
-push that touches `site/`. One-time repo setup: **Settings → Pages → Source: “GitHub
-Actions.”** Then:
+Deployed by [`.github/workflows/pages.yml`](../.github/workflows/pages.yml) on every push touching
+`site/`. One-time: **Settings → Pages → Source: "GitHub Actions."**
 
-- Landing: `https://lyr-ai.github.io/lyr/`
-- Explorer: `https://lyr-ai.github.io/lyr/explorer.html`
-- Deep links: `.../explorer.html#coffee-ritual`, `#family-over-career`,
-  `#guidance-reversal`, `#payments-ci-flakiness`
+- Home: `https://lyr-ai.github.io/lyr/`
+- Agent Root Cause: `.../app-agent-root-cause.html`
+- Research: `.../research.html`
 
 ## Run locally
 
-Fully self-contained — no build, no server, no network:
+Self-contained — no build, no server, no network:
 
 ```bash
 open site/index.html
-```
-
-## Regenerate the data
-
-```bash
-python site/build_data.py   # records/ + experiment fixtures → data.js
-```
-
-It reads the real full-lifecycle `JudgmentRecord`s in `site/records/` (from the
-M3.1-C.1 verified run), resolves each cited evidence id back to its **semantic label
-and original Source passage** (parsed from the experiment `input.md` files), attaches
-a human title + the research finding, and writes `site/data.js`
-(`window.LYR_RECORDS`). 16 substantive judgments are shown (13 KEEP + 3 REJECT); the
-builder-`NO_OP` units (empty statement) are skipped.
-
-## Embed in the blog
-
-```html
-<iframe src="https://lyr-ai.github.io/lyr/explorer.html#coffee-ritual"
-        width="100%" height="720" style="border:1px solid #e5e7eb;border-radius:12px"></iframe>
 ```
 
 ## Layout
 
 ```
 site/
-  index.html       landing page
-  explorer.html    the Judgment Explorer (loads data.js; theme-aware; read-only)
-  data.js          generated: window.LYR_RECORDS = [ …enriched records… ]
-  build_data.py    records/ + experiment fixtures → data.js
-  records/         real JudgmentRecords (committed demo evidence)
-  .nojekyll        serve files as-is on Pages
+  index.html               product homepage
+  app-agent-root-cause.html   Agent Root Cause application (Live; Case 001)
+  app-pet-health.html      Dog Health application (Ready; awaiting real cases)
+  research.html            paper · protocol · reproduction · explorer
+  about.html               what LYR is; the three lines; the discipline
+  product.css              shared styles
+  explorer.html            durable-layer Judgment Explorer prototype
+  data.js / records/ / build_data.py   explorer data
+  .nojekyll                serve files as-is on Pages
 ```

@@ -3,147 +3,101 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LYR — Living Knowledge Layers</title>
-<meta name="description" content="LYR forms durable, model-driven long-term knowledge from evolving information — and preserves why it believes it, how it was verified, and how it traces back to source. Explore real judgments.">
-<style>
-  :root{
-    --bg:#f6f6f8; --panel:#fff; --ink:#181820; --muted:#66707c; --line:#e6e7eb; --soft:#f0f1f4;
-    --keep:#15803d; --keep-bg:#dcfce7; --reject:#b91c1c; --reject-bg:#fee2e2; --accent:#4f46e5; --accent-ink:#fff;
-  }
-  @media (prefers-color-scheme:dark){:root{
-    --bg:#0c0d11; --panel:#15171f; --ink:#e9e9ef; --muted:#98a0ac; --line:#262933; --soft:#1c1f28;
-    --keep:#4ade80; --keep-bg:#0f2f1c; --reject:#f87171; --reject-bg:#3a1414; --accent:#8b93ff; --accent-ink:#0c0d11; }}
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
-  a{color:var(--accent)}
-  /* hero */
-  .hero{text-align:center;padding:70px 0 44px}
-  .brand{font-size:13px;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);font-weight:800}
-  h1{font-size:44px;line-height:1.08;margin:14px 0 0;letter-spacing:-.02em}
-  .tag{font-size:19px;color:var(--muted);max-width:40ch;margin:16px auto 0}
-  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
-  .btn{display:inline-block;padding:12px 22px;border-radius:11px;font-weight:700;font-size:15px;text-decoration:none;border:1px solid var(--line)}
-  .btn.primary{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
-  .btn.ghost{background:var(--panel);color:var(--ink)}
-  .repo{margin-top:16px;font-size:13.5px;color:var(--muted)}
-  /* contrast */
-  section{padding:30px 0}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);text-align:center;margin:0 0 18px}
-  .cols{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-  @media (max-width:680px){.cols{grid-template-columns:1fr}h1{font-size:34px}}
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
-  .card h3{margin:0 0 10px;font-size:16px}
-  .card.old h3{color:var(--muted)} .card.new h3{color:var(--accent)}
-  .card ul{margin:0;padding-left:18px;color:var(--muted);font-size:14.5px} .card li{margin:5px 0}
-  .card.new li{color:var(--ink)}
-  /* layers */
-  .layers{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px;text-align:center}
-  .layers .row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;font-weight:700}
-  .lyr{background:var(--soft);border:1px solid var(--line);border-radius:10px;padding:8px 14px}
-  .lyr.next{opacity:.6;border-style:dashed;font-weight:600}
-  .lyr.next em{font-style:normal;color:var(--accent);font-size:11px;letter-spacing:.04em}
-  .layers .arw{color:var(--muted)}
-  .layers p{color:var(--muted);font-size:13.5px;margin:14px 0 0}
-  /* featured */
-  .feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  @media (max-width:680px){.feat{grid-template-columns:1fr}}
-  .fj{display:flex;gap:12px;align-items:center;background:var(--panel);border:1px solid var(--line);
-    border-radius:12px;padding:14px 16px;text-decoration:none;color:inherit}
-  .fj:hover{border-color:var(--accent)}
-  .fj .mk{font-size:20px}
-  .fj .t{font-weight:700} .fj .s{font-size:12.5px;color:var(--muted)}
-  .badge{margin-left:auto;font-size:11px;font-weight:800;padding:3px 9px;border-radius:20px}
-  .badge.KEEP{color:var(--keep);background:var(--keep-bg)} .badge.REJECT{color:var(--reject);background:var(--reject-bg)}
-  footer{text-align:center;color:var(--muted);font-size:13px;padding:36px 0 60px}
-  .code{font-family:ui-monospace,Menlo,monospace}
-</style>
+<title>LYR — Does the explanation refer to the world?</title>
+<meta name="description" content="AI can generate explanations. LYR tells you whether they actually refer to the world — by showing what is identified, what is only a measurement artifact, and what stays unknown.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔎</text></svg>">
+<link rel="stylesheet" href="product.css">
 </head>
 <body>
-<div class="wrap">
 
-  <div class="hero">
-    <div class="brand">LYR</div>
-    <h1>Living Knowledge Layers</h1>
-    <p class="tag">Most AI systems store documents. LYR <b>forms knowledge</b> — and remembers
-       <b>why</b> it believes it.</p>
-    <div class="cta">
-      <a class="btn primary" href="explorer.html">Open the Judgment Explorer →</a>
-      <a class="btn ghost" href="https://github.com/lyr-ai/lyr/blob/main/docs/M3.1-research-arc.md">Read the research</a>
+<nav class="top"><div class="wrap">
+  <a class="logo" href="index.html"><b>LYR</b></a>
+  <span class="sp"></span>
+  <a class="lnk on" href="#applications">Applications</a>
+  <a class="lnk" href="research.html">Research</a>
+  <a class="lnk" href="about.html">About</a>
+</div></nav>
+
+<header class="hero"><div class="wrap narrow">
+  <div class="kicker">LYR</div>
+  <h1><span class="d">AI can generate explanations.</span> LYR tells you whether they actually refer to the world.</h1>
+  <p class="sub">Not "what's most likely" — <b>what is currently identified</b>, what is only a measurement artifact, and what a single next observation would resolve.</p>
+  <div class="scroll">A real incident, two ways ↓</div>
+</div></header>
+
+<!-- FLAGSHIP DEMO — a real case -->
+<section><div class="wrap narrow">
+  <div class="demoframe">
+    <div class="bar"><span class="tag">● Real case</span> — from this project's own deployment history (Case 001)</div>
+    <div class="inp">A GitHub Action failed. The log shows: <code>configure-pages: Get Pages site failed</code></div>
+    <div class="cols2">
+      <div class="colL">
+        <p class="coltag old">Traditional AI</p>
+        <p class="flat"><span class="q">"The Pages deployment failed."</span><br><br>It restates the error message as the diagnosis — treating the measurement's output as if it were the cause.</p>
+      </div>
+      <div class="colR">
+        <p class="coltag new">LYR</p>
+        <div class="row"><div class="rl">World hypotheses</div><div class="rv">
+          <span class="h">Pages not enabled</span><span class="h">workflow misconfig</span><span class="h">token perms</span><span class="h">transient outage</span>
+        </div></div>
+        <div class="row"><div class="rl">Measurement assumption</div><div class="rv">The message <span class="mono">"Get Pages site failed"</span> is <span class="art">generic across all four causes</span> — so it is a <span class="art">measurement artifact</span>, not evidence for any one of them.</div></div>
+        <div class="row"><div class="rl">Identified — on the log alone</div><div class="rv"><b>Nothing.</b> All four hypotheses remain live. The error text identifies no cause.</div></div>
+        <div class="row"><div class="rl">Identified — after a witness</div><div class="rv"><span class="ided">Pages was never enabled.</span> Witnessed by the settings state + a single-line fix (<span class="mono">enablement: true</span>) that made the next run succeed.</div></div>
+        <div class="row"><div class="rl">Still unidentified</div><div class="rv">Whether token permissions would have blocked a later step; whether any transient contributed.</div></div>
+        <div class="row"><div class="rl">Next observation</div><div class="rv">A run with Pages enabled but permissions removed would close the first; GitHub status history closes the second.</div></div>
+      </div>
     </div>
-    <div class="repo">Open source · <a href="https://github.com/lyr-ai/lyr">github.com/lyr-ai/lyr</a></div>
   </div>
+  <p class="muted" style="text-align:center;margin-top:14px;font-size:14px">Every claim above is tagged with the assumption it rests on. The diagnosis is stated <b>with</b> what it still doesn't know — that is the whole point.</p>
+</div></section>
 
-  <section>
-    <h2>The difference</h2>
-    <div class="cols">
-      <div class="card old">
-        <h3>Traditional AI memory</h3>
-        <ul>
-          <li>Stores documents or embeddings</li>
-          <li>Returns the closest text</li>
-          <li>Can't say <i>why</i> it believes something</li>
-          <li>Forgets how understanding changed</li>
-        </ul>
-      </div>
-      <div class="card new">
-        <h3>LYR</h3>
-        <ul>
-          <li><b>Forms</b> durable knowledge from evolving evidence</li>
-          <li><b>Explains why</b> a memory exists — proposal, verdict, commit</li>
-          <li><b>Verifies</b> whether something deserves to persist</li>
-          <li><b>Traces</b> every belief back to its original source</li>
-        </ul>
-      </div>
+<!-- APPLICATIONS -->
+<section id="applications"><div class="wrap">
+  <p class="eyebrow">Applications</p>
+  <h2 class="sechead">One protocol. Any domain where evidence is uncertain.</h2>
+  <p class="secnote">The same view everywhere — evidence, hypotheses, measurement assumptions, witnesses, identified set, next observation. When every application looks identical, the protocol is doing the work, not the domain.</p>
+  <div class="apps">
+    <a class="appcard" href="app-agent-root-cause.html" style="color:inherit">
+      <div class="ico">🖥️</div>
+      <h3>Agent Incident</h3>
+      <div class="q">Why did the deployment fail?</div>
+      <div class="foot"><span class="pill live"><span class="dot"></span>Live</span><span class="explore">Explore →</span></div>
+    </a>
+    <a class="appcard" href="app-pet-health.html" style="color:inherit">
+      <div class="ico">🐶</div>
+      <h3>Dog Health</h3>
+      <div class="q">Is this really an ACL tear?</div>
+      <div class="foot"><span class="pill ready"><span class="dot"></span>Ready</span><span class="explore off">Awaiting real cases</span></div>
+    </a>
+    <div class="appcard">
+      <div class="ico">📖</div>
+      <h3>Book</h3>
+      <div class="q">Does this claim refer to the world?</div>
+      <div class="foot"><span class="pill planned"><span class="dot"></span>Planned</span><span class="explore off">Planned</span></div>
     </div>
-  </section>
+  </div>
+</div></section>
 
-  <section>
-    <h2>Four layers over immutable evidence</h2>
-    <div class="layers">
-      <div class="row">
-        <span class="lyr">Source</span><span class="arw">→</span>
-        <span class="lyr">Semantic</span><span class="arw">→</span>
-        <span class="lyr">Durable</span><span class="arw">→</span>
-        <span class="lyr next">Cognitive <em>· next</em></span>
-      </div>
-      <p>Every layer above Source cites its evidence one layer down — so any belief is a single
-         walk back to what actually happened. The <b>Durable</b> layer is model-driven and was
-         <b>evaluated on a frozen four-domain benchmark</b> (M3.1). The <b>Cognitive</b> layer is
-         the next layer — future work, not yet built.</p>
+<!-- BRING YOUR OWN -->
+<section><div class="wrap narrow">
+  <div class="byo">
+    <h3>Build with your own evidence</h3>
+    <p>Bring a record whose explanation you don't yet trust — LYR runs the same audit over it.</p>
+    <div class="chips">
+      <span class="chip">Agent logs</span><span class="chip">A book or article</span><span class="chip">A forum thread</span>
+      <span class="chip">An incident timeline</span><span class="chip">A medical history</span><span class="chip">Telemetry</span>
     </div>
-  </section>
+    <p class="muted" style="margin:16px 0 0;font-size:13.5px">Coming soon.</p>
+  </div>
+</div></section>
 
-  <section>
-    <h2>See it on one real judgment</h2>
-    <div class="feat" id="feat"></div>
-    <p style="text-align:center;color:var(--muted);font-size:13px;margin-top:14px">
-      Each is an actual <span class="code">JudgmentRecord</span> from the M3.1-C.1 experiment —
-      no install, no signup.</p>
-  </section>
+<footer><div class="wrap">
+  <span>LYR — auditable identification.</span>
+  <span class="sp"></span>
+  <a href="research.html">Research</a>
+  <a href="about.html">About</a>
+  <a href="https://github.com/lyr-ai/lyr">GitHub</a>
+</div></footer>
 
-  <footer>
-    LYR · Living Knowledge Layers &nbsp;·&nbsp;
-    <a href="explorer.html">Explorer</a> &nbsp;·&nbsp;
-    <a href="https://github.com/lyr-ai/lyr">GitHub</a>
-  </footer>
-
-</div>
-
-<script>
-const FEATURED=[
-  {slug:"coffee-ritual",     mk:"❌", t:"Coffee ritual",     s:"a recurring habit — trivia", v:"REJECT", note:"Rejected"},
-  {slug:"family-over-career",mk:"✅", t:"Family over career",s:"a lifelong pattern",         v:"KEEP",   note:"Kept"},
-  {slug:"guidance-reversal", mk:"❌", t:"Guidance reversal", s:"a real trend the system dropped", v:"REJECT", note:"Should have been kept"},
-  {slug:"payments-ci-flakiness",mk:"✅",t:"Payments CI flakiness",s:"a recurring blocker",     v:"KEEP",   note:"Kept"},
-];
-document.getElementById("feat").innerHTML = FEATURED.map(f=>
-  `<a class="fj" href="explorer.html#${f.slug}">
-     <span class="mk">${f.mk}</span>
-     <span><div class="t">${f.t}</div><div class="s">${f.s}</div></span>
-     <span class="badge ${f.v}">${f.note}</span>
-   </a>`).join("");
-</script>
 </body>
 </html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Agent Root Cause — LYR</title>
+<meta name="description" content="LYR applied to agent/CI root-cause analysis. A real incident run through the identification protocol: hypotheses, measurement assumptions, witnesses, identified set, and the next observation.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔎</text></svg>">
+<link rel="stylesheet" href="product.css">
+</head>
+<body>
+
+<nav class="top"><div class="wrap">
+  <a class="logo" href="index.html"><b>LYR</b></a>
+  <span class="sp"></span>
+  <a class="lnk on" href="index.html#applications">Applications</a>
+  <a class="lnk" href="research.html">Research</a>
+  <a class="lnk" href="about.html">About</a>
+</div></nav>
+
+<section><div class="wrap narrow">
+  <p class="eyebrow">Application · Agent Root Cause &nbsp;<span class="pill live"><span class="dot"></span>Live</span></p>
+  <h1 class="sechead">🖥️ Why did the deployment fail?</h1>
+  <p class="secnote">A <b>real</b> incident from this project's deployment history, run through the identification protocol. The same six-part view is used by every LYR application — the protocol is domain-independent.</p>
+
+  <div class="callout"><b>Failure mode covered:</b> ambiguous / generic measurement — an error message that reads like a cause but is really the output of a lossy measurement.</div>
+
+  <!-- 1 -->
+  <div class="panel">
+    <h3>1 · Evidence timeline</h3>
+    <ul class="tl">
+      <li><div class="t">CI run fails at <span class="mono">configure-pages</span></div><div class="m">Record <code>r₁</code>: log message "Get Pages site failed"; the run halts. <span class="muted">(Provenance: read in-session, summary granularity.)</span></div></li>
+      <li><div class="t">Repository Settings → Pages inspected</div><div class="m">Record <code>r₂</code>: the Pages source is not established via Actions.</div></li>
+      <li><div class="t">One-line change applied</div><div class="m"><span class="mono">enablement: true</span> added to the step — nothing else changed.</div></li>
+      <li><div class="t">Next run succeeds; site goes live</div><div class="m">The deploy publishes at the project Pages URL.</div></li>
+    </ul>
+  </div>
+
+  <!-- 2 -->
+  <div class="panel">
+    <h3>2 · World hypotheses (candidate causes)</h3>
+    <div class="row"><div class="rl">h_notenabled</div><div class="rv">Pages was never enabled — no site to configure.</div></div>
+    <div class="row"><div class="rl">h_workflow</div><div class="rv">The workflow YAML is misconfigured.</div></div>
+    <div class="row"><div class="rl">h_perms</div><div class="rv">The workflow token lacks Pages write permission.</div></div>
+    <div class="row"><div class="rl">h_transient</div><div class="rv">A transient GitHub-side outage.</div></div>
+  </div>
+
+  <!-- 3 -->
+  <div class="panel">
+    <h3>3 · Measurement assumptions</h3>
+    <p>How did the failure become <em>this</em> record? Two candidate measurement processes:</p>
+    <div class="row"><div class="rl">m_specific</div><div class="rv">the action reports the true underlying cause.</div></div>
+    <div class="row"><div class="rl">m_generic</div><div class="rv"><span class="art">the same "Get Pages site failed" is emitted for several causes — a lossy measurement.</span></div></div>
+    <p class="muted" style="margin:10px 0 0">The message did not vary with the cause → <b>m_generic is operative</b>. So <code>r₁</code> is a <span class="art">measurement artifact</span>, not a reading of the cause. Naming this is the move a checklist skips.</p>
+  </div>
+
+  <!-- 4 -->
+  <div class="panel">
+    <h3>4 · Witnesses</h3>
+    <table class="w">
+      <tr><th>constraint</th><th>witness</th><th>type</th><th>excludes</th></tr>
+      <tr><td>c₁ — a site was never set up</td><td>Settings → Pages state (<code>r₂</code>)</td><td>empirical, under <span class="mono">A_settings</span></td><td>h_workflow, h_perms as primary</td></tr>
+      <tr><td>c₂ — the fix identifies the blocker</td><td>single-change <span class="mono">enablement:true</span> → success</td><td>empirical, under <span class="mono">A_intervention, A_nontransient</span></td><td>the remaining alternatives</td></tr>
+    </table>
+  </div>
+
+  <!-- 5 -->
+  <div class="panel">
+    <h3>5 · Identified set <span class="muted mono">I_Q</span> — "what caused the failure?"</h3>
+    <div class="row"><div class="rl">on <span class="mono">r</span> alone</div><div class="rv"><span class="h">not enabled</span><span class="h">workflow</span><span class="h">perms</span><span class="h">transient</span> &nbsp;— <b>not identified</b></div></div>
+    <div class="row"><div class="rl">after c₁</div><div class="rv">narrows toward <b>not enabled</b>; perms not yet excluded from co-occurring</div></div>
+    <div class="row"><div class="rl">after c₂</div><div class="rv"><span class="ided">{ Pages was never enabled }</span> — identified, under <span class="mono">A_settings, A_intervention, A_nontransient</span></div></div>
+  </div>
+
+  <!-- 6 -->
+  <div class="panel">
+    <h3>6 · What would change the conclusion?</h3>
+    <div class="row"><div class="rl">open</div><div class="rv">Would <b>token permissions</b> have blocked a later step? <span class="muted">Never reached.</span> → <em>closing witness:</em> a run with Pages enabled but permission removed.</div></div>
+    <div class="row"><div class="rl">open</div><div class="rv">Did a <b>transient</b> contribute? <span class="muted">Excluded only weakly.</span> → <em>closing witness:</em> GitHub status history for that window.</div></div>
+    <div class="row"><div class="rl">provenance</div><div class="rv">The raw failing log was at summary granularity. → <em>closing witness:</em> re-capture the run log into the repo.</div></div>
+  </div>
+
+  <p class="muted" style="font-size:14px">The value here was not a cleverer guess — the fix was known. It was refusing to read the generic error as the cause, and stating the diagnosis <b>with</b> the assumption that carried it and what it still doesn't know.</p>
+
+  <a class="backlink" href="index.html#applications">← All applications</a> &nbsp;·&nbsp;
+  <a class="backlink" href="https://github.com/lyr-ai/lyr/blob/main/docs/applications/agent-root-cause/case-001-pages-deploy-failure.md">Full case write-up on GitHub →</a>
+</div></section>
+
+<footer><div class="wrap">
+  <span>LYR — auditable identification.</span>
+  <span class="sp"></span>
+  <a href="research.html">Research</a>
+  <a href="about.html">About</a>
+  <a href="https://github.com/lyr-ai/lyr">GitHub</a>
+</div></footer>
+
+</body>
+</html>
