@@ -3,10 +3,10 @@
 
     python explorer/run.py
 
-Downloads the demo source if needed, asks for your Anthropic API key (hidden
-input, optionally saved for next time), asks how many chapters, then runs the
-real LLM extraction over Pride and Prejudice and writes the knowledge.json the
-explorer renders. No flags to remember.
+Pick a provider (OpenAI/ChatGPT or Anthropic/Claude), paste your API key (hidden,
+optionally saved), choose how many chapters — then it runs the real LLM
+extraction over Pride and Prejudice and writes the knowledge.json the explorer
+renders. No flags to remember.
 """
 from __future__ import annotations
 
@@ -24,7 +24,27 @@ ENV = HERE / ".env"
 SRC = DATA / "pride-and-prejudice.raw.txt"
 EXPORT = HERE / "pipeline" / "export_knowledge.py"
 GUTENBERG = "https://www.gutenberg.org/files/1342/1342-0.txt"
-MODEL = "claude-haiku-4-5"  # cheap + fast; change to claude-opus-4-8 for max quality
+
+PROVIDERS = {
+    "openai": {
+        "label": "OpenAI (ChatGPT)",
+        "env": "OPENAI_API_KEY",
+        "model": "gpt-4o-mini",           # cheap + fast; use gpt-4o for max quality
+        "import": "openai",
+        "keys_url": "https://platform.openai.com/api-keys",
+        "billing_url": "https://platform.openai.com/settings/organization/billing",
+        "note": "The API needs its own credit — a ChatGPT Plus/Pro subscription does NOT include it.",
+    },
+    "anthropic": {
+        "label": "Anthropic (Claude)",
+        "env": "ANTHROPIC_API_KEY",
+        "model": "claude-haiku-4-5",
+        "import": "anthropic",
+        "keys_url": "https://console.anthropic.com/settings/keys",
+        "billing_url": "https://console.anthropic.com/settings/billing",
+        "note": "Needs API credit under Plans & Billing.",
+    },
+}
 
 
 def say(m: str = "") -> None:
@@ -40,37 +60,51 @@ def ensure_source() -> None:
     say(f"   saved → explorer/data/{SRC.name}")
 
 
-def check_anthropic() -> None:
+def ask_provider() -> str:
+    say("Which API do you want to use?")
+    say("  [1] OpenAI (ChatGPT)")
+    say("  [2] Anthropic (Claude)")
+    choice = input("Choose [1]: ").strip() or "1"
+    return "anthropic" if choice == "2" else "openai"
+
+
+def check_pkg(cfg: dict) -> None:
     try:
-        import anthropic  # noqa: F401
+        __import__(cfg["import"])
     except ImportError:
-        say("✗  The 'anthropic' package isn't installed. Install it with:")
-        say("       pip install anthropic")
+        say(f"✗  The '{cfg['import']}' package isn't installed. Install it with:")
+        say(f"       pip install {cfg['import']}")
         sys.exit(1)
 
 
-def env_file_key() -> str | None:
-    if not ENV.exists():
-        return None
-    for line in ENV.read_text().splitlines():
-        if line.strip().startswith("ANTHROPIC_API_KEY="):
-            return line.split("=", 1)[1].strip().strip('"').strip("'")
-    return None
+def _env_file_pairs() -> dict[str, str]:
+    pairs: dict[str, str] = {}
+    if ENV.exists():
+        for line in ENV.read_text().splitlines():
+            s = line.strip()
+            if s and not s.startswith("#") and "=" in s:
+                k, v = s.split("=", 1)
+                pairs[k.strip()] = v.strip().strip('"').strip("'")
+    return pairs
 
 
-def get_key() -> str:
-    key = os.environ.get("ANTHROPIC_API_KEY") or env_file_key()
+def get_key(cfg: dict) -> str:
+    var = cfg["env"]
+    key = os.environ.get(var) or _env_file_pairs().get(var)
     if key:
-        say("✓  Using the Anthropic API key already configured.")
+        say(f"✓  Using the {cfg['label']} key already configured.")
         return key
-    say("This run calls the Anthropic API, so it needs your key.")
-    say("Get one at https://console.anthropic.com/  (it starts with 'sk-ant-').")
-    key = getpass.getpass("   Paste your Anthropic API key (hidden): ").strip()
+    say(f"\nThis run calls the {cfg['label']} API, so it needs your key.")
+    say(f"   Get one at {cfg['keys_url']}")
+    say(f"   Note: {cfg['note']}")
+    key = getpass.getpass("   Paste your API key (hidden): ").strip()
     if not key:
         say("No key entered — aborting.")
         sys.exit(1)
     if input("   Save it to explorer/.env for next time? [y/N]: ").strip().lower() == "y":
-        ENV.write_text(f"ANTHROPIC_API_KEY={key}\n")
+        pairs = _env_file_pairs()
+        pairs[var] = key
+        ENV.write_text("".join(f"{k}={v}\n" for k, v in pairs.items()))
         try:
             os.chmod(ENV, 0o600)
         except OSError:
@@ -92,20 +126,23 @@ def ask_chapters() -> int:
 
 def main() -> None:
     say("── LYR Explorer — build a living knowledge space ─────────────")
-    say("Demo source: Pride and Prejudice.  Model: Claude Haiku (low cost).")
+    say("Demo source: Pride and Prejudice.")
     say("")
     ensure_source()
-    check_anthropic()
-    key = get_key()
+    provider = ask_provider()
+    cfg = PROVIDERS[provider]
+    say(f"→  {cfg['label']}, model {cfg['model']} (edit PROVIDERS in run.py to change).")
+    check_pkg(cfg)
+    key = get_key(cfg)
     n = ask_chapters()
     out = DATA / ("knowledge.full.json" if n >= 61 else f"knowledge.ch{n:02d}.json")
 
     say(f"\n▶  Extracting knowledge from {n} chapter(s) — about {n}+ API calls. One moment…\n")
-    env = {**os.environ, "ANTHROPIC_API_KEY": key}  # passed via env, never on the command line
+    env = {**os.environ, cfg["env"]: key}  # key passed via env, never on the command line
     cmd = [
         sys.executable, str(EXPORT),
-        "--extractor", "llm", "--provider", "anthropic", "--consolidator", "llm",
-        "--model", MODEL, "--limit", str(n), "--out", str(out),
+        "--extractor", "llm", "--provider", provider, "--consolidator", "llm",
+        "--model", cfg["model"], "--limit", str(n), "--out", str(out),
     ]
     result = subprocess.run(cmd, env=env)
 
@@ -114,7 +151,9 @@ def main() -> None:
         say("   That file is what the explorer renders. Re-run any time to redo or extend it.")
     else:
         say("\n✗  The run failed above. Most common causes:")
-        say("   • the API key is wrong or has no billing/credit")
+        say("   • the API key is wrong, or the account has no credit/billing set up")
+        say(f"     → add credit at {cfg['billing_url']}")
+        say(f"     ({cfg['note']})")
         say("   • no network access")
         say("   Fix and run  python explorer/run.py  again.")
     sys.exit(result.returncode)

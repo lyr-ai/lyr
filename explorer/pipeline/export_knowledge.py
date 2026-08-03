@@ -68,11 +68,14 @@ def _client(provider: str, api_key: str | None, model: str | None):
             kwargs["model"] = model
         return AnthropicClient(**kwargs)
     if provider == "openai":
-        from lyr.llm.openai import OpenAIClient
         try:
-            return OpenAIClient(api_key=api_key) if api_key else OpenAIClient()
-        except TypeError:
-            return OpenAIClient()
+            from lyr.llm.openai import OpenAIClient
+        except Exception as e:  # noqa: BLE001
+            raise SystemExit(str(e))
+        kwargs = {"api_key": api_key}
+        if model:
+            kwargs["model"] = model
+        return OpenAIClient(**kwargs)
     raise SystemExit(f"unknown provider {provider!r}")
 
 
@@ -115,8 +118,9 @@ def main() -> None:
     if args.extractor == "llm":
         api_key = _resolve_key(args.api_key, args.provider)
         if not api_key:
+            env_name = "OPENAI_API_KEY" if args.provider == "openai" else "ANTHROPIC_API_KEY"
             raise SystemExit(
-                "No API key found. Pass --api-key, set ANTHROPIC_API_KEY, add it to "
+                f"No API key found. Pass --api-key, set {env_name}, add it to "
                 "explorer/.env, or use the friendly runner:  python explorer/run.py"
             )
         client = _client(args.provider, api_key, args.model)

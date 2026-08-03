@@ -37,9 +37,15 @@ of the design's rich views (relationships, unresolved conflicts) are honestly bu
 python explorer/run.py
 ```
 
-It downloads the source if needed, **asks for your Anthropic API key** (hidden input, and offers to
-save it to a gitignored `explorer/.env` so you only enter it once), asks how many chapters (default
-10), and runs the demo-quality LLM extraction. No flags to remember. Requires `pip install anthropic`.
+It lets you **pick a provider — OpenAI (ChatGPT) or Anthropic (Claude)** — downloads the source if
+needed, **asks for that provider's API key** (hidden input, and offers to save it to a gitignored
+`explorer/.env` so you only enter it once), asks how many chapters (default 10), and runs the
+demo-quality LLM extraction. No flags to remember. Requires the provider's package
+(`pip install openai` or `pip install anthropic`).
+
+> **OpenAI note:** the *API* needs its own credit at
+> [platform.openai.com/billing](https://platform.openai.com/settings/organization/billing) — a
+> ChatGPT Plus/Pro subscription does **not** include API access; they are billed separately.
 
 **Manual, if you prefer flags:**
 
@@ -47,10 +53,13 @@ save it to a gitignored `explorer/.env` so you only enter it once), asks how man
 # baseline — no API key, real-but-crude:
 python explorer/pipeline/export_knowledge.py --limit 6 --out explorer/data/knowledge.sample.json
 
-# demo quality — key via env, .env, or --api-key:
-python explorer/pipeline/export_knowledge.py --extractor llm --consolidator llm \
-    --model claude-haiku-4-5 --limit 10 --api-key sk-ant-... \
-    --out explorer/data/knowledge.full.json
+# demo quality — OpenAI (ChatGPT), key via env / .env / --api-key:
+python explorer/pipeline/export_knowledge.py --extractor llm --provider openai --consolidator llm \
+    --model gpt-4o-mini --limit 10 --out explorer/data/knowledge.full.json
+
+# demo quality — Anthropic (Claude):
+python explorer/pipeline/export_knowledge.py --extractor llm --provider anthropic --consolidator llm \
+    --model claude-haiku-4-5 --limit 10 --out explorer/data/knowledge.full.json
 ```
 
 The key is resolved in order: `--api-key` → `ANTHROPIC_API_KEY` env → `explorer/.env` → (in
