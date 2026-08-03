@@ -1,0 +1,17 @@
+{
+  "source": "Pride and Prejudice — first real corpus run (OpenAI gpt-4o-mini)",
+  "role": "Temporary GOLD resolution fixture. It is NOT book logic and NOT the runtime path. It records the expected output of a GENERIC entity resolver, derived from a hand-reviewed real run. Positives must resolve to one entity; negatives must stay distinct. Once the generic resolver matches or exceeds this, the hand-written alias adapter leaves the runtime path and this stays as evaluation data.",
+  "positives": [
+    ["Elizabeth", "Elizabeth Bennet"],
+    ["Wickham", "Mr. Wickham", "George Wickham"],
+    ["Jane", "Jane Bennet"],
+    ["Lydia", "Lydia Bennet"],
+    ["Charlotte", "Charlotte Lucas"],
+    ["Lady Catherine", "Lady Catherine de Bourgh"],
+    ["Pemberley House", "Pemberley"]
+  ],
+  "negatives": [
+    ["Miss Darcy", "Mr. Darcy"],
+    ["Miss Bingley", "Mr. Bingley"]
+  ]
+}
