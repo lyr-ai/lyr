@@ -122,3 +122,13 @@ footer a{font-weight:600}
 @media (max-width:560px){
   table.w{display:block;overflow-x:auto;white-space:nowrap}
 }
+
+/* hero cta + bridge (vision → evidence) */
+.hero .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:28px}
+.hero .bridge{margin:26px auto 0;max-width:56ch;color:var(--muted);font-size:15px;border-top:1px solid var(--line);padding-top:18px}
+.hero .bridge b{color:var(--ink)}
+
+/* horizontal step flow (roadmap) */
+.flow{display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap;margin:22px 0}
+.flow .step{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 18px;font-weight:700;font-size:14.5px}
+.flow .arw{color:var(--muted);font-weight:700}

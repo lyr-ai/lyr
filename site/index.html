@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LYR — Does the explanation refer to the world?</title>
-<meta name="description" content="AI can generate explanations. LYR tells you whether they actually refer to the world — by showing what is identified, what is only a measurement artifact, and what stays unknown.">
-<meta property="og:title" content="LYR — Does the explanation refer to the world?">
-<meta property="og:description" content="An auditable way to separate evidence, measurement artifacts, assumptions, and what remains unidentified.">
+<title>LYR — RAG retrieves documents. LYR builds knowledge.</title>
+<meta name="description" content="RAG retrieves information for the next question. LYR turns books, papers, videos, repositories, and communities into living knowledge that persists, evolves, and gets harder to fool over time.">
+<meta property="og:title" content="LYR — RAG retrieves documents. LYR builds knowledge.">
+<meta property="og:description" content="Living knowledge that continuously evolves — and that you can audit, so it gets harder to fool over time.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lyr-ai.github.io/lyr/">
 <meta name="twitter:card" content="summary">
@@ -18,20 +18,25 @@
 <nav class="top"><div class="wrap">
   <a class="logo" href="index.html"><b>LYR</b></a>
   <span class="sp"></span>
-  <a class="lnk on" href="#applications">Applications</a>
+  <a class="lnk" href="#proof">Proof</a>
+  <a class="lnk" href="#direction">Roadmap</a>
   <a class="lnk" href="research.html">Research</a>
   <a class="lnk" href="about.html">About</a>
 </div></nav>
 
 <header class="hero"><div class="wrap narrow">
-  <div class="kicker">LYR</div>
-  <h1><span class="d">AI can generate explanations.</span> LYR tells you whether they actually refer to the world.</h1>
-  <p class="sub">Not "what's most likely" — <b>what is currently identified</b>, what is only a measurement artifact, and what evidence would reduce the remaining uncertainty.</p>
-  <div class="scroll">A real incident, two ways ↓</div>
+  <div class="kicker">Beyond RAG</div>
+  <h1><span class="d">RAG retrieves documents.</span> LYR builds knowledge.</h1>
+  <p class="sub">Transform books, papers, videos, repositories, and communities into living knowledge that continuously evolves.</p>
+  <div class="cta"><a class="btn primary" href="#proof">Explore a real example →</a></div>
+  <p class="bridge">AI can generate explanations. <b>LYR tells you whether they actually refer to the world</b> — living knowledge you can audit, that gets harder to fool over time.</p>
 </div></header>
 
-<!-- FLAGSHIP DEMO — a real case -->
-<section><div class="wrap narrow">
+<!-- PROOF — a real case (unchanged: this is what's real today) -->
+<section id="proof"><div class="wrap narrow">
+  <p class="eyebrow">The proof · what's real today</p>
+  <h2 class="sechead">How does LYR become harder to fool?</h2>
+  <p class="secnote">An ordinary system goes <b>error → diagnosis</b>. LYR goes <b>error → knowledge → diagnosis</b>: it separates what happened from how it was measured, and states the diagnosis with what it still doesn't know. This real incident is knowledge doing the work for the first time.</p>
   <div class="demoframe">
     <div class="bar"><span class="tag">● Real case</span> — from this project's own deployment history (Case 001)</div>
     <div class="inp">A GitHub Action failed. The log shows: <code>configure-pages: Get Pages site failed</code></div>
@@ -57,31 +62,23 @@
   <p class="muted" style="text-align:center;margin-top:14px;font-size:14px">Every claim above is tagged with the assumption it rests on. The diagnosis is stated <b>with</b> what it still doesn't know — that is the whole point.</p>
 </div></section>
 
-<!-- APPLICATIONS -->
-<section id="applications"><div class="wrap">
-  <p class="eyebrow">Applications</p>
-  <h2 class="sechead">One protocol, designed for domains where evidence is uncertain.</h2>
-  <p class="secnote">The same view everywhere — evidence, hypotheses, measurement assumptions, witnesses, identified set, next observation. When every application looks identical, the protocol is doing the work, not the domain.</p>
-  <div class="apps">
-    <a class="appcard" href="app-agent-root-cause.html" style="color:inherit">
-      <div class="ico">🖥️</div>
-      <h3>Agent Incident</h3>
-      <div class="q">Why did the deployment fail?</div>
-      <div class="foot"><span class="pill live"><span class="dot"></span>Live</span><span class="explore">Explore →</span></div>
-    </a>
-    <a class="appcard" href="app-pet-health.html" style="color:inherit">
-      <div class="ico">🐶</div>
-      <h3>Dog Health</h3>
-      <div class="q">Is this really an ACL tear?</div>
-      <div class="foot"><span class="pill ready"><span class="dot"></span>Ready</span><span class="explore off">Awaiting real cases</span></div>
-    </a>
-    <div class="appcard">
-      <div class="ico">📖</div>
-      <h3>Book</h3>
-      <div class="q">Does this claim refer to the world?</div>
-      <div class="foot"><span class="pill planned"><span class="dot"></span>Planned</span><span class="explore off">Planned</span></div>
-    </div>
+<!-- DIRECTION / ROADMAP -->
+<section id="direction"><div class="wrap narrow">
+  <p class="eyebrow">The roadmap · where this goes</p>
+  <h2 class="sechead">Connect a source. Watch knowledge grow.</h2>
+  <p class="secnote">Not upload-and-ask. The same pipeline turns any long-form source into a living, explorable knowledge space — people, events, relationships, durable claims, and the conflicts still unresolved — with every object traceable to its evidence. The conversation happens <b>on top of</b> that knowledge.</p>
+  <div class="flow">
+    <span class="step">Connect a source</span><span class="arw">→</span>
+    <span class="step">Knowledge grows</span><span class="arw">→</span>
+    <span class="step">Explore</span><span class="arw">→</span>
+    <span class="step">Ask</span>
   </div>
+  <p class="secnote" style="margin-top:24px">Every source is a <b>validation domain</b>, never the design center — the representation stays the same across all of them:</p>
+  <div class="chips">
+    <span class="chip">📖 Book</span><span class="chip">📄 Research paper</span><span class="chip">🎬 Video</span>
+    <span class="chip">🗂️ GitHub</span><span class="chip">💬 Forum</span><span class="chip">📔 Journal</span><span class="chip">🩺 Medical record</span>
+  </div>
+  <p class="muted" style="margin-top:18px;font-size:14px">Built honestly: the "knowledge growing" experience is <b>not</b> a mockup — it will appear here the day a real Book produces real people, relationships, and durable ideas, not before. What's live today is the audit above; the working pieces are the <a href="app-agent-root-cause.html">full Agent audit →</a> and the <a href="app-pet-health.html">pet-health case template →</a>.</p>
 </div></section>
 
 <!-- CTA -->
@@ -98,7 +95,7 @@
 </div></section>
 
 <footer><div class="wrap">
-  <span>LYR — auditable identification.</span>
+  <span>LYR — living knowledge you can audit.</span>
   <span class="sp"></span>
   <a href="research.html">Research</a>
   <a href="about.html">About</a>
