@@ -1,0 +1,39 @@
+{
+  "entities_extracted": 52,
+  "canonical_entities": 49,
+  "resolver": {
+    "merges": 3,
+    "link_pairs": 3,
+    "unsure": 6,
+    "rejects": 12,
+    "guard_warnings": 0
+  },
+  "duplicate_ratio": 1.06,
+  "events": 30,
+  "relationships": 38,
+  "sources": 174,
+  "evidence_coverage_pct": 70.7,
+  "orphan_entities": {
+    "count": 28,
+    "sample": [
+      "空空道人",
+      "封氏",
+      "封肅",
+      "黛玉",
+      "贾雨村",
+      "荣国府",
+      "馮淵",
+      "警幻仙姑",
+      "Wang Xifeng",
+      "Ban'er"
+    ]
+  },
+  "source_types": [
+    "?"
+  ],
+  "claims_themes": "not_derived",
+  "known_capability_gaps": [
+    "stateful semantic claims — entity version chain is evidence accumulation, not interpretation change (docs/design/capability-gap-stateful-claims.md)",
+    "themes / durable ideas — not_yet_derived (docs/design/canonicalization-and-identity.md)"
+  ]
+}
