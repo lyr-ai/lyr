@@ -1,0 +1,635 @@
+{
+  "label": "openai-2",
+  "git_commit": "39f0905303f0926ea2302fe1a1ff045deea7976a",
+  "corpus_hashes": {
+    "deepseek": "7bbdf1576ac8fa37",
+    "pnp": "1897107e0de40212",
+    "kimi": "8dfa314c476afa7d"
+  },
+  "proposer_prompt_template": "You are building a knowledge base from the evidence passages below. Propose candidate relations\nbetween the named things in these passages, each as (subject, predicate, object). For each\ncandidate, list the ids of the passages it is based on.\n\nReturn ONLY a JSON array; each element:\n  {{\"subject\": \"..\", \"predicate\": \"..\", \"object\": \"..\", \"scope\": \"..\", \"evidence\": [\"<id>\", ..], \"rationale\": \"..\"}}\n\nEvidence passages:\n{passages}\n\nJSON array:",
+  "model": "openai:gpt-4o-mini",
+  "temperature": "provider-default (LYR clients send no sampling params)",
+  "gold": [
+    {
+      "corpus": "deepseek",
+      "category": "SUPPORTED_TRUTH",
+      "expected": "SUPPORTED",
+      "status": "SUPPORTED",
+      "subject": "MLA/DSA/CSA/HCA",
+      "predicate": "grouping",
+      "object": "attention efficiency",
+      "evidence": [
+        "deepseek/v3-technical-report#p2",
+        "deepseek/v3_2-model-card#p3",
+        "deepseek/v4-technical-report#p4",
+        "deepseek/v4-technical-report#p4"
+      ],
+      "reason": "4 members cited with the shared goal"
+    },
+    {
+      "corpus": "deepseek",
+      "category": "SUPPORTED_TRUTH",
+      "expected": "SUPPORTED",
+      "status": "SUPPORTED",
+      "subject": "V4-Pro",
+      "predicate": "quantified",
+      "object": "27% FLOPs / 10% KV cache vs V3.2",
+      "evidence": [
+        "deepseek/v4-technical-report#p10"
+      ],
+      "reason": "passage deepseek/v4-technical-report#p10 states the value"
+    },
+    {
+      "corpus": "deepseek",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "DSA",
+      "predicate": "derives_from",
+      "object": "MLA",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "deepseek",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "CSA",
+      "predicate": "derives_from",
+      "object": "DSA",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "deepseek",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "DeepSeek-V4",
+      "predicate": "derives_from",
+      "object": "DeepSeek-V3",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "deepseek",
+      "category": "CONTRADICTED",
+      "expected": "CONTRADICTED",
+      "status": "UNKNOWN",
+      "subject": "MLA",
+      "predicate": "introduces",
+      "object": "sparse attention",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "pnp",
+      "category": "SUPPORTED_TRUTH",
+      "expected": "SUPPORTED",
+      "status": "SUPPORTED",
+      "subject": "Elizabeth",
+      "predicate": "refuses",
+      "object": "Darcy",
+      "evidence": [
+        "pnp/eliz#c34_52"
+      ],
+      "reason": "passage pnp/eliz#c34_52 states 'refuses'"
+    },
+    {
+      "corpus": "pnp",
+      "category": "SUPPORTED_TRUTH",
+      "expected": "SUPPORTED",
+      "status": "SUPPORTED",
+      "subject": "Elizabeth",
+      "predicate": "married",
+      "object": "Darcy",
+      "evidence": [
+        "pnp/eliz#c61_97"
+      ],
+      "reason": "passage pnp/eliz#c61_97 states 'married'"
+    },
+    {
+      "corpus": "pnp",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "Elizabeth's prejudice",
+      "predicate": "resolved_by",
+      "object": "Darcy's letter",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "pnp",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "Austen",
+      "predicate": "critiques",
+      "object": "the marriage market",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "pnp",
+      "category": "CONTRADICTED",
+      "expected": "CONTRADICTED",
+      "status": "CONTRADICTED",
+      "subject": "Elizabeth",
+      "predicate": "accepts",
+      "object": "Darcy",
+      "evidence": [
+        "pnp/eliz#c34_52"
+      ],
+      "reason": "passage pnp/eliz#c34_52 asserts the antonym 'refuses'"
+    },
+    {
+      "corpus": "kimi",
+      "category": "SUPPORTED_TRUTH",
+      "expected": "SUPPORTED",
+      "status": "SUPPORTED",
+      "subject": "MuonClip",
+      "predicate": "derives_from",
+      "object": "Muon",
+      "evidence": [
+        "kimi/k2-technical-report#p2"
+      ],
+      "reason": "passage kimi/k2-technical-report#p2 states 'improves upon'"
+    },
+    {
+      "corpus": "kimi",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "MLA",
+      "predicate": "derives_from",
+      "object": "MuonClip",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "kimi",
+      "category": "PLAUSIBLE_UNSUPPORTED",
+      "expected": "UNKNOWN",
+      "status": "UNKNOWN",
+      "subject": "INT4 QAT",
+      "predicate": "introduces",
+      "object": "SOTA on HLE",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    },
+    {
+      "corpus": "kimi",
+      "category": "CONTRADICTED",
+      "expected": "CONTRADICTED",
+      "status": "UNKNOWN",
+      "subject": "Kimi K2",
+      "predicate": "introduces",
+      "object": "INT4 quantization",
+      "evidence": [],
+      "reason": "no passage links these endpoints with a matching cue"
+    }
+  ],
+  "metrics_part_a": {
+    "fab_accept_den": 10,
+    "fab_accept_num": 0,
+    "sup_den": 5,
+    "sup_keep": 5,
+    "sup_overabstain": 0,
+    "contra_den": 3,
+    "contra_hit": 1,
+    "contra_as_sup": 0,
+    "fabrication_acceptance": 0,
+    "supported_retention": 1.0
+  },
+  "part_b": {
+    "deepseek": {
+      "role": "dev",
+      "rendered_prompt": "You are building a knowledge base from the evidence passages below. Propose candidate relations\nbetween the named things in these passages, each as (subject, predicate, object). For each\ncandidate, list the ids of the passages it is based on.\n\nReturn ONLY a JSON array; each element:\n  {\"subject\": \"..\", \"predicate\": \"..\", \"object\": \"..\", \"scope\": \"..\", \"evidence\": [\"<id>\", ..], \"rationale\": \"..\"}\n\nEvidence passages:\n[deepseek/v3-readme#p0] # DeepSeek-V3 README\n[deepseek/v3-readme#p1] ## Overview\n[deepseek/v3-readme#p2] DeepSeek-V3 is a Mixture-of-Experts (MoE) language model featuring 671B total\nparameters with 37B activated per token. The model leverages Multi-head Latent\nAttention (MLA) and DeepSeekMoE architectures, trained on 14.8 trillion tokens\nwith remarkable training stability and no rollbacks required.\n[deepseek/v3-readme#p3] ## Key Architecture Innovations\n[deepseek/v3-readme#p4] The model pioneers an auxiliary-loss-free load balancing strategy and introduces\nMulti-Token Prediction (MTP) objectives for enhanced performance. Training\nemployed an FP8 mixed precision framework validated at extreme scale, achieving\nfull computation-communication overlap in cross-node MoE training.\n[deepseek/v3-readme#p5] ## Model Availability\n[deepseek/v3-readme#p6] Two variants are available on Hugging Face:\n[deepseek/v3-readme#p7] - **DeepSeek-V3-Base** — 671B parameters, 128K context.\n- **DeepSeek-V3** — 671B parameters (includes 14B MTP module weights), 128K context.\n[deepseek/v3-readme#p8] ## Performance Highlights\n[deepseek/v3-readme#p9] DeepSeek-V3 demonstrates competitive results against closed-source models:\n[deepseek/v3-readme#p10] - Math: MATH-500 (90.2%), AIME 2024 (39.2%)\n- Code: HumanEval-Mul (82.6%), Codeforces (51.6 percentile)\n- General: MMLU (88.5%), MMLU-Redux (89.1%)\n- Long Context: NIAH evaluation validates the 128K context window\n- Open-ended: Arena-Hard (85.5), AlpacaEval 2.0 (70.0)\n[deepseek/v3-readme#p11] ## Deployment\n[deepseek/v3-readme#p12] Recommended inference frameworks include DeepSeek-Infer Demo (FP8/BF16), SGLang,\nLMDeploy, TensorRT-LLM, vLLM, and LightLLM, with support for AMD GPU and Huawei\nAscend NPU.\n[deepseek/v3-readme#p13] ## Licensing\n[deepseek/v3-readme#p14] The code is released under the MIT License; the model is released under a Model\nAgreement supporting commercial use. Access is available via chat.deepseek.com\nand the OpenAI-compatible API at platform.deepseek.com.\n[deepseek/v3-technical-report#p0] # DeepSeek-V3 Technical Report\n[deepseek/v3-technical-report#p1] ## Abstract\n[deepseek/v3-technical-report#p2] We present DeepSeek-V3, a strong Mixture-of-Experts (MoE) language model with\n671B total parameters with 37B activated for each token. To achieve efficient\ninference and cost-effective training, DeepSeek-V3 adopts Multi-head Latent\nAttention (MLA) and DeepSeekMoE architectures, which were thoroughly validated\nin DeepSeek-V2. Furthermore, DeepSeek-V3 pioneers an auxiliary-loss-free\nstrategy for load balancing and sets a multi-token prediction training\nobjective for stronger performance.\n[deepseek/v3-technical-report#p3] ## Models\n[deepseek/v3-technical-report#p4] - **DeepSeek-V3** — the main model: 671B total parameters, 37B activated per token.\n- **DeepSeek-V3-Base** — the base model variant.\n[deepseek/v3-technical-report#p5] ## Architecture\n[deepseek/v3-technical-report#p6] DeepSeek-V3 adopts **Multi-head Latent Attention (MLA)** for efficient inference\nand **DeepSeekMoE** for cost-effective training. Both MLA and DeepSeekMoE were\nthoroughly validated in DeepSeek-V2. DeepSeek-V3 pioneers an\n**auxiliary-loss-free strategy** for load balancing, minimizing the performance\ndegradation that arises from encouraging load balancing. It also sets a\n**Multi-Token Prediction (MTP)** training objective for stronger performance.\nTraining uses an **FP8 mixed precision** framework.\n[deepseek/v3-technical-report#p7] ## Claims\n[deepseek/v3-technical-report#p8] Comprehensive evaluations reveal that DeepSeek-V3 outperforms other open-source\nmodels and achieves performance comparable to leading closed-source models.\nDeepSeek-V3 requires only 2.788M H800 GPU hours for its full training, with\nremarkable training stability throughout the process.\n[deepseek/v3_2-model-card#p0] # DeepSeek-V3.2-Exp Model Card\n[deepseek/v3_2-model-card#p1] ## Model Information\n[deepseek/v3_2-model-card#p2] **Model Name:** DeepSeek-V3.2-Exp\n[deepseek/v3_2-model-card#p3] **Base Model:** DeepSeek-V3.2-Exp builds upon V3.1-Terminus by introducing\nDeepSeek Sparse Attention — a sparse attention mechanism designed to explore and\nvalidate optimizations for training and inference efficiency in long-context\nscenarios.\n[deepseek/v3_2-model-card#p4] ## Architecture Components\n[deepseek/v3_2-model-card#p5] - **DeepSeek Sparse Attention (DSA):** achieves fine-grained sparse attention for\n  the first time, delivering substantial improvements in long-context training\n  and inference efficiency while maintaining virtually identical model output\n  quality.\n- **MLA module:** referenced in the context of RoPE (Rotary Position Embedding)\n  implementation details.\n- **Indexer module:** referenced alongside architectural specifications for RoPE\n  handling.\n- **MoE (Mixture of Experts):** the configuration uses 256 experts.\n[deepseek/v3_2-model-card#p6] ## Performance Claims\n[deepseek/v3_2-model-card#p7] The model demonstrates performance on par with V3.1-Terminus across public\nbenchmarks. Highlighted capabilities include reasoning (MMLU-Pro: 85.0, AIME\n2025: 89.3), code generation (Codeforces: 2121), agentic tool use, and\nlong-context processing efficiency.\n[deepseek/v3_2-model-card#p8] ## License\n[deepseek/v3_2-model-card#p9] This repository and the model weights are licensed under the MIT License.\n[deepseek/v3_2-release#p0] # DeepSeek-V3.2 Release Notes (2025/12/01)\n[deepseek/v3_2-release#p1] ## Models Released\n[deepseek/v3_2-release#p2] - **DeepSeek-V3.2** — the official successor to DeepSeek-V3.2-Exp, available on\n  App, Web, and API platforms.\n- **DeepSeek-V3.2-Speciale** — an advanced reasoning variant, currently API-only\n  without tool-use support.\n[deepseek/v3_2-release#p3] ## Reasoning Performance\n[deepseek/v3_2-release#p4] DeepSeek-V3.2 offers a balanced trade-off of inference quality vs. length at\nGPT-5 performance levels. DeepSeek-V3.2-Speciale is positioned to rival\nGemini-3.0-Pro with maxed-out reasoning capabilities, and achieved gold-level\nresults in IMO, CMO, ICPC World Finals, and IOI 2025.\n[deepseek/v3_2-release#p5] ## Agent Training\n[deepseek/v3_2-release#p6] The release highlights a new massive agent training data synthesis method\ncovering 1,800+ environments and 85k+ complex instructions. DeepSeek-V3.2\nintroduces direct integration of thinking into tool-use workflows, supporting\ntool-calling in both thinking and non-thinking modes.\n[deepseek/v3_2-release#p7] ## API\n[deepseek/v3_2-release#p8] DeepSeek-V3.2 maintains the same usage pattern as its predecessor\nDeepSeek-V3.2-Exp, with added thinking-in-tool-use support.\nDeepSeek-V3.2-Speciale is available via a temporary endpoint until December 15th,\n2025, with pricing identical to V3.2. Both models are released open-source via\nHugging Face repositories with accompanying technical documentation.\n[deepseek/v4-technical-report#p0] # DeepSeek-V4 Technical Report\n[deepseek/v4-technical-report#p1] ## Title\n[deepseek/v4-technical-report#p2] DeepSeek-V4: Towards Highly Efficient Million-Token Context Intelligence\n[deepseek/v4-technical-report#p3] ## Abstract\n[deepseek/v4-technical-report#p4] We present a preview version of the DeepSeek-V4 series, including two strong\nMixture-of-Experts (MoE) language models — DeepSeek-V4-Pro with 1.6T parameters\n(49B activated) and DeepSeek-V4-Flash with 284B parameters (13B activated) —\nboth supporting a context length of one million tokens. The DeepSeek-V4 series\nincorporates several key upgrades in architecture and optimization: (1) a hybrid\nattention architecture that combines Compressed Sparse Attention (CSA) and\nHeavily Compressed Attention (HCA) to improve long-context efficiency;\n(2) Manifold-Constrained Hyper-Connections (mHC) that enhance conventional\nresidual connections; and (3) the Muon optimizer for faster convergence and\ngreater training stability.\n[deepseek/v4-technical-report#p5] ## Model Variants\n[deepseek/v4-technical-report#p6] - **DeepSeek-V4-Pro** — 1.6T parameters, 49B activated.\n- **DeepSeek-V4-Flash** — 284B parameters, 13B activated.\n- **DeepSeek-V4-Pro-Max** — the maximum reasoning effort mode of DeepSeek-V4-Pro.\n[deepseek/v4-technical-report#p7] ## Architecture Components\n[deepseek/v4-technical-report#p8] - Compressed Sparse Attention (CSA)\n- Heavily Compressed Attention (HCA)\n- Manifold-Constrained Hyper-Connections (mHC)\n- Mixture-of-Experts (MoE) design\n- Muon optimizer\n- One-million-token context length support\n[deepseek/v4-technical-report#p9] ## Capability Claims\n[deepseek/v4-technical-report#p10] DeepSeek-V4-Pro-Max, the maximum reasoning effort mode of DeepSeek-V4-Pro,\nredefines the state-of-the-art for open models. DeepSeek-V4-Pro requires only 27%\nof single-token inference FLOPs and 10% of KV cache compared with DeepSeek-V3.2.\nThe models routinely support one-million-token contexts, thereby making\nlong-horizon tasks and further test-time scaling more feasible.\n\nJSON array:",
+      "raw_completion": "```json\n[\n    {\n        \"subject\": \"DeepSeek-V3\",\n        \"predicate\": \"is a\",\n        \"object\": \"Mixture-of-Experts (MoE) language model\",\n        \"scope\": \"technology\",\n        \"evidence\": [\"deepseek/v3-readme#p2\", \"deepseek/v3-technical-report#p2\"],\n        \"rationale\": \"DeepSeek-V3 is explicitly described as a Mixture-of-Experts language model with a defined number of parameters.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V3\",\n        \"predicate\": \"features\",\n        \"object\": \"671B total parameters\",\n        \"scope\": \"architecture\",\n        \"evidence\": [\"deepseek/v3-readme#p2\", \"deepseek/v3-technical-report#p2\"],\n        \"rationale\": \"Both passages state that DeepSeek-V3 has a total of 671 billion parameters.\"\n    },\n    {\n        \"subject\": \"Multi-head Latent Attention (MLA)\",\n        \"predicate\": \"is used in\",\n        \"object\": \"DeepSeek-V3\",\n        \"scope\": \"architecture\",\n        \"evidence\": [\"deepseek/v3-readme#p2\", \"deepseek/v3-technical-report#p6\"],\n        \"rationale\": \"MLA is mentioned as part of the architecture of DeepSeek-V3 in both passages.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V3\",\n        \"predicate\": \"achieves\",\n        \"object\": \"competitive results against closed-source models\",\n        \"scope\": \"performance\",\n        \"evidence\": [\"deepseek/v3-readme#p9\", \"deepseek/v3-technical-report#p8\"],\n        \"rationale\": \"The performance claims suggest that DeepSeek-V3 competes favorably against closed-source models.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V3.2\",\n        \"predicate\": \"builds upon\",\n        \"object\": \"V3.1-Terminus\",\n        \"scope\": \"versioning\",\n        \"evidence\": [\"deepseek/v3_2-model-card#p3\"],\n        \"rationale\": \"The passage states that DeepSeek-V3.2 is an enhancement over V3.1-Terminus.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V4-Pro\",\n        \"predicate\": \"has\",\n        \"object\": \"1.6T parameters\",\n        \"scope\": \"architecture\",\n        \"evidence\": [\"deepseek/v4-technical-report#p6\"],\n        \"rationale\": \"DeepSeek-V4-Pro is noted to have 1.6 trillion parameters according to the technical report.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V4 series\",\n        \"predicate\": \"incorporates\",\n        \"object\": \"Hybrid Attention architecture\",\n        \"scope\": \"architecture\",\n        \"evidence\": [\"deepseek/v4-technical-report#p4\"],\n        \"rationale\": \"The report states that the DeepSeek-V4 series implements key upgrades including a hybrid attention architecture.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V3-Base\",\n        \"predicate\": \"is a variant of\",\n        \"object\": \"DeepSeek-V3\",\n        \"scope\": \"model variants\",\n        \"evidence\": [\"deepseek/v3-readme#p7\", \"deepseek/v3-technical-report#p4\"],\n        \"rationale\": \"DeepSeek-V3-Base is explicitly defined as a variant of DeepSeek-V3 in both passages.\"\n    },\n    {\n        \"subject\": \"DeepSeek-V4-Flash\",\n        \"predicate\": \"has\",\n        \"object\": \"284B parameters\",\n        \"scope\": \"architecture\",\n        \"evidence\": [\"deepseek/v4-technical-report#p6\"],\n        \"rationale\": \"The reporting indicates that DeepSeek-V4-Flash has 284 billion parameters.\"\n    }\n]\n```",
+      "proposals": [
+        {
+          "subject": "DeepSeek-V3",
+          "predicate": "is a",
+          "normalized_predicate": "is_a",
+          "object": "Mixture-of-Experts (MoE) language model",
+          "scope": "technology",
+          "proposer_evidence": [
+            "deepseek/v3-readme#p2",
+            "deepseek/v3-technical-report#p2"
+          ],
+          "rationale": "DeepSeek-V3 is explicitly described as a Mixture-of-Experts language model with a defined number of parameters.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V3",
+          "predicate": "features",
+          "normalized_predicate": "features",
+          "object": "671B total parameters",
+          "scope": "architecture",
+          "proposer_evidence": [
+            "deepseek/v3-readme#p2",
+            "deepseek/v3-technical-report#p2"
+          ],
+          "rationale": "Both passages state that DeepSeek-V3 has a total of 671 billion parameters.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Multi-head Latent Attention (MLA)",
+          "predicate": "is used in",
+          "normalized_predicate": "is_used_in",
+          "object": "DeepSeek-V3",
+          "scope": "architecture",
+          "proposer_evidence": [
+            "deepseek/v3-readme#p2",
+            "deepseek/v3-technical-report#p6"
+          ],
+          "rationale": "MLA is mentioned as part of the architecture of DeepSeek-V3 in both passages.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V3",
+          "predicate": "achieves",
+          "normalized_predicate": "achieves",
+          "object": "competitive results against closed-source models",
+          "scope": "performance",
+          "proposer_evidence": [
+            "deepseek/v3-readme#p9",
+            "deepseek/v3-technical-report#p8"
+          ],
+          "rationale": "The performance claims suggest that DeepSeek-V3 competes favorably against closed-source models.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V3.2",
+          "predicate": "builds upon",
+          "normalized_predicate": "derives_from",
+          "object": "V3.1-Terminus",
+          "scope": "versioning",
+          "proposer_evidence": [
+            "deepseek/v3_2-model-card#p3"
+          ],
+          "rationale": "The passage states that DeepSeek-V3.2 is an enhancement over V3.1-Terminus.",
+          "verdict": "SUPPORTED",
+          "verifier_evidence": [
+            "deepseek/v3_2-model-card#p3"
+          ],
+          "evidence_precise": true
+        },
+        {
+          "subject": "DeepSeek-V4-Pro",
+          "predicate": "has",
+          "normalized_predicate": "has",
+          "object": "1.6T parameters",
+          "scope": "architecture",
+          "proposer_evidence": [
+            "deepseek/v4-technical-report#p6"
+          ],
+          "rationale": "DeepSeek-V4-Pro is noted to have 1.6 trillion parameters according to the technical report.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V4 series",
+          "predicate": "incorporates",
+          "normalized_predicate": "incorporates",
+          "object": "Hybrid Attention architecture",
+          "scope": "architecture",
+          "proposer_evidence": [
+            "deepseek/v4-technical-report#p4"
+          ],
+          "rationale": "The report states that the DeepSeek-V4 series implements key upgrades including a hybrid attention architecture.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V3-Base",
+          "predicate": "is a variant of",
+          "normalized_predicate": "is_a_variant_of",
+          "object": "DeepSeek-V3",
+          "scope": "model variants",
+          "proposer_evidence": [
+            "deepseek/v3-readme#p7",
+            "deepseek/v3-technical-report#p4"
+          ],
+          "rationale": "DeepSeek-V3-Base is explicitly defined as a variant of DeepSeek-V3 in both passages.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "DeepSeek-V4-Flash",
+          "predicate": "has",
+          "normalized_predicate": "has",
+          "object": "284B parameters",
+          "scope": "architecture",
+          "proposer_evidence": [
+            "deepseek/v4-technical-report#p6"
+          ],
+          "rationale": "The reporting indicates that DeepSeek-V4-Flash has 284 billion parameters.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        }
+      ],
+      "metrics": {
+        "proposed": 9,
+        "proposer_only_not_grounded": 8,
+        "unknown": 8,
+        "contradicted": 0,
+        "committed_supported": 1,
+        "withheld": 8,
+        "evidence_precise_among_supported": 1
+      }
+    },
+    "pnp": {
+      "role": "dev",
+      "rendered_prompt": "You are building a knowledge base from the evidence passages below. Propose candidate relations\nbetween the named things in these passages, each as (subject, predicate, object). For each\ncandidate, list the ids of the passages it is based on.\n\nReturn ONLY a JSON array; each element:\n  {\"subject\": \"..\", \"predicate\": \"..\", \"object\": \"..\", \"scope\": \"..\", \"evidence\": [\"<id>\", ..], \"rationale\": \"..\"}\n\nEvidence passages:\n[pnp/eliz#c3_0] Assembly Ball\n[pnp/eliz#c4_1] Discussion about Mr. Bingley\n[pnp/eliz#c6_2] Dance at Meryton\n[pnp/eliz#c6_3] Mr. Darcy's growing interest in Elizabeth\n[pnp/eliz#c7_4] Visit to Netherfield\n[pnp/eliz#c7_5] familial relation\n[pnp/eliz#c8_6] Discussion of accomplishments among ladies\n[pnp/eliz#c8_7] Mr. Bingley expresses concern for Jane Bennet\n[pnp/eliz#c8_8] Sending for Mr. Jones to attend to Jane Bennet\n[pnp/eliz#c8_9] Elizabeth Bennet and Mr. Bingley\n[pnp/eliz#c8_10] Miss Bingley criticizes Elizabeth Bennet\n[pnp/eliz#c10_11] Social gathering in the drawing-room\n[pnp/eliz#c10_12] Elizabeth Bennet's interaction with Mr. Darcy\n[pnp/eliz#c11_13] Conversation after dinner at Netherfield\n[pnp/eliz#c12_14] Departure from Netherfield\n[pnp/eliz#c12_15] Reception at Home\n[pnp/eliz#c12_16] Elizabeth's Displeasure with Staying Longer\n[pnp/eliz#c13_17] Mr. Collins visits the Bennet family\n[pnp/eliz#c14_18] Dinner with Mr. Collins\n[pnp/eliz#c16_19] Mr. Collins visits Meryton with his cousins\n[pnp/eliz#c17_20] Netherfield Ball Invitation\n[pnp/eliz#c17_21] Arrival of Mr. Bingley and his Sisters\n[pnp/eliz#c17_22] Elizabeth's Engagement to Mr. Collins\n[pnp/eliz#c18_23] Dance at Netherfield\n[pnp/eliz#c18_24] Elizabeth's discontent towards Mr. Darcy\n[pnp/eliz#c19_25] Mr. Collins proposes to Elizabeth\n[pnp/eliz#c19_26] Mr. Collins' proposal and Elizabeth's rejection\n[pnp/eliz#c21_27] Departure of the Bingley party from Netherfield\n[pnp/eliz#c23_28] Engagement Announcement\n[pnp/eliz#c23_29] Elizabeth disapproves of Charlotte's engagement\n[pnp/eliz#c24_30] Jane expresses her feelings about Mr. Bingley\n[pnp/eliz#c24_31] Elizabeth's perception of Mr. Bingley\n[pnp/eliz#c25_32] Mrs. Gardiner's Visit to Longbourn\n[pnp/eliz#c26_33] Elizabeth receives advice from Mrs. Gardiner\n[pnp/eliz#c26_34] Charlotte's wedding\n[pnp/eliz#c26_35] Elizabeth's feelings towards Mr. Wickham\n[pnp/eliz#c27_36] Elizabeth's acceptance of summer tour invitation\n[pnp/eliz#c27_37] Elizabeth's journey to Hunsford\n[pnp/eliz#c27_38] Elizabeth's visit to Jane\n[pnp/eliz#c27_39] Elizabeth's farewell to Mr. Wickham\n[pnp/eliz#c28_40] Visit to the Parsonage\n[pnp/eliz#c28_41] Meeting Lady Catherine and Miss De Bourgh\n[pnp/eliz#c29_42] Dinner at Rosings\n[pnp/eliz#c29_43] Mr. Collins is a cousin of Elizabeth Bennet\n[pnp/eliz#c30_44] Arrival of Mr. Darcy\n[pnp/eliz#c30_45] Visit of Sir William\n[pnp/eliz#c31_46] Colonel Fitzwilliam plays music with Elizabeth\n[pnp/eliz#c31_47] Lady Catherine critiques music performance\n[pnp/eliz#c32_48] Mr. Darcy visits Elizabeth\n[pnp/eliz#c33_49] Discussion about Mr. Bingley's relationship\n[pnp/eliz#c33_50] Elizabeth and Colonel Fitzwilliam's walk\n[pnp/eliz#c34_51] Mr. Darcy proposes to Elizabeth\n[pnp/eliz#c34_52] Elizabeth refuses Mr. Darcy\n[pnp/eliz#c34_53] Mr. Darcy's feelings for Elizabeth\n[pnp/eliz#c34_54] Elizabeth's dislike of Mr. Darcy\n[pnp/eliz#c35_55] Darcy delivers letter to Elizabeth\n[pnp/eliz#c35_56] Darcy explains his actions regarding Bingley and Wickham\n[pnp/eliz#c36_57] Elizabeth reads Darcy's letter\n[pnp/eliz#c36_58] Elizabeth's self-realization\n[pnp/eliz#c36_59] Elizabeth's changing perception of Wickham and Darcy\n[pnp/eliz#c37_60] Departure from Rosings\n[pnp/eliz#c37_61] Elizabeth's refusal to extend her stay\n[pnp/eliz#c37_62] Reflections on family behaviour\n[pnp/eliz#c38_63] Departure from Hunsford\n[pnp/eliz#c38_64] Reflection on Visit to Rosings\n[pnp/eliz#c38_65] Elizabeth and Mr. Collins\n[pnp/eliz#c39_66] Visit to the Inn\n[pnp/eliz#c39_67] Discussion about Brighton\n[pnp/eliz#c40_68] Elizabeth confides in Jane about Mr. Darcy\n[pnp/eliz#c40_69] Jane's distress over Mr. Wickham's true character\n[pnp/eliz#c40_70] Elizabeth refuses Mr. Darcy\n[pnp/eliz#c41_71] Lydia's foolishness concerns Elizabeth\n[pnp/eliz#c42_72] Journey to Pemberley\n[pnp/eliz#c43_73] Elizabeth visits Pemberley\n[pnp/eliz#c43_74] Meeting between Elizabeth and Mr. Darcy\n[pnp/eliz#c43_75] Connection between Elizabeth and Mr. Darcy\n[pnp/eliz#c44_76] Visit to Pemberley\n[pnp/eliz#c44_77] Mr. Darcy's admiration for Elizabeth\n[pnp/eliz#c44_78] Elizabeth's evolving feelings towards Mr. Darcy\n[pnp/eliz#c45_79] Miss Bingley's jealousy of Elizabeth\n[pnp/eliz#c46_80] Elizabeth receives distressing news\n[pnp/eliz#c47_81] Elizabeth's disapproval of Wickham\n[pnp/eliz#c52_82] Elizabeth Bennet's feelings about Mr. Darcy's actions\n[pnp/eliz#c53_83] Mr. Bingley arrives at Netherfield\n[pnp/eliz#c53_84] Mr. Darcy's feelings toward Elizabeth Bennet\n[pnp/eliz#c54_85] Dinner at Longbourn\n[pnp/eliz#c54_86] Elizabeth's feelings towards Mr. Darcy\n[pnp/eliz#c56_87] Lady Catherine visits Elizabeth\n[pnp/eliz#c57_88] Mr. Collins writes to Elizabeth about Mr. Darcy\n[pnp/eliz#c58_89] Conversation between Elizabeth and Darcy\n[pnp/eliz#c58_90] Darcy's realization of his feelings\n[pnp/eliz#c58_91] Darcy's affections for Elizabeth\n[pnp/eliz#c59_92] Elizabeth confesses her engagement to Jane\n[pnp/eliz#c59_93] Elizabeth Bennet is engaged to Mr. Darcy\n[pnp/eliz#c60_94] Mr. Collins's letter about Elizabeth's engagement\n[pnp/eliz#c60_95] Elizabeth and Mr. Darcy's engagement\n[pnp/eliz#c61_96] Lady Catherine's indignation over Darcy's marriage\n[pnp/eliz#c61_97] Elizabeth is married to Darcy\n\nJSON array:",
+      "raw_completion": "```json\n[\n    {\"subject\": \"Mr. Bingley\", \"predicate\": \"expresses concern for\", \"object\": \"Jane Bennet\", \"scope\": \"personal relationships\", \"evidence\": [\"pnp/eliz#c8_7\"], \"rationale\": \"Mr. Bingley shows his concern for Jane, which indicates a relationship of care.\"},\n    {\"subject\": \"Elizabeth Bennet\", \"predicate\": \"rejects\", \"object\": \"Mr. Collins' proposal\", \"scope\": \"romantic relationships\", \"evidence\": [\"pnp/eliz#c19_26\"], \"rationale\": \"Elizabeth's rejection highlights her disinterest in Mr. Collins.\"},\n    {\"subject\": \"Mr. Darcy\", \"predicate\": \"proposes to\", \"object\": \"Elizabeth Bennet\", \"scope\": \"romantic relationships\", \"evidence\": [\"pnp/eliz#c34_51\"], \"rationale\": \"Mr. Darcy expresses his intention to marry Elizabeth.\"},\n    {\"subject\": \"Elizabeth Bennet\", \"predicate\": \"is engaged to\", \"object\": \"Mr. Darcy\", \"scope\": \"marital status\", \"evidence\": [\"pnp/eliz#c59_93\"], \"rationale\": \"Elizabeth's engagement to Mr. Darcy marks a significant change in her relationship status.\"},\n    {\"subject\": \"Lady Catherine\", \"predicate\": \"visits\", \"object\": \"Elizabeth Bennet\", \"scope\": \"social interaction\", \"evidence\": [\"pnp/eliz#c56_87\"], \"rationale\": \"Lady Catherine's visit indicates her social connection and interest in Elizabeth's affairs.\"},\n    {\"subject\": \"Mr. Collins\", \"predicate\": \"is a cousin of\", \"object\": \"Elizabeth Bennet\", \"scope\": \"family relations\", \"evidence\": [\"pnp/eliz#c43_73\"], \"rationale\": \"Mr. Collins is identified as part of Elizabeth's extended family.\"},\n    {\"subject\": \"Mrs. Gardiner\", \"predicate\": \"advises\", \"object\": \"Elizabeth Bennet\", \"scope\": \"familial support\", \"evidence\": [\"pnp/eliz#c26_33\"], \"rationale\": \"Mrs. Gardiner offers advice, indicating a supportive family relationship.\"},\n    {\"subject\": \"Mr. Darcy\", \"predicate\": \"admiration for\", \"object\": \"Elizabeth Bennet\", \"scope\": \"emotional connection\", \"evidence\": [\"pnp/eliz#c44_77\"], \"rationale\": \"Mr. Darcy's feelings suggest a deepening romantic interest.\"}\n]\n```",
+      "proposals": [
+        {
+          "subject": "Mr. Bingley",
+          "predicate": "expresses concern for",
+          "normalized_predicate": "expresses_concern_for",
+          "object": "Jane Bennet",
+          "scope": "personal relationships",
+          "proposer_evidence": [
+            "pnp/eliz#c8_7"
+          ],
+          "rationale": "Mr. Bingley shows his concern for Jane, which indicates a relationship of care.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Elizabeth Bennet",
+          "predicate": "rejects",
+          "normalized_predicate": "refuses",
+          "object": "Mr. Collins' proposal",
+          "scope": "romantic relationships",
+          "proposer_evidence": [
+            "pnp/eliz#c19_26"
+          ],
+          "rationale": "Elizabeth's rejection highlights her disinterest in Mr. Collins.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Mr. Darcy",
+          "predicate": "proposes to",
+          "normalized_predicate": "proposes_to",
+          "object": "Elizabeth Bennet",
+          "scope": "romantic relationships",
+          "proposer_evidence": [
+            "pnp/eliz#c34_51"
+          ],
+          "rationale": "Mr. Darcy expresses his intention to marry Elizabeth.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Elizabeth Bennet",
+          "predicate": "is engaged to",
+          "normalized_predicate": "is_engaged_to",
+          "object": "Mr. Darcy",
+          "scope": "marital status",
+          "proposer_evidence": [
+            "pnp/eliz#c59_93"
+          ],
+          "rationale": "Elizabeth's engagement to Mr. Darcy marks a significant change in her relationship status.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Lady Catherine",
+          "predicate": "visits",
+          "normalized_predicate": "visits",
+          "object": "Elizabeth Bennet",
+          "scope": "social interaction",
+          "proposer_evidence": [
+            "pnp/eliz#c56_87"
+          ],
+          "rationale": "Lady Catherine's visit indicates her social connection and interest in Elizabeth's affairs.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Mr. Collins",
+          "predicate": "is a cousin of",
+          "normalized_predicate": "is_a_cousin_of",
+          "object": "Elizabeth Bennet",
+          "scope": "family relations",
+          "proposer_evidence": [
+            "pnp/eliz#c43_73"
+          ],
+          "rationale": "Mr. Collins is identified as part of Elizabeth's extended family.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Mrs. Gardiner",
+          "predicate": "advises",
+          "normalized_predicate": "advises",
+          "object": "Elizabeth Bennet",
+          "scope": "familial support",
+          "proposer_evidence": [
+            "pnp/eliz#c26_33"
+          ],
+          "rationale": "Mrs. Gardiner offers advice, indicating a supportive family relationship.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Mr. Darcy",
+          "predicate": "admiration for",
+          "normalized_predicate": "admiration_for",
+          "object": "Elizabeth Bennet",
+          "scope": "emotional connection",
+          "proposer_evidence": [
+            "pnp/eliz#c44_77"
+          ],
+          "rationale": "Mr. Darcy's feelings suggest a deepening romantic interest.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        }
+      ],
+      "metrics": {
+        "proposed": 8,
+        "proposer_only_not_grounded": 8,
+        "unknown": 8,
+        "contradicted": 0,
+        "committed_supported": 0,
+        "withheld": 8,
+        "evidence_precise_among_supported": 0
+      }
+    },
+    "kimi": {
+      "role": "HELD-OUT",
+      "rendered_prompt": "You are building a knowledge base from the evidence passages below. Propose candidate relations\nbetween the named things in these passages, each as (subject, predicate, object). For each\ncandidate, list the ids of the passages it is based on.\n\nReturn ONLY a JSON array; each element:\n  {\"subject\": \"..\", \"predicate\": \"..\", \"object\": \"..\", \"scope\": \"..\", \"evidence\": [\"<id>\", ..], \"rationale\": \"..\"}\n\nEvidence passages:\n[kimi/k2-readme#p0] # Kimi K2 README — Open Agentic Intelligence\n[kimi/k2-readme#p1] ## Overview\n[kimi/k2-readme#p2] Kimi K2 is a state-of-the-art Mixture-of-Experts (MoE) language model with 32 billion activated\nparameters and 1 trillion total parameters. The architecture employs the Muon optimizer at\nunprecedented scale together with novel optimization techniques for training stability.\n[kimi/k2-readme#p3] ## Specifications\n[kimi/k2-readme#p4] | Component | Details |\n|-----------|---------|\n| Total parameters | 1 Trillion |\n| Activated parameters | 32 Billion |\n| Architecture | Mixture-of-Experts (MoE) |\n| Layers | 61 (including 1 dense layer) |\n| Experts | 384 total; 8 selected per token |\n| Context length | 128K tokens |\n| Vocabulary | 160K tokens |\n| Attention | MLA (Multi-head Latent Attention) |\n[kimi/k2-readme#p5] ## Model variants\n[kimi/k2-readme#p6] - **Kimi-K2-Base** — foundation model for researchers requiring full control for fine-tuning and\n  custom solutions.\n- **Kimi-K2-Instruct** — post-trained variant optimized for drop-in, general-purpose chat and\n  agentic experiences.\n[kimi/k2-readme#p7] ## Capabilities\n[kimi/k2-readme#p8] Kimi K2 performs strongly in coding (53.7 on LiveCodeBench), tool use (70.6 on Tau2 retail tasks),\nmathematics (69.6 on AIME 2024), and general knowledge (89.5 MMLU), with strong agentic capabilities\nincluding autonomous problem-solving and reasoning.\n[kimi/k2-readme#p9] ## Access and license\n[kimi/k2-readme#p10] Models are available via Hugging Face in block-fp8 format and through the Moonshot AI API with\nOpenAI/Anthropic-compatible endpoints. Recommended inference engines: vLLM, SGLang, KTransformers,\nTensorRT-LLM. Code and weights are released under a Modified MIT License.\n[kimi/k2-technical-report#p0] # Kimi K2 Technical Report — Open Agentic Intelligence\n[kimi/k2-technical-report#p1] ## Abstract\n[kimi/k2-technical-report#p2] We introduce Kimi K2, a Mixture-of-Experts (MoE) large language model with 32 billion activated\nparameters and 1 trillion total parameters. We propose the MuonClip optimizer, which improves upon\nMuon with a novel QK-clip technique to address training instability while enjoying the advanced token\nefficiency of Muon. Based on MuonClip, K2 was pre-trained on 15.5 trillion tokens with zero loss\nspike. During post-training, K2 undergoes a multi-stage post-training process, highlighted by a\nlarge-scale agentic data synthesis pipeline and a joint reinforcement learning (RL) stage, where the\nmodel improves its capabilities through interactions with real and synthetic environments.\n[kimi/k2-technical-report#p3] Kimi K2 achieves state-of-the-art performance among open-source non-thinking models, with strengths\nin agentic capabilities. Notably, K2 obtains 66.1 on Tau2-Bench, 76.5 on ACEBench (En), 65.8 on\nSWE-Bench Verified, and 47.3 on SWE-Bench Multilingual — surpassing most open and closed-sourced\nbaselines in non-thinking settings. It also exhibits strong capabilities in coding, mathematics, and\nreasoning tasks, with 53.7 on LiveCodeBench v6, 49.5 on AIME 2025, 75.1 on GPQA-Diamond, and 27.1 on\nOJBench, all without extended thinking.\n[kimi/k2-technical-report#p4] ## Model variants\n[kimi/k2-technical-report#p5] - **Kimi K2** — the primary model.\n- **Kimi-K2-Base** — the base checkpoint.\n- **Kimi-K2-Instruct** — the post-trained checkpoint.\n[kimi/k2-technical-report#p6] ## Architecture and optimization\n[kimi/k2-technical-report#p7] - **Mixture-of-Experts (MoE):** 32B activated of 1T total parameters.\n- **MuonClip optimizer:** improves upon Muon with a novel QK-clip technique to address training\n  instability, while keeping the token efficiency of Muon. Enabled pre-training on 15.5T tokens with\n  zero loss spike.\n- **Multi-stage post-training:** a large-scale agentic data synthesis pipeline and a joint\n  reinforcement learning (RL) stage.\n[kimi/k2-technical-report#p8] ## Departures from prior work\n[kimi/k2-technical-report#p9] The MuonClip optimizer is a departure from standard Muon: it introduces a novel QK-clip technique to\naddress training instability while maintaining Muon's token-efficiency advantages.\n[kimi/k2-thinking-model-card#p0] # Kimi-K2-Thinking Model Card\n[kimi/k2-thinking-model-card#p1] ## Model identity\n[kimi/k2-thinking-model-card#p2] Kimi K2 Thinking is the latest, most capable version of the open-source thinking model, built upon\nKimi K2 — an evolution in the product line.\n[kimi/k2-thinking-model-card#p3] ## Architecture components\n[kimi/k2-thinking-model-card#p4] - **MoE (Mixture-of-Experts):** 384 total experts with 8 selected per token; 1T total, 32B activated.\n- **MLA (Multi-head Latent Attention):** the attention mechanism.\n- **SwiGLU:** activation function.\n- 61 total layers (including 1 dense layer); 256K context window.\n[kimi/k2-thinking-model-card#p5] ## Capability claims\n[kimi/k2-thinking-model-card#p6] Kimi K2 Thinking sets a new state-of-the-art on Humanity's Last Exam (HLE), BrowseComp, and other\nbenchmarks. It demonstrates stable tool-use across 200–300 sequential tool calls, a significant\nimprovement in multi-step reasoning stability.\n[kimi/k2-thinking-model-card#p7] ## Departures from prior versions\n[kimi/k2-thinking-model-card#p8] The model introduces native INT4 quantization via Quantization-Aware Training (QAT), achieving\nroughly 2x generation-speed improvement without performance degradation — a technical advancement\nabsent from previous Kimi versions.\n\nJSON array:",
+      "raw_completion": "```json\n[\n    {\n        \"subject\": \"Kimi K2\",\n        \"predicate\": \"is a\",\n        \"object\": \"Mixture-of-Experts (MoE) language model\",\n        \"scope\": \"general\",\n        \"evidence\": [\"kimi/k2-readme#p2\", \"kimi/k2-technical-report#p2\"],\n        \"rationale\": \"Both passages explicitly state that Kimi K2 is a Mixture-of-Experts (MoE) language model.\"\n    },\n    {\n        \"subject\": \"Kimi K2\",\n        \"predicate\": \"has\",\n        \"object\": \"32 billion activated parameters\",\n        \"scope\": \"technical specification\",\n        \"evidence\": [\"kimi/k2-readme#p2\", \"kimi/k2-technical-report#p2\"],\n        \"rationale\": \"The number of activated parameters is mentioned in both passages as a characteristic of Kimi K2.\"\n    },\n    {\n        \"subject\": \"Kimi K2\",\n        \"predicate\": \"has\",\n        \"object\": \"1 trillion total parameters\",\n        \"scope\": \"technical specification\",\n        \"evidence\": [\"kimi/k2-readme#p2\", \"kimi/k2-technical-report#p2\"],\n        \"rationale\": \"Both passages specify that Kimi K2 has a total of 1 trillion parameters.\"\n    },\n    {\n        \"subject\": \"MuonClip optimizer\",\n        \"predicate\": \"improves upon\",\n        \"object\": \"Muon\",\n        \"scope\": \"technical innovation\",\n        \"evidence\": [\"kimi/k2-technical-report#p7\", \"kimi/k2-technical-report#p9\"],\n        \"rationale\": \"The MuonClip optimizer is described as an improvement over the original Muon.\"\n    },\n    {\n        \"subject\": \"Kimi K2\",\n        \"predicate\": \"was pre-trained on\",\n        \"object\": \"15.5 trillion tokens\",\n        \"scope\": \"model training\",\n        \"evidence\": [\"kimi/k2-technical-report#p2\"],\n        \"rationale\": \"The passage specifies that Kimi K2 underwent pre-training on a large dataset of 15.5 trillion tokens.\"\n    },\n    {\n        \"subject\": \"Kimi K2 Thinking\",\n        \"predicate\": \"is built upon\",\n        \"object\": \"Kimi K2\",\n        \"scope\": \"model evolution\",\n        \"evidence\": [\"kimi/k2-thinking-model-card#p2\"],\n        \"rationale\": \"This model is described as an evolution built upon Kimi K2.\"\n    },\n    {\n        \"subject\": \"Kimi K2\",\n        \"predicate\": \"achieves\",\n        \"object\": \"state-of-the-art performance\",\n        \"scope\": \"model capabilities\",\n        \"evidence\": [\"kimi/k2-technical-report#p3\"],\n        \"rationale\": \"It is stated that Kimi K2 achieves state-of-the-art performance in various benchmarks.\"\n    },\n    {\n        \"subject\": \"Kimi-K2-Base\",\n        \"predicate\": \"is a\",\n        \"object\": \"foundation model for researchers\",\n        \"scope\": \"model variants\",\n        \"evidence\": [\"kimi/k2-readme#p6\", \"kimi/k2-technical-report#p5\"],\n        \"rationale\": \"Kimi-K2-Base is described as a foundation model suitable for research purposes.\"\n    },\n    {\n        \"subject\": \"Kimi-K2-Instruct\",\n        \"predicate\": \"is a\",\n        \"object\": \"post-trained variant optimized for chat and agentic experiences\",\n        \"scope\": \"model variants\",\n        \"evidence\": [\"kimi/k2-readme#p6\", \"kimi/k2-technical-report#p5\"],\n        \"rationale\": \"The passage describes Kimi-K2-Instruct as specifically optimized for chat applications.\"\n    }\n]\n```",
+      "proposals": [
+        {
+          "subject": "Kimi K2",
+          "predicate": "is a",
+          "normalized_predicate": "is_a",
+          "object": "Mixture-of-Experts (MoE) language model",
+          "scope": "general",
+          "proposer_evidence": [
+            "kimi/k2-readme#p2",
+            "kimi/k2-technical-report#p2"
+          ],
+          "rationale": "Both passages explicitly state that Kimi K2 is a Mixture-of-Experts (MoE) language model.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi K2",
+          "predicate": "has",
+          "normalized_predicate": "has",
+          "object": "32 billion activated parameters",
+          "scope": "technical specification",
+          "proposer_evidence": [
+            "kimi/k2-readme#p2",
+            "kimi/k2-technical-report#p2"
+          ],
+          "rationale": "The number of activated parameters is mentioned in both passages as a characteristic of Kimi K2.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi K2",
+          "predicate": "has",
+          "normalized_predicate": "has",
+          "object": "1 trillion total parameters",
+          "scope": "technical specification",
+          "proposer_evidence": [
+            "kimi/k2-readme#p2",
+            "kimi/k2-technical-report#p2"
+          ],
+          "rationale": "Both passages specify that Kimi K2 has a total of 1 trillion parameters.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "MuonClip optimizer",
+          "predicate": "improves upon",
+          "normalized_predicate": "derives_from",
+          "object": "Muon",
+          "scope": "technical innovation",
+          "proposer_evidence": [
+            "kimi/k2-technical-report#p7",
+            "kimi/k2-technical-report#p9"
+          ],
+          "rationale": "The MuonClip optimizer is described as an improvement over the original Muon.",
+          "verdict": "SUPPORTED",
+          "verifier_evidence": [
+            "kimi/k2-technical-report#p2"
+          ],
+          "evidence_precise": false
+        },
+        {
+          "subject": "Kimi K2",
+          "predicate": "was pre-trained on",
+          "normalized_predicate": "was_pre-trained_on",
+          "object": "15.5 trillion tokens",
+          "scope": "model training",
+          "proposer_evidence": [
+            "kimi/k2-technical-report#p2"
+          ],
+          "rationale": "The passage specifies that Kimi K2 underwent pre-training on a large dataset of 15.5 trillion tokens.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi K2 Thinking",
+          "predicate": "is built upon",
+          "normalized_predicate": "is_built_upon",
+          "object": "Kimi K2",
+          "scope": "model evolution",
+          "proposer_evidence": [
+            "kimi/k2-thinking-model-card#p2"
+          ],
+          "rationale": "This model is described as an evolution built upon Kimi K2.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi K2",
+          "predicate": "achieves",
+          "normalized_predicate": "achieves",
+          "object": "state-of-the-art performance",
+          "scope": "model capabilities",
+          "proposer_evidence": [
+            "kimi/k2-technical-report#p3"
+          ],
+          "rationale": "It is stated that Kimi K2 achieves state-of-the-art performance in various benchmarks.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi-K2-Base",
+          "predicate": "is a",
+          "normalized_predicate": "is_a",
+          "object": "foundation model for researchers",
+          "scope": "model variants",
+          "proposer_evidence": [
+            "kimi/k2-readme#p6",
+            "kimi/k2-technical-report#p5"
+          ],
+          "rationale": "Kimi-K2-Base is described as a foundation model suitable for research purposes.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        },
+        {
+          "subject": "Kimi-K2-Instruct",
+          "predicate": "is a",
+          "normalized_predicate": "is_a",
+          "object": "post-trained variant optimized for chat and agentic experiences",
+          "scope": "model variants",
+          "proposer_evidence": [
+            "kimi/k2-readme#p6",
+            "kimi/k2-technical-report#p5"
+          ],
+          "rationale": "The passage describes Kimi-K2-Instruct as specifically optimized for chat applications.",
+          "verdict": "UNKNOWN",
+          "verifier_evidence": [],
+          "evidence_precise": null
+        }
+      ],
+      "metrics": {
+        "proposed": 9,
+        "proposer_only_not_grounded": 8,
+        "unknown": 8,
+        "contradicted": 0,
+        "committed_supported": 1,
+        "withheld": 8,
+        "evidence_precise_among_supported": 0
+      }
+    }
+  }
+}

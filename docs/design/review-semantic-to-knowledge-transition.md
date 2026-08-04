@@ -271,6 +271,20 @@ Two open items:
 Until Part B passes the gate: no layer declared, no pipeline, no UI, no schema expansion, no
 cross-corpus merge.
 
+### Part B ran — FAILED the gate; research frozen
+
+The paid run (gpt-4o-mini, two seeds) **failed** the Knowledge Claim Layer gate — see
+`witness-partb-generic-relation-grounding.md`. Zero fabrication was achieved by **mass abstention**:
+the verifier committed ~1/36 free proposals and withheld true, corpus-supported claims wholesale,
+because its grounding is **predicate-closed, not relation-general**. Part A's pass was scope-limited
+(adversarial on evidence, not on predicate coverage). Notably, the cheap proposer was **mostly
+faithful** on clean corpora — fabrication was modest, so the urgent product question is not "stop
+hallucination" but "organize and let people explore real knowledge."
+
+Outcome: **Research v1 is frozen** (`research-v1-frozen.md`) — a *located frontier*, not a completed
+layer. Generic open-relation grounding is filed as a deferred frontier with its witness. The next
+phase is the **Explorer** (product); backend research reopens only on a product-surfaced trigger.
+
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
 

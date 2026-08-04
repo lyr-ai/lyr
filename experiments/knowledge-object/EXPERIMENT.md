@@ -65,7 +65,17 @@ the clean antonym case (Elizabeth accepts↔refuses) but **misses inferential/pr
 by "absent from previous versions"). Those degrade to `UNKNOWN` — **safe** (never accepted), but
 imprecise. Closing that gap is a job for the LLM verifier, not the deterministic baseline.
 
-## Part B — the paid proposer run (needs a key)
+## Part B — RAN, FAILED the gate (2026-08-03)
+
+The paid run (gpt-4o-mini, two seeds; `runs/openai-1.json`, `openai-2.json`) **failed** the gate.
+Zero fabrication came from **mass abstention** — the verifier committed ~1/36 free proposals and
+withheld true, supported claims wholesale, because its grounding is **predicate-closed, not
+relation-general** (unknown predicate → default `UNKNOWN`). Fails conditions 4, 5, 6, 8, 2. Full
+analysis: `docs/design/witness-partb-generic-relation-grounding.md`. Research is now frozen
+(`docs/design/research-v1-frozen.md`); the deferred frontier is *generic open-relation grounding*.
+The instructions below remain for reproduction / a future reopen.
+
+## Part B — how to reproduce (needs a key)
 
 Built and self-tested with a canned `FakeClient` (`python experiment.py --fake` — harness self-test,
 NOT a measurement). The real run:
