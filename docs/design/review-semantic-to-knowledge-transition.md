@@ -247,15 +247,29 @@ its unsupported relations — that needs a paid run and is the next measurement.
 
 Settled: (1) Durable ≠ Knowledge; (2) four worlds converge on the scoped-claim substrate at the
 representation level; (3) the abstention discipline is mechanizable (baseline verifier, zero
-fabrication on two corpora). Two open items, both the PI's call:
+fabrication on two corpora).
 
-- **Proposer-behind-verifier measurement** — the step that would earn the substrate the name
-  "layer" (put an LLM proposer behind the verifier; measure caught vs. missed fabrications).
-- **Cross-corpus concept identity** — the boundary Kimi surfaced (`MLA@DeepSeek` vs `MLA@Kimi`),
-  the knowledge-object analogue of entity resolution, still unbuilt.
+**Proposer-behind-verifier harness — built, Part A passed.** `experiments/knowledge-object/`
+implements the narrow experiment (relation proposal under evidence) to the frozen spec: three-category
+adversarial gold set; corpus roles frozen (DeepSeek dev · P&P dev-sanity · **Kimi held-out**); six
+metrics with **fabrication acceptance = 0** as the gate; two baselines (proposer-only vs
+proposer+verifier); full logging. **Part A** (the verifier's defense, deterministic) is done and
+**PASS** — fabrication acceptance **0/10**, retention **5/5**, contradiction 1/3 (0 unsafe; the
+inferential-contradiction gap is disclosed, a job for the LLM verifier). **Part B** (the LLM proposer
+— the actual "does a model's narrative get stopped?" measurement) is built and self-tested with a
+FakeClient; it needs a paid key (`--client openai/anthropic`) to run, which is the PI's to trigger.
 
-Naming the substrate a layer / opening "M3.2" is earned by the proposer-behind-verifier measurement,
-not by the probes or the baseline verifier.
+Two open items:
+
+- **Part B paid run** — the measurement that, if it satisfies the 10 gate conditions
+  (`experiments/knowledge-object/EXPERIMENT.md`), promotes the working hypothesis to a layer. The
+  accurate name would be **Knowledge Claim Layer** — the commit unit is the *claim*; a "Knowledge
+  Object" is a projection over claims.
+- **Cross-corpus concept identity** — the boundary Kimi surfaced (`MLA@DeepSeek` vs `MLA@Kimi`), kept
+  explicitly out of this round (`NOT_EVALUATED`, no merge on name).
+
+Until Part B passes the gate: no layer declared, no pipeline, no UI, no schema expansion, no
+cross-corpus merge.
 
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
