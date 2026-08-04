@@ -44,6 +44,10 @@ avoided.
 **Not** reopen triggers: a more elegant schema; wanting to add predicates; a Kimi page looking thin;
 a feeling the Knowledge Layer is "almost there"; making a paper more complete.
 
+**The instrument that decides trigger 2** is the Capability Board in `case-protocol-v1.md`: a backend
+capability is touched only when its gap frequency reaches **Count ≥ 2** across independent cases. A
+single sighting is data, not a mandate.
+
 ## Deferred research frontier
 
     Generic relation grounding over an open predicate space
