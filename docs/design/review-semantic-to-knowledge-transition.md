@@ -230,14 +230,32 @@ Four independent worlds now converge on the scoped-claim substrate.
   surfaced is unbuilt; (4) a **representation surviving four worlds is a strong working hypothesis,
   not a validated layer.** It earns "layer" only when a *system* forms it honestly and is graded.
 
-### The decision this leaves for the PI
+### Minimal build + measurement — done, baseline PASS
 
-The scoped-claim / claim-maintenance substrate is now a working hypothesis validated across four
-worlds at the representation level. The open fork is no longer "which corpus" but **build vs. keep
-exploring**: (a) a first minimal **build + zero-fabrication measurement** (a system forms scoped
-claims on one corpus, graded against the hand-probe), or (b) probe the newly-surfaced **cross-corpus
-concept-identity** boundary before any build. Naming the substrate a layer / opening "M3.2" is earned
-by (a), not by the probes.
+`experiments/knowledge-object/` builds the smallest load-bearing piece — a deterministic
+**evidence-grounded status verifier** — and measures it against the hand-probes. The discriminating
+test (same rule must abstain DeepSeek's unstated lineage yet support Kimi's stated
+`MuonClip → Muon`) came out **6/6, zero fabrications**. The abstention discipline is **mechanizable**
+and reproducible across two corpora.
+
+Honest bound on that result: the verifier **grades** claims, it does not **propose** them (candidates
+were hand-given). A baseline verifier passing is **necessary, not sufficient**. The real fabrication
+test is **proposer-behind-verifier**: an LLM proposes knowledge objects, and the verifier must catch
+its unsupported relations — that needs a paid run and is the next measurement.
+
+### What is settled, and the decision that remains
+
+Settled: (1) Durable ≠ Knowledge; (2) four worlds converge on the scoped-claim substrate at the
+representation level; (3) the abstention discipline is mechanizable (baseline verifier, zero
+fabrication on two corpora). Two open items, both the PI's call:
+
+- **Proposer-behind-verifier measurement** — the step that would earn the substrate the name
+  "layer" (put an LLM proposer behind the verifier; measure caught vs. missed fabrications).
+- **Cross-corpus concept identity** — the boundary Kimi surfaced (`MLA@DeepSeek` vs `MLA@Kimi`),
+  the knowledge-object analogue of entity resolution, still unbuilt.
+
+Naming the substrate a layer / opening "M3.2" is earned by the proposer-behind-verifier measurement,
+not by the probes or the baseline verifier.
 
 Each prototype held to the resolver's bar: strict evidence coverage, propose/commit, honest
 abstention, **zero fabrication**.
