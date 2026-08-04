@@ -95,6 +95,40 @@ If it passes, the commit unit is the **claim**, so the accurate name is **Knowle
 (a "Knowledge Object" is a projection view over these claims). Until then: no layer declared, no
 pipeline, no UI, no schema expansion.
 
+## Preflight (frozen before the paid run)
+
+Confirmed per the PI's four checks:
+
+1. **Gold set frozen.** `gold.py` is not changed after this point; changing it post-result would
+   contaminate the first measurement. (Corpus integrity is logged as `corpus_hashes` per run.)
+2. **Proposer is NOT taught the verifier's rules.** The prompt (`proposer.py`) asks only for grounded
+   candidate relations with cited evidence — no mention of downstream verification, no "abstain when
+   unsupported", no "lineage is risky". Priming it would bias the proposer-only baseline and hide the
+   verifier's contribution.
+3. **Raw artifacts saved** to `runs/<label>.json`: `git_commit`, `corpus_hashes`,
+   `proposer_prompt_template`, model id, temperature note, the rendered prompt, the **raw completion**,
+   every proposal with the proposer's own cited evidence, the normalized predicate, the verifier
+   verdict + the verifier's evidence, `evidence_precise`, and metrics — so any fabrication can be traced
+   to proposer vs. evidence-mapping vs. verifier.
+4. **≥ 2 independent runs.** LYR clients send no sampling params (provider-default temperature, i.e.
+   > 0), so two runs are the minimum to check stability:
+
+       python experiment.py --client openai --model <model> --label openai-1
+       python experiment.py --client openai --model <model> --label openai-2
+
+**Model order:** start with a cheap, stable model (the question is what an ordinary proposer invents
+and whether the verifier blocks it, not maximum recall); then repeat with a stronger model — which may
+propose more genuinely-novel supported claims *and* more convincing unsupported narrative, both
+informative.
+
+**Reading the result:** report proposer-only (how many claims; how many unsupported/contradicted; does
+it volunteer lineage / causality / inner-state / thematic argument) separately from proposer+verifier
+(fabrication blocked; real claims wrongly deleted; keyword-adjacent-but-non-entailing false support;
+held-out Kimi still clean; run-to-run stability). Do **not** lower the gate to pass: any unsupported
+committed, any contradicted committed, zero-fabrication achieved only by mass abstention, Kimi failing,
+non-entailing evidence, large run-to-run variance, or a corpus-specific patch → not a Layer, just the
+next verifier witness.
+
 ## Explicitly out of scope (this round)
 
 **Cross-corpus concept identity.** `DeepSeek::MLA` and `Kimi::MLA` stay separate; cross-corpus sameness

@@ -15,14 +15,18 @@ from dataclasses import dataclass
 
 from grounding import Passage
 
+# NEUTRAL by design: the proposer must behave like an ordinary model building a knowledge base —
+# NOT be primed with the verifier's rules. No mention of downstream verification, no "abstain when
+# unsupported", no "lineage is risky", no "don't self-censor". Any such hint would bias the
+# proposer-only baseline and hide the verifier's actual contribution. It is only asked to propose
+# grounded candidates and cite the passages it relied on; the verifier alone decides admissibility.
 PROMPT = """\
-You are proposing candidate knowledge for a knowledge base, using ONLY the evidence passages below.
-Propose relations between named things as (subject, predicate, object). Propose BOTH what is clearly
-stated AND what seems plausible given the passages — each candidate will be verified against the
-evidence separately, so do not self-censor plausible-but-uncertain relations.
+You are building a knowledge base from the evidence passages below. Propose candidate relations
+between the named things in these passages, each as (subject, predicate, object). For each
+candidate, list the ids of the passages it is based on.
 
 Return ONLY a JSON array; each element:
-  {{"subject": "..", "predicate": "..", "object": "..", "scope": "..", "rationale": ".."}}
+  {{"subject": "..", "predicate": "..", "object": "..", "scope": "..", "evidence": ["<id>", ..], "rationale": ".."}}
 
 Evidence passages:
 {passages}
@@ -36,7 +40,12 @@ class Proposed:
     predicate: str
     object: str
     scope: str = ""
+    evidence: list[str] = None  # passage ids the PROPOSER cites (its own claim of support)
     rationale: str = ""
+
+    def __post_init__(self) -> None:
+        if self.evidence is None:
+            self.evidence = []
 
 
 def _parse(text: str) -> list[Proposed]:
@@ -50,11 +59,18 @@ def _parse(text: str) -> list[Proposed]:
     out = []
     for it in arr:
         if isinstance(it, dict) and it.get("subject") and it.get("predicate") and it.get("object"):
+            ev = it.get("evidence") or []
+            ev = [str(x) for x in ev] if isinstance(ev, list) else []
             out.append(Proposed(str(it["subject"]), str(it["predicate"]), str(it["object"]),
-                                str(it.get("scope", "")), str(it.get("rationale", ""))))
+                                str(it.get("scope", "")), ev, str(it.get("rationale", ""))))
     return out
 
 
-def propose(client, passages: list[Passage]) -> list[Proposed]:
-    rendered = "\n".join(f"[{p.id}] {p.text}" for p in passages)
-    return _parse(client.complete(PROMPT.format(passages=rendered)))
+def render_prompt(passages: list[Passage]) -> str:
+    return PROMPT.format(passages="\n".join(f"[{p.id}] {p.text}" for p in passages))
+
+
+def propose(client, passages: list[Passage]) -> tuple[str, list[Proposed]]:
+    """Returns (raw_completion, parsed) so the raw model output can be logged for audit."""
+    raw = client.complete(render_prompt(passages))
+    return raw, _parse(raw)

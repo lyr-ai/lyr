@@ -21,9 +21,11 @@ _CANNED = {
     ],
     "kimi": [
         {"subject": "MuonClip", "predicate": "improves upon", "object": "Muon",
-         "scope": "optimization", "rationale": "stated in the abstract"},
+         "scope": "optimization", "evidence": ["kimi/k2-technical-report#p2"],
+         "rationale": "stated in the abstract"},
         {"subject": "MLA", "predicate": "evolved into", "object": "MuonClip",
-         "scope": "architecture", "rationale": "both are Kimi components"},
+         "scope": "architecture", "evidence": ["kimi/k2-readme#p1"],
+         "rationale": "both are Kimi components"},
     ],
     "pnp": [
         {"subject": "Elizabeth", "predicate": "refuses", "object": "Mr. Darcy",

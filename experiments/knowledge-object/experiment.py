@@ -18,7 +18,9 @@ Corpus roles (frozen): deepseek = dev · pnp = dev sanity · kimi = HELD-OUT.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -30,9 +32,24 @@ sys.path.insert(0, str(REPO))
 from claim_verifier import Claim, verify  # noqa: E402
 from gold import by_corpus  # noqa: E402
 from grounding import CONTRADICTED, SUPPORTED, UNKNOWN, Passage  # noqa: E402
-from proposer import propose  # noqa: E402
+from proposer import PROMPT, propose, render_prompt  # noqa: E402
 
 CORPORA = ("deepseek", "pnp", "kimi")
+
+
+def _git_commit() -> str:
+    try:
+        return subprocess.check_output(["git", "-C", str(REPO), "rev-parse", "HEAD"],
+                                       text=True).strip()
+    except Exception:  # noqa: BLE001
+        return "unknown"
+
+
+def _corpus_hash(passages: list[Passage]) -> str:
+    h = hashlib.sha256()
+    for p in passages:
+        h.update(p.id.encode()); h.update(b"\0"); h.update(p.text.encode()); h.update(b"\0")
+    return h.hexdigest()[:16]
 
 
 # ---------- passage loading ----------
@@ -140,27 +157,48 @@ def _norm_predicate(pred: str) -> str:
 def part_b(client, model_id: str, log: dict) -> None:
     print("\n=== Part B — proposer (LLM) vs proposer+verifier ===\n")
     log["model"] = model_id
+    log["temperature"] = "provider-default (LYR clients send no sampling params)"
+    log["part_b"] = {}
     for corpus in CORPORA:
         passages = load_passages(corpus)
-        proposals = propose(client, passages)
+        rendered = render_prompt(passages)
+        raw, proposals = propose(client, passages)
         graded = []
         for pr in proposals:
-            claim = Claim(pr.subject, _norm_predicate(pr.predicate), pr.object, pr.scope,
-                          (pr.subject,), (pr.object,))
+            norm = _norm_predicate(pr.predicate)
+            claim = Claim(pr.subject, norm, pr.object, pr.scope, (pr.subject,), (pr.object,))
             v = verify(claim, passages)
-            graded.append((pr, v.status, v.evidence))
-        supported = [g for g in graded if g[1] == SUPPORTED]
-        not_supported = [g for g in graded if g[1] != SUPPORTED]
-        print(f"-- {corpus} ({'HELD-OUT' if corpus == 'kimi' else 'dev'}) --")
-        print(f"   proposer-only:     {len(proposals)} claims proposed")
-        print(f"   proposer+verifier: {len(supported)} committed (SUPPORTED), "
-              f"{len(not_supported)} withheld (UNKNOWN/CONTRADICTED)")
-        print(f"   → verifier withheld {len(not_supported)}/{len(proposals)} of the proposer's claims")
-        for pr, st, ev in graded:
-            log["proposals"].append({"corpus": corpus, "subject": pr.subject,
-                                     "predicate": pr.predicate, "object": pr.object,
-                                     "status": st, "evidence": ev, "rationale": pr.rationale})
-        print()
+            # evidence precision proxy: did the PROPOSER's cited passage ids overlap the passage
+            # the verifier actually grounded the claim in? (only meaningful when SUPPORTED)
+            precise = bool(set(pr.evidence) & set(v.evidence)) if v.status == SUPPORTED else None
+            graded.append({"subject": pr.subject, "predicate": pr.predicate,
+                           "normalized_predicate": norm, "object": pr.object, "scope": pr.scope,
+                           "proposer_evidence": pr.evidence, "rationale": pr.rationale,
+                           "verdict": v.status, "verifier_evidence": v.evidence,
+                           "evidence_precise": precise})
+        n = len(graded)
+        supported = [g for g in graded if g["verdict"] == SUPPORTED]
+        unknown = [g for g in graded if g["verdict"] == UNKNOWN]
+        contra = [g for g in graded if g["verdict"] == CONTRADICTED]
+        metrics = {
+            "proposed": n,
+            "proposer_only_not_grounded": len(unknown) + len(contra),  # verifier's view of fabrication
+            "unknown": len(unknown), "contradicted": len(contra),
+            "committed_supported": len(supported),
+            "withheld": len(unknown) + len(contra),
+            "evidence_precise_among_supported":
+                sum(1 for g in supported if g["evidence_precise"]),
+        }
+        held = "HELD-OUT" if corpus == "kimi" else "dev"
+        print(f"-- {corpus} ({held}) --")
+        print(f"   proposer-only:     {n} proposed  "
+              f"({metrics['proposer_only_not_grounded']} not evidence-grounded per verifier)")
+        print(f"   proposer+verifier: {len(supported)} committed, "
+              f"{metrics['withheld']} withheld ({len(unknown)} UNKNOWN, {len(contra)} CONTRADICTED)")
+        print(f"   evidence-precise among committed: "
+              f"{metrics['evidence_precise_among_supported']}/{len(supported)}\n")
+        log["part_b"][corpus] = {"role": held, "rendered_prompt": rendered, "raw_completion": raw,
+                                 "proposals": graded, "metrics": metrics}
 
 
 def main() -> None:
@@ -171,7 +209,15 @@ def main() -> None:
     ap.add_argument("--label", default="run", help="log file label (keep deterministic, no timestamp)")
     args = ap.parse_args()
 
-    log: dict = {"label": args.label, "gold": [], "proposals": [], "model": None}
+    log: dict = {
+        "label": args.label,
+        "git_commit": _git_commit(),
+        "corpus_hashes": {c: _corpus_hash(load_passages(c)) for c in CORPORA},
+        "proposer_prompt_template": PROMPT,
+        "model": None,
+        "temperature": None,
+        "gold": [],
+    }
     gate = part_a(log)
 
     if args.fake:
